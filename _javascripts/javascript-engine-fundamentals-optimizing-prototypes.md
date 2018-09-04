@@ -222,4 +222,63 @@ const foo = new Bar(true);
     <figcaption>class shape 1</figcaption>
 </figure>
 
+<kbd>Bar.prototype</kbd>은 단일 property <kbd>'getX'</kbd>를 포함하는 shape를 가지고 있으며, <kbd>getX</kbd>의 값은 호출시 <kbd>this.x</kbd>를 반환하는 함수입니다. <kbd>Bar.prototype</kbd>의 prototype은 <kbd>Object.prototype</kbd>이고, 이는 JavaScript 언어의 한 부분입니다. <kbd>Object.prototype</kbd>은 prototype tree의 root이기 때문에 이것의 prototype은 <kbd>null</kbd>입니다.
+
+<figure class="align-center">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/javascript_engine_fundamentals_optimizing_prototypes/12_class-shape-2.svg" alt="12">
+    <figcaption>class shape 2</figcaption>
+</figure>
+
+만약 같은 class의 다른 instance를 만든다면, 두 instance는 앞서 살펴본것과 같이 object shape를 공유합니다. 그리고 두 instance 모두 같은 <kbd>Bar.prototype</kbd> object를 가리킬것입니다.
+
+### Prototype property access
+
+자, 이제 class를 선언하고 새로운 instance를 생성할 때 어떤 일이 일어나는지 알게 되었습니다. 하지만, 아래 코드와 같이 instance의 method를 호출할 때는 어떻게 될까요?
+
+```js
+class Bar {
+	constructor(x) { this.x = x; }
+	getX() { return this.x; }
+}
+
+const foo = new Bar(true);
+const x = foo.getX();
+//        ^^^^^^^^^^
+```
+
+모든 method 호출을 두 가지 개별 단계로 생각할 수 있습니다.
+
+```js
+const x = foo.getX();
+
+// is actually two steps:
+
+const $getX = foo.getX;
+const x = $getX.call(foo);
+```
+
+첫 번째 단계는 prototype의 property일 뿐인 method를 가져오는 것입니다(이러한 값이 function일 수 있습니다).
+두 번째 단계는 instance를 <kbd>this</kbd>로 사용해서 function을 call하는 것입니다. Instance <kbd>foo</kbd>에서 method <kbd>getX</kbd>를 가져오는 첫 번째 단계를 살펴보겠습니다.
+
+<figure class="align-center">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/javascript_engine_fundamentals_optimizing_prototypes/13_method-load.svg" alt="13">
+    <figcaption>method load</figcaption>
+</figure>
+
+Engine은 <kbd>foo</kbd> instance에서 시작하고, <kbd>foo</kbd>의 shape에 <kbd>'getX</kbd>' property가 없다는 것을 알아챕니다. 그래서 engine은 prototype chain을 타고 올라간다. <kbd>Bar.prototype</kbd>에 도달하여, prototype의 shape를 봤을 때 offset <kbd>0</kbd>에 <kbd>'getX'</kbd> property가 있는 것을 알 수 있습니다. <kbd>Bar.prototype</kbd>에서 앞서 찾은 offset의 값을 보면 우리가 찾던 <kbd>JSFunction</kbd> <kbd>getX</kbd>를 찾을 수 있습니다.
+
+JavaScript의 유연함(flexibility)덕분에 prototype chain link를 다음과 같이 변형할 수 있습니다.
+
+```js
+const foo = new Bar(true);
+foo.getX();
+// → true
+
+Object.setPrototypeOf(foo, null);
+foo.getX();
+// → Uncaught TypeError: foo.getX is not a function
+```
+
+위의 예제에서 <kbd>foo.getX</kbd>를 2번 호출했지만, 각각의 호출은 완전히 다른 의미와 결과를 가져옵니다. 그렇기 때문에 prototype은 JavaScript에서 object일 뿐이지만, 일반 object의 자체(own) property에 접근하는 속도를 높이는 것 보다 prototype의 property에 접근하는 속도를 높이는 것이 더 어렵습니다. 
+
 ing...
