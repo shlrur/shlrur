@@ -18,7 +18,7 @@ title: First Blog
 email: shlrur123@gmail.com
 description: A blog about study log.
 baseurl: # the optional subpath of your site, e.g. "/blog"
-url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url: "https://shlrur.github.io/"
 author: 
   name:
   twitter:
@@ -26,13 +26,13 @@ author:
 twitter_username:
 github_username:
 logo: # path of site logo, e.g. "/assets/images/logo.png"
-search: # true, false (default)
+search: true
 search_full_content: false # true, false (default)
-search_provider: # lunr (default), algolia
+search_provider: algolia
 algolia:
-  application_id: # YOUR_APPLICATION_ID
-  index_name: # YOUR_INDEX_NAME
-  search_only_api_key: # YOUR_SEARCH_ONLY_API_KEY
+  application_id: 8K2C62GHZZ
+  index_name: my_first_blog_search
+  search_only_api_key: ac6b1c9d2ea0e17891c512e13491b27b
   powered_by: # true (default), false
 
 # Build settings
