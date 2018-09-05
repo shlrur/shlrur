@@ -9,13 +9,13 @@ tags:
 last_modified_at: 2018-09-01T01:20:00+09:00
 ---
 
-_이 포스트는 [JavaScript engine fundamentals: optimizing prototypes](https://mathiasbynens.be/notes/prototypes) 의 글을 번역한 것입니다._
+>이 포스트는 [JavaScript engine fundamentals: optimizing prototypes](https://mathiasbynens.be/notes/prototypes) 의 글을 번역한 것입니다.
 
 이 문서는 V8 엔진뿐만 아니라 모든 JavaScript 엔진에 공통으로 적용되는 몇 가지 핵심 기본 사항을 설명합니다. JavaScript 개발자로서, JavaScript 엔진이 어떻게 작동하는지에 대한 이해를 통해 코드의 성능 특성을 추론할 수 있을것입니다.
 
 [이전 포스트에서](http://localhost:4000/javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/), 우리는 JavaScript 엔진이 Shapes와 Inline Caches를 사용하여 어떻게 object와 array에 대한 접근을 최적화하는지에 대해서 논의했습니다. 이 글은 optimization pipeline의 trade-off에 관해서 설명하고, JavaScript 엔진이 prototype property에 대한 접근 속도를 높이는 방법을 설명합니다.
 
-_**Note** : 문서를 읽는 것보다 발표를 보는 것을 더 좋아한다면 아래의 동영상을 보십시오. 그렇지 않다면 문서를 계속해서 읽어 주십시오._
+>**Note** : 문서를 읽는 것보다 발표를 보는 것을 더 좋아한다면 아래의 동영상을 보십시오. 그렇지 않다면 문서를 계속해서 읽어 주십시오.
 <div class="embed-responsive embed-responsive-16by9">
   <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/IFWulQnM5E0" frameborder="0" allowfullscreen></iframe>
 </div>
@@ -162,7 +162,7 @@ ret 0x18
     <figcaption>trade-off memory</figcaption>
 </figure>
 
-_**Note**: JavaScript 엔진들의 최적화 tier가 다른 이유는 interpreter와 같이 **코드를 빠르게 생성**하는 것과 최적화 compiler로 **빠른 코드를 생성**하는 것 사이의 근본적인 trade-off 때문입니다. 최적화 계층을 추가하면 복잡성과 오버헤드를 추가로 희생하여 보다 fine-grained한 의사 결정을 내릴 수 있습니다. 또한, 생성된 코드의 memory-usage와 최적화 level 간의 trade-off도 있습니다.(machine 코드와 bytecode) 그렇기 때문에 JavaScript 엔진은 **hot**한 function만 최적화하려고 합니다._
+> **Summary**: JavaScript 엔진들의 최적화 tier가 다른 이유는 interpreter와 같이 **코드를 빠르게 생성**하는 것과 최적화 compiler로 **빠른 코드를 생성**하는 것 사이의 근본적인 trade-off 때문입니다. 최적화 계층을 추가하면 복잡성과 오버헤드를 추가로 희생하여 보다 fine-grained한 의사 결정을 내릴 수 있습니다. 또한, 생성된 코드의 memory-usage와 최적화 level 간의 trade-off도 있습니다.(machine 코드와 bytecode) 그렇기 때문에 JavaScript 엔진은 **hot**한 function만 최적화하려고 합니다.
 
 ## Optimizing prototype property access
 
@@ -281,4 +281,159 @@ foo.getX();
 
 위의 예제에서 <kbd>foo.getX</kbd>를 2번 호출했지만, 각각의 호출은 완전히 다른 의미와 결과를 가져옵니다. 그렇기 때문에 prototype은 JavaScript에서 object일 뿐이지만, 일반 object의 자체(own) property에 접근하는 속도를 높이는 것 보다 prototype의 property에 접근하는 속도를 높이는 것이 더 어렵습니다. 
 
-ing...
+일반적인 프로그램들을 보면, prototype의 property를 로드하는 작업은 매우 빈번하게 일어납니다.(method를 호출할때마다 말이죠.)
+
+```js
+class Bar {
+	constructor(x) { this.x = x; }
+	getX() { return this.x; }
+}
+
+const foo = new Bar(true);
+const x = foo.getX();
+//        ^^^^^^^^^^
+```
+
+앞서 우리는 어떻게 엔진이 Shape와 Inline Cache를 사용하여 정기적인 _자신의_ property 로드를 최적화하는지 논의했습니다. 유사한 shape의 object에서 prototype property의 반복적 로드를 어떻게 최적화할 수 있을까요? 우리는 위에서 property 로드가 어떻게 일어나는지 보았습니다.
+
+<figure class="align-center">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/javascript_engine_fundamentals_optimizing_prototypes/14_prototype-load-checks-1.svg" alt="14">
+    <figcaption>property load check 1</figcaption>
+</figure>
+
+위의 그림과 같은 경우, 반복되는 로드에 대해 신속하게 처리하려면 다음 세 가지 사항을 알아야 합니다.
+
+1. <kbd>foo</kbd>의 shape는 <kbd>'getX'</kbd>를 포함하지 않으며, 변하지 않습니다. 즉, <kbd>foo</kbd>의 property를 추가하거나 삭제하지않고, 그리고 property attribute중 하나라도 변경하지 않는다는 뜻입니다.
+2. <kbd>foo</kbd>의 prototype은 초기의 <kbd>Bar.prototype</kbd>입니다. 즉, <kbd>Object.setPrototypeOf()</kbd>를 사용하거나 특별한 <kbd>_proto_</kbd> property에 값을 할당함으로써 <kbd>foo</kbd>의 prototype을 변경하지 않는다는 뜻입니다.
+3. <kbd>Bar.prototype</kbd>의 shape은 <kbd>'getX'</kbd>를 가지며 변하지 않습니다. 즉, <kbd>Bar.prototype</kbd>의 property를 추가하거나 삭제하지않고, 그리고 prototype attribute중 하나라도 변경하지 않는다는 뜻입니다.
+
+일반적인 경우, instance 자체에 대해 1회의 검사(1번)를 수행하고, prototype에 대해 2회의 검사(2, 3번)를 수행해야 하며, 이 검사에서는 우리가 찾고 있는 prototype이 포함된 prototype까지 올라갑니다. <kbd>1+2N</kbd>체크(여기서 <kbd>N</kbd>은 관련된 prototype의 수임)는 prototype 체인이 상대적으로 얕기 때문에 이 경우 나쁘지 않게 들릴 수 있지만, 엔진은 흔히 일반적인 DOM class 훨씬 더 긴 prototype chain을 처리해야 합니다. 그 예는 다음과 같습니다.
+
+```js
+const anchor = document.createElement('a');
+// → HTMLAnchorElement
+
+const title = anchor.getAttribute('title');
+```
+
+우리는 <kbd>HTMLAnchorElement</kbd>를 가지고 있으며 여기서 <kbd>getAttribute()</kbd> 함수를 호출하였습니다. 이 단순한 anchor element의 prototype chain은 이미 6개의 prototype이 포함되어 있습니다. 대부분의 흥미로운 DOM method의 대부분은 <kbd>HTMLAnchorElement</kbd> prototype이 아니라 chain의 더 높은곳에 있습니다.
+
+<figure class="align-center">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/javascript_engine_fundamentals_optimizing_prototypes/15_anchor-prototype-chain.svg" alt="15">
+    <figcaption>anchor prototype chain</figcaption>
+</figure>
+
+<kbd>getAttribute()</kbd> 함수는 <kbd>Element.prototype</kbd>에 있습니다. 즉, <kbd>anchor.getAttribute()</kbd>를 호출할 때마다 JavaScript는...
+1. <kbd>'getAttribute'</kbd>가 <kbd>anchor</kbd> object 자체에 없는지 확인하고,
+2. 바로 위의 prototype이 <kbd>HTMLAnchorElement.prototype</kbd>인지 확인하고,
+3. <kbd>'getAttribute'</kbd>가 없다는것을 확인하고,
+4. 다음 prototype이 <kbd>HTMLElement.prototype</kbd>이라는 것을 확인하고,
+5. 여기도 <kbd>'getAttribute'</kbd>가 없다는것을 확인하고,
+6. 결국 다음 prototype이 <kbd>Element.prototype</kbd>이라는 것을 확인하고,
+7. 그리고 거기에 <kbd>'getAttribute'</kbd>가 있다.
+
+총 7번의 확인을 해야합니다! 이러한 종류의 코드는 웹에서 매우 흔하기 때문에, 엔진은 prototype의 property 로드에 필요한 검사 횟수를 줄이기 위해 트릭을 사용합니다.
+
+앞에서 살펴봤던 예제로 돌아가서, 우리는 <kbd>foo</kbd>의 <kbd>'getX'</kbd>에 접근하기 위해서 3번의 확인을 거칩니다.
+
+```js
+class Bar {
+	constructor(x) { this.x = x; }
+	getX() { return this.x; }
+}
+
+const foo = new Bar(true);
+const $getX = foo.getX;
+```
+
+이 property를 가지는 prototype이 나올 때까지 각 object에 대해서 shape 검사를 해야 합니다. 만약 prototype 검사를 property 검사에 넣어서 검사 횟수를 줄일 수 있다면 좋을 것 같습니다. 그리고 이것이 JavaScripe 엔진이 기본적으로, 그리고 간단하게 사용하는 트릭입니다. **Prototype link를 instance 자체에 저장하는 대신, <kbd>Shape</kbd>에 저장하는 것입니다.**
+
+<figure class="align-center">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/javascript_engine_fundamentals_optimizing_prototypes/16_prototype-load-checks-2.svg" alt="16">
+    <figcaption>prototype load cheks 2</figcaption>
+</figure>
+
+각 shape는 prototype을 가리킵니다. 이것은 <kbd>foo</kbd>의 prototype이 변경될 때마다 shape도 변경되는 것을 뜻합니다. 이제 우리는 특정 property의 부재와 prototype link를 보기 위해서 object의 shape만 확인하면 가능하게 되었습니다.
+
+이 접근 방식을 사용하면 prototype에 대한 property access 속도를 높이기 위해 필요한 검사 횟수를 <kbd>1+2N</kbd>에서 <kbd>1+N</kbd>으로 줄일 수 있습니다. 하지만 해당 비용은 prototype chain 길이만큼 선형적으로 늘어나기 때문에 여전히 꽤 많은 비용이 들어가는 편입니다. 엔진은 검사 횟수를 상수가 되도록 더 줄이기 위해 다양한 트릭을 구현합니다(특히 동일한 property 로드의 후속 실행에 대해).
+
+### Validity cells
+
+V8은 이러한 목적을 위해 특별하게 prototype shape를 처리합니다. 각 prototype은 다른 object(특히 다른 prototype과는 공유되지 않음)와 공유되지 않는 고유한 shape를 가지며, 각 prototype shape에는 특별한 <kbd>ValidityCell</kbd>이 연결됩니다.
+
+<figure class="align-center">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/javascript_engine_fundamentals_optimizing_prototypes/17_validitycell.svg" alt="17">
+    <figcaption>validity cell</figcaption>
+</figure>
+
+이 ValidityCell은 관련된 prototype 또는 위에 있는 prototype을 변경할 때마다 무효화됩니다. 이것이 정확히 어떻게 작동하는지 살펴봅시다.
+
+특정 prototype에서 후속(subsequent) 로드의 속도를 높이기 위해서 V8은 4개의 field를 가지는 Inline Cache를 배치합니다.
+
+<figure class="align-center">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/javascript_engine_fundamentals_optimizing_prototypes/18_ic-validitycell.svg" alt="18">
+    <figcaption>inline cache - validity cell</figcaption>
+</figure>
+
+이 코드를 처음 실행하는 동안 inline cache를 워밍업할 때 V8은 해당 property가 발견된 offset, 즉 해당 property가 발견된 prototype(이 예제에서는 <kbd>Bar.prototype</kbd>)과 instance의 모양(여기서는 <kbd>foo</kbd>의 shape)을 기억합니다. 그리고 instance의 shape가 가리키는 _바로위의 prototype_(이 경우 <kbd>Bar.prototype</kbd>)의 ValidityCell을 가리키는 링크도 가지고 있습니다.
+
+다음번에 Inline Cache를 hit하면, 엔진은 instance의 shape와 <kbd>ValidityCell</kbd>을 확인합니다. 아직 valid하다면, 엔진은 <kbd>Prototype</kbd>의 <kbd>offset</kbd>에 직접 접근해서 추가적인 조회를 생략할수 있습니다.
+
+<figure class="align-center">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/javascript_engine_fundamentals_optimizing_prototypes/19_validitycell-invalid.svg" alt="19">
+    <figcaption>validity cell - Invalid</figcaption>
+</figure>
+
+Prototype이 변경되면 새로운 shape가 prototype에 할당되고 기존의 <kbd>ValidityCell</kbd> 무효(invalidated)가 됩니다. 따라서 다음 번 실행시에 Inline Cache는 누락되어서 성능이 저하됩니다.
+
+이전에 살펴봤던 DOM element예제로 돌아가보면, 예제의 <kbd>Object.prototype</kbd>을 변경하는 것은 <kbd>Object.prototype</kbd>의 Inline Cache가 무효화되는것 뿐만 아니라, 아래에 있는 <kbd>EventTarget.prototype</kbd>, <kbd>Node.prototype</kbd>, <kbd>Element.prototype</kbd> 그리고 마지막으로 <kbd>HTMLAnchorElement.prototype</kbd>사이에 있는 prototype 모두 무효화되는 것을 뜻한다.
+
+<figure class="align-center">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/javascript_engine_fundamentals_optimizing_prototypes/20_prototype-chain-validitycells.svg" alt="20">
+    <figcaption>prototype chain - validity cell</figcaption>
+</figure>
+
+실제로 코드가 실행되는 동안 <kbd>Object.prototype</kbd>을 수정한다는 것은 성능따위 창문밖으로 던져버린다는 것을 뜻합니다. 절대 하지마세요!
+
+구체적인 예를 들어 좀 더 알아보겠습니다. <kbd>Bar</kbd>라는 class가 있다고 가정하고, <kbd>Bar</kbd> object에 대한 method를 호출하는 함수 <kbd>loadX</kbd>가 있다고 해보겠습니다. 동일한 class의 instance에서 이 <kbd>loadX</kbd> 함수를 몇 번 호출해보겠습니다.
+
+```js
+class Bar { /* … */ }
+
+function loadX(bar) {
+	return bar.getX(); // IC for 'getX' on `Bar` instances.
+}
+
+loadX(new Bar(true));
+loadX(new Bar(false));
+// IC in `loadX` now links the `ValidityCell` for
+// `Bar.prototype`.
+
+Object.prototype.newMethod = y => y;
+// The `ValidityCell` in the `loadX` IC is invalid
+// now, because `Object.prototype` changed.
+```
+
+<kbd>loadX</kbd>에 있는 inline cache는 <kbd>Bar.prototype</kbd>의 <kbd>ValidityCell</kbd>을 가리킵니다. 만약 <kbd>Object.prototype</kbd>(JavaScript의 prototype들 중에서 가장 root에 있음)에 어떤 변형을 주는 작업을 한다면, 그 <kbd>ValidityCell</kbd>은 무효화되고 다음번 실행시에 기존의 Inline Cache가 누락되고 성능이 저하됩니다.
+
+<kbd>Object.prototype</kbd>를 변형시키는 것은 언제나 좋지않은 아이디어입니다. 왜냐하면 엔진이 그 시점까지 prototype 로드하면서 생긴 모든 Inline Cache를 무효화시키기 때문입니다. 다음 코드는 하지 _말아야_ 할 다은 예입니다.
+
+```js
+Object.prototype.foo = function() { /* … */ };
+
+// Run critical code:
+someObject.foo();
+// End of critical code.
+
+delete Object.prototype.foo;
+```
+
+위의 코드에서 <kbd>Object.prototype</kbd>를 확장했고, 이는 그 시점까지 엔진이 올려놓은 모든 prototype의 Inline Cache를 무효로 함을 뜻합니다. 그런 다음 새로 만든 prototype method를 사용하는 코드를 실행합니다. 엔진은 처음부터 다시 시작해서, 모든 prototype property에 대한 접근을 위해 새로운 Inline Cache를 만들어야 합니다. 그리고 마지막으로 "스스로 깨끗하게 정리(clean up after ourselves)"하기 위해서 앞서 추가했던 prototye method를 삭제합니다.
+
+정리란 좋은 아이디어처럼 들립니다. 그렇지 않나요? 글쎄요, 위의 경우에서는 좋지 않은 상황을 더욱 악화시키는 요소로 작용합니다. Property의 삭제는 <kbd>Object.prototype</kbd>의 수정을 뜻하므로 Inline Cache는 모두 다시 무효가 되고 엔진은 다시 처음부터 다시 작업을 해야 합니다.
+
+> **Summary**: Prototype은 object일 뿐이지만 prototype에서 method 검색 성능을 최적화하기 위해 JavaScript 엔진에서 특별하게 처리됩니다. Prototype은 건드리지 마십시오! 또는 prototype을 정말 건드려야 하는 경우, 다른 코드가 실행되기 전에 prototype을 제작하십시오. 그러면 당신의 코드가 실행되는 동안 엔진의 모든 최적화가 무효화되지 않습니다.
+
+## Take-aways
+
+JavaScript 엔진이 object와 array를 저장하는 방법과, <kbd>Shape</kbd>, Inlice Cache 그리고 <kbd>ValidityCell</kbd>을 통해 prototype 작업을 최적화하는 방법을 배웠습니다. 이러한 지식을 바탕으로 성능을 향상시킬 수 있는 몇 가지 실용적인 JavaScript 코딩 팁을 확인했습니다. **prototype을 건드리지 마십시오**(만일 정말로, 정말로 필요할때는 다른 코드들을 실행하기 전에 건드리십시오).
