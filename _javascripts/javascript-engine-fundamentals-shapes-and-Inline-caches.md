@@ -13,11 +13,11 @@ tags:
 last_modified_at: 2018-08-28T01:08:00+09:00
 ---
 
-_이 포스트는 [JavaScript engine fundamentals: Shapes and Inline Caches](https://mathiasbynens.be/notes/shapes-ics) 의 글을 번역한 것입니다._
+>이 포스트는 [JavaScript engine fundamentals: Shapes and Inline Caches](https://mathiasbynens.be/notes/shapes-ics) 의 글을 번역한 것입니다.
 
 이 문서는 V8 엔진뿐만 아니라 모든 JavaScript 엔진에 공통으로 적용되는 몇 가지 핵심 기본 사항을 설명합니다. JavaScript 개발자로서, JavaScript 엔진이 어떻게 작동하는지에 대한 이해를 통해 코드의 성능 특성을 추론할 수 있습니다.
 
-_**Note** : 문서를 읽는 것보다 발표를 보는 것을 더 좋아한다면 아래의 동영상을 보십시오. 그렇지 않다면 문서를 계속해서 읽어 주십시오._
+>**Note** : 문서를 읽는 것보다 발표를 보는 것을 더 좋아한다면 아래의 동영상을 보십시오. 그렇지 않다면 문서를 계속해서 읽어 주십시오.
 <div class="embed-responsive embed-responsive-16by9">
   <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/5nmpokoRaZI" frameborder="0" allowfullscreen></iframe>
 </div>
@@ -214,7 +214,7 @@ JavaScript 엔진에서 shape는 transition chain을 형성합니다. 아래의 
 
 Object는 아무 property가 없이 시작하기 때문에 빈 shape를 가리킵니다. 다음 명령문으로 object에 값이 <kbd>5</kbd>인 property <kbd>'x'</kbd>를 추가함으로서, JavaScript 엔진이 shape에 <kbd>'x'</kbd> property를 추가하고 <kbd>JSObject</kbd>의 첫 번째 offset인 0에 value <kbd>5</kbd>를 추가합니다. 다음 명령문으로 property <kbd>'y'</kbd>를 추가하면, JavaScript 엔진은 shape를 <kbd>'x'</kbd>, <kbd>'y'</kbd>가 모두 포함도록 변환한다. 그리고 <kbd>JSObject</kbd>에 <kbd>6</kbd>을 추가한다(offset은 <kbd>1</kbd>).
 
-_**Note** : property가 추가된 순서는 shape에 영향을 줍니다. 예를 들어, <kbd>{ x: 4, y: 5 }</kbd>의 경우와 <kbd>{ y: 5, x: 4 }</kbd>의 경우는 shape이 달라집니다._
+>**Note** : property가 추가된 순서는 shape에 영향을 줍니다. 예를 들어, <kbd>{ x: 4, y: 5 }</kbd>의 경우와 <kbd>{ y: 5, x: 4 }</kbd>의 경우는 shape이 달라집니다.
 
 각 <kbd>Shape</kbd>에 대한 전체 property table도 저장할 필요가 없습니다. 대신, 모든 <kbd>Shape</kbd>은 새로 포함한 property에 대한 것만 필요합니다. 아래의 그림을 예로 들어보겠습니다. <kbd>'x'</kbd>에 대한 정보는 chain에 연결된 바로 앞의 shape에 있기 때문에, 마지막 shape에는 저장할 필요가 없습니다. 이게 가능하기 위해서는 모든 <kbd>Shape</kbd>는 이전 shape와 연결되어 있어야 합니다.
 
