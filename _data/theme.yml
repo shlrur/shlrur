@@ -35,3 +35,4 @@ google_fonts:
 
 navigation_pages:
   - javascripts.md
+  - javascript_design_pattern.md

@@ -1,5 +1,5 @@
 ---
-title: Javascripts
+title: JavaScripts
 layout: collection
 permalink: /javascripts/
 collection: javascripts
