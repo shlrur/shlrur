@@ -19,8 +19,9 @@ JavaScript framework 중에서 주로 Angular를 사용해서 프로젝트를 �
 전통적으로 유명하고 많이 배우는 design pattern들 부터, 현재 유행하는 JavaScript framework들이 사용하는 design pattern까지 살펴보려고 합니다.
 
 ## Design Patterns
-* Constructor Pattern
-* Module Pattern
+* [Constructor Pattern]({{site.baseurl}}/javascript_design_pattern/1-constructor)
+* [Module Pattern]({{site.baseurl}}/javascript_design_pattern/2-module)
+* Factory Pattern
 * Singleton Pattern
 * Observer Pattern
 * Prototype Pattern
