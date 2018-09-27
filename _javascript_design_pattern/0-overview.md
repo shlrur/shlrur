@@ -27,6 +27,7 @@ JavaScript framework 중에서 주로 Angular를 사용해서 프로젝트를 �
 * Prototype Pattern
 * Pub-Sub Pattern
 * SOLID Principles
+* Dependency Inversion Principle
 * Proxy Pattern
 * Command Pattern
 * Dependency Injection Pattern
