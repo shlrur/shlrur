@@ -76,12 +76,15 @@ exclude:
 
 # Collections
 collections:
-  javascripts:
-    output: true
-    permalink: /:collection/:path/
-  javascript_design_pattern:
-    output: true
-    permalink: /:collection/:path/
+  featured_categories:
+    permalink:       /category/:name/
+    output:          true
+  featured_tags:
+    permalink:       /tag/:name/
+    output:          true
+  projects:
+    permalink:       /projects/:path/
+    output:          true
 
 # Front Matter Defaults
 defaults:

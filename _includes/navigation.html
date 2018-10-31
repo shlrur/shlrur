@@ -8,18 +8,37 @@
     </li>
 
     <!-- site.pages links -->
-    {% assign default_paths = site.pages | map: "path" %}
-    {% assign page_paths = site.data.theme.navigation_pages | default: default_paths %}
+    {% assign pages = site.pages %}
 
-    {% for path in page_paths %}
-      {% assign my_page = site.pages | where: "path", path | first %}
-      {% if my_page.title %}
-        <li class="menu-item">
-          <a href="{{ my_page.url | relative_url }}" itemprop="url">
-            <span itemprop="name">{{ my_page.title | escape }}</span>
-          </a>
+    {% assign category = site.featured_categories | where: "slug", page.slug | first %}
+
+    {% for document in site.documents %}
+    {% assign pages = pages | push: document %}
+    {% endfor %}
+
+    {% assign subpages = pages | where: "menu", false | sort: "order" %}
+    {% assign pages = pages | where: "menu", true | sort: "order" %}
+    {% assign count = 0%}
+    {% for node in pages %}
+    {% assign count = count | plus: 1 %}
+    !!{{site.featured_categories}}!!
+    <li>
+      <input type="checkbox" id="list-item-{{ count }}" />
+      <div class="list-wrapper">
+        <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | relative_url }}">{{ node.title }}T{{node.url}}</a>
+        {% if node.submenu %}<label class="folder" for="list-item-{{ count }}">▾</label>{% endif %}
+      </div>
+      <ul class="list-body">
+        {% for subnode in subpages %}
+        {% if subnode.category == node.slug %}
+        <li>
+          <a class="sidebar-nav-subitem{% if page.url == subnode.url %} active{% endif %}" href="{{ subnode.url | relative_url }}">{{ subnode.title }}</a>
         </li>
-      {% endif %}
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
     {% endfor %}
   </ul>
 </nav>
