@@ -1,11 +1,9 @@
-<footer id="footer" class="site-footer">
-  <div class="inner">
-    <div class="copyright">
-      {% if site.copyright %}
-        {{ site.copyright | markdownify }}
-      {% else %}
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}.</p>
-      {% endif %}
-    </div>
-  </div>
+<footer>
+  <hr/>
+  {% if site.copyright.size > 0 %}
+    {{ site.copyright | markdownify }}
+  {% endif %}
+  <p>
+    <code>Powered by <a href="https://shlrur.github.io/">shlrur</a></code>
+  </p>
 </footer>

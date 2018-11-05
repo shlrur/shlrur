@@ -1,12 +1,11 @@
 ---
-title: "JavaScript engine fundamentals: optimizing prototypes"
-date: 2018-09-01
-categories:
-  - JavaScript
-tags:
-  - JavaScript
-  - performance
-last_modified_at: 2018-09-01T01:20:00+09:00
+layout:     post
+title:      "JavaScript engine fundamentals: optimizing prototypes"
+subtitle:   "optimizing prototypes"
+categories: devlog
+tags:       javascript
+comments:   true
+permalink:  /javascripts/javascript-engine-fundamentals-optimizing-prototypes/
 ---
 
 >이 포스트는 [JavaScript engine fundamentals: optimizing prototypes](https://mathiasbynens.be/notes/prototypes) 의 글을 번역한 것입니다.

@@ -1,13 +1,10 @@
 ---
-title: "1. Constructor Design Pattern"
-date: 2018-09-06
-categories:
-  - JavaScript Design Pattern
-tags:
-  - JavaScript
-  - designpattern
-  - constructor
-last_modified_at: 2018-09-10T17:22:00+09:00
+layout:     post
+title:      "Constructor Design Pattern"
+subtitle:   "Constructor Design Pattern"
+categories: devlog
+tags:       javascript_design_pattern
+comments:   true
 ---
 
 기존의 객체 지향 프로그래밍(OOP) 언어에서, 객체가 새로 생성되고 메모리가 할당될 때 이 객체를 초기화하는데 사용하는 특수한 method가 있습니다. 바로 생성자(Constructor)입니다.

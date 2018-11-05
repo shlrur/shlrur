@@ -1,16 +1,11 @@
 ---
-title: "JavaScript engine fundamentals: Shapes and Inline Caches"
-date: 2018-08-28
-categories:
-  - JavaScript
-tags:
-  - JavaScript
-  - performance
-  - object
-  - array
-  - shape
-  - cache
-last_modified_at: 2018-08-28T01:08:00+09:00
+layout:     post
+title:      "JavaScript engine fundamentals: Shapes and Inline Caches"
+subtitle:   "Shapes and Inline Caches"
+categories: devlog
+tags:       javascript
+comments:   true
+permalink:  /javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/
 ---
 
 >이 포스트는 [JavaScript engine fundamentals: Shapes and Inline Caches](https://mathiasbynens.be/notes/shapes-ics) 의 글을 번역한 것입니다.

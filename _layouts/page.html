@@ -1,15 +1,12 @@
 ---
-layout: default
+layout: base
 ---
 
-{% include page-intro.html %}
+<article class="page" role="article">
+  <header style="margin-bottom:2rem">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% include message.html text=page.description %}
+  </header>
 
-<main id="main" class="page-content" aria-label="Content">
-  <div class="inner">
-    <article class="entry-wrap">
-      <div class="entry-content">
-        {{ content }}
-      </div>
-    </article>
-  </div>
-</main>
+  {{ content }}
+</article>

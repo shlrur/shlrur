@@ -1,22 +1,14 @@
 ---
-title: "About JavaScript Loop Performance(forEach, for, while, etc...)"
-layout: post
-date: 2018-10-18
-categories:
-  - JavaScript
-tags:
-  - JavaScript
-  - loop
-  - performance
-  - forEach
-  - for
-  - while
-  - for of
-  - lodash
-  - underscore
-  - Codility
-last_modified_at: 2018-10-22T01:35:00+09:00
+layout:     post
+title:      "About JavaScript Loop Performance(forEach, for, while, etc...)"
+subtitle:   "For loop performance"
+categories: devlog
+tags:       javascript
+comments:   true
 ---
+
+최근 Codility에서 코딩 연습을 하다가 정리해야 할 것이 있어서 포스트를 작성하기로 하였습니다.
+연습했던 문제는 [MaxCounters](https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/) 였고, 해당 문제의 난이도는 어렵지 않았습니다. 하지만 계속해서 Performance tests에서 score가 만점이 나오지 않아, 이것저것 시도해본 경험을 기록하고자 합니다.
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.8/c3.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js" charset="utf-8"></script>
@@ -25,10 +17,6 @@ last_modified_at: 2018-10-22T01:35:00+09:00
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg .tg-s6z2{text-align:center}
 </style>
-
-최근 Codility에서 코딩 연습을 하다가 정리해야 할 것이 있어서 포스트를 작성하기로 하였습니다.
-
-연습했던 문제는 [MaxCounters](https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/) 였고, 해당 문제의 난이도는 어렵지 않았습니다. 하지만 계속해서 Performance tests에서 score가 만점이 나오지 않아, 이것저것 시도해본 경험을 기록하고자 합니다.
 
 ## Problems raised
 

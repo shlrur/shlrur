@@ -1,12 +1,8 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.5"
-gem "jekyll-theme-basically-basic"
-
-group :jekyll_plugins do
-    gem "jekyll-feed"
-    gem "jekyll-seo-tag"
-    gem "jekyll-sitemap"
-    gem "jekyll-paginate"
-    gem "jekyll-algolia", '~> 1.0'
-end
+gem "jekyll", "~> 3.4"
+gem "jekyll-paginate", "~> 1.1"
+gem "jekyll-feed", "~> 0.9"
+gem "jekyll-sitemap", "~> 1.0"
+gem "jekyll-redirect-from", "~> 0.12"
+gem "classifier-reborn"
