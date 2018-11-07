@@ -173,7 +173,91 @@ function updateColorMap(colormap) {
 위의 문제를 해결하기 위한 방법으로 [Immutable.js](https://github.com/facebook/immutable-js)를 들수있습니다. Immutable.js는 구조 공유를 통해 작동하는 **불변하고(Immutable)** **지속적인(Persistent)** collection을 제공합니다.
 
 * __Immutable__: 일단 생성되면, collection은 이후에 변경할 수 없습니다.
-* __Persistent__: 
+* __Persistent__: 새로운 collection은 이전 collection과 여러 mutation으로 인해서 만들어집니다. 그리고 새로운 collection이 만들어지더라도 이전 collection은 유효(valid)합니다.
+* __Structural Sharing__: 새로운 collection은 원래의 collection과 최대한 동일한 구조로 생성되어서, 복사를 최소한으로 줄여서 performance를 향상시킵니다.
+
+**Immutability**는 변화를 추적할때 유용할 수 있습니다. 변화가 있을때 마다 새로운 object를 만들기 때문에, object의 reference가 바뀌었는지만 확인하면 됩니다.
+
+```js
+const x = { foo: 'bar' };
+const y = x;
+y.foo = 'baz';
+x === y; // true
+```
+
+위의 코드는 일반적인 JavaScript 코드입니다. **y.foo**를 바꾸더라도, x===y는 true입니다. object의 copy는 "__copy by reference__"이기 때문입니다. 위의 코드를 **Immutable.js**를 사용하면 아래와 같은 코드가 됩니다.
+
+```js
+const SomeRecord = Immutable.Record({ foo: null });
+const x = new SomeRecord({ foo: 'bar' });
+const y = x.set('foo', 'baz');
+const z = x.set('foo', 'bar');
+x === y; // false
+x === z; // true
+```
+
+x에 변화가 있을 때 새로운 object와 reference가 생성됩니다. 그리고 __(x===y)__ reference equality check를 통해서 y에 새로 저장된 값과 x에 원래 있던 값이 같은지 확인할 수 있습니다.
+
+**Immutable data structures**는 **shouldComponentUpdate**함수에서 구현해야하는 **object의 변화 추적**에 큰 도움이 되고, 이는 결국 **performance 향상**으로 귀결될 수 있습니다.
+
+## Why do I need it?
+
+지금까지 React의 performance와 관련해서 Immutability의 중요성을 살펴봤습니다. 그런데, 위의 Immutable.js를 사용한 코드만 보면 딱히 Immutable.js를 사용할 필요를 못느낄수도 있습니다. 그냥 [ES6의 Spread syntax](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax)를 사용하면 될거같기도 합니다. 하지만, object의 구조가 저렇게 단순하지 않고, 매우 복잡한 경우엔 골치아파집니다.
+
+```js
+const config = {
+  bindto: '#chart4',
+  data: {
+    x: 'x',
+    rows: [
+      ['x', 'Block', 'Async'],
+      ['AN_10^1/PS_10^6', 20.618, 15.429],
+      ['AN_10^2/PS_10^5', 20.713, 18.944],
+      ['AN_10^3/PS_10^4', 12.371, 12.249],
+      ['AN_10^4/PS_10^3', 14.377, 33.429],
+      ['AN_10^5/PS_10^2', 16.493, 238.419]
+    ],
+    type: 'bar'
+  },
+  axis: {
+    x: {
+      type: 'category',
+      label: 'Test type'  // I want to change this string!!
+    },
+    y: {
+      label: 'ms'
+    }
+  }
+};
+```
+
+위의 **config**라는 object의 config.axis.x.label을 바꾸는데 순수 JavaScript만을 사용한다면 어떻게 될까요?
+
+```js
+// using assign
+const assignConfig = Object.assign({}, config, {axis: Object.assign({}, config.axis, {x: Object.assign({}, config.axis.x, {label: 'New String'})})});
+
+// using spread syntax
+const spreadConfig = {
+  ...config,
+  axis: {
+    ...config.axis,
+    x: {
+      ...config.axis.x,
+      label: 'New String'
+    }
+  }
+};
+```
+
+더러운 코드가 됩니다... 코드의 가독성도 나쁘고 유지보수에도 좋지 않습니다. 실수 할 수도 있습니다.
+(__JSON__ 객체의 __parse__와 __stringify__를 사용해서 deep copy하는 방법도 있지만, 이 방법은 object 내에 function이 value로 있을 경우 function은 복사가 되지 않습니다.)
+이런 경우에 Immutable.js를 사용하면 편하게 작업할 수 있습니다.
+
+## Usages of Immutable.js
+
+**Immutable.js**에서 자주 사용되는 API들의 사용법에 대해서 예제와 함께 알아보겠습니다.
+
 
 # References
 
