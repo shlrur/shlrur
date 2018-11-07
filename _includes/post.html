@@ -24,21 +24,26 @@
 
   {% unless include.excerpt %}
     <div class="markdown-body">
-
-{% if post.header-img %}<div class="head-image"><img src="{{ site.url }}/{% if post.header-img %}assets/{{ post.header-img }}{% endif %}"/></div>
-<br/>{% elsif tag.header-img %}
-<div class="head-image"><img src="{{ site.url }}/assets/{{ tag.header-img }}"/></div>
-<br/>{% endif %}
-<style>
-.myAd1190 { display:block; width:98%; height: 280px; }
-@media(min-width: 600px) { .myAd1190 { display: none; } }
-</style>
-<br/>
+      {% if post.header-img %}
+        <div class="head-image"><img src="{{ site.url }}/{% if post.header-img %}assets/{{ post.header-img }}{% endif %}"/></div>
+        <br/>
+      {% elsif tag.header-img %}
+        <div class="head-image"><img src="{{ site.url }}/assets/{{ tag.header-img }}"/></div>
+        <br/>
+      {% endif %}
+      <style>
+      .myAd1190 { display:block; width:98%; height: 280px; }
+      @media(min-width: 600px) { .myAd1190 { display: none; } }
+      </style>
+      <br/>
       {{ post.content }}
     </div>
-    
   {% else %}
-    {{ post.excerpt }}
+    {% if post.instagram-img %}
+      <div class="head-image"><img src="{{ site.url }}/{% if post.instagram-img %}assets/{{ post.instagram-img }}{% endif %}"/></div>
+    {% else %}
+      {{ post.excerpt }}
+    {% endif %}
     <p class="read-more"><a class="heading" href="{{ post.url | relative_url }}" data-flip="title">Continue reading </a></p>
   {% endunless %}
 
