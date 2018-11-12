@@ -2,7 +2,7 @@
 layout:     post
 title:      "[React] Immutable.js: Using Immutable Data Structures"
 subtitle:   "DOM operation"
-categories: devlog
+categories: develog
 tags:       api
 comments:   true
 ---

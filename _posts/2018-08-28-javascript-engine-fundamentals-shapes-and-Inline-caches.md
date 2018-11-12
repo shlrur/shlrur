@@ -2,7 +2,7 @@
 layout:     post
 title:      "JavaScript engine fundamentals: Shapes and Inline Caches"
 subtitle:   "Shapes and Inline Caches"
-categories: devlog
+categories: develog
 tags:       javascript
 comments:   true
 permalink:  /javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/

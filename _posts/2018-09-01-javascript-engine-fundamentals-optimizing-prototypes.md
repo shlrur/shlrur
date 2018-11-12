@@ -2,7 +2,7 @@
 layout:     post
 title:      "JavaScript engine fundamentals: optimizing prototypes"
 subtitle:   "optimizing prototypes"
-categories: devlog
+categories: develog
 tags:       javascript
 comments:   true
 permalink:  /javascripts/javascript-engine-fundamentals-optimizing-prototypes/

@@ -2,8 +2,8 @@
 layout:     post
 title:      "Constructor Design Pattern"
 subtitle:   "Constructor Design Pattern"
-categories: devlog
-tags:       javascript_design_pattern
+categories: develog
+tags:       javascriptdesignpattern
 comments:   true
 ---
 

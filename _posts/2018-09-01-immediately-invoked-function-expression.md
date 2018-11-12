@@ -2,7 +2,7 @@
 layout:     post
 title:      "Immediately-Invoked Function Expression (IIFE)"
 subtitle:   "IIFE"
-categories: devlog
+categories: develog
 tags:       javascript
 comments:   true
 ---

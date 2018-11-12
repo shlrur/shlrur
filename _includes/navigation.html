@@ -1,0 +1,78 @@
+<nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="{{ '/' | relative_url }}" itemprop="url">
+        <span itemprop="name">{{ site.data.theme.t.home | default: 'Home' }}</span>
+      </a>
+    </li>
+
+    <!-- <a href="{{ 'test/javascript' | relative_url }}" itemprop="url"></a> -->
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-0"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item{% if page.url contains 'category/livelog' %} active{% endif %}" href="{{ 'category/livelog' | relative_url }}" itemprop="url">
+          <span itemprop="name">LiveLog</span>
+        </a>
+          <label class="folder" for="list-item-0">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem{% if page.url contains 'tag/idea' %} active{% endif %}" href="{{ 'tag/idea' | relative_url }}" itemprop="url">
+              <span itemprop="name">Idea</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item{% if page.url contains 'category/workout' %} active{% endif %}" href="{{ 'category/workout' | relative_url }}" itemprop="url">
+          <span itemprop="name">Workout</span>
+        </a>
+          <label class="folder" for="list-item-1">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem{% if page.url contains 'tag/kendo' %} active{% endif %}" href="{{ 'tag/kendo' | relative_url }}" itemprop="url">
+              <span itemprop="name">Kendo</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem{% if page.url contains 'tag/strength' %} active{% endif %}" href="{{ 'tag/strength' | relative_url }}" itemprop="url">
+              <span itemprop="name">Strength</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item{% if page.url contains 'category/develog' %} active{% endif %}" href="{{ 'category/develog' | relative_url }}" itemprop="url">
+          <span itemprop="name">Develog</span>
+        </a>
+          <label class="folder" for="list-item-2">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem{% if page.url contains 'tag/javascript' %} active{% endif %}" href="{{ '/tag/javascript' | relative_url }}" itemprop="url">
+              <span itemprop="name">JavaScript</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem{% if page.url contains 'tag/javascript-design-pattern' %} active{% endif %}" href="{{ 'tag/javascript-design-pattern' | relative_url }}" itemprop="url">
+              <span itemprop="name">javascript Design Pattern</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem{% if page.url contains 'tag/api' %} active{% endif %}" href="{{ 'tag/api' | relative_url }}" itemprop="url">
+              <span itemprop="name">Apis</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
