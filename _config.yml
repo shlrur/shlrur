@@ -29,7 +29,7 @@ instagram_username: dochaebi
 
 logo: "/assets/images/me.jpg"
 
-search: true
+search: false
 search_full_content: false # true, false (default)
 search_provider: algolia
 algolia:
