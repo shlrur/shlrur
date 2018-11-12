@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--
+    Basically Basic Jekyll Theme 1.4.1
+    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
+-->
+<html lang="ko" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Module Design Pattern | First Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Module Design Pattern" />
+<meta name="author" content="Heekyum" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="소프트웨어 개발에서 소스코드는 특정 기능을 수행하거나(function), 특정 작업을 수행하는데 필요한 모든 것을 포함하는 구성요소(object)로 구성할 수 있습니다. Modular programming은 이러한 개념을 사용한 프로그래밍 방법입니다." />
+<meta property="og:description" content="소프트웨어 개발에서 소스코드는 특정 기능을 수행하거나(function), 특정 작업을 수행하는데 필요한 모든 것을 포함하는 구성요소(object)로 구성할 수 있습니다. Modular programming은 이러한 개념을 사용한 프로그래밍 방법입니다." />
+<link rel="canonical" href="https://shlrur.github.io//develog/2018/09/11/2-module/" />
+<meta property="og:url" content="https://shlrur.github.io//develog/2018/09/11/2-module/" />
+<meta property="og:site_name" content="First Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-11T00:00:00+09:00" />
+<script type="application/ld+json">
+{"description":"소프트웨어 개발에서 소스코드는 특정 기능을 수행하거나(function), 특정 작업을 수행하는데 필요한 모든 것을 포함하는 구성요소(object)로 구성할 수 있습니다. Modular programming은 이러한 개념을 사용한 프로그래밍 방법입니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2018/09/11/2-module/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/me.jpg"},"name":"Heekyum"},"headline":"Module Design Pattern","dateModified":"2018-09-11T00:00:00+09:00","datePublished":"2018-09-11T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2018/09/11/2-module/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="First Blog" href="/atom.xml">
+  
+</head>
+
+
+  <body class="layout--post module-design-pattern">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- <a href="/test/javascript" itemprop="url"></a> -->
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-0"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/livelog" itemprop="url">
+          <span itemprop="name">LiveLog</span>
+        </a>
+          <label class="folder" for="list-item-0">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/idea" itemprop="url">
+              <span itemprop="name">Idea</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/workout" itemprop="url">
+          <span itemprop="name">Workout</span>
+        </a>
+          <label class="folder" for="list-item-1">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/kendo" itemprop="url">
+              <span itemprop="name">Kendo</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/strength" itemprop="url">
+              <span itemprop="name">Strength</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/develog" itemprop="url">
+          <span itemprop="name">Develog</span>
+        </a>
+          <label class="folder" for="list-item-2">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript" itemprop="url">
+              <span itemprop="name">JavaScript</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript-design-pattern" itemprop="url">
+              <span itemprop="name">javascript Design Pattern</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/api" itemprop="url">
+              <span itemprop="name">Apis</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:shlrur123@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/shlrur">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+
+  
+    <li><a href="https://instagram.com/dochaebi">
+  <span class="icon icon--instagram"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.05 3.233c-.04.78-.17 1.203-.28 1.485-.15.374-.32.64-.6.92-.28.28-.55.453-.92.598-.28.11-.71.24-1.49.276-.85.038-1.1.047-3.24.047s-2.39-.01-3.24-.05c-.78-.04-1.21-.17-1.49-.28-.38-.15-.64-.32-.92-.6-.28-.28-.46-.55-.6-.92-.11-.28-.24-.71-.28-1.49-.03-.84-.04-1.1-.04-3.23s.01-2.39.04-3.24c.04-.78.17-1.21.28-1.49.14-.38.32-.64.6-.92.28-.28.54-.46.92-.6.28-.11.7-.24 1.48-.28.85-.03 1.1-.04 3.24-.04zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z"/></svg></span>
+  <span class="label">Instagram</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/atom.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">Subscribe</span>
+      </a>
+    
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/">
+            <img src="/assets/images/me.jpg" alt="" class="site-logo">
+            <span>First Blog</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          <header class="intro">
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      <h1 id="page-title" class="intro-title">Module Design Pattern
+</h1>
+      
+
+      
+        
+
+        <p class="entry-meta">
+          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2018-09-11T00:00:00+09:00">September 11, 2018</time></span>
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        <p>소프트웨어 개발에서 소스코드는 특정 기능을 수행하거나(function), 특정 작업을 수행하는데 필요한 모든 것을 포함하는 구성요소(object)로 구성할 수 있습니다. Modular programming은 이러한 개념을 사용한 프로그래밍 방법입니다.</p>
+
+<p>소프트웨어 공학에서 말하는 <strong>module design pattern</strong>은 modular programming에서 의미하는 module 개념이 지원되지 않는 언어에서 module을 사용하기 위해서 사용하는 pattern입니다. Module 이라는 개념은 모든 언어에서 지원되지 않기 때문입니다.</p>
+
+<p>여러 종류의 언어에서 module design pattern을 구현하는 방법들이 있지만, 이 글에서는 Prototype-based language인 JavaScript에서의 module design pattern에 대해서 알아보겠습니다.</p>
+
+<p>Module pattern은 원래 2003년 Richard Cornford를 포함한 많은 사람들에 의해 개발되었다고 합니다. 후에 Douglas Crockford의 강의에서 대중화되었습니다.</p>
+
+<h3 id="module">Module</h3>
+
+<blockquote>
+  <p>Modules are an integral piece of any robust application’s architecture and typically help in keeping the units of code for a project both cleanly separated and organized.</p>
+</blockquote>
+
+<p><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">Learning JavaScript Design Patterns</a> 에서는 module을 위와 같이 정의합니다.</p>
+
+<p>이를 번역하면 다음과 같습니다.</p>
+
+<blockquote>
+  <p>Module은 강력한 애플리케이션 아키텍처의 필수적인 요소이며, 일반적으로 프로젝트의 코드 단위를 깨끗하게 분리하여 구성하는 데 도움이 됩니다.</p>
+</blockquote>
+
+<p>위의 정의에서 가장 중요한 부분은 <em>프로젝트의 코드 단위를 깨끗하게 <strong>분리</strong>하여 구성</em> 한다는 것입니다. JavaScript에서의 module은 <strong>Class</strong>라고 볼 수 있습니다. OOP에서 말하는 class의 특징중 하나는 encapsulation인데, 이는 특정 class의 member들을 다른 class에서 접근하지 못하도록 보호합니다. Module pattern은 ES6이전 class가 지원되지 않던 JavaScript에서도 class의 member에 대한 private과 public 설정을 가능하게 하였습니다.</p>
+
+<h3 id="privacy">Privacy</h3>
+
+<p>Module Pattern은 <kbd>Closure{}</kbd>를 사용해서 private 하거나 public 한 member variable/method들을 감싸서 외부로 유출되는 것을 방지함으로써 실수로 다른 개발자의 interface와 충돌하는 것을 막을 수 있습니다. Module Pattern을 사용해서 return 된 object는 public 한 API만 외부에서 볼 수 있게 하며 나머지 variable 및 method들은 (private 한) 비공개 상태가 됩니다.</p>
+
+<p>이 pattern은 application이 아무리 무거운 작업 중이라도 public 한 API만 사용할 수 있도록 하며, 숨기길 원하는 logic은 외부에서 절대 접근할 수 없도록 도와줍니다. 이 pattern은 IIFE(Immediately invoked function express)를 사용해서 object를 return 합니다.</p>
+
+<p>JavaScript는 다른 언어들과는 다르게 <strong>Privacy</strong>를 명시하지 않습니다. 그렇기 때문에 변수들에 private/public을 명시할 수 없지만, function scope를 사용해서 Module pattern의 개념을 흉내 낼 수 있습니다. Closure 덕분에 module 내에서 선언된 variable/method들은 module 내에서만 사용 가능하며, return 되는 object 내에 정의된 variable/method들만 외부에서 사용할 수 있습니다.</p>
+
+<h2 id="the-module-pattern">The Module Pattern</h2>
+
+<p>Module pattern은 원래 기존 소프트웨어 공학의 class에 대해서 private/public encapsulation을 제공하는 방법으로써 정의되었습니다.</p>
+
+<p>JavaScript는 자체적으로 Class 개념이 없었고(ES6부터 사용하고 있지만 syntactic sugar) 특정 object의 member에 대한 private/public 설정 방법을 제공하지 않았습니다. 그래서 JavaScript는 Module pattern을 사용해서 object 내의 member variable/method들을 private/public 설정할 수 있도록 Class 개념을 <em>모방</em> 할 방법을 찾게 되었습니다. 덕분에 다른 object 혹은 script 내부의 member들과 충돌할 가능성이 줄어들게 되었습니다.</p>
+
+<p>Module pattern의 코드를 살펴보겠습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// using IIFE</span>
+<span class="kd">var</span> <span class="nx">testModule</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">incrementCounter</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="na">resetCounter</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"counter value prior to reset: "</span> <span class="o">+</span> <span class="nx">counter</span><span class="p">);</span>
+            <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">})();</span>
+
+<span class="c1">// namespace: testModule</span>
+<span class="nx">testModule</span><span class="p">.</span><span class="nx">incrementCounter</span><span class="p">();</span>
+
+<span class="nx">testModule</span><span class="p">.</span><span class="nx">resetCounter</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>위의 코드는 Module pattern을 구현한 것입니다. <kbd>incrementCounter</kbd>와 <kbd>resetCounter</kbd> method 내부의 값은 외부의 다른 코드들이 절대 접근할 수 없습니다. <kbd>counter</kbd> 변수는 private 하게 동작되어 외부에서 절대 접근할 수 없고, 외부에서 접근할 수 있는 것은 두 method뿐입니다. 이 두 method는 namespece 되어있기 때문에, 해당 method들을 사용하는 부분에서는 module의 이름을 prefix로 붙여서 사용해야 합니다.</p>
+
+<p>Module pattern을 처음 사용할 때, private/public을 구분해서 좀 더 쉽게 사용할 수 있도록 도와주는 template은 아래와 같습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// using IIFE</span>
+<span class="kd">var</span> <span class="nx">myNamespace</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">myPrivateVar</span><span class="p">,</span> <span class="nx">myPrivateMethod</span><span class="p">;</span>
+
+    <span class="nx">myPrivateVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="nx">myPrivateMethod</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">myPublicVar</span><span class="p">:</span> <span class="s2">"foo"</span><span class="p">,</span>
+
+        <span class="na">myPublicFunction</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">bar</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">myPrivateVar</span><span class="o">++</span><span class="p">;</span>
+
+            <span class="nx">myPrivateMethod</span><span class="p">(</span><span class="nx">bar</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p>위의 예제 코드에서, IIFE는 object를 return하고, 이 object는 myNameSpace에 할당됩니다.</p>
+
+<h3 id="장점">장점</h3>
+
+<p>Module pattern의 장점은 크게 두 가지로 볼 수 있습니다.
+첫 번째로, 적어도 JavaScript에서는, OOP에 익숙한 개발자들에게 encapsulation에 대한 개념을 명확하게 줄 수 있습니다.
+두 번째는, 앞서 계속 말했던 <strong>private</strong>을 제공한다는 것입니다. Module 내부에서는 private member에 접근할 수 있지만, 외부에서는 module의 private member에 절대 접근할 수 없습니다.</p>
+
+<h3 id="단점">단점</h3>
+
+<p>첫 번째로, private/public이 설정된 member에 대해서 visibility를 변경하려면, 그 member가 사용된 혹은 사용될 모든 곳을 변경해야 한다는 것입니다. 즉, API를 변경하면 그 API가 사용된 부분도 모두 손을 봐야 한다는 것입니다.
+두 번째로, module이 선언된 후에 method를 추가했을 경우, 해당 method는 private member에 접근할 수 없다는 것입니다. 물론 이런 경우가 생기지 않도록 module pattern을 제대로 사용한다면 문제가 생기지 않을 것입니다.
+세 번째로, private member에 대한 unit test를 할 수 없다는 문제가 있습니다.
+(bug가 발생해서 hot fix를 해야 할 때, private member를 변경하는 것은 불가능에 가깝기 때문에 연관된 모든 public member들을 고쳐야 하는 단점이 있다고 하는데, 이는 이해가 잘 안 된다. Private member의 변경이 가져오는 side-effect를 모두 잡기 힘들다는 뜻인가?)</p>
+
+<h2 id="the-revealing-module-pattern">The Revealing Module Pattern</h2>
+
+<p>Revealing module pattern은 module pattern을 조금 개선한 것입니다.</p>
+
+<p>아래의 코드는 revealing module pattern을 보여줍니다. 모든 public method/variable이 return되는 object literal에 있던것과 다르게, module의 본문에서 모두 구현이 됩니다. 그중에서 export하고싶은 method/variable을 원한다면 이름을 바꿔서 object literal로 return할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myRevealingModule</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">privateCounter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="kd">function</span> <span class="nx">privateFunction</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nx">privateCounter</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">function</span> <span class="nx">publicFunction</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nx">publicIncrement</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="kd">function</span> <span class="nx">publicIncrement</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nx">privateFunction</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="kd">function</span> <span class="nx">publicGetCount</span><span class="p">(){</span>
+		<span class="k">return</span> <span class="nx">privateCounter</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Reveal public pointers to</span>
+	<span class="c1">// private functions and properties</span>
+	<span class="k">return</span> <span class="p">{</span>
+        <span class="na">start</span><span class="p">:</span> <span class="nx">publicFunction</span><span class="p">,</span>
+		<span class="na">increment</span><span class="p">:</span> <span class="nx">publicIncrement</span><span class="p">,</span>
+		<span class="na">count</span><span class="p">:</span> <span class="nx">publicGetCount</span>
+	<span class="p">};</span>
+<span class="p">})();</span>
+
+<span class="nx">myRevealingModule</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="장점-1">장점</h3>
+
+<p>이러한 pattern을 통해 스크립트 구문이 보다 일관적으로 이루어질 수 있습니다. 또한 module의 마지막 부분에서(return object literal) 어떤 method/variable이 public으로 설정되어 있는지 명시되어 있기 때문에 가독성을 증가시킵니다.</p>
+
+<h3 id="단점-1">단점</h3>
+
+<p>이 pattern의 단점은 다음과 같습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">rmpUrlBuilder</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">_urlBase</span> <span class="o">=</span> <span class="s2">"http://my.default.domain/"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">_build</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">relUrl</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">_urlBase</span> <span class="o">+</span> <span class="nx">relUrl</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">urlBase</span><span class="p">:</span> <span class="nx">_urlBase</span><span class="p">,</span>
+        <span class="na">build</span><span class="p">:</span> <span class="nx">_build</span>
+    <span class="p">}</span>
+<span class="p">})()</span>
+
+<span class="nx">rmpUrlBuilder</span><span class="p">.</span><span class="nx">urlBase</span> <span class="o">=</span> <span class="s2">"http://stackoverflow.com"</span><span class="p">;</span>
+
+<span class="c1">// prints "http://my.default.domain/questions" not "http://stackoverflow.com/questions"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rmpUrlBuilder</span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="s2">"/questions"</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>위의 코드에서 revealing module pattern의 단점을 보여주고 있습니다. _urlBase와 _build는 object literal에서 public으로 명시되어서 return 됩니다. 그 후에 public variable인 urlBase 값을 변경했지만, 이 variable을 사용하는 build method에서는 변경된 값이 적용되지 않았습니다. 이는 원래의 module pattern에서는 생기지 않았던 문제입니다. 그러므로 revealing module pattern으로 만들어진 module이 원래 module pattern으로 만들어진 module보다 더 취약할 수 있으므로 사용 중에 주의해야 합니다.</p>
+
+<h2 id="references">references</h2>
+<ul>
+  <li><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">Learning JavaScript Design Patterns</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Module_pattern">Wiki - Module Pattern</a></li>
+  <li><a href="https://stackoverflow.com/questions/14050755/revealing-module-pattern-disadvantages">stackoverflow - Revealing module pattern disadvantages</a></li>
+</ul>
+
+      </div>
+      
+        
+      
+    </article>
+  </div>
+</main>
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+  <div class="inner">
+    <div class="copyright">
+      
+        <p>&copy; 2018 First Blog.</p>
+      
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async src="/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '8K2C62GHZZ',
+  apiKey: 'ac6b1c9d2ea0e17891c512e13491b27b',
+  indexName: 'my_first_blog_search',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

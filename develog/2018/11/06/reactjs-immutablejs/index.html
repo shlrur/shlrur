@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!--
+    Basically Basic Jekyll Theme 1.4.1
+    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
+-->
+<html lang="ko" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>[React] Immutable.js: Using Immutable Data Structures | First Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="[React] Immutable.js: Using Immutable Data Structures" />
+<meta name="author" content="Heekyum" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="React에서 performance를 높이는 방법은 여러가지가 있습니다." />
+<meta property="og:description" content="React에서 performance를 높이는 방법은 여러가지가 있습니다." />
+<link rel="canonical" href="https://shlrur.github.io//develog/2018/11/06/reactjs-immutablejs/" />
+<meta property="og:url" content="https://shlrur.github.io//develog/2018/11/06/reactjs-immutablejs/" />
+<meta property="og:site_name" content="First Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-11-06T00:00:00+09:00" />
+<script type="application/ld+json">
+{"description":"React에서 performance를 높이는 방법은 여러가지가 있습니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2018/11/06/reactjs-immutablejs/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/me.jpg"},"name":"Heekyum"},"headline":"[React] Immutable.js: Using Immutable Data Structures","dateModified":"2018-11-06T00:00:00+09:00","datePublished":"2018-11-06T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2018/11/06/reactjs-immutablejs/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="First Blog" href="/atom.xml">
+  
+</head>
+
+
+  <body class="layout--post react-immutable-js-using-immutable-data-structures">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- <a href="/test/javascript" itemprop="url"></a> -->
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-0"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/livelog" itemprop="url">
+          <span itemprop="name">LiveLog</span>
+        </a>
+          <label class="folder" for="list-item-0">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/idea" itemprop="url">
+              <span itemprop="name">Idea</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/workout" itemprop="url">
+          <span itemprop="name">Workout</span>
+        </a>
+          <label class="folder" for="list-item-1">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/kendo" itemprop="url">
+              <span itemprop="name">Kendo</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/strength" itemprop="url">
+              <span itemprop="name">Strength</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/develog" itemprop="url">
+          <span itemprop="name">Develog</span>
+        </a>
+          <label class="folder" for="list-item-2">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript" itemprop="url">
+              <span itemprop="name">JavaScript</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript-design-pattern" itemprop="url">
+              <span itemprop="name">javascript Design Pattern</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/api" itemprop="url">
+              <span itemprop="name">Apis</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:shlrur123@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/shlrur">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+
+  
+    <li><a href="https://instagram.com/dochaebi">
+  <span class="icon icon--instagram"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.05 3.233c-.04.78-.17 1.203-.28 1.485-.15.374-.32.64-.6.92-.28.28-.55.453-.92.598-.28.11-.71.24-1.49.276-.85.038-1.1.047-3.24.047s-2.39-.01-3.24-.05c-.78-.04-1.21-.17-1.49-.28-.38-.15-.64-.32-.92-.6-.28-.28-.46-.55-.6-.92-.11-.28-.24-.71-.28-1.49-.03-.84-.04-1.1-.04-3.23s.01-2.39.04-3.24c.04-.78.17-1.21.28-1.49.14-.38.32-.64.6-.92.28-.28.54-.46.92-.6.28-.11.7-.24 1.48-.28.85-.03 1.1-.04 3.24-.04zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z"/></svg></span>
+  <span class="label">Instagram</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/atom.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">Subscribe</span>
+      </a>
+    
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/">
+            <img src="/assets/images/me.jpg" alt="" class="site-logo">
+            <span>First Blog</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          <header class="intro">
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      <h1 id="page-title" class="intro-title">[React] Immutable.js: Using Immutable Data Structures
+</h1>
+      
+
+      
+        
+
+        <p class="entry-meta">
+          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2018-11-06T00:00:00+09:00">November 6, 2018</time></span>
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        <p>React에서 performance를 높이는 방법은 여러가지가 있습니다.</p>
+
+<h3 id="use-the-production-build">Use the Production Build</h3>
+
+<p>React를 통한 사이트를 제작한 후 배포할 때 production 모드로 build를 하게 되면, 여러 js 파일을 하나로 합친다든지 js파일 내의 name들을 줄인다든지 등의 작업들을 통해서 해당 사이트의 performance를 향상시킬 수 있습니다.</p>
+
+<h3 id="profiling-components-with-the-chrome-performance-tab">Profiling Components with the Chrome Performance Tab</h3>
+
+<p>브라우저에서 제공하는 performance tool(현재 Chrome, Edge, 그리고 IE에서 이 기능을 제공합니다)을 사용하면 component들이 어떻게 mount, update 그리고 unmount되는지 볼 수 있습니다.
+이 기능을 사용하면 원하지 않는 UI가 실수에 의해서 update되는 현상을 알아낼 수 있고, UI가 어떻게 update되는지 확인할 수 있습니다.
+Chrome에서의 사용법은 <a href="https://building.calibreapp.com/debugging-react-performance-with-react-16-and-chrome-devtools-c90698a522ad">Ben Schwarz의 article</a>에서 볼 수 있습니다.</p>
+
+<h3 id="profiling-components-with-the-devtools-profiler">Profiling Components with the DevTools Profiler</h3>
+
+<p><strong>react-dom</strong> 16.5+ 과 <strong>react-native</strong> 0.57+ 에서는 <strong>React DevToold Profiler</strong>라는 profiling 기능을 제공합니다. 해당 기능은 <a href="https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html">“Introducing the React Profiler”</a>에서 확인 가능합니다.</p>
+
+<h3 id="virtualize-long-lists">Virtualize Long Lists</h3>
+
+<p>UI에서 어떤 list를 보여주기 위해서 스크롤을 사용할 때, 해당 list의 크기가 정도 이상이라면 performance의 저하를 불러올 수 있습니다. 화면에 보이지 않는 list의 요소들이 dom에서 그려져있기 때문입니다. 이때, <strong>windowing</strong>이라는 기술을 사용할 수 있습니다. 이 기술을 통해서, list의 요소중에서 화면에 보여지는 요소만 그리도록 할 수 있습니다.</p>
+
+<p><a href="https://react-window.now.sh/">react-window</a>와 <a href="https://bvaughn.github.io/react-virtualized/">react-virtualized</a>가 유명한 windowing library입니다.</p>
+
+<h3 id="avoid-reconciliation">Avoid Reconciliation</h3>
+
+<p>의도하지 않은 불필요한 re-rendering은 대부분 크게 문제되지 않지만, 만약 눈에 띌 정도로 성능저하가 일어난다면 lifecycle 함수중의 하나인 <strong>shouldComponentUpdate</strong>를 overriding함으로써 성능을 높일 수 있습니다.</p>
+
+<h3 id="shouldcomponentupdate-in-action">shouldComponentUpdate In Action</h3>
+
+<p>React에서 화면이 rendering되는데 영향을 주는 요소는 두가지가 있습니다. <strong>**shouldComponentUpdate** 함수가 true를 return</strong> 하거나 <strong>새로 그려질 elements가 이전의 elements와 같을때</strong>(virtual dom을 통해서 비교합니다) 입니다. 두 요소를 각각 <strong>SCU</strong>와 <strong>vDOMEq</strong>(elements were equivalent의 줄임말)라고 하겠습니다.</p>
+
+<ul>
+  <li>SCU===true &amp;&amp; vDOMEq===true
+    <ul>
+      <li>SCU가 true를 return했지만, 바뀐것이 없기 때문에 re-rendering되지 않습니다.</li>
+    </ul>
+  </li>
+  <li>SCU===true &amp;&amp; vDOMEq===false
+    <ul>
+      <li>SCU도 true를 return하고, 바뀐것이 있기 때문에 re-rendering하게 됩니다.</li>
+    </ul>
+  </li>
+  <li>SCU===false &amp;&amp; vDOMEq===true
+    <ul>
+      <li>바뀐것도 없고, shouldComponentUpdate 함수도 false를 return하기 때문에 자신과 child component들이 re-rendering 되지 않습니다.</li>
+    </ul>
+  </li>
+  <li>SCU===false &amp;&amp; vDOMEq===false
+    <ul>
+      <li>바뀌었지만, shouldComponentUpdate 함수가 false를 return하기 때문에 자신과 child component들이 re-rendering 되지 않습니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>위와 같은 경우들을 고려해서 React의 performance를 향상시킬 수 있습니다. 여기서, shouldComponentUpdate 함수를 좀 더 살펴보겠습니다.</p>
+
+<h1 id="mutation-in-react">Mutation in React</h1>
+
+<h2 id="problems-raised">Problems raised</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CounterButton</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span><span class="na">count</span><span class="p">:</span> <span class="mi">1</span><span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="nx">shouldComponentUpdate</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span> <span class="o">!==</span> <span class="nx">nextProps</span><span class="p">.</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span> <span class="o">!==</span> <span class="nx">nextState</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">button</span>
+        <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">}</span>
+        <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">({</span><span class="na">count</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}))}</span><span class="o">&gt;</span>
+        <span class="nx">Count</span><span class="p">:</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>CounterButton</strong> component는 <strong>props.color</strong>나 <strong>state.count</strong>가 변경될 때만 re-rendering되도록 shouldComponentUpdate 함수에서 설정되어 있습니다. 이 component가 좀 더 복잡해지더라도 props와 state의 모든 field에 대해서 <strong>shallow comparsion</strong> 을 통해서 update할지 말지를 결정할 수 있습니다. 이런 패턴은 매우 흔하기 때문에 React에서 제공하는것이 있습니다. React.Component가 아닌 <strong>React.PureComponent</strong>를 상속받으면 됩니다. 아래의 코드는 위의 코드와 같은 로직을 가집니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CounterButton</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PureComponent</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span><span class="na">count</span><span class="p">:</span> <span class="mi">1</span><span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">button</span>
+        <span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">}</span>
+        <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">({</span><span class="na">count</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}))}</span><span class="o">&gt;</span>
+        <span class="nx">Count</span><span class="p">:</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>하지만, state나 props의 field가 primitive variable이 아닌 array나 object처럼 복잡한 data structure를 가지게 된다면 <strong>shallow comparision</strong>으로 비교할 수 없으므로 문제가 됩니다. 아래의 코드를 보겠습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">ListOfWords</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PureComponent</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">words</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">','</span><span class="p">)}</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span>  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">WordAdder</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">words</span><span class="p">:</span> <span class="p">[</span><span class="s1">'marklar'</span><span class="p">]</span>
+    <span class="p">};</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// This section is bad style and causes a bug</span>
+    <span class="kd">const</span> <span class="nx">words</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">words</span><span class="p">;</span>
+    <span class="nx">words</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'marklar'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">words</span><span class="p">:</span> <span class="nx">words</span><span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">ListOfWords</span> <span class="nx">words</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">words</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>ListOfWords</strong> component는 <strong>React.PureComponent</strong>를 상속받아서, props.words에 대한 <strong>shallow comparision</strong>을 통해 re-rendering을 하려 합니다. 하지만 단순한 비교(shallow comparision)로는 handleClick 함수에 의한 <strong>words</strong> 배열의 변화를 알수없고 계속 같다고 판단합니다. 그리고 <strong>ListOfWords</strong> component는 update되지 않습니다…</p>
+
+<h2 id="the-power-of-not-mutating-data">The Power Of Not Mutating Data</h2>
+
+<p>위와같은 문제를 해결하기위한 가장 간단한 방법은 <strong>mutating values</strong>를 사용하지 않는 것입니다. 위에서 본 코드의 <strong>handleClick</strong> 함수를 아래 코드와 같이 바꿀 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">({</span>
+      <span class="na">words</span><span class="p">:</span> <span class="p">[...</span><span class="nx">state</span><span class="p">.</span><span class="nx">words</span><span class="p">,</span> <span class="s1">'marklar'</span><span class="p">]</span>
+    <span class="p">}));</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위와 비슷한 방법으로, object의 mutation을 방지하기 위해 object를 mutate할 수 있습니다. 막상 들으면 이상하게 들리지만, 아래의 코드를 보겠습니다. :)</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">updateColorMap</span><span class="p">(</span><span class="nx">colormap</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">colormap</span><span class="p">.</span><span class="nx">right</span> <span class="o">=</span> <span class="s1">'blue'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 코드는 colormap.right를 ‘blue’로 바꾸려 합니다. Original object를 mutating하지 않기위해 아래의 코드를 사용할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">updateColorMap</span><span class="p">(</span><span class="nx">colormap</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{...</span><span class="nx">colormap</span><span class="p">,</span> <span class="na">right</span><span class="p">:</span> <span class="s1">'blue'</span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="immutablejs-using-immutable-data-structures">Immutable.js: Using Immutable Data Structures</h1>
+
+<p>위의 문제를 해결하기 위한 방법으로 <a href="https://github.com/facebook/immutable-js">Immutable.js</a>를 들수있습니다. Immutable.js는 구조 공유를 통해 작동하는 <strong>불변하고(Immutable)</strong> <strong>지속적인(Persistent)</strong> collection을 제공합니다.</p>
+
+<ul>
+  <li><strong>Immutable</strong>: 일단 생성되면, collection은 이후에 변경할 수 없습니다.</li>
+  <li><strong>Persistent</strong>: 새로운 collection은 이전 collection과 여러 mutation으로 인해서 만들어집니다. 그리고 새로운 collection이 만들어지더라도 이전 collection은 유효(valid)합니다.</li>
+  <li><strong>Structural Sharing</strong>: 새로운 collection은 원래의 collection과 최대한 동일한 구조로 생성되어서, 복사를 최소한으로 줄여서 performance를 향상시킵니다.</li>
+</ul>
+
+<p><strong>Immutability</strong>는 변화를 추적할때 유용할 수 있습니다. 변화가 있을때 마다 새로운 object를 만들기 때문에, object의 reference가 바뀌었는지만 확인하면 됩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="s1">'bar'</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+<span class="nx">y</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="s1">'baz'</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">===</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>위의 코드는 일반적인 JavaScript 코드입니다. <strong>y.foo</strong>를 바꾸더라도, x===y는 true입니다. object의 copy는 “<strong>copy by reference</strong>“이기 때문입니다. 위의 코드를 <strong>Immutable.js</strong>를 사용하면 아래와 같은 코드가 됩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">SomeRecord</span> <span class="o">=</span> <span class="nx">Immutable</span><span class="p">.</span><span class="nx">Record</span><span class="p">({</span> <span class="na">foo</span><span class="p">:</span> <span class="kc">null</span> <span class="p">});</span>
+<span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SomeRecord</span><span class="p">({</span> <span class="na">foo</span><span class="p">:</span> <span class="s1">'bar'</span> <span class="p">});</span>
+<span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'baz'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">);</span>
+<span class="nx">x</span> <span class="o">===</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// false</span>
+<span class="nx">x</span> <span class="o">===</span> <span class="nx">z</span><span class="p">;</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>x에 변화가 있을 때 새로운 object와 reference가 생성됩니다. 그리고 <strong>(x===y)</strong> reference equality check를 통해서 y에 새로 저장된 값과 x에 원래 있던 값이 같은지 확인할 수 있습니다.</p>
+
+<p><strong>Immutable data structures</strong>는 <strong>shouldComponentUpdate</strong>함수에서 구현해야하는 <strong>object의 변화 추적</strong>에 큰 도움이 되고, 이는 결국 <strong>performance 향상</strong>으로 귀결될 수 있습니다.</p>
+
+<h2 id="why-do-i-need-it">Why do I need it?</h2>
+
+<p>지금까지 React의 performance와 관련해서 Immutability의 중요성을 살펴봤습니다. 그런데, 위의 Immutable.js를 사용한 코드만 보면 딱히 Immutable.js를 사용할 필요를 못느낄수도 있습니다. 그냥 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax">ES6의 Spread syntax</a>를 사용하면 될거같기도 합니다. 하지만, object의 구조가 저렇게 단순하지 않고, 매우 복잡한 경우엔 골치아파집니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">bindto</span><span class="p">:</span> <span class="s1">'#chart4'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">x</span><span class="p">:</span> <span class="s1">'x'</span><span class="p">,</span>
+    <span class="na">rows</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'Block'</span><span class="p">,</span> <span class="s1">'Async'</span><span class="p">],</span>
+      <span class="p">[</span><span class="s1">'AN_10^1/PS_10^6'</span><span class="p">,</span> <span class="mf">20.618</span><span class="p">,</span> <span class="mf">15.429</span><span class="p">],</span>
+      <span class="p">[</span><span class="s1">'AN_10^2/PS_10^5'</span><span class="p">,</span> <span class="mf">20.713</span><span class="p">,</span> <span class="mf">18.944</span><span class="p">],</span>
+      <span class="p">[</span><span class="s1">'AN_10^3/PS_10^4'</span><span class="p">,</span> <span class="mf">12.371</span><span class="p">,</span> <span class="mf">12.249</span><span class="p">],</span>
+      <span class="p">[</span><span class="s1">'AN_10^4/PS_10^3'</span><span class="p">,</span> <span class="mf">14.377</span><span class="p">,</span> <span class="mf">33.429</span><span class="p">],</span>
+      <span class="p">[</span><span class="s1">'AN_10^5/PS_10^2'</span><span class="p">,</span> <span class="mf">16.493</span><span class="p">,</span> <span class="mf">238.419</span><span class="p">]</span>
+    <span class="p">],</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s1">'bar'</span>
+  <span class="p">},</span>
+  <span class="na">axis</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">x</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="s1">'category'</span><span class="p">,</span>
+      <span class="na">label</span><span class="p">:</span> <span class="s1">'Test type'</span>  <span class="c1">// I want to change this string!!</span>
+    <span class="p">},</span>
+    <span class="na">y</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">label</span><span class="p">:</span> <span class="s1">'ms'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>위의 <strong>config</strong>라는 object의 config.axis.x.label을 바꾸는데 순수 JavaScript만을 사용한다면 어떻게 될까요?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// using assign</span>
+<span class="kd">const</span> <span class="nx">assignConfig</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">config</span><span class="p">,</span> <span class="p">{</span><span class="na">axis</span><span class="p">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">config</span><span class="p">.</span><span class="nx">axis</span><span class="p">,</span> <span class="p">{</span><span class="na">x</span><span class="p">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">config</span><span class="p">.</span><span class="nx">axis</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="p">{</span><span class="na">label</span><span class="p">:</span> <span class="s1">'New String'</span><span class="p">})})});</span>
+
+<span class="c1">// using spread syntax</span>
+<span class="kd">const</span> <span class="nx">spreadConfig</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">...</span><span class="nx">config</span><span class="p">,</span>
+  <span class="na">axis</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span><span class="nx">config</span><span class="p">.</span><span class="nx">axis</span><span class="p">,</span>
+    <span class="na">x</span><span class="p">:</span> <span class="p">{</span>
+      <span class="p">...</span><span class="nx">config</span><span class="p">.</span><span class="nx">axis</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span>
+      <span class="na">label</span><span class="p">:</span> <span class="s1">'New String'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>더러운 코드가 됩니다… 코드의 가독성도 나쁘고 유지보수에도 좋지 않습니다. 실수 할 수도 있습니다.
+(<strong>JSON</strong> 객체의 __parse__와 __stringify__를 사용해서 deep copy하는 방법도 있지만, 이 방법은 object 내에 function이 value로 있을 경우 function은 복사가 되지 않습니다.)
+이런 경우에 Immutable.js를 사용하면 편하게 작업할 수 있습니다.</p>
+
+<h2 id="usages-of-immutablejs">Usages of Immutable.js</h2>
+
+<p><strong>Immutable.js</strong>에서 자주 사용되는 API들의 사용법에 대해서 예제와 함께 알아보겠습니다.</p>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li><a href="https://reactjs.org/docs/optimizing-performance.html#using-immutable-data-structures">Using Immutable Data Structures</a></li>
+</ul>
+
+      </div>
+      
+        
+      
+    </article>
+  </div>
+</main>
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+  <div class="inner">
+    <div class="copyright">
+      
+        <p>&copy; 2018 First Blog.</p>
+      
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async src="/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '8K2C62GHZZ',
+  apiKey: 'ac6b1c9d2ea0e17891c512e13491b27b',
+  indexName: 'my_first_blog_search',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

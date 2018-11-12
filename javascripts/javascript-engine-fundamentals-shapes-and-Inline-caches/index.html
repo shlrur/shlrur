@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<!--
+    Basically Basic Jekyll Theme 1.4.1
+    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
+-->
+<html lang="ko" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>JavaScript engine fundamentals: Shapes and Inline Caches | First Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="JavaScript engine fundamentals: Shapes and Inline Caches" />
+<meta name="author" content="Heekyum" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="이 포스트는 JavaScript engine fundamentals: Shapes and Inline Caches 의 글을 번역한 것입니다." />
+<meta property="og:description" content="이 포스트는 JavaScript engine fundamentals: Shapes and Inline Caches 의 글을 번역한 것입니다." />
+<link rel="canonical" href="https://shlrur.github.io//javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/" />
+<meta property="og:url" content="https://shlrur.github.io//javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/" />
+<meta property="og:site_name" content="First Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-28T00:00:00+09:00" />
+<script type="application/ld+json">
+{"description":"이 포스트는 JavaScript engine fundamentals: Shapes and Inline Caches 의 글을 번역한 것입니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/me.jpg"},"name":"Heekyum"},"headline":"JavaScript engine fundamentals: Shapes and Inline Caches","dateModified":"2018-08-28T00:00:00+09:00","datePublished":"2018-08-28T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="First Blog" href="/atom.xml">
+  
+</head>
+
+
+  <body class="layout--post javascript-engine-fundamentals-shapes-and-inline-caches">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- <a href="/test/javascript" itemprop="url"></a> -->
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-0"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/livelog" itemprop="url">
+          <span itemprop="name">LiveLog</span>
+        </a>
+          <label class="folder" for="list-item-0">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/idea" itemprop="url">
+              <span itemprop="name">Idea</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/workout" itemprop="url">
+          <span itemprop="name">Workout</span>
+        </a>
+          <label class="folder" for="list-item-1">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/kendo" itemprop="url">
+              <span itemprop="name">Kendo</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/strength" itemprop="url">
+              <span itemprop="name">Strength</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/develog" itemprop="url">
+          <span itemprop="name">Develog</span>
+        </a>
+          <label class="folder" for="list-item-2">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript" itemprop="url">
+              <span itemprop="name">JavaScript</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript-design-pattern" itemprop="url">
+              <span itemprop="name">javascript Design Pattern</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/api" itemprop="url">
+              <span itemprop="name">Apis</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:shlrur123@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/shlrur">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+
+  
+    <li><a href="https://instagram.com/dochaebi">
+  <span class="icon icon--instagram"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.05 3.233c-.04.78-.17 1.203-.28 1.485-.15.374-.32.64-.6.92-.28.28-.55.453-.92.598-.28.11-.71.24-1.49.276-.85.038-1.1.047-3.24.047s-2.39-.01-3.24-.05c-.78-.04-1.21-.17-1.49-.28-.38-.15-.64-.32-.92-.6-.28-.28-.46-.55-.6-.92-.11-.28-.24-.71-.28-1.49-.03-.84-.04-1.1-.04-3.23s.01-2.39.04-3.24c.04-.78.17-1.21.28-1.49.14-.38.32-.64.6-.92.28-.28.54-.46.92-.6.28-.11.7-.24 1.48-.28.85-.03 1.1-.04 3.24-.04zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z"/></svg></span>
+  <span class="label">Instagram</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/atom.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">Subscribe</span>
+      </a>
+    
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/">
+            <img src="/assets/images/me.jpg" alt="" class="site-logo">
+            <span>First Blog</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          <header class="intro">
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      <h1 id="page-title" class="intro-title">JavaScript engine fundamentals: Shapes and Inline Caches
+</h1>
+      
+
+      
+        
+
+        <p class="entry-meta">
+          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2018-08-28T00:00:00+09:00">August 28, 2018</time></span>
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        <blockquote>
+  <p>이 포스트는 <a href="https://mathiasbynens.be/notes/shapes-ics">JavaScript engine fundamentals: Shapes and Inline Caches</a> 의 글을 번역한 것입니다.</p>
+</blockquote>
+
+<p>이 문서는 V8 엔진뿐만 아니라 모든 JavaScript 엔진에 공통으로 적용되는 몇 가지 핵심 기본 사항을 설명합니다. JavaScript 개발자로서, JavaScript 엔진이 어떻게 작동하는지에 대한 이해를 통해 코드의 성능 특성을 추론할 수 있습니다.</p>
+
+<blockquote>
+  <p><strong>Note</strong> : 문서를 읽는 것보다 발표를 보는 것을 더 좋아한다면 아래의 동영상을 보십시오. 그렇지 않다면 문서를 계속해서 읽어 주십시오.</p>
+</blockquote>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/5nmpokoRaZI" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="the-javascript-engine-pipeline">The JavaScript engine pipeline</h2>
+
+<p>모든 것은 작성된 <strong>JavaScript code</strong>로부터 시작합니다. JavaScript 엔진은 소스 코드를 구문 분석(<strong>parse</strong>)하여 AST(<strong>Abstract Syntax Tree</strong>)로 변환합니다. <strong>Interpreter</strong>는 이 AST를 기반으로 일을 시작하고 바이트 코드를 생산할 수 있습니다. 그 시점에서 엔진은 실제로 JavaScript 코드를 실행하고 있습니다.</p>
+
+<p><img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/0_js-engine-pipeline.png" alt="image-center" class="align-center" /></p>
+
+<p>위의 과정이 더 빨리 실행되도록 하기 위해, <strong>bytecode</strong>는 <strong>profiling data</strong>와 함께 <strong>optimizing compiler</strong>로 보내집니다. <strong>optimizing compiler</strong>는 자신이 보유한 <strong>profiling data</strong>를 기반으로 특정한 가정을 한 다음 고도로 최적화된 시스템 코드(<strong>optimized code</strong>)를 생성합니다.</p>
+
+<p>어느 시점에서 가정 중 하나가 잘못된 것으로 판명될 경우, <strong>optimizing compiler</strong>는 최적화를 수행하지 않고 다시 <strong>interpreter</strong>로 돌아가게 됩니다.</p>
+
+<h3 id="interpretercompiler-pipelines-in-javascript-engines">Interpreter/compiler pipelines in JavaScript engines</h3>
+
+<p>이제 JavaScript 코드를 실제로 실행하는 pipeline의 부분(즉, 코드가 해석되고 최적화되는 부분)을 파고들어 주요 JavaScript 엔진 간의 차이점 몇 가지를 살펴보겠습니다.</p>
+
+<p>일반적인 경우를 말해보자면, <strong>interpreter</strong>와 <strong>optimazing compiler</strong>가 들어 있는 pipeline이 있습니다. 아래의 그림과 함께 살펴보자. <strong>Interpreter</strong>는 최적화되지 않은 <strong>bytecode</strong>를 빠르게 생성하며, <strong>optimazing compiler</strong>는 시간이 좀 더 걸리지만 결국 고도로 최적화된 머신 코드(<strong>optimized code</strong>)를 생성합니다.</p>
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/1_interpreter-optimizing-compiler.png" alt="" />
+    <figcaption>generally speaking compiler</figcaption>
+</figure>
+
+<p>아래 그림의 pipeline이 작동하는 방식은 Chrome 및 Node.js에서 사용되는 JavaScript 엔진이 작동하는 방식과 거의 동일합니다.</p>
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/2_interpreter-optimizing-compiler-v8.png" alt="" />
+    <figcaption>v8 compiler</figcaption>
+</figure>
+<p>V8의 interpreter는 <strong>Ignition</strong>이라고 불리며, <strong>bytecode</strong>를 생성하고 실행하는 역할을 합니다. <strong>Bytecode</strong>를 실행하는 동안, 이후에 실행 속도를 높이는데 사용하기 위해서 <strong>profiling data</strong>를 수집합니다. 예를 들어, 종종(often) 실행되는 기능에 부하가 걸리면, 생성된 <strong>bytecode</strong>와 <strong>profiling data</strong>는 <strong>TurboFan</strong>(최적화된 컴파일러)으로 전달되어 <strong>profiling data</strong>를 기반으로 최적화 머신 코드(<strong>optimized code</strong>)를 생성합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/3_interpreter-optimizing-compiler-spidermonkey.png" alt="" />
+    <figcaption>SpiderMonkey compiler</figcaption>
+</figure>
+<p>FireFox와 <a href="https://github.com/mozilla/spidernode">SpiderNode</a> 에서 사용되는 Mozilla의 JavaScript 엔진인 <strong>SpiderMonkey</strong>는 조금 다른 방식을 사용합니다. <strong>SpiderMonkey</strong>는 하나가 아닌 두 개의 optimizing compiler를 가지고 있습니다. <strong>Interpreter</strong>는 <strong>somewhat optimized code</strong>(다소 최적화된 code)를 생산하는 <strong>Baseline</strong> compiler로 최적화를 수행합니다. <strong>IonMonkey</strong> 컴파일러는 <strong>profiling data</strong>(코드를 실행하는 동안 수집됨)와 결합하여 <strong>optimized code</strong>를 생성합니다. 투기적(speculative) 최적화에 실패하면 <strong>IonMonkey</strong>는 <strong>Baseline</strong> 코드로 되돌아간다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/4_interpreter-optimizing-compiler-chakra.png" alt="" />
+    <figcaption>Chakra compiler</figcaption>
+</figure>
+<p>Edge 및 Node-ChakraCore에서 사용되는 Microsoft의 JavaScript 엔진인 <strong>Chakra</strong>는 앞서 보여드린 두 최적화 컴파일러와 매우 유사한 설정을 가지고 있습니다. <strong>Interpreter</strong>는 <strong>somewhat optimized code</strong>를 생성하는 SimpleJIT(Just-In-Time)로 <strong>optimized</strong>됩니다. <strong>Profiling data</strong>와 결합된 FullJIT는 보다 효율적으로 <strong>optimized code</strong>를 생성할 수 있습니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/5_interpreter-optimizing-compiler-jsc.png" alt="" />
+    <figcaption>JSC compiler</figcaption>
+</figure>
+<p>JavaScriptCore(JSC로 약칭)는 Safari 및 React Native에서 사용되는 Apple의 JavaScript 엔진으로, 세 가지 최적화 컴파일러를 극단적으로 사용합니다. <strong>LLInt</strong>(Low-Level Interpreter)는 <strong>Baseline</strong> compiler로 최적화되며, <strong>Baseline</strong> 컴파일러는 <strong>DFG</strong>(Data Flow Graph) 컴파일러로 최적화고, <strong>DFG</strong> 컴파일러는 <strong>FTL</strong>(Faster Than Light) 컴파일러로 최적화됩니다.</p>
+
+<p>왜 어떤 엔진들은 다른 엔진들보다 더 최적화된 컴파일러를 가지고 있을까요? 모든 것은 타협(trade-offs)이라고 볼 수 있습니다. Interpreter는 빨리 bytecode를 만들 수 있지만, 일반적으로 bytecode는 그리 효율적이지 않습다. 반면에 최적화 컴파일러는 시간이 좀 더 걸리지만 결국 훨씬 더 효율적인 machine code를 만들어냅니다. 빨리 코드를 실행하거나(Interpreter) 더 많은 시간을 들일 수 있지만 결국 최적의 성능(컴파일러 최적화)으로 코드를 실행할 수 있습니다. 일부 엔진은 시간/효율의 특성이 다른 여러 개의 최적화 컴파일러를 추가함으로써 “복잡성이 가중되는 비용(the cost of additional complexity)” 과 “보다 세밀하게 제어(more fine-grained control)”사이의 타협(trade-offs)를 결정할 수 있습니다.</p>
+
+<p>각 JavaScript 엔진에 대해 interpreter와 컴파일러 pipeline 최적화의 주요 차이점을 강조하여 살펴보았습니다. 그러나 이러한 차이점 외에도, high-level에서 보면 <strong>모든 JavaScript 엔진은 동일한 아키텍처(Parser와 일종의 interpreter/compiline pipeline)를 가지고 있습니다.</strong></p>
+
+<h2 id="javascripts-object-model">JavaScript’s object model</h2>
+<p>이제 일부 사항들이 구현되는 방법을 파고들어 JavaScript 엔진의 공통점을 살펴보겠습니다.</p>
+
+<p>예를 들어 JavaScript 엔진은 어떻게 JavaScript object model을 구현하고, JavaScript object의 property에 접근하는 속도를 높이기 위해 어떤 기술을 사용할까요? 밝혀진 바와 같이, 모든 주요 엔진들은 이것들을 매우 유사하게 구현합니다.</p>
+
+<p>ECMAScript 규격은 기본적으로 모든 object를 사전(<a href="https://tc39.github.io/ecma262/#sec-property-attributes"><em>property attributes</em></a>에 문자열로 매핑)으로 정의합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/6_object-model.png" alt="" />
+    <figcaption>Object model</figcaption>
+</figure>
+
+<p>규격(spec)은 object 자신의 <kbd>[[value]]</kbd> 를 제외하더라도, 다른 property들을 가진다는 것을 알려줍니다.</p>
+
+<ul>
+  <li><kbd>[[Writable]]</kbd> : 재할당할 수 있는지 여부를 결정합니다.</li>
+  <li><kbd>[[Enumerable]]</kbd> : for…in 루프에서 열거될 수 있는지를 나타냅니다.</li>
+  <li><kbd>[[Configurable]]</kbd> : property를 삭제할 수 있는지 여부를 결정합니다.</li>
+</ul>
+
+<p><kbd>[[double square brakets]]</kbd> 표기법은 우스꽝스러워 보이지만, spec에서 JavaScript이 직접적으로 노출하지 않는 property를 나타내는 방법입니다. <kbd>Object.getOwnPropertyDescriptor</kbd> API를 사용하여 JavaScript에서 지정된 object 및 property에 대한 다음과 같은 property attribute 들을 가져올 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="mi">42</span> <span class="p">};</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="s1">'foo'</span><span class="p">);</span>
+<span class="c1">// → { value: 42, writable: true, enumerable: true, configurable: true }</span>
+</code></pre></div></div>
+
+<p>자, 이것이 JavaScript가 object를 정의하는 방법입니다. Array는 어떨까요?</p>
+
+<p>Array를 object의 특별한 case라고 생각할 수 있습니다. 한 가지 차이점은 array가 array index들을 특별히 처리한다는 것입니다. 여기서 말하는 array index는 ECMAScript 규격의 특수 용어입니다. JavaScript에서 array의 길이는 최대 <var>2<sup>32</sup>-1</var> 개로 제한됩니다. Array index는 이 길이 내에서는 모두 유효합니다. 즉, <var>0 ~ 2<sup>32</sup>-2</var> 사이의 정수를 뜻합니다.</p>
+
+<p>또 다른 차이점은 array에도 마법과 같은 <kbd>length</kbd> 라는 property가 있다는 것입니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">];</span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// → 2</span>
+<span class="nx">array</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'c'</span><span class="p">;</span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// → 3</span>
+</code></pre></div></div>
+
+<p>위의 코드를 보면, array가 생성될 때는 <kbd>length</kbd>가 <kbd>2</kbd>였습니다. 그 후, index <kbd>2</kbd>에 다른 값을 할당하였더니 <kbd>length</kbd>가 자동으로 변경되었습니다.</p>
+
+<p>JavaScript는 array를 object와 유사하게 정의합니다. 예를 들어 array index를 포함한 모든 키는 문자열로 명시적(explicitly)으로 표시됩니다. Array의 첫 번째 요소는 키 <kbd>'0'</kbd> 아래에 저장됩니다.</p>
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/7_array-1.png" alt="" />
+    <figcaption>Array - add item 1</figcaption>
+</figure>
+<p><kbd>'length'</kbd> property는 열거할 수 없고, 삭제할 수 없는 다른 property입니다.</p>
+
+<p>Array에 항목이 하나 추가되면, JavaScript는 <kbd>'length'</kbd> property의 attributes중 하나인 <kbd>[[value]]</kbd> 값을 자동으로 갱신합니다.</p>
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/8_array-2.png" alt="" />
+    <figcaption>Array - add item 2</figcaption>
+</figure>
+<p>일반적으로, array는 object와 비슷하게 작동합니다. :)</p>
+
+<h2 id="optimizing-property-access">Optimizing property access</h2>
+<p>우리는 object가 JavaScript에서 어떻게 정의되었는지를 알았습니다. 이제 JavaScript 엔진이 object를 효율적으로 사용하여 작업하는 방법에 대해 알아보겠습니다.</p>
+
+<p>주위의 JavaScript 프로그램들을 살펴보면, property에 접근하는 것이 가장 일반적인 작업입니다. 그러므로 JavaScript 엔진이 property에 빠르게 액세스 하는 것이 중요해집니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">foo</span><span class="p">:</span> <span class="s1">'bar'</span><span class="p">,</span>
+	<span class="na">baz</span><span class="p">:</span> <span class="s1">'qux'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// Here, we’re accessing the property `foo` on `object`:</span>
+<span class="nx">doSomething</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">foo</span><span class="p">);</span>
+<span class="c1">//          ^^^^^^^^^^</span>
+</code></pre></div></div>
+
+<h3 id="shapes">Shapes</h3>
+<p>JavaScript 프로그램에서, 아래의 코드와 같이, 같은 property key들을 가지는 여러 개의 object를 사용하는 것이 일반적입니다. 이러한 object들은 같은 <em>shape</em> 가 같다고 말합니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">object1</span> <span class="o">=</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">object2</span> <span class="o">=</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">4</span> <span class="p">};</span>
+<span class="c1">// `object1` and `object2` have the same shape.</span>
+</code></pre></div></div>
+
+<p>그리고 아래의 코드와 같이, 동일한 shape의 object에서 동일한 property에 접근하는 것 또한 매우 일반적입니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">logX</span><span class="p">(</span><span class="nx">object</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span>
+	<span class="c1">//          ^^^^^^^^</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">object1</span> <span class="o">=</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">object2</span> <span class="o">=</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">4</span> <span class="p">};</span>
+
+<span class="nx">logX</span><span class="p">(</span><span class="nx">object1</span><span class="p">);</span>
+<span class="nx">logX</span><span class="p">(</span><span class="nx">object2</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>이러한 점들을 염두에 두고, JavaScript 엔진은 object shape에 따라 object property에 접근하는 것을 최적화할 수 있습니다. 최적화 하는 방법은 다음과 같습니다.</p>
+
+<p><kbd>x</kbd>와 <kbd>y</kbd> property를 가진 object가 있다고 가정해 보겠습니다. 앞에서 설명한 사전 데이터 구조(Key는 문자열로서 포함되고, 각각의 property attribute들을 가리킵니다)를 사용합니다.</p>
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/9_object-model.png" alt="" />
+    <figcaption>object model</figcaption>
+</figure>
+<p><kbd>object.y</kbd>에 접근한다고 할 때, JavaScript 엔진은 <kbd>JSObject</kbd>에서 key <kbd>'y'</kbd>를 찾아 해당 property attribute들을 로드한 후 <kbd>[[Value]]</kbd>를 반환합니다.</p>
+
+<p>하지만 이러한 property attribute는 메모리의 어느곳에 저장될까요? 그것들을 JSObject의 일부로 저장해야 할까요? 나중에 이 shape의 object를 더 사용하게 될 것이라고 가정하면, property 이름이 동일한 object가 반복되므로, property 이름과 attribute를 포함하는 전체 사전을 JSObject 자체에 저장하는 것은 낭비가 됩니다. 이러한 것은 중복이 많아지고 불필요하게 메모리를 사용하게 됩니다. 그러므로 최적화로서, JavaScript 엔진은 object의 <kbd>shape</kbd>를 별도로 저장합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/10_shape-1.png" alt="" />
+    <figcaption>shape 1</figcaption>
+</figure>
+
+<p>아래의 그림에서, 이 <kbd>Shape</kbd>는 <kbd>[[Value]]</kbd>들을 제외한 모든 property 이름과 attribute들을 포함합니다. 대신 <kbd>Shape</kbd>는 <kbd>JSObject</kbd>에 있는 value의 offset 값을 가지고 있어서, JavaScript 엔진이 value의 위치를 알 수 있습니다. 같은 shape를 가진 모든 <kbd>JSObject</kbd>는 같은 <kbd>Shape</kbd> instance를 정확히 가리킵니다(point). 이제 모든 <kbd>JSObject</kbd>는 이 object에 고유한 value만 저장하면 됩니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/11_shape-2.png" alt="" />
+    <figcaption>shape 2</figcaption>
+</figure>
+
+<p>여러 개의 object를 사용할 때 장점이 더 명확하게 나타납니다. 얼마나 많은 object가 있든 간에, 같은 shape가 있는 한, shape와 property 정보를 한 번만 저장하면 됩니다.</p>
+
+<p>모든 JavaScript 엔진은 shape을 최적화를 위해서 사용하지만, 모두 그것을 shape이라고 하지는 않습니다.</p>
+<ul>
+  <li>학술 논문에서는 이를 <em>Hidden Classes</em> 라고 합니다.(JavaScript class와 혼동)</li>
+  <li>V8은 이러한 <em>Map</em> 이라고 부릅니다.(JavaScript의 Map과 혼동)</li>
+  <li>Chakra는 이를 <em>Types</em> 라고 합니다.(JavaScript의 dynamic types, typeof와 혼동)</li>
+  <li>JavaScriptCore에서는 <em>Structures</em> 라고 합니다.</li>
+  <li>SpiderMonkey는 <em>Shapes</em> 라고 부른다.</li>
+</ul>
+
+<p>이 문서 전반에 걸쳐 ‘Shapes’라는 용어를 계속 사용하겠습니다.</p>
+
+<h3 id="transition-chains-and-trees">Transition chains and trees</h3>
+<p>특정 shape를 가지고 있는 object에 property를 추가하면 어떤 일이 생길까요? JavaScript 엔진은 새로운 shape를 어떻게 찾을까요?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>JavaScript 엔진에서 shape는 transition chain을 형성합니다. 아래의 그림을 예로 살펴보겠습니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/12_shape-chain-1.png" alt="" />
+    <figcaption>shape chain 1</figcaption>
+</figure>
+
+<p>Object는 아무 property가 없이 시작하기 때문에 빈 shape를 가리킵니다. 다음 명령문으로 object에 값이 <kbd>5</kbd>인 property <kbd>'x'</kbd>를 추가함으로서, JavaScript 엔진이 shape에 <kbd>'x'</kbd> property를 추가하고 <kbd>JSObject</kbd>의 첫 번째 offset인 0에 value <kbd>5</kbd>를 추가합니다. 다음 명령문으로 property <kbd>'y'</kbd>를 추가하면, JavaScript 엔진은 shape를 <kbd>'x'</kbd>, <kbd>'y'</kbd>가 모두 포함도록 변환한다. 그리고 <kbd>JSObject</kbd>에 <kbd>6</kbd>을 추가한다(offset은 <kbd>1</kbd>).</p>
+
+<blockquote>
+  <p><strong>Note</strong> : property가 추가된 순서는 shape에 영향을 줍니다. 예를 들어, <kbd>{ x: 4, y: 5 }</kbd>의 경우와 <kbd>{ y: 5, x: 4 }</kbd>의 경우는 shape이 달라집니다.</p>
+</blockquote>
+
+<p>각 <kbd>Shape</kbd>에 대한 전체 property table도 저장할 필요가 없습니다. 대신, 모든 <kbd>Shape</kbd>은 새로 포함한 property에 대한 것만 필요합니다. 아래의 그림을 예로 들어보겠습니다. <kbd>'x'</kbd>에 대한 정보는 chain에 연결된 바로 앞의 shape에 있기 때문에, 마지막 shape에는 저장할 필요가 없습니다. 이게 가능하기 위해서는 모든 <kbd>Shape</kbd>는 이전 shape와 연결되어 있어야 합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/13_shape-chain-2.png" alt="" />
+    <figcaption>shape chain 2</figcaption>
+</figure>
+
+<p>JavaScript 코드에서 <kbd>o.x</kbd>에 값을 입력하게 되면, JavaScript 엔진은 <kbd>'x'</kbd>가 포함된 <kbd>Shape</kbd>를 찾기위해 transition chain을 아래에서 위로 탐색합니다.</p>
+
+<p>Transition chain을 만들 수 없다면 어떻게 될까요? 예를들어, 아래의 코드와 같이 2개의 빈 object를 만들고 각자 다른 property를 추가한다면 어떻게 될까요?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">object1</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">object1</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">object2</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">object2</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이런 경우에는 chain 대신 branch를 사용해서 <em>transition tree</em> 를 사용해야 합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/14_shape-tree.png" alt="" />
+    <figcaption>shape tree</figcaption>
+</figure>
+
+<p>위의 그림을 보겠습니다. <kbd>a</kbd>라는 빈 object를 만든 후 <kbd>'x'</kbd>라는 property를 추가하였습니다. 이때는 하나의 값만 가지는 <kbd>JSObject</kbd>와 2개의 <kbd>Shape</kbd>만 생성됩니다. (비어있는 shape와 <kbd>x</kbd> property만 가지는 shape)</p>
+
+<p>두 번째로, <kbd>b</kbd>라는 빈 object가 생성되고 <kbd>'y'</kbd>라는 또 다른 property를 추가합니다. 결과적으로 2개의 shape chain이 생성되고 3개의 shape가 생성됩니다.</p>
+
+<p>위의 예제를 봤을 때, 항상 빈 shape로 시작되는 걸까요? 꼭 그렇다고는 할 수 없습니다. 엔진은 처음부터 property를 포함하는 object literal 에 대한 초기화도 적용하고 있습니다. 아래의 코드와 같이, 빈 object literal 에 <kbd>x</kbd> property를 추가할때와 처음부터 <kbd>x</kbd> property를 추가한 object literal을 살펴보겠습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">object1</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">object1</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">object2</span> <span class="o">=</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">6</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<p>위 코드에서 첫 번째 라인은, 빈 shape에서 시작해서 <kbd>x</kbd>가 추가된 shape로 transition하게 됩니다. 이는 우리가 이전에 살펴본 것과 같습니다.</p>
+
+<p><kbd>object2</kbd>의 경우에는, 빈 shape에서 transition 하는 것 보다 처음부터 이미 <kbd>x</kbd>가 포함된 shape를 생성하는 것이 상식적입니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/15_empty-shape-bypass.png" alt="" />
+    <figcaption>empty shape bypass</figcaption>
+</figure>
+
+<p><kbd>'x'</kbd> property를 포함하는 object literal은 처음부터 <kbd>'x'</kbd>가 포함된 shape에서 시작하여 빈 shape를 효과적으로 사용하지 않습니다. 이러한 방법들을 적어도 V8과 Spider Monkey에서 사용하고 있습니다. 이러한 최적화는 transition chain을 단축하고 literal에서 object를 보다 효율적으로 생성할 수 있도록 합니다.</p>
+
+<p>Benedikt의 blog의 <a href="https://medium.com/@bmeurer/surprising-polymorphism-in-react-applications-63015b50abc">surprising polymorphism in React applications</a> post는 이러한 세부 요소들이 실제 성능에 어떻게 영향을 미칠 수 있는지를 논의합니다.</p>
+
+<p>아래 코드는 <kbd>'x'</kbd>, <kbd>'y'</kbd>, 그리고 <kbd>'z'</kbd> property들을 가지는 3D point object를 나타내고 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">point</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">point</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="nx">point</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">point</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>우리가 배우기로, 이것은 object와 함께 3개의 shape를 메모리에 생성합니다(빈 shape는 개수에 포함하지 않았을 때). 아래의 그림과 같이 <kbd>'x'</kbd> property에 접근하기 위해서 program에서 <kbd>point.x</kbd> 를 입력한다면, JavaScript 엔진은 linked list를 따라갑니다. <kbd>Shape</kbd>의 제일 아래에서 시작해서, <kbd>'x'</kbd>가 포함된 제일 위 <kbd>Shape</kbd>까지 올라갑니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/16_shapetable-1.png" alt="" />
+    <figcaption>shape table 1</figcaption>
+</figure>
+
+<p>만약 우리가 이러한 작업을 더 자주 한다면, 특히 object에 많은 property가 있을 때, 정말 느려질 것입니다. Property를 찾는 시간은 <kbd>O(n)</kbd>입니다. 즉, object의 property 개수에서 선형(linear)입니다. Property 검색 속도를 높이기 위해 JavaScript 엔진은 <kbd>ShapeTable</kbd> 데이터 구조를 추가합니다. 이 <kbd>ShapeTable</kbd>은 지정된 property를 가지는 각 <kbd>Shape</kbd>에 property key를 매핑하는 사전입니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/17_shapetable-2.png" alt="" />
+    <figcaption>shape table 2</figcaption>
+</figure>
+
+<p>여기서 잠시 살펴보면, 우리는 사전 검색으로 돌아왔습니다… 만 애초에 Shape를 사용하기 전에 사전은 사용하고 있었습니다! 그럼 왜 우리는 Shape에 신경을 써야 할까요?</p>
+
+<p>그 이유는 shape가 <em>inline cache</em> 라고 불리는 또 다른 최적화를 가능하게 하기 때문입니다.</p>
+
+<h3 id="inline-caches-ics">Inline Caches (ICs)</h3>
+<p>Shape 뒤에 숨어있는 주된 동기는 Inline Caches(ICs)의 개념이다. ICs는 JavaScript를 신속하게 실행할 수 있게하는 핵심 요소입니다. JavaScript 엔진은 ICs를 사용하여 object에서 property를 찾을수 있는 위치에 대한 정보를 암기하여 높은 cost를 가지는 조회 수를 줄입니다.</p>
+
+<p>여기 object를 받아서 그 object의 property <kbd>x</kbd>를 반환하는 함수 <kbd>getX</kbd>가 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getX</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">o</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 함수를 JSC에서 실행한다면, 아래의 그림과 같은 bytecode를 생성할 것입니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/18_ic-1.png" alt="" />
+    <figcaption>Inline Caches 1</figcaption>
+</figure>
+
+<p>첫 번째 명령문 <kbd>get_by_id</kbd>는 첫 번째 argument (<kbd>arg1</kbd>)에서 property <kbd>'x'</kbd>를 로드하여 결과를 <kbd>loc0</kbd>에 저장합니다. 두 번째 명령문은 <kbd>loc0</kbd>에 저장한 것을 반환합니다.</p>
+
+<p>또한 JSC는 Inline Cache를 초기화되지 않은 두 개의 슬롯으로 구성된 <kbd>get_by_id</kbd> 명령문에 포함합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/19_ic-2.png" alt="" />
+    <figcaption>Inline Caches 2</figcaption>
+</figure>
+
+<p>이제 위의 그림과 같이 <kbd>{x: 'a'}</kbd> object가 <kbd>getX</kbd> 함수에서 실행될 때를 보겠습니다. 앞서 배웠듯이, 이 object는 property <kbd>'x'</kbd>가 있는 shape를 가지며, 이 <kbd>Shape</kbd>는 property <kbd>x</kbd>에 대한 offset과 attribute 들을 가집니다. 이 함수를 처음 실행하면, <kbd>get_by_id</kbd> 함수는 property <kbd>'x'</kbd>를 검색하고 value는 offset <kbd>0</kbd>에 저장되어 있다는 것도 찾게 됩니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/20_ic-3.png" alt="" />
+    <figcaption>Inline Caches 3</figcaption>
+</figure>
+
+<p>위의 그림에서 처럼 <kbd>get_by_id</kbd> 명령문에 포함된 IC는 property가 발견된 shape와 offset을 기억합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/21_ic-4.png" alt="" />
+    <figcaption>Inline Caches 4</figcaption>
+</figure>
+
+<p>위의 그림을 살펴보겠습니다. 다음 명령문을 실행할 때, IC는 shape만 비교하면 되며, 이전과 같다면 저장되어있는 offset을 보고 value를 가져오면 됩니다. 구체적으로 말하자면, JavaScript 엔진이 IC가 이전에 기록한 shape의 object를 볼 경우, 더 이상 property 정보에 접근할 필요가 없습니다. 그리고 비용이 많이 들어가는 property 정보 조회를 완전히 생략할 수 있습니다. 이 방법은 매번 property를 조회하는 것 보다 훨씬 더 빠릅니다.</p>
+
+<h2 id="storing-arrays-efficiently">Storing arrays efficiently</h2>
+<p>Array의 경우, array의 property인 <em>array indices</em> 를 저장하는 것이 일반적입니다. 각 property의 값들은 array element라고 부릅니다. 모든 array의 모든array element에 대한 각각의 property attribute들을 저장하는 것은 메모리 낭비일 수 있습니다. 그 대신에, JavaScript 엔진은 array-indexed property 들이 기본적으로 writable, enumerable, 그리고 configurable하다는 점을 사용합니다. 그리고 array element를 다른 이름있는 property(named property)와는 별도로 저장합니다.</p>
+
+<p>다음 array를 고려해봅시다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s1">'#jsconfeu'</span><span class="p">,</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<p>아래의 그림과 같이, JavaScript 엔진은 array의 길이 (<kbd>1</kbd>) 을 저장하고, <kbd>'length'</kbd> property에 대한 offset과 attribute들을 가지고 있는 <kbd>Shape</kbd>를 가리킵니다(point).</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/22_array-shape.png" alt="" />
+    <figcaption>Array shape</figcaption>
+</figure>
+
+<p>이것은 우리가 이전에 본 것과 비슷합니다… 그런데 array의 value는 어디에 저장될까요?</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/23_array-elements.png" alt="" />
+    <figcaption>Array elements</figcaption>
+</figure>
+
+<p>모든 array에는 array-indexed property 값이 모두 포함된 별도의 <em>element 백업 저장소</em> 가 있습니다. 일반적으로 모든 array element에 대한 property attribute 들은 writable, enumerable, 그리고 configurable하기 때문에 JavaScript 엔진은 그것들을 저장할 필요가 없습니다.</p>
+
+<p>하지만 특이한 경우엔 어떤 일이 일어날까요? Array element의 property attribute 들을 변경하면 어떻게 될까요?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Please don’t ever do this!</span>
+<span class="kd">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span>
+	<span class="p">[],</span>
+	<span class="s1">'0'</span><span class="p">,</span>
+	<span class="p">{</span>
+		<span class="na">value</span><span class="p">:</span> <span class="s1">'Oh noes!!1'</span><span class="p">,</span>
+		<span class="na">writable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+		<span class="na">enumerable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+		<span class="na">configurable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+	<span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>위의 코드는 <kbd>'0'</kbd>이라는 property를 정의하지만(array의 index가 됨), attribute 들을 기본값과 다르게 설정합니다.</p>
+
+<p>이런 특이한 경우, JavaScript 엔진은 <em>모든</em> element 백업 저장소를 property attribute 들에 array index 들을 매핑하는 사전으로 나타냅니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_shape_and_inline_caches/24_array-dictionary-elements.png" alt="" />
+    <figcaption>Array dictionary elements</figcaption>
+</figure>
+
+<p>하나의 array element에 기본값이 아닌 property attribute 들이 있을때도, 전체 array의 백업 저장소가 느리고 비효율적인 모드로 전환됩니다. <strong>Array index에서 <kbd>Object.defineProperty</kbd>는 사용하지 마십시오.</strong> (당신이 왜 이걸 사용하려 하는지 모르겠습니다. 이상하고, 쓸모없어 보입니다.)</p>
+
+<h2 id="take-aways">Take-aways</h2>
+<p>JavaScript 엔진이 object와 array를 저장하는 방법과, shape 및 ICs를 통해 일반적인 작업을 최적화하는 방법을 배웠습니다. 이러한 지식을 바탕으로 성능을 향상시킬 수 있는 몇 가지 실용적인 JavaScript 코딩 팁을 확인했습니다.</p>
+<ul>
+  <li>항상 동일한 방식으로 object를 초기화하여 shape가 서로 다르지 않게 합니다.</li>
+  <li>효율적으로 저장 및 작동할 수 있도록 array element의 property attribute 들을 건드리지 마십시오.</li>
+</ul>
+
+      </div>
+      
+        
+      
+    </article>
+  </div>
+</main>
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+  <div class="inner">
+    <div class="copyright">
+      
+        <p>&copy; 2018 First Blog.</p>
+      
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async src="/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '8K2C62GHZZ',
+  apiKey: 'ac6b1c9d2ea0e17891c512e13491b27b',
+  indexName: 'my_first_blog_search',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

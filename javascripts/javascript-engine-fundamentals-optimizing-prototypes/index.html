@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<!--
+    Basically Basic Jekyll Theme 1.4.1
+    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
+-->
+<html lang="ko" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>JavaScript engine fundamentals: optimizing prototypes | First Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="JavaScript engine fundamentals: optimizing prototypes" />
+<meta name="author" content="Heekyum" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="이 포스트는 JavaScript engine fundamentals: optimizing prototypes 의 글을 번역한 것입니다." />
+<meta property="og:description" content="이 포스트는 JavaScript engine fundamentals: optimizing prototypes 의 글을 번역한 것입니다." />
+<link rel="canonical" href="https://shlrur.github.io//javascripts/javascript-engine-fundamentals-optimizing-prototypes/" />
+<meta property="og:url" content="https://shlrur.github.io//javascripts/javascript-engine-fundamentals-optimizing-prototypes/" />
+<meta property="og:site_name" content="First Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-01T00:00:00+09:00" />
+<script type="application/ld+json">
+{"description":"이 포스트는 JavaScript engine fundamentals: optimizing prototypes 의 글을 번역한 것입니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//javascripts/javascript-engine-fundamentals-optimizing-prototypes/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/me.jpg"},"name":"Heekyum"},"headline":"JavaScript engine fundamentals: optimizing prototypes","dateModified":"2018-09-01T00:00:00+09:00","datePublished":"2018-09-01T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//javascripts/javascript-engine-fundamentals-optimizing-prototypes/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="First Blog" href="/atom.xml">
+  
+</head>
+
+
+  <body class="layout--post javascript-engine-fundamentals-optimizing-prototypes">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- <a href="/test/javascript" itemprop="url"></a> -->
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-0"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/livelog" itemprop="url">
+          <span itemprop="name">LiveLog</span>
+        </a>
+          <label class="folder" for="list-item-0">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/idea" itemprop="url">
+              <span itemprop="name">Idea</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/workout" itemprop="url">
+          <span itemprop="name">Workout</span>
+        </a>
+          <label class="folder" for="list-item-1">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/kendo" itemprop="url">
+              <span itemprop="name">Kendo</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/strength" itemprop="url">
+              <span itemprop="name">Strength</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/develog" itemprop="url">
+          <span itemprop="name">Develog</span>
+        </a>
+          <label class="folder" for="list-item-2">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript" itemprop="url">
+              <span itemprop="name">JavaScript</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript-design-pattern" itemprop="url">
+              <span itemprop="name">javascript Design Pattern</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/api" itemprop="url">
+              <span itemprop="name">Apis</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:shlrur123@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/shlrur">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+
+  
+    <li><a href="https://instagram.com/dochaebi">
+  <span class="icon icon--instagram"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.05 3.233c-.04.78-.17 1.203-.28 1.485-.15.374-.32.64-.6.92-.28.28-.55.453-.92.598-.28.11-.71.24-1.49.276-.85.038-1.1.047-3.24.047s-2.39-.01-3.24-.05c-.78-.04-1.21-.17-1.49-.28-.38-.15-.64-.32-.92-.6-.28-.28-.46-.55-.6-.92-.11-.28-.24-.71-.28-1.49-.03-.84-.04-1.1-.04-3.23s.01-2.39.04-3.24c.04-.78.17-1.21.28-1.49.14-.38.32-.64.6-.92.28-.28.54-.46.92-.6.28-.11.7-.24 1.48-.28.85-.03 1.1-.04 3.24-.04zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z"/></svg></span>
+  <span class="label">Instagram</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/atom.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">Subscribe</span>
+      </a>
+    
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/">
+            <img src="/assets/images/me.jpg" alt="" class="site-logo">
+            <span>First Blog</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          <header class="intro">
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      <h1 id="page-title" class="intro-title">JavaScript engine fundamentals: optimizing prototypes
+</h1>
+      
+
+      
+        
+
+        <p class="entry-meta">
+          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2018-09-01T00:00:00+09:00">September 1, 2018</time></span>
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        <blockquote>
+  <p>이 포스트는 <a href="https://mathiasbynens.be/notes/prototypes">JavaScript engine fundamentals: optimizing prototypes</a> 의 글을 번역한 것입니다.</p>
+</blockquote>
+
+<p>이 문서는 V8 엔진뿐만 아니라 모든 JavaScript 엔진에 공통으로 적용되는 몇 가지 핵심 기본 사항을 설명합니다. JavaScript 개발자로서, JavaScript 엔진이 어떻게 작동하는지에 대한 이해를 통해 코드의 성능 특성을 추론할 수 있을것입니다.</p>
+
+<p><a href="http://localhost:4000/javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/">이전 포스트에서</a>, 우리는 JavaScript 엔진이 Shapes와 Inline Caches를 사용하여 어떻게 object와 array에 대한 접근을 최적화하는지에 대해서 논의했습니다. 이 글은 optimization pipeline의 trade-off에 관해서 설명하고, JavaScript 엔진이 prototype property에 대한 접근 속도를 높이는 방법을 설명합니다.</p>
+
+<blockquote>
+  <p><strong>Note</strong> : 문서를 읽는 것보다 발표를 보는 것을 더 좋아한다면 아래의 동영상을 보십시오. 그렇지 않다면 문서를 계속해서 읽어 주십시오.</p>
+</blockquote>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/IFWulQnM5E0" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="optimization-tiers-and-execution-trade-offs">Optimization tiers and execution trade-offs</h2>
+
+<p><a href="http://localhost:4000/javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/">이전 포스트에서</a>, 현대 JavaScript 엔진들이 전반적으로 동일한 pipeline(아래의 그림과 같이)을 가지는 방법에 대해서 이야기를 나눴습니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/0_js-engine-pipeline.svg" alt="0" />
+    <figcaption>js engine pipeline</figcaption>
+</figure>
+
+<p>또한 엔진 간에 high-level의 pipeline은 유사하지만 optimization pipeline에는 종종 차이가 있음을 지적했습니다. 왜 그런 것일까요? <strong>일부 엔진의 최적화 tier가 다른 엔진보다 많은 이유는 무엇일까요?</strong> 그것은 아래의 그림과 같이, 코드를 빨리 만들어서 실행하는 것과 시간을 더 들이지만 결국 최적화된 성능으로 코드를 만들어서 실행하는 것 사이의 trade-off가 있기 때문입니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/1_tradeoff-startup-speed.svg" alt="1" />
+    <figcaption>trade-off startup speed</figcaption>
+</figure>
+
+<p>Interpreter는 bytecode를 재빨리 만들 수 있지만, 일반적으로 bytecode는 그리 효율적이지 않습니다. 반면에 optimizing compiler는 시간이 좀 더 걸리지만 결국 훨씬 더 효율적인 machine 코드를 생산합니다.</p>
+
+<p>아래의 그림이 바로 V8이 사용하는 model입니다. V8 interpreter는 Ignition이라고 불리며, 모든 JavaScript 엔진의 interpreter 중에서 가장 빠릅니다(raw bytecode 실행 측면에서) V8의 optimizing compiler이름은 TurboFan이며, 고도로 최적화된 machine 코드를 생성합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/2_tradeoff-startup-speed-v8.svg" alt="2" />
+    <figcaption>trade-off startup speed: V8</figcaption>
+</figure>
+
+<p>이러한 startup latency와 execution speed 간의 trade-off는 일부 JavaScript 엔진이 최적화 tier를 추가하기로 선택하는 이유입니다. 예를 들어 SpiderMonkey는 interpreter와 전체 IonMonkey 사이에 compiler를 최적화하는 Baseline tier를 추가했습니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/3_tradeoff-startup-speed-spidermonkey.svg" alt="3" />
+    <figcaption>trade-off startup speed: SpiderMonkey</figcaption>
+</figure>
+
+<p>Interpreter는 bytecode를 빠르게 생성하지만, bytecode의 실행속도는 비교적 느린편입니다. Baseline은 코드를 생성하는데 약간 더 오래 걸리지만 run-time 성능을 향상시킵니다. 마지막으로, optimizing compiler인 IonMonkey는 machine 코드를 생산하는데 가장 오래 걸리지만, machine 코드는 매우 효율적으로 실행됩니다.</p>
+
+<p>구체적인 예시를 통해 각 JavaScript 엔진의 파이프라인이 어떤 방법으로 처리하는지 살펴보겠습니다. 여기 자주 반복되는 코드들이 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">4242424242</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">result</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>V8은 Ignition interpreter에서 bytecode를 실행하기 시작합니다. 어느 시점에 V8은 코드가 hot 하다고 판단하고 TurboFan frontend를 시작합니다. TurboFan frontend는 profiling data를 통합하고 코드의 기본적인 machine representation 체계를 구축하는 TurboFan의 일부입니다. 그런 다음 추가적인 개선을 위해 다른 thread에 있는 TurboFan optimizer로 전송합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/4_pipeline-detail-v8.svg" alt="4" />
+    <figcaption>pipeline detail: V8</figcaption>
+</figure>
+
+<p>Optimizer가 실행되는 동안, V8은 Ingition에서 bytecode를 실행합니다. 어느 시점에서 optimizer가 완료되고 나면 실행 가능한 machine 코드가 생성되며, 이 machine 코드로 계속해서 실행할 수 있습니다.</p>
+
+<p>SpiderMonkey engine 역시 interpreter에서 bytecode를 실행하기 시작합니다. 그러나 Baseline tier가 추가되어 hot 코드는 먼저 Baseline으로 전송됩니다. Baseline compiler는 메인 thread에서 Baseline 코드를 생성하고 준비가되면 실행을 계속합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/5_pipeline-detail-spidermonkey.svg" alt="5" />
+    <figcaption>pipeline detail: SpiderMonkey</figcaption>
+</figure>
+
+<p>한동안 Baseline 코드를 실행하면 SpiderMonkey는 결국 IonMonkey frontend를 실행하고 V8과 매우 유사한 optimizer를 시작합니다. IonMonkey가 최적화하는 동안 Baseline에서 실행됩니다. 마지막으로 optimizer가 완료되면, Baseline 코드 대신 최적화된 코드를 실행합니다.</p>
+
+<p>Chakra의 구조는 SpiderMonkey와 매우 비슷하지만, Chakra는 메인 thread를 막지 않기 위해 더 많은 것들을 동시에 실행하려고 시도합니다. 메인 Thread에서 compiler의 일부를 실행하는 대신, Chakra는 compiler가 필요로 하는 bytecode와 profiling data를 복사하여 전용 compiler 프로세스로 보냅니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/6_pipeline-detail-chakra.svg" alt="6" />
+    <figcaption>pipeline detail: Chakra</figcaption>
+</figure>
+
+<p>생성된 코드가 준비되면, Chakra 엔진은 bytecode 대신 이 SimpleJIT 코드를 실행합니다. FullJIT에 대해서도 같은 과정이 실행됩니다. 이러한 접근 방식의 이점은 복사가 발생하는 일시 중지 시간이 보통 전체 compiler가(frontend)를 실행하는 데 비해 훨씬 짧다는 것입니다. 그러나 이러한 접근 방식의 단점은 <strong>copy heuristic</strong> 이 특정 최적화에 필요한 일부 정보를 놓칠 수 있다는 것입니다. 따라서 latency를 위해 코드 품질을 어느 정도 타협한 것입니다.</p>
+
+<p>JavaScriptCore에서 모든 optimizing compiler는 모두 main JavaScript 실행과 <strong>동시에</strong> 일어나기 때문에 copy 단계가 없습니다! 대신에 메인 thread는 다른 thread의 compile 작업만 일으킵니다. 그 후 해당 compiler는 복잡한 locking scheme을 사용해서 메인 thread에서 profiling data에 접근합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/7_pipeline-detail-javascriptcore.svg" alt="7" />
+    <figcaption>pipeline detail: JavaScriptCore</figcaption>
+</figure>
+
+<p>이 접근법의 장점은, 메인 thread에서 일어나는 JavaScript 최적화로 인한 junk를 감소시킨다는 것입니다. 단점은 복잡한 multithreading 문제를 처리해야 하는 것과 다양한 작업에 대해 약간의 locking cost를 감수해야 한다는 것입니다.</p>
+
+<p>우리는 interpreter와 같이 빨리 코드를 생성하는 방법과 optimizing compiler로 빠른 코드를 생성하는 방법 사이의 trade-off에 관해서 이야기했습니다. 하지만 여기에는 또 다른 trade-off가 있습니다. 바로 <strong>memory usage(메모리 사용량)</strong> 입니다. 이를 설명하기 위해, 여기 두 개의 수를 더하는 간단한 JavaScript 프로그램이 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>아래의 코드는 위의 <kbd>add</kbd> function을 V8의 interpreter인 Ignition을 사용해서 만든 bytecode입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">StackCheck</span>
+<span class="nx">Ldar</span> <span class="nx">a1</span>
+<span class="nx">Add</span> <span class="nx">a0</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nx">Return</span>
+</code></pre></div></div>
+
+<p>위의 bytecode에 대해서 걱정하지 마십시오. 실제로 읽을 필요는 없습니다. 요점은 <strong>단지 4개</strong>의 명령문으로 이루어져 있다는 것입니다.</p>
+
+<p>코드가 hot해지면, TurboFan은 아래와 같이 고도로 최적화된 machine 코드를 생성합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">leaq</span> <span class="nx">rcx</span><span class="p">,[</span><span class="nx">rip</span><span class="o">+</span><span class="mh">0x0</span><span class="p">]</span>
+<span class="nx">movq</span> <span class="nx">rcx</span><span class="p">,[</span><span class="nx">rcx</span><span class="o">-</span><span class="mh">0x37</span><span class="p">]</span>
+<span class="nx">testb</span> <span class="p">[</span><span class="nx">rcx</span><span class="o">+</span><span class="mh">0xf</span><span class="p">],</span><span class="mh">0x1</span>
+<span class="nx">jnz</span> <span class="nx">CompileLazyDeoptimizedCode</span>
+<span class="nx">push</span> <span class="nx">rbp</span>
+<span class="nx">movq</span> <span class="nx">rbp</span><span class="p">,</span><span class="nx">rsp</span>
+<span class="nx">push</span> <span class="nx">rsi</span>
+<span class="nx">push</span> <span class="nx">rdi</span>
+<span class="nx">cmpq</span> <span class="nx">rsp</span><span class="p">,[</span><span class="nx">r13</span><span class="o">+</span><span class="mh">0xe88</span><span class="p">]</span>
+<span class="nx">jna</span> <span class="nx">StackOverflow</span>
+<span class="nx">movq</span> <span class="nx">rax</span><span class="p">,[</span><span class="nx">rbp</span><span class="o">+</span><span class="mh">0x18</span><span class="p">]</span>
+<span class="nx">test</span> <span class="nx">al</span><span class="p">,</span><span class="mh">0x1</span>
+<span class="nx">jnz</span> <span class="nx">Deoptimize</span>
+<span class="nx">movq</span> <span class="nx">rbx</span><span class="p">,[</span><span class="nx">rbp</span><span class="o">+</span><span class="mh">0x10</span><span class="p">]</span>
+<span class="nx">testb</span> <span class="nx">rbx</span><span class="p">,</span><span class="mh">0x1</span>
+<span class="nx">jnz</span> <span class="nx">Deoptimize</span>
+<span class="nx">movq</span> <span class="nx">rdx</span><span class="p">,</span><span class="nx">rbx</span>
+<span class="nx">shrq</span> <span class="nx">rdx</span><span class="p">,</span> <span class="mi">32</span>
+<span class="nx">movq</span> <span class="nx">rcx</span><span class="p">,</span><span class="nx">rax</span>
+<span class="nx">shrq</span> <span class="nx">rcx</span><span class="p">,</span> <span class="mi">32</span>
+<span class="nx">addl</span> <span class="nx">rdx</span><span class="p">,</span><span class="nx">rcx</span>
+<span class="nx">jo</span> <span class="nx">Deoptimize</span>
+<span class="nx">shlq</span> <span class="nx">rdx</span><span class="p">,</span> <span class="mi">32</span>
+<span class="nx">movq</span> <span class="nx">rax</span><span class="p">,</span><span class="nx">rdx</span>
+<span class="nx">movq</span> <span class="nx">rsp</span><span class="p">,</span><span class="nx">rbp</span>
+<span class="nx">pop</span> <span class="nx">rbp</span>
+<span class="nx">ret</span> <span class="mh">0x18</span>
+</code></pre></div></div>
+
+<p>코드가 <em>매우 많습니다.</em> 특히 4개의 명령문으로 이루어진 bytecode와 비교하면 더 그렇습니다. 보통 bytecode는 machine 코드보다, 특히 최적화된 machine 코드보다 더 간결한 경향이 있습니다. 반면에, bytecode는 실행하는데 interpreter가 필요하지만, 최적화된 machine 코드 processor에 의해 바로 실행될 수 있습니다.</p>
+
+<p>이것이 바로 JavaScript 엔진이 “모든 것을 최적화”하지 않는 주된 이유 중 하나입니다. 우리가 앞서 살펴봤듯이, 최적화된 machine 코드를 생성하는데는 긴 시간이 걸리고, 그 외에도 <strong>최적화된 machine 코드는 더 많은 memory가 필요하다</strong>는 것을 알게 되었습니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/8_tradeoff-memory.svg" alt="8" />
+    <figcaption>trade-off memory</figcaption>
+</figure>
+
+<blockquote>
+  <p><strong>Summary</strong>: JavaScript 엔진들의 최적화 tier가 다른 이유는 interpreter와 같이 <strong>코드를 빠르게 생성</strong>하는 것과 최적화 compiler로 <strong>빠른 코드를 생성</strong>하는 것 사이의 근본적인 trade-off 때문입니다. 최적화 계층을 추가하면 복잡성과 오버헤드를 추가로 희생하여 보다 fine-grained한 의사 결정을 내릴 수 있습니다. 또한, 생성된 코드의 memory-usage와 최적화 level 간의 trade-off도 있습니다.(machine 코드와 bytecode) 그렇기 때문에 JavaScript 엔진은 <strong>hot</strong>한 function만 최적화하려고 합니다.</p>
+</blockquote>
+
+<h2 id="optimizing-prototype-property-access">Optimizing prototype property access</h2>
+
+<p><a href="https://mathiasbynens.be/notes/shapes-ics#optimizing-property-access">우리의 이전 글에서</a> JavaScript엔진이 Shape와 Inline cache를 사용해서 어떻게 object property load를 최적화 했는지 설명하였습니다. 다시 상기해보면, 엔진은 object의 값과 별도로 object의 <kbd>Shape</kbd>를 저장합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/9_shape-2.svg" alt="9" />
+    <figcaption>shape</figcaption>
+</figure>
+
+<p>Shape는 Inline Caches 혹은 ICs 라 불리는 최적화를 가능하게 합니다. Shape 및 ICs를 코드의 동일한 위치에서 property에 반복해서 접근할 때 속도를 높일 수 있습니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/10_ic-4.svg" alt="10" />
+    <figcaption>Inline Cache</figcaption>
+</figure>
+
+<h3 id="classes-and-prototype-based-programming">Classes and prototype-based programming</h3>
+
+<p>이제 JavaScript object의 property를 빨리 가져오는 방법에 대해서 알았으니, JavaScript에서 최근에 추가된 <strong>Class</strong>에 대해서 살펴보겠습니다. 아래의 코드는 JavaScript의 class syntax입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Bar</span> <span class="p">{</span>
+	<span class="kd">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nx">getX</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>마치 JavaScript에서 새로운 개념이 나온것처럼 보이지만, 단지 JavaScript에서 계속 사용한 prototype-based programming을 위한 syntactic sugar일 뿐입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Bar</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Bar</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getX</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">getX</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>여기 <kbd>Bar.prototype</kbd> object에 <kbd>getX</kbd> property를 할당합니다. 이 작업은 다른 어떤 object에서도 똑같이 일어납니다. <strong>JavaScript에서 prototype은 object일 뿐</strong>이기 때문입니다. JavaScript와 같은 prototype-based programming language에서는, method는 prototype을 통해 공유되고 field는 실제 instance에 저장됩니다.</p>
+
+<p><kbd>Bar</kbd>의 새로운 instance인 <kbd>foo</kbd>가 생성될 때 뒤에선 어떤 일이 일어나는지 살펴보겠습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bar</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>위의 코드를 통해서 생성된 instance는 <kbd>'x'</kbd> property 가 들어있는 shape를 가진다. <kbd>foo</kbd>의 prototype인 <kbd>Bar.prototype</kbd>은 <kbd>Bar</kbd> class에 속해있다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/11_class-shape-1.svg" alt="11" />
+    <figcaption>class shape 1</figcaption>
+</figure>
+
+<p><kbd>Bar.prototype</kbd>은 단일 property <kbd>'getX'</kbd>를 포함하는 shape를 가지고 있으며, <kbd>getX</kbd>의 값은 호출시 <kbd>this.x</kbd>를 반환하는 함수입니다. <kbd>Bar.prototype</kbd>의 prototype은 <kbd>Object.prototype</kbd>이고, 이는 JavaScript 언어의 한 부분입니다. <kbd>Object.prototype</kbd>은 prototype tree의 root이기 때문에 이것의 prototype은 <kbd>null</kbd>입니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/12_class-shape-2.svg" alt="12" />
+    <figcaption>class shape 2</figcaption>
+</figure>
+
+<p>만약 같은 class의 다른 instance를 만든다면, 두 instance는 앞서 살펴본것과 같이 object shape를 공유합니다. 그리고 두 instance 모두 같은 <kbd>Bar.prototype</kbd> object를 가리킬것입니다.</p>
+
+<h3 id="prototype-property-access">Prototype property access</h3>
+
+<p>자, 이제 class를 선언하고 새로운 instance를 생성할 때 어떤 일이 일어나는지 알게 되었습니다. 하지만, 아래 코드와 같이 instance의 method를 호출할 때는 어떻게 될까요?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Bar</span> <span class="p">{</span>
+	<span class="kd">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span> <span class="p">}</span>
+	<span class="nx">getX</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bar</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">getX</span><span class="p">();</span>
+<span class="c1">//        ^^^^^^^^^^</span>
+</code></pre></div></div>
+
+<p>모든 method 호출을 두 가지 개별 단계로 생각할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">getX</span><span class="p">();</span>
+
+<span class="c1">// is actually two steps:</span>
+
+<span class="kd">const</span> <span class="nx">$getX</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">getX</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">$getX</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">foo</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>첫 번째 단계는 prototype의 property일 뿐인 method를 가져오는 것입니다(이러한 값이 function일 수 있습니다).
+두 번째 단계는 instance를 <kbd>this</kbd>로 사용해서 function을 call하는 것입니다. Instance <kbd>foo</kbd>에서 method <kbd>getX</kbd>를 가져오는 첫 번째 단계를 살펴보겠습니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/13_method-load.svg" alt="13" />
+    <figcaption>method load</figcaption>
+</figure>
+
+<p>Engine은 <kbd>foo</kbd> instance에서 시작하고, <kbd>foo</kbd>의 shape에 <kbd>'getX</kbd>’ property가 없다는 것을 알아챕니다. 그래서 engine은 prototype chain을 타고 올라간다. <kbd>Bar.prototype</kbd>에 도달하여, prototype의 shape를 봤을 때 offset <kbd>0</kbd>에 <kbd>'getX'</kbd> property가 있는 것을 알 수 있습니다. <kbd>Bar.prototype</kbd>에서 앞서 찾은 offset의 값을 보면 우리가 찾던 <kbd>JSFunction</kbd> <kbd>getX</kbd>를 찾을 수 있습니다.</p>
+
+<p>JavaScript의 유연함(flexibility)덕분에 prototype chain link를 다음과 같이 변형할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bar</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">getX</span><span class="p">();</span>
+<span class="c1">// → true</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">setPrototypeOf</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">getX</span><span class="p">();</span>
+<span class="c1">// → Uncaught TypeError: foo.getX is not a function</span>
+</code></pre></div></div>
+
+<p>위의 예제에서 <kbd>foo.getX</kbd>를 2번 호출했지만, 각각의 호출은 완전히 다른 의미와 결과를 가져옵니다. 그렇기 때문에 prototype은 JavaScript에서 object일 뿐이지만, 일반 object의 자체(own) property에 접근하는 속도를 높이는 것 보다 prototype의 property에 접근하는 속도를 높이는 것이 더 어렵습니다.</p>
+
+<p>일반적인 프로그램들을 보면, prototype의 property를 로드하는 작업은 매우 빈번하게 일어납니다.(method를 호출할때마다 말이죠.)</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Bar</span> <span class="p">{</span>
+	<span class="kd">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span> <span class="p">}</span>
+	<span class="nx">getX</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bar</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">getX</span><span class="p">();</span>
+<span class="c1">//        ^^^^^^^^^^</span>
+</code></pre></div></div>
+
+<p>앞서 우리는 어떻게 엔진이 Shape와 Inline Cache를 사용하여 정기적인 <em>자신의</em> property 로드를 최적화하는지 논의했습니다. 유사한 shape의 object에서 prototype property의 반복적 로드를 어떻게 최적화할 수 있을까요? 우리는 위에서 property 로드가 어떻게 일어나는지 보았습니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/14_prototype-load-checks-1.svg" alt="14" />
+    <figcaption>property load check 1</figcaption>
+</figure>
+
+<p>위의 그림과 같은 경우, 반복되는 로드에 대해 신속하게 처리하려면 다음 세 가지 사항을 알아야 합니다.</p>
+
+<ol>
+  <li><kbd>foo</kbd>의 shape는 <kbd>'getX'</kbd>를 포함하지 않으며, 변하지 않습니다. 즉, <kbd>foo</kbd>의 property를 추가하거나 삭제하지않고, 그리고 property attribute중 하나라도 변경하지 않는다는 뜻입니다.</li>
+  <li><kbd>foo</kbd>의 prototype은 초기의 <kbd>Bar.prototype</kbd>입니다. 즉, <kbd>Object.setPrototypeOf()</kbd>를 사용하거나 특별한 <kbd>_proto_</kbd> property에 값을 할당함으로써 <kbd>foo</kbd>의 prototype을 변경하지 않는다는 뜻입니다.</li>
+  <li><kbd>Bar.prototype</kbd>의 shape은 <kbd>'getX'</kbd>를 가지며 변하지 않습니다. 즉, <kbd>Bar.prototype</kbd>의 property를 추가하거나 삭제하지않고, 그리고 prototype attribute중 하나라도 변경하지 않는다는 뜻입니다.</li>
+</ol>
+
+<p>일반적인 경우, instance 자체에 대해 1회의 검사(1번)를 수행하고, prototype에 대해 2회의 검사(2, 3번)를 수행해야 하며, 이 검사에서는 우리가 찾고 있는 prototype이 포함된 prototype까지 올라갑니다. <kbd>1+2N</kbd>체크(여기서 <kbd>N</kbd>은 관련된 prototype의 수임)는 prototype 체인이 상대적으로 얕기 때문에 이 경우 나쁘지 않게 들릴 수 있지만, 엔진은 흔히 일반적인 DOM class 훨씬 더 긴 prototype chain을 처리해야 합니다. 그 예는 다음과 같습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">anchor</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'a'</span><span class="p">);</span>
+<span class="c1">// → HTMLAnchorElement</span>
+
+<span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">anchor</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">'title'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>우리는 <kbd>HTMLAnchorElement</kbd>를 가지고 있으며 여기서 <kbd>getAttribute()</kbd> 함수를 호출하였습니다. 이 단순한 anchor element의 prototype chain은 이미 6개의 prototype이 포함되어 있습니다. 대부분의 흥미로운 DOM method의 대부분은 <kbd>HTMLAnchorElement</kbd> prototype이 아니라 chain의 더 높은곳에 있습니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/15_anchor-prototype-chain.svg" alt="15" />
+    <figcaption>anchor prototype chain</figcaption>
+</figure>
+
+<p><kbd>getAttribute()</kbd> 함수는 <kbd>Element.prototype</kbd>에 있습니다. 즉, <kbd>anchor.getAttribute()</kbd>를 호출할 때마다 JavaScript는…</p>
+<ol>
+  <li><kbd>'getAttribute'</kbd>가 <kbd>anchor</kbd> object 자체에 없는지 확인하고,</li>
+  <li>바로 위의 prototype이 <kbd>HTMLAnchorElement.prototype</kbd>인지 확인하고,</li>
+  <li><kbd>'getAttribute'</kbd>가 없다는것을 확인하고,</li>
+  <li>다음 prototype이 <kbd>HTMLElement.prototype</kbd>이라는 것을 확인하고,</li>
+  <li>여기도 <kbd>'getAttribute'</kbd>가 없다는것을 확인하고,</li>
+  <li>결국 다음 prototype이 <kbd>Element.prototype</kbd>이라는 것을 확인하고,</li>
+  <li>그리고 거기에 <kbd>'getAttribute'</kbd>가 있다.</li>
+</ol>
+
+<p>총 7번의 확인을 해야합니다! 이러한 종류의 코드는 웹에서 매우 흔하기 때문에, 엔진은 prototype의 property 로드에 필요한 검사 횟수를 줄이기 위해 트릭을 사용합니다.</p>
+
+<p>앞에서 살펴봤던 예제로 돌아가서, 우리는 <kbd>foo</kbd>의 <kbd>'getX'</kbd>에 접근하기 위해서 3번의 확인을 거칩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Bar</span> <span class="p">{</span>
+	<span class="kd">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span> <span class="p">}</span>
+	<span class="nx">getX</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bar</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">$getX</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">getX</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이 property를 가지는 prototype이 나올 때까지 각 object에 대해서 shape 검사를 해야 합니다. 만약 prototype 검사를 property 검사에 넣어서 검사 횟수를 줄일 수 있다면 좋을 것 같습니다. 그리고 이것이 JavaScripe 엔진이 기본적으로, 그리고 간단하게 사용하는 트릭입니다. <strong>Prototype link를 instance 자체에 저장하는 대신, <kbd>Shape</kbd>에 저장하는 것입니다.</strong></p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/16_prototype-load-checks-2.svg" alt="16" />
+    <figcaption>prototype load cheks 2</figcaption>
+</figure>
+
+<p>각 shape는 prototype을 가리킵니다. 이것은 <kbd>foo</kbd>의 prototype이 변경될 때마다 shape도 변경되는 것을 뜻합니다. 이제 우리는 특정 property의 부재와 prototype link를 보기 위해서 object의 shape만 확인하면 가능하게 되었습니다.</p>
+
+<p>이 접근 방식을 사용하면 prototype에 대한 property access 속도를 높이기 위해 필요한 검사 횟수를 <kbd>1+2N</kbd>에서 <kbd>1+N</kbd>으로 줄일 수 있습니다. 하지만 해당 비용은 prototype chain 길이만큼 선형적으로 늘어나기 때문에 여전히 꽤 많은 비용이 들어가는 편입니다. 엔진은 검사 횟수를 상수가 되도록 더 줄이기 위해 다양한 트릭을 구현합니다(특히 동일한 property 로드의 후속 실행에 대해).</p>
+
+<h3 id="validity-cells">Validity cells</h3>
+
+<p>V8은 이러한 목적을 위해 특별하게 prototype shape를 처리합니다. 각 prototype은 다른 object(특히 다른 prototype과는 공유되지 않음)와 공유되지 않는 고유한 shape를 가지며, 각 prototype shape에는 특별한 <kbd>ValidityCell</kbd>이 연결됩니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/17_validitycell.svg" alt="17" />
+    <figcaption>validity cell</figcaption>
+</figure>
+
+<p>이 ValidityCell은 관련된 prototype 또는 위에 있는 prototype을 변경할 때마다 무효화됩니다. 이것이 정확히 어떻게 작동하는지 살펴봅시다.</p>
+
+<p>특정 prototype에서 후속(subsequent) 로드의 속도를 높이기 위해서 V8은 4개의 field를 가지는 Inline Cache를 배치합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/18_ic-validitycell.svg" alt="18" />
+    <figcaption>inline cache - validity cell</figcaption>
+</figure>
+
+<p>이 코드를 처음 실행하는 동안 inline cache를 워밍업할 때 V8은 해당 property가 발견된 offset, 즉 해당 property가 발견된 prototype(이 예제에서는 <kbd>Bar.prototype</kbd>)과 instance의 모양(여기서는 <kbd>foo</kbd>의 shape)을 기억합니다. 그리고 instance의 shape가 가리키는 <em>바로위의 prototype</em>(이 경우 <kbd>Bar.prototype</kbd>)의 ValidityCell을 가리키는 링크도 가지고 있습니다.</p>
+
+<p>다음번에 Inline Cache를 hit하면, 엔진은 instance의 shape와 <kbd>ValidityCell</kbd>을 확인합니다. 아직 valid하다면, 엔진은 <kbd>Prototype</kbd>의 <kbd>offset</kbd>에 직접 접근해서 추가적인 조회를 생략할수 있습니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/19_validitycell-invalid.svg" alt="19" />
+    <figcaption>validity cell - Invalid</figcaption>
+</figure>
+
+<p>Prototype이 변경되면 새로운 shape가 prototype에 할당되고 기존의 <kbd>ValidityCell</kbd> 무효(invalidated)가 됩니다. 따라서 다음 번 실행시에 Inline Cache는 누락되어서 성능이 저하됩니다.</p>
+
+<p>이전에 살펴봤던 DOM element예제로 돌아가보면, 예제의 <kbd>Object.prototype</kbd>을 변경하는 것은 <kbd>Object.prototype</kbd>의 Inline Cache가 무효화되는것 뿐만 아니라, 아래에 있는 <kbd>EventTarget.prototype</kbd>, <kbd>Node.prototype</kbd>, <kbd>Element.prototype</kbd> 그리고 마지막으로 <kbd>HTMLAnchorElement.prototype</kbd>사이에 있는 prototype 모두 무효화되는 것을 뜻한다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/javascript_engine_fundamentals_optimizing_prototypes/20_prototype-chain-validitycells.svg" alt="20" />
+    <figcaption>prototype chain - validity cell</figcaption>
+</figure>
+
+<p>실제로 코드가 실행되는 동안 <kbd>Object.prototype</kbd>을 수정한다는 것은 성능따위 창문밖으로 던져버린다는 것을 뜻합니다. 절대 하지마세요!</p>
+
+<p>구체적인 예를 들어 좀 더 알아보겠습니다. <kbd>Bar</kbd>라는 class가 있다고 가정하고, <kbd>Bar</kbd> object에 대한 method를 호출하는 함수 <kbd>loadX</kbd>가 있다고 해보겠습니다. 동일한 class의 instance에서 이 <kbd>loadX</kbd> 함수를 몇 번 호출해보겠습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Bar</span> <span class="p">{</span> <span class="cm">/* … */</span> <span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">loadX</span><span class="p">(</span><span class="nx">bar</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">getX</span><span class="p">();</span> <span class="c1">// IC for 'getX' on `Bar` instances.</span>
+<span class="p">}</span>
+
+<span class="nx">loadX</span><span class="p">(</span><span class="k">new</span> <span class="nx">Bar</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
+<span class="nx">loadX</span><span class="p">(</span><span class="k">new</span> <span class="nx">Bar</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="c1">// IC in `loadX` now links the `ValidityCell` for</span>
+<span class="c1">// `Bar.prototype`.</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">newMethod</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">=&gt;</span> <span class="nx">y</span><span class="p">;</span>
+<span class="c1">// The `ValidityCell` in the `loadX` IC is invalid</span>
+<span class="c1">// now, because `Object.prototype` changed.</span>
+</code></pre></div></div>
+
+<p><kbd>loadX</kbd>에 있는 inline cache는 <kbd>Bar.prototype</kbd>의 <kbd>ValidityCell</kbd>을 가리킵니다. 만약 <kbd>Object.prototype</kbd>(JavaScript의 prototype들 중에서 가장 root에 있음)에 어떤 변형을 주는 작업을 한다면, 그 <kbd>ValidityCell</kbd>은 무효화되고 다음번 실행시에 기존의 Inline Cache가 누락되고 성능이 저하됩니다.</p>
+
+<p><kbd>Object.prototype</kbd>를 변형시키는 것은 언제나 좋지않은 아이디어입니다. 왜냐하면 엔진이 그 시점까지 prototype 로드하면서 생긴 모든 Inline Cache를 무효화시키기 때문입니다. 다음 코드는 하지 <em>말아야</em> 할 다은 예입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* … */</span> <span class="p">};</span>
+
+<span class="c1">// Run critical code:</span>
+<span class="nx">someObject</span><span class="p">.</span><span class="nx">foo</span><span class="p">();</span>
+<span class="c1">// End of critical code.</span>
+
+<span class="k">delete</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위의 코드에서 <kbd>Object.prototype</kbd>를 확장했고, 이는 그 시점까지 엔진이 올려놓은 모든 prototype의 Inline Cache를 무효로 함을 뜻합니다. 그런 다음 새로 만든 prototype method를 사용하는 코드를 실행합니다. 엔진은 처음부터 다시 시작해서, 모든 prototype property에 대한 접근을 위해 새로운 Inline Cache를 만들어야 합니다. 그리고 마지막으로 “스스로 깨끗하게 정리(clean up after ourselves)”하기 위해서 앞서 추가했던 prototye method를 삭제합니다.</p>
+
+<p>정리란 좋은 아이디어처럼 들립니다. 그렇지 않나요? 글쎄요, 위의 경우에서는 좋지 않은 상황을 더욱 악화시키는 요소로 작용합니다. Property의 삭제는 <kbd>Object.prototype</kbd>의 수정을 뜻하므로 Inline Cache는 모두 다시 무효가 되고 엔진은 다시 처음부터 다시 작업을 해야 합니다.</p>
+
+<blockquote>
+  <p><strong>Summary</strong>: Prototype은 object일 뿐이지만 prototype에서 method 검색 성능을 최적화하기 위해 JavaScript 엔진에서 특별하게 처리됩니다. Prototype은 건드리지 마십시오! 또는 prototype을 정말 건드려야 하는 경우, 다른 코드가 실행되기 전에 prototype을 제작하십시오. 그러면 당신의 코드가 실행되는 동안 엔진의 모든 최적화가 무효화되지 않습니다.</p>
+</blockquote>
+
+<h2 id="take-aways">Take-aways</h2>
+
+<p>JavaScript 엔진이 object와 array를 저장하는 방법과, <kbd>Shape</kbd>, Inlice Cache 그리고 <kbd>ValidityCell</kbd>을 통해 prototype 작업을 최적화하는 방법을 배웠습니다. 이러한 지식을 바탕으로 성능을 향상시킬 수 있는 몇 가지 실용적인 JavaScript 코딩 팁을 확인했습니다. <strong>prototype을 건드리지 마십시오</strong>(만일 정말로, 정말로 필요할때는 다른 코드들을 실행하기 전에 건드리십시오).</p>
+
+      </div>
+      
+        
+      
+    </article>
+  </div>
+</main>
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+  <div class="inner">
+    <div class="copyright">
+      
+        <p>&copy; 2018 First Blog.</p>
+      
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async src="/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '8K2C62GHZZ',
+  apiKey: 'ac6b1c9d2ea0e17891c512e13491b27b',
+  indexName: 'my_first_blog_search',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>
