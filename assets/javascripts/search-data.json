@@ -1,223 +1,188 @@
 var store = [{
-        "title": "2018-5-25 Workout Log: kendo",
+        "title": "2018-6-25 Workout Log: kendo",
         "excerpt":"        View this post on Instagram           #검도 #kendo #매일운동 #저녁운동  A post shared by  #kendo #검도 #strength (@dochaebi) on Jun 25, 2018 at 5:09am PDT ","categories": ["workout"],
         "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/05/25/workout-log-kendo/"
-      },{
-        "title": "2018-5-26 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #strength #deadlift 105kg 5X5 #benchpress 70kg 5-5-3-4-5 #pullup 10-5-6-6-1  A post shared by  #kendo #검도 #strength (@dochaebi) on Jun 26, 2018 at 4:45am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/05/26/workout-log-strength/"
-      },{
-        "title": "2018-5-28 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #strength #squat 90kg 5-5-5-4-5 #benchpress 65kg 5X5  A post shared by  #kendo #검도 #strength (@dochaebi) on Jun 28, 2018 at 7:43am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/05/28/workout-log-strength/"
-      },{
-        "title": "2018-5-29 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #squat 70kg 10-10 #treadmill 30min  A post shared by  #kendo #검도 #strength (@dochaebi) on Jun 29, 2018 at 4:54am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/05/29/workout-log-strength/"
-      },{
-        "title": "2018-6-2 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #장마 #검도 #kumdo #kendo  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 2, 2018 at 4:51am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/06/02/workout-log-kendo/"
-      },{
-        "title": "2018-6-3 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #strength #deadlift 105kg 5X5 #benchpress 65kg 2X5 70kg 3X5 #treadmill 15min  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 3, 2018 at 5:13am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/03/workout-log-strength/"
-      },{
-        "title": "2018-6-4 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #검도 #kumdo #kendo  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 4, 2018 at 5:31am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/06/04/workout-log-kendo/"
-      },{
-        "title": "2018-6-5 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkout #squat 90kg 5X5 #pullup 8-8-8 #treadmillworkout 15min  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 5, 2018 at 4:27am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/05/workout-log-strength/"
-      },{
-        "title": "2018-6-7 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dailyworkout  #deadlift 105kg 5X5 #benchpress 70kg 5X5 #legraises 3X30 #treadmillworkout 10min  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 6, 2018 at 11:11pm PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/07/workout-log-strength/"
-      },{
-        "title": "2018-6-10 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkout  #squat 90kg 5X5 #pushpress 30kg 5, 35kg 5, 40kg 5, 45kg 5, 50kg 5 #pullup 8-8-8-8 #legraises 30-30-30  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 10, 2018 at 4:57am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/10/workout-log-strength/"
-      },{
-        "title": "2018-6-12 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout #deadlift 110kg 5X5 #benchpress 70kg 5X5 #legraises 3X30  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 12, 2018 at 4:40am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/12/workout-log-strength/"
-      },{
-        "title": "2018-6-17 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #squat 90kg 5X5 #pushpress 50kg 5X5 #hainglegraise 10-10-10 스쿼트 90kg 5X5를 3번 성공했다. 다음엔 95kg 5X5 해볼것.  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 17, 2018 at 5:30am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/17/workout-log-strength/"
-      },{
-        "title": "2018-6-19 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #deadlift 110kg 5X5 #benchpress 70kg 5X5  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 19, 2018 at 4:03am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/19/workout-log-strength/"
-      },{
-        "title": "2018-6-23 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkout  #squat 95kg 5X4 #pushpress 50kg 5X5 스쿼트 95kg 첫 시도. 5x5는 힘들거같아서 4회씩 5세트 수행. 다음엔 5회씩 4세트 수행 할 것.  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 22, 2018 at 9:46pm PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/23/workout-log-strength/"
-      },{
-        "title": "2018-6-24 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #treadmillworkout 60min 유산소 할때는 무선이어폰이 필수인걸 느꼈다. 하나 알아봐야겠다. #bosesportfreewireless 혹은 #samsungiconx2018  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 24, 2018 at 3:50am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/24/workout-log-strength/"
-      },{
-        "title": "2018-6-25 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkout  #deadlift 110kg 5x5 #benchpress 75kg 3x5 #benchpress 5x5 실패하고 3세트만 함... 5x5 프로그램을 8주 주기로 제대로 돌려봐야겠다.  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 24, 2018 at 9:10pm PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/25/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/06/25/workout-log-kendo/"
       },{
         "title": "2018-6-26 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #treadmillworkout 60min  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 26, 2018 at 5:11am PDT ","categories": ["workout"],
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #strength #deadlift 105kg 5X5 #benchpress 70kg 5-5-3-4-5 #pullup 10-5-6-6-1  A post shared by  #kendo #검도 #strength (@dochaebi) on Jun 26, 2018 at 4:45am PDT ","categories": ["workout"],
         "tags": ["strength"],
         "url": "https://shlrur.github.io//workout/2018/06/26/workout-log-strength/"
       },{
-        "title": "2018-6-27 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkout  #squat 95kg 5x4 #pullup 10kg 5-5-3-3-3 #legraises 30-30-30 #squat 95kg 4repx5set 한번만 더 해보고 5repx5set 도전. #weighted #pull은 너무 힘들어...  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 26, 2018 at 10:43pm PDT ","categories": ["workout"],
+        "title": "2018-6-28 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #strength #squat 90kg 5-5-5-4-5 #benchpress 65kg 5X5  A post shared by  #kendo #검도 #strength (@dochaebi) on Jun 28, 2018 at 7:43am PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/06/27/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/06/28/workout-log-strength/"
       },{
-        "title": "2018-6-31 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkout  #deadlift 110kg 5x5 #curl 8 up down 시간없어서 많이 못했다...  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 30, 2018 at 9:40pm PDT ","categories": ["workout"],
+        "title": "2018-6-29 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #squat 70kg 10-10 #treadmill 30min  A post shared by  #kendo #검도 #strength (@dochaebi) on Jun 29, 2018 at 4:54am PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/07/01/workout-log-strength/"
-      },{
-        "title": "2018-7-1 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #검도 #kendo 3주만에 호구썼더니 #넘나 #힘든것  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 1, 2018 at 4:52am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/07/01/workout-log-kendo/"
+        "url": "https://shlrur.github.io//workout/2018/06/29/workout-log-strength/"
       },{
         "title": "2018-7-2 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #검도 #kendo 19:00 ~ 21:30 #머리 #아파  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 2, 2018 at 7:23am PDT ","categories": ["workout"],
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #장마 #검도 #kumdo #kendo  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 2, 2018 at 4:51am PDT ","categories": ["workout"],
         "tags": ["kendo"],
         "url": "https://shlrur.github.io//workout/2018/07/02/workout-log-kendo/"
       },{
         "title": "2018-7-3 Workout Log: strength",
-        "excerpt":"View this post on Instagram #squat 95kg 5x4 #benchpress 75kg 5-4-4-3-3 #fail #dips 10-10-10 #legraises 30-30-30 #cardio 20min #스쿼트 다음엔 95kg로 5곱5 해볼것. #benchpress 실패...ㅠㅠ 그래서 #dips함. Next time, I will try a 95kg 5x5 #squat. #benchpress 5x5 failed... so try #dips. A post shared by #kendo #검도 #strength (@dochaebi)...","categories": ["workout"],
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #strength #deadlift 105kg 5X5 #benchpress 65kg 2X5 70kg 3X5 #treadmill 15min  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 3, 2018 at 5:13am PDT ","categories": ["workout"],
         "tags": ["strength"],
         "url": "https://shlrur.github.io//workout/2018/07/03/workout-log-strength/"
       },{
-        "title": "2018-7-6 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkout  #검도 #kendo #운동후 #물회 공복에 운동하니까 머리아프다... 다음엔 밥먹고 검도할 것.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 6, 2018 at 5:29am PDT ","categories": ["workout"],
+        "title": "2018-7-4 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #검도 #kumdo #kendo  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 4, 2018 at 5:31am PDT ","categories": ["workout"],
         "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/07/06/workout-log-kendo/"
+        "url": "https://shlrur.github.io//workout/2018/07/04/workout-log-kendo/"
       },{
-        "title": "2018-7-8 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkouts  #검도 #kendo #keepgoing #dontbackdown  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 8, 2018 at 4:26am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/07/08/workout-log-kendo/"
-      },{
-        "title": "2018-7-8 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dailyworkouts  #deadlift 110kg 5x5 #pullup 8-8-8-8  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 7, 2018 at 9:56pm PDT ","categories": ["workout"],
+        "title": "2018-7-5 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkout #squat 90kg 5X5 #pullup 8-8-8 #treadmillworkout 15min  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 5, 2018 at 4:27am PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/07/08/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/07/05/workout-log-strength/"
       },{
-        "title": "2018-7-9 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkout  #cardio 60min  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 9, 2018 at 2:41am PDT ","categories": ["workout"],
+        "title": "2018-7-7 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dailyworkout  #deadlift 105kg 5X5 #benchpress 70kg 5X5 #legraises 3X30 #treadmillworkout 10min  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 6, 2018 at 11:11pm PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/07/09/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/07/07/workout-log-strength/"
       },{
         "title": "2018-7-10 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dailyworkouts  #squat 95kg 5-5-5-3-5 #fail #pushpress 55kg 5x5 #legraises 30-30-30 It&#39;s too hard that do squat 95kg 5x5... So i&#39;m failed.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 9, 2018 at 10:01pm PDT ","categories": ["workout"],
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkout  #squat 90kg 5X5 #pushpress 30kg 5, 35kg 5, 40kg 5, 45kg 5, 50kg 5 #pullup 8-8-8-8 #legraises 30-30-30  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 10, 2018 at 4:57am PDT ","categories": ["workout"],
         "tags": ["strength"],
         "url": "https://shlrur.github.io//workout/2018/07/10/workout-log-strength/"
       },{
-        "title": "2018-7-13 Workout Log: strength",
-        "excerpt":"View this post on Instagram #매일운동 #점심운동 #dailyworkouts #deadlift 110kg 2x5 I was going to set five, but only two sets. And I trained both my back and forehead with low weight and high rebound numbers. #pullups, #latpulldowns, #tbarrows, #barbellcurls, #dumbellcurls, #etc... 엄청 힘들었다... A post shared by #kendo #검도...","categories": ["workout"],
+        "title": "2018-7-12 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout #deadlift 110kg 5X5 #benchpress 70kg 5X5 #legraises 3X30  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 12, 2018 at 4:40am PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/07/13/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/07/12/workout-log-strength/"
       },{
-        "title": "2018-7-16 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkouts  #squats 95kg 5x5 #benchpressing 70kg 5x5 #dumbellshoulderpress 14kg 8-6-5-5-5-6 I did first 95kg squat success. and I lowered the weight of the benchpress.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 16, 2018 at 4:16am PDT ","categories": ["workout"],
+        "title": "2018-7-17 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #squat 90kg 5X5 #pushpress 50kg 5X5 #hainglegraise 10-10-10 스쿼트 90kg 5X5를 3번 성공했다. 다음엔 95kg 5X5 해볼것.  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 17, 2018 at 5:30am PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/07/16/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/07/17/workout-log-strength/"
       },{
-        "title": "2018-7-18 Workout Log: strength",
-        "excerpt":"View this post on Instagram #매일운동 #점심운동 #dailyworkouts #deadlifting 110kg 3x5 #pullups 6-6-6-6 데드리프트 5x5하려했는데 3세트째 하는중에 갈비뼈에 통증이와서 남은 두 세트는 생략함. 평소보다 숨을 많이 넣은채로 복압유지해서 그런듯. 다음엔 좀 더 집중해서 할 것. I tried to deadlifts 110kg 5x5, but during the third set, I had a pain...","categories": ["workout"],
+        "title": "2018-7-19 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #deadlift 110kg 5X5 #benchpress 70kg 5X5  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 19, 2018 at 4:03am PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/07/18/workout-log-strength/"
-      },{
-        "title": "2018-7-19 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkouts  #검도 #kendo #기본동작연습 #basictraining  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 19, 2018 at 4:27am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/07/19/workout-log-kendo/"
-      },{
-        "title": "2018-7-20 Workout Log: strength",
-        "excerpt":"View this post on Instagram #매일운동 #점심운동 #dailyworkouts #chestday #benchpressing #smithmachine 40kg-18 50kg-12 55kg-7 60kg-3 #dips #assist -20kg 3-10 #peckdeck 20kg-20 35kg-18 40kg-12 45kg-8 50kg-5 25kg-20 #benchpressing #dumbell 10kg-20 12kg-12 14kg-8 16kg-5 #benchpressing 25kg-30 #overheadtricepextensions #dumbell 14kg-20 16kg-12 18kg-10 14kg-20 A post shared by #kendo #검도 #strength (@dochaebi) on Aug...","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/07/20/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/07/19/workout-log-strength/"
       },{
         "title": "2018-7-23 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dailyworkouts  #squats 90kg 5x5 #barbellshrugged 20kg, 40kg, 50kg, 60kg, 70kg(each 10reps) #pullups 8-6 #hainglegraise 3-10 #bicepscurl 20kg 8 #upanddown  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 22, 2018 at 10:05pm PDT ","categories": ["workout"],
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkout  #squat 95kg 5X4 #pushpress 50kg 5X5 스쿼트 95kg 첫 시도. 5x5는 힘들거같아서 4회씩 5세트 수행. 다음엔 5회씩 4세트 수행 할 것.  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 22, 2018 at 9:46pm PDT ","categories": ["workout"],
         "tags": ["strength"],
         "url": "https://shlrur.github.io//workout/2018/07/23/workout-log-strength/"
       },{
-        "title": "2018-7-28 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #운동하는남자 #dailyworkouts #kendo #검도 #하루두탕 #힘들다  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 28, 2018 at 4:58am PDT ","categories": ["workout"],
+        "title": "2018-7-24 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #treadmillworkout 60min 유산소 할때는 무선이어폰이 필수인걸 느꼈다. 하나 알아봐야겠다. #bosesportfreewireless 혹은 #samsungiconx2018  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 24, 2018 at 3:50am PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/07/24/workout-log-strength/"
+      },{
+        "title": "2018-7-25 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkout  #deadlift 110kg 5x5 #benchpress 75kg 3x5 #benchpress 5x5 실패하고 3세트만 함... 5x5 프로그램을 8주 주기로 제대로 돌려봐야겠다.  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 24, 2018 at 9:10pm PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/07/25/workout-log-strength/"
+      },{
+        "title": "2018-7-26 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #treadmillworkout 60min  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 26, 2018 at 5:11am PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/07/26/workout-log-strength/"
+      },{
+        "title": "2018-7-27 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkout  #squat 95kg 5x4 #pullup 10kg 5-5-3-3-3 #legraises 30-30-30 #squat 95kg 4repx5set 한번만 더 해보고 5repx5set 도전. #weighted #pull은 너무 힘들어...  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 26, 2018 at 10:43pm PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/07/27/workout-log-strength/"
+      },{
+        "title": "2018-7-31 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkout  #deadlift 110kg 5x5 #curl 8 up down 시간없어서 많이 못했다...  A post shared by  #kendo #검도 #strength (@dochaebi) on Jul 30, 2018 at 9:40pm PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/07/31/workout-log-strength/"
+      },{
+        "title": "2018-8-1 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #검도 #kendo 3주만에 호구썼더니 #넘나 #힘든것  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 1, 2018 at 4:52am PDT ","categories": ["workout"],
         "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/07/28/workout-log-kendo/"
+        "url": "https://shlrur.github.io//workout/2018/08/01/workout-log-kendo/"
       },{
-        "title": "2018-7-28 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dailyworkouts  #squats 95kg 5x5 #hainglegraise 3x15 시간이 없어서 #스쿼트 랑 #복근운동 만 했다. 저녁운동은 열심히 해야지.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 27, 2018 at 10:57pm PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/07/28/workout-log-strength/"
-      },{
-        "title": "2018-7-30 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #매일운동 #아침운동 #dailyworkouts  #검도 #kendo 아침 6시 30분 수련. 느므 힘들다.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 29, 2018 at 8:01pm PDT ","categories": ["workout"],
+        "title": "2018-8-2 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dayliworkout  #검도 #kendo 19:00 ~ 21:30 #머리 #아파  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 2, 2018 at 7:23am PDT ","categories": ["workout"],
         "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/07/30/workout-log-kendo/"
+        "url": "https://shlrur.github.io//workout/2018/08/02/workout-log-kendo/"
       },{
-        "title": "2018-8-1 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkouts #squats 100kg 5x3 #pushpresses 40kg-5, 50kg-5, 60kg-5 #hanginglegraises 3x15 My first 100kg squat.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 31, 2018 at 11:21pm PDT ","categories": ["workout"],
+        "title": "2018-8-3 Workout Log: strength",
+        "excerpt":"View this post on Instagram #squat 95kg 5x4 #benchpress 75kg 5-4-4-3-3 #fail #dips 10-10-10 #legraises 30-30-30 #cardio 20min #스쿼트 다음엔 95kg로 5곱5 해볼것. #benchpress 실패...ㅠㅠ 그래서 #dips함. Next time, I will try a 95kg 5x5 #squat. #benchpress 5x5 failed... so try #dips. A post shared by #kendo #검도 #strength (@dochaebi)...","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/08/01/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/08/03/workout-log-strength/"
       },{
-        "title": "2018-8-3 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #kendo #검도스타그램  검도는 항상 운동후에 뿌듯함을 준다.  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 3, 2018 at 5:31am PDT ","categories": ["workout"],
+        "title": "2018-8-6 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkout  #검도 #kendo #운동후 #물회 공복에 운동하니까 머리아프다... 다음엔 밥먹고 검도할 것.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 6, 2018 at 5:29am PDT ","categories": ["workout"],
         "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/08/03/workout-log-kendo/"
+        "url": "https://shlrur.github.io//workout/2018/08/06/workout-log-kendo/"
       },{
-        "title": "2018-8-4 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #데드리프트 #deadlifting 105kg 5x5 #푸시프레스 #pushpresses 60kg 5x5 #케이블트라이셉스익스텐션 #cabletricepextension 65kg 8 up&amp;down #행잉레그레이즈 #hanginglegraises 3x15  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 4, 2018 at 5:52am PDT ","categories": ["workout"],
-        "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/08/04/workout-log-strength/"
+        "title": "2018-8-8 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkouts  #검도 #kendo #keepgoing #dontbackdown  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 8, 2018 at 4:26am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/08/08/workout-log-kendo/"
       },{
-        "title": "2018-8-7 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #점심운동 #dailyworkouts  #squats #스쿼트 100kg 5x3 #benchpressing #벤치프레스 60kg 5x5 #pullups #풀업 6-6-6-6 #hanginglegraises #행잉레그레이즈 15-15-15-15  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 6, 2018 at 9:40pm PDT ","categories": ["workout"],
+        "title": "2018-8-8 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dailyworkouts  #deadlift 110kg 5x5 #pullup 8-8-8-8  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 7, 2018 at 9:56pm PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/08/07/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/08/08/workout-log-strength/"
+      },{
+        "title": "2018-8-9 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkout  #cardio 60min  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 9, 2018 at 2:41am PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/08/09/workout-log-strength/"
       },{
         "title": "2018-8-10 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts #deadlifting #데드리프트 110kg 5x5 #pullups #풀업 5-5-5-5-8 #hanginglegraises #행잉레그레이즈  15-15-15 #bicepscurl #이두컬 15kg 8 up&amp;down  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 10, 2018 at 6:46am PDT ","categories": ["workout"],
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dailyworkouts  #squat 95kg 5-5-5-3-5 #fail #pushpress 55kg 5x5 #legraises 30-30-30 It&#39;s too hard that do squat 95kg 5x5... So i&#39;m failed.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 9, 2018 at 10:01pm PDT ","categories": ["workout"],
         "tags": ["strength"],
         "url": "https://shlrur.github.io//workout/2018/08/10/workout-log-strength/"
       },{
         "title": "2018-8-13 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #benchpressing #벤치프레스 70kg 5x5 #squats #스쿼트 100kg 4x4 #hanginglegraises #행잉레그레이즈 15-15-15 스쿼트 고중량시에 왼다리에 힘을 안준다. 다음엔 신경써서 해야함.  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 13, 2018 at 5:19am PDT ","categories": ["workout"],
+        "excerpt":"View this post on Instagram #매일운동 #점심운동 #dailyworkouts #deadlift 110kg 2x5 I was going to set five, but only two sets. And I trained both my back and forehead with low weight and high rebound numbers. #pullups, #latpulldowns, #tbarrows, #barbellcurls, #dumbellcurls, #etc... 엄청 힘들었다... A post shared by #kendo #검도...","categories": ["workout"],
         "tags": ["strength"],
         "url": "https://shlrur.github.io//workout/2018/08/13/workout-log-strength/"
       },{
-        "title": "2018-8-19 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #deadlifting #데드리프트 110kg 5x5 #benchpressing #벤치프레스 70kg 5x5  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 19, 2018 at 4:26am PDT ","categories": ["workout"],
+        "title": "2018-8-16 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkouts  #squats 95kg 5x5 #benchpressing 70kg 5x5 #dumbellshoulderpress 14kg 8-6-5-5-5-6 I did first 95kg squat success. and I lowered the weight of the benchpress.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 16, 2018 at 4:16am PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/08/19/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/08/16/workout-log-strength/"
+      },{
+        "title": "2018-8-18 Workout Log: strength",
+        "excerpt":"View this post on Instagram #매일운동 #점심운동 #dailyworkouts #deadlifting 110kg 3x5 #pullups 6-6-6-6 데드리프트 5x5하려했는데 3세트째 하는중에 갈비뼈에 통증이와서 남은 두 세트는 생략함. 평소보다 숨을 많이 넣은채로 복압유지해서 그런듯. 다음엔 좀 더 집중해서 할 것. I tried to deadlifts 110kg 5x5, but during the third set, I had a pain...","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/08/18/workout-log-strength/"
+      },{
+        "title": "2018-8-19 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkouts  #검도 #kendo #기본동작연습 #basictraining  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 19, 2018 at 4:27am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/08/19/workout-log-kendo/"
+      },{
+        "title": "2018-8-20 Workout Log: strength",
+        "excerpt":"View this post on Instagram #매일운동 #점심운동 #dailyworkouts #chestday #benchpressing #smithmachine 40kg-18 50kg-12 55kg-7 60kg-3 #dips #assist -20kg 3-10 #peckdeck 20kg-20 35kg-18 40kg-12 45kg-8 50kg-5 25kg-20 #benchpressing #dumbell 10kg-20 12kg-12 14kg-8 16kg-5 #benchpressing 25kg-30 #overheadtricepextensions #dumbell 14kg-20 16kg-12 18kg-10 14kg-20 A post shared by #kendo #검도 #strength (@dochaebi) on Aug...","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/08/20/workout-log-strength/"
+      },{
+        "title": "2018-8-23 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dailyworkouts  #squats 90kg 5x5 #barbellshrugged 20kg, 40kg, 50kg, 60kg, 70kg(each 10reps) #pullups 8-6 #hainglegraise 3-10 #bicepscurl 20kg 8 #upanddown  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 22, 2018 at 10:05pm PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/08/23/workout-log-strength/"
       },{
         "title": "JavaScript engine fundamentals: Shapes and Inline Caches",
         "excerpt":"이 포스트는 JavaScript engine fundamentals: Shapes and Inline Caches 의 글을 번역한 것입니다. 이 문서는 V8 엔진뿐만 아니라 모든 JavaScript 엔진에 공통으로 적용되는 몇 가지 핵심 기본 사항을 설명합니다. JavaScript 개발자로서, JavaScript 엔진이 어떻게 작동하는지에 대한 이해를 통해 코드의 성능 특성을 추론할 수 있습니다. Note : 문서를 읽는 것보다 발표를...","categories": ["develog"],
         "tags": ["javascript"],
         "url": "https://shlrur.github.io//javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/"
+      },{
+        "title": "2018-8-28 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #운동하는남자 #dailyworkouts #kendo #검도 #하루두탕 #힘들다  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 28, 2018 at 4:58am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/08/28/workout-log-kendo/"
+      },{
+        "title": "2018-8-28 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dailyworkouts  #squats 95kg 5x5 #hainglegraise 3x15 시간이 없어서 #스쿼트 랑 #복근운동 만 했다. 저녁운동은 열심히 해야지.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 27, 2018 at 10:57pm PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/08/28/workout-log-strength/"
+      },{
+        "title": "2018-8-30 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #매일운동 #아침운동 #dailyworkouts  #검도 #kendo 아침 6시 30분 수련. 느므 힘들다.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 29, 2018 at 8:01pm PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/08/30/workout-log-kendo/"
       },{
         "title": "Immediately-Invoked Function Expression (IIFE)",
         "excerpt":"이 포스트는 Immediately-Invoked Function Expression (IIFE) 의 글을 번역한 것입니다. 잘 모르시겠지만, 저는 용어 사용에 있어서 까다로운 편입니다. 그래서 유명하지만 오해의 소지가 있는 JavaScript 용어인 “self-executing anonymous function” (혹은 self-invoked anonymous function) 을 매우 자주 접한 후, 제 생각을 article에 정리해야겠다고 생각했습니다. 이 패턴이 실제로 어떻게 작용하는지에 대해 철저한 정보를...","categories": ["develog"],
@@ -229,6 +194,21 @@ var store = [{
         "tags": ["javascript"],
         "url": "https://shlrur.github.io//javascripts/javascript-engine-fundamentals-optimizing-prototypes/"
       },{
+        "title": "2018-9-1 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #매일운동 #점심운동 #dayliworkouts #squats 100kg 5x3 #pushpresses 40kg-5, 50kg-5, 60kg-5 #hanginglegraises 3x15 My first 100kg squat.  A post shared by  #kendo #검도 #strength (@dochaebi) on Aug 31, 2018 at 11:21pm PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/09/01/workout-log-strength/"
+      },{
+        "title": "2018-9-3 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #kendo #검도스타그램  검도는 항상 운동후에 뿌듯함을 준다.  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 3, 2018 at 5:31am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/09/03/workout-log-kendo/"
+      },{
+        "title": "2018-9-4 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #데드리프트 #deadlifting 105kg 5x5 #푸시프레스 #pushpresses 60kg 5x5 #케이블트라이셉스익스텐션 #cabletricepextension 65kg 8 up&amp;down #행잉레그레이즈 #hanginglegraises 3x15  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 4, 2018 at 5:52am PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/09/04/workout-log-strength/"
+      },{
         "title": "JavaScript design pattern: overview",
         "excerpt":"Software engineer분야에서 말하는 design pattern이란, software를 설계할 때 흔히 일어나는 문제에 대해서 일반적으로 재사용 할 수 있는 해결책을 뜻합니다. JavaScript Design Pattern에서는 JavaScript 언어를 사용하면서 주로 사용하게 되는, 혹은 주로 사용하고 있었던 design pattern에 대해서 하나씩 살펴보려고 합니다. JavaScript framework 중에서 주로 Angular를 사용해서 프로젝트를 진행하면서 framework에서 정해놓은 혹은 추천하는...","categories": ["develog"],
         "tags": ["javascriptdesignpattern"],
@@ -239,23 +219,13 @@ var store = [{
         "tags": ["javascriptdesignpattern"],
         "url": "https://shlrur.github.io//develog/2018/09/06/1-constructor/"
       },{
-        "title": "2018-9-6 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #dailyworkouts  #squats #스쿼트 90kg 5x5 #benchpressing #벤치프레스 70kg 5x5 #pullups #풀업 9-9-7 #intervaltraining #cycle 4set 30s/1m30s 싸이클 인터벌트레이닝 했더니 허벅지 돌되는거같다. 감각이 없어짐.  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 5, 2018 at 11:50pm PDT ","categories": ["workout"],
+        "title": "2018-9-7 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #점심운동 #dailyworkouts  #squats #스쿼트 100kg 5x3 #benchpressing #벤치프레스 60kg 5x5 #pullups #풀업 6-6-6-6 #hanginglegraises #행잉레그레이즈 15-15-15-15  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 6, 2018 at 9:40pm PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/09/06/workout-log-strength/"
-      },{
-        "title": "2018-9-8 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #운동 #저녁운동 #dailyworkouts  #kendo #검도 #온몸이쑤신다 #어깨결림  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 8, 2018 at 7:46am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/09/08/workout-log-kendo/"
-      },{
-        "title": "2018-9-10 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkouts  #kendo #검도 #합동연무 #온몸이쑤신다  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 9, 2018 at 9:21am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/09/10/workout-log-kendo/"
+        "url": "https://shlrur.github.io//workout/2018/09/07/workout-log-strength/"
       },{
         "title": "2018-9-10 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #점심운동 #dailyworkouts  #deadlifting #데드리프트 110kg  5x5 #hanginglegraises 15-15-15 #pushpresses #푸시프레스 40kg-50kg-55kg 5회씩  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 9, 2018 at 10:03pm PDT ","categories": ["workout"],
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts #deadlifting #데드리프트 110kg 5x5 #pullups #풀업 5-5-5-5-8 #hanginglegraises #행잉레그레이즈  15-15-15 #bicepscurl #이두컬 15kg 8 up&amp;down  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 10, 2018 at 6:46am PDT ","categories": ["workout"],
         "tags": ["strength"],
         "url": "https://shlrur.github.io//workout/2018/09/10/workout-log-strength/"
       },{
@@ -269,83 +239,123 @@ var store = [{
         "tags": ["javascriptdesignpattern"],
         "url": "https://shlrur.github.io//develog/2018/09/12/3-fatory/"
       },{
-        "title": "2018-9-16 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #dailyworkouts #squats #스쿼트 95kg 5x5 #benchpressing #벤치프레스 70kg 5, 75kg 5-5, 70kg 5-5 #luraise #루레이즈 5kg 4x10 벤치 언제 100kg로 해보나... :(  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 16, 2018 at 5:39am PDT ","categories": ["workout"],
+        "title": "2018-9-13 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #benchpressing #벤치프레스 70kg 5x5 #squats #스쿼트 100kg 4x4 #hanginglegraises #행잉레그레이즈 15-15-15 스쿼트 고중량시에 왼다리에 힘을 안준다. 다음엔 신경써서 해야함.  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 13, 2018 at 5:19am PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/09/16/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/09/13/workout-log-strength/"
       },{
         "title": "Obserber Design Pattern",
         "excerpt":"Observer pattern을 간단히 말하자면, subject라는 object가 observer라는 object의 목록을 유지 관리하면서 observer들의 상태 변경을 자동으로 알려주는 design pattern이라고 할 수 있습니다. Subject가 observer들에게 특정 알림을 보내고 싶을 때는 해당 정보를 observer들에게 broadcast 합니다. 특정 observer에게 더이상 알림을 보내고싶지 않을때는 observer 목록에서 해당 observer들을 삭제하면 됩니다. GoF의 Design Patterns: Elements of...","categories": ["develog"],
         "tags": ["javascriptdesignpattern"],
         "url": "https://shlrur.github.io//develog/2018/09/18/4-observer/"
       },{
-        "title": "2018-9-18 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #점심운동 #dailyworkouts  #kendo #검도 #죽도집 #생일선물 #감사합니다  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 18, 2018 at 12:08am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/09/18/workout-log-kendo/"
-      },{
-        "title": "2018-9-19 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #kendo #검도 #합동연무 #수리된죽도 #고마워  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 19, 2018 at 5:59am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/09/19/workout-log-kendo/"
-      },{
-        "title": "2018-9-22 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #kendo #검도 #누드곱창맛있다  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 22, 2018 at 6:15am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/09/22/workout-log-kendo/"
-      },{
-        "title": "2018-9-24 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #dailyworkouts  #kendo #검도 #이번주에두번째  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 24, 2018 at 5:26am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/09/24/workout-log-kendo/"
-      },{
-        "title": "2018-9-25 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #dailyworkouts  #kendo #검도  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 25, 2018 at 7:42am PDT ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/09/25/workout-log-kendo/"
-      },{
-        "title": "2018-9-26 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #strength - #deadlifting #데드리프트 110kg 5x5 #pushpresses #푸시프레스 55kg 5x5  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 26, 2018 at 3:33am PDT ","categories": ["workout"],
+        "title": "2018-9-19 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #deadlifting #데드리프트 110kg 5x5 #benchpressing #벤치프레스 70kg 5x5  A post shared by  #kendo #검도 #strength (@dochaebi) on Sep 19, 2018 at 4:26am PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/09/26/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/09/19/workout-log-strength/"
       },{
-        "title": "2018-9-29 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts #strengh #squats #스쿼트 100kg 5-5-4-5 (4x5 failed) #benchpressing #벤치프레스 70kg 5x5  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 29, 2018 at 6:18am PDT ","categories": ["workout"],
+        "title": "2018-10-6 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #dailyworkouts  #squats #스쿼트 90kg 5x5 #benchpressing #벤치프레스 70kg 5x5 #pullups #풀업 9-9-7 #intervaltraining #cycle 4set 30s/1m30s 싸이클 인터벌트레이닝 했더니 허벅지 돌되는거같다. 감각이 없어짐.  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 5, 2018 at 11:50pm PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/09/29/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/10/06/workout-log-strength/"
       },{
-        "title": "2018-9-30 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #kendo #검도 #공격연습힘들다 #저번주말 #아츠기시검도선수권대회 #내가간건아님 #부럽다  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 30, 2018 at 5:24am PDT ","categories": ["workout"],
+        "title": "2018-10-8 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #저녁운동 #dailyworkouts  #kendo #검도 #온몸이쑤신다 #어깨결림  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 8, 2018 at 7:46am PDT ","categories": ["workout"],
         "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/09/30/workout-log-kendo/"
+        "url": "https://shlrur.github.io//workout/2018/10/08/workout-log-kendo/"
       },{
-        "title": "2018-10-1 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #kendo #검도 #중단  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 1, 2018 at 5:02am PDT ","categories": ["workout"],
+        "title": "2018-10-10 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #매일운동 #저녁운동 #dailyworkouts  #kendo #검도 #합동연무 #온몸이쑤신다  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 9, 2018 at 9:21am PDT ","categories": ["workout"],
         "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/10/01/workout-log-kendo/"
+        "url": "https://shlrur.github.io//workout/2018/10/10/workout-log-kendo/"
       },{
-        "title": "2018-10-3 Workout Log: strength",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #오전운동 #dailyworkouts  #strength #deadlifting #데드리프트 115kg 4x5 #benchpressing #narrowgrip #벤치프레스 #내로우그립 70kg 4x5 #pendlayrow #펜들레이로우 60kg 4x5 #atlashorizontal #아틀라스호리즌탈 3set 10kg-30sec  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 2, 2018 at 9:19pm PDT ","categories": ["workout"],
+        "title": "2018-10-10 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #점심운동 #dailyworkouts  #deadlifting #데드리프트 110kg  5x5 #hanginglegraises 15-15-15 #pushpresses #푸시프레스 40kg-50kg-55kg 5회씩  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 9, 2018 at 10:03pm PDT ","categories": ["workout"],
         "tags": ["strength"],
-        "url": "https://shlrur.github.io//workout/2018/10/03/workout-log-strength/"
+        "url": "https://shlrur.github.io//workout/2018/10/10/workout-log-strength/"
       },{
-        "title": "2018-10-5 Workout Log: kendo",
-        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #kendo #검도 #일안이족삼담사력  사범님들 수련모습.  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 5, 2018 at 5:19am PST ","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/10/05/workout-log-kendo/"
-      },{
-        "title": "2018-10-6 Workout Log: kendo",
-        "excerpt":"View this post on Instagram #운동 #매일운동 #저녁운동 #kendo #검도 #이틀연속 #그래서 #무릎아파 &#34;공격 후 몸에 힘을 풀어버리거나 의미없이 뒤로 빠지지 말고, 몸받음을 하든 옆으로 비껴나가든 해서 상대방의 중심을 무너뜨려서 다음 기회를 노릴 수 있어야한다.&#34; A post shared by #kendo #검도 #strength (@dochaebi) on Nov 6, 2018 at 4:19am PST...","categories": ["workout"],
-        "tags": ["kendo"],
-        "url": "https://shlrur.github.io//workout/2018/10/06/workout-log-kendo/"
+        "title": "2018-10-16 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #dailyworkouts #squats #스쿼트 95kg 5x5 #benchpressing #벤치프레스 70kg 5, 75kg 5-5, 70kg 5-5 #luraise #루레이즈 5kg 4x10 벤치 언제 100kg로 해보나... :(  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 16, 2018 at 5:39am PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/10/16/workout-log-strength/"
       },{
         "title": "About JavaScript Loop Performance(forEach, for, while, etc...)",
         "excerpt":"최근 Codility에서 코딩 연습을 하다가 정리해야 할 것이 있어서 포스트를 작성하기로 하였습니다.연습했던 문제는 MaxCounters 였고, 해당 문제의 난이도는 어렵지 않았습니다. 하지만 계속해서 Performance tests에서 score가 만점이 나오지 않아, 이것저것 시도해본 경험을 기록하고자 합니다. Problems raised 아래의 코드는 Performance tests에서 100% score를 기록한 코드입니다. function solution(N, A) { let answer =...","categories": ["develog"],
         "tags": ["javascript"],
         "url": "https://shlrur.github.io//develog/2018/10/18/about-loop-performance/"
       },{
-        "title": "[React] Immutable.js: Using Immutable Data Structures",
+        "title": "2018-10-18 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #점심운동 #dailyworkouts  #kendo #검도 #죽도집 #생일선물 #감사합니다  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 18, 2018 at 12:08am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/10/18/workout-log-kendo/"
+      },{
+        "title": "2018-10-19 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #kendo #검도 #합동연무 #수리된죽도 #고마워  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 19, 2018 at 5:59am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/10/19/workout-log-kendo/"
+      },{
+        "title": "2018-10-22 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #kendo #검도 #누드곱창맛있다  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 22, 2018 at 6:15am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/10/22/workout-log-kendo/"
+      },{
+        "title": "2018-10-24 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #dailyworkouts  #kendo #검도 #이번주에두번째  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 24, 2018 at 5:26am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/10/24/workout-log-kendo/"
+      },{
+        "title": "2018-10-25 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #dailyworkouts  #kendo #검도  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 25, 2018 at 7:42am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/10/25/workout-log-kendo/"
+      },{
+        "title": "2018-10-26 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #strength - #deadlifting #데드리프트 110kg 5x5 #pushpresses #푸시프레스 55kg 5x5  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 26, 2018 at 3:33am PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/10/26/workout-log-strength/"
+      },{
+        "title": "2018-10-29 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts #strengh #squats #스쿼트 100kg 5-5-4-5 (4x5 failed) #benchpressing #벤치프레스 70kg 5x5  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 29, 2018 at 6:18am PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/10/29/workout-log-strength/"
+      },{
+        "title": "2018-10-30 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #kendo #검도 #공격연습힘들다 #저번주말 #아츠기시검도선수권대회 #내가간건아님 #부럽다  A post shared by  #kendo #검도 #strength (@dochaebi) on Oct 30, 2018 at 5:24am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/10/30/workout-log-kendo/"
+      },{
+        "title": "2018-11-1 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #kendo #검도 #중단  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 1, 2018 at 5:02am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/11/01/workout-log-kendo/"
+      },{
+        "title": "2018-11-3 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #오전운동 #dailyworkouts  #strength #deadlifting #데드리프트 115kg 4x5 #benchpressing #narrowgrip #벤치프레스 #내로우그립 70kg 4x5 #pendlayrow #펜들레이로우 60kg 4x5 #atlashorizontal #아틀라스호리즌탈 3set 10kg-30sec  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 2, 2018 at 9:19pm PDT ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/11/03/workout-log-strength/"
+      },{
+        "title": "2018-11-5 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #kendo #검도 #일안이족삼담사력  사범님들 수련모습.  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 5, 2018 at 5:19am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/11/05/workout-log-kendo/"
+      },{
+        "title": "[React] Immutable.js: Why Using Immutable Data Structures",
         "excerpt":"React에서 performance를 높이는 방법은 여러가지가 있습니다. Use the Production Build React를 통한 사이트를 제작한 후 배포할 때 production 모드로 build를 하게 되면, 여러 js 파일을 하나로 합친다든지 js파일 내의 name들을 줄인다든지 등의 작업들을 통해서 해당 사이트의 performance를 향상시킬 수 있습니다. Profiling Components with the Chrome Performance Tab 브라우저에서 제공하는 performance...","categories": ["develog"],
         "tags": ["api"],
         "url": "https://shlrur.github.io//develog/2018/11/06/reactjs-immutablejs/"
+      },{
+        "title": "2018-11-6 Workout Log: kendo",
+        "excerpt":"View this post on Instagram #운동 #매일운동 #저녁운동 #kendo #검도 #이틀연속 #그래서 #무릎아파 &#34;공격 후 몸에 힘을 풀어버리거나 의미없이 뒤로 빠지지 말고, 몸받음을 하든 옆으로 비껴나가든 해서 상대방의 중심을 무너뜨려서 다음 기회를 노릴 수 있어야한다.&#34; A post shared by #kendo #검도 #strength (@dochaebi) on Nov 6, 2018 at 4:19am PST...","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/11/06/workout-log-kendo/"
+      },{
+        "title": "2018-11-9 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #kendo #검도  #허리조심 #발톱부상 #뿌듯  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 8, 2018 at 7:08am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/11/09/workout-log-kendo/"
+      },{
+        "title": "2018-11-13 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #kendo #검도 #넘나못하는것 #언젠간잘하겠지  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 13, 2018 at 5:33am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/11/13/workout-log-kendo/"
       }]
