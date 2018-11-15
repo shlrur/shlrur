@@ -358,9 +358,4 @@ var store = [{
         "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts  #kendo #검도 #넘나못하는것 #언젠간잘하겠지  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 13, 2018 at 5:33am PST ","categories": ["workout"],
         "tags": ["kendo"],
         "url": "https://shlrur.github.io//workout/2018/11/13/workout-log-kendo/"
-      },{
-        "title": "[webpack] Why using webpack",
-        "excerpt":"기존의 React Boilerplate들은 여러 종류의 package를 사용하지만, 그 중에서 webpack과 babel은 거의 필수로 사용하고 있습니다. 이번 포스트에서는 필수 third party API중 Frontend에서 bundling을 위해 가장 많이 사용하는 Webpack이 필요한 이유에 대해서 알아보려 합니다. webpack is a static module bundler for modern JavaScript applications. Webpack 공식 홈페이지의 concept을 설명하는 제일 첫...","categories": ["develog"],
-        "tags": ["api"],
-        "url": "https://shlrur.github.io//develog/2018/11/14/why-using-webpack/"
       }]
