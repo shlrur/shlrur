@@ -566,12 +566,11 @@ pre {
 kbd {
   display: inline-block;
   margin: 0 0.125em;
-  padding: 0.125em 0.5em;
+  padding: 0.005em 0.05em;
   border: 1px solid #cccccc;
   border-radius: 3px;
   background-color: #f7f7f7;
-  text-shadow: 0 1px 0 #fff;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25), inset 0 0 0 2px #fff; }
+  text-shadow: 0 1px 0 #fff; }
 
 h1,
 h2,

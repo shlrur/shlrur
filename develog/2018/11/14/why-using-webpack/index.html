@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<!--
+    Basically Basic Jekyll Theme 1.4.1
+    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
+-->
+<html lang="ko" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>[webpack] Why using webpack | First Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="[webpack] Why using webpack" />
+<meta name="author" content="Heekyum" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="기존의 React Boilerplate들은 여러 종류의 package를 사용하지만, 그중에서 webpack과 babel은 거의 필수로 사용하고 있습니다. 이번 포스트에서는 필수 third party API 중 Frontend에서 bundling을 위해 가장 많이 사용하는 Webpack이 필요한 이유에 대해서 알아보려 합니다." />
+<meta property="og:description" content="기존의 React Boilerplate들은 여러 종류의 package를 사용하지만, 그중에서 webpack과 babel은 거의 필수로 사용하고 있습니다. 이번 포스트에서는 필수 third party API 중 Frontend에서 bundling을 위해 가장 많이 사용하는 Webpack이 필요한 이유에 대해서 알아보려 합니다." />
+<link rel="canonical" href="https://shlrur.github.io//develog/2018/11/14/why-using-webpack/" />
+<meta property="og:url" content="https://shlrur.github.io//develog/2018/11/14/why-using-webpack/" />
+<meta property="og:site_name" content="First Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-11-14T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"기존의 React Boilerplate들은 여러 종류의 package를 사용하지만, 그중에서 webpack과 babel은 거의 필수로 사용하고 있습니다. 이번 포스트에서는 필수 third party API 중 Frontend에서 bundling을 위해 가장 많이 사용하는 Webpack이 필요한 이유에 대해서 알아보려 합니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2018/11/14/why-using-webpack/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/icon_me.jpg"},"name":"Heekyum"},"headline":"[webpack] Why using webpack","dateModified":"2018-11-14T00:00:00+00:00","datePublished":"2018-11-14T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2018/11/14/why-using-webpack/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="First Blog" href="/atom.xml">
+  
+</head>
+
+
+  <body class="layout--post webpack-why-using-webpack">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- <a href="/test/javascript" itemprop="url"></a> -->
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-0"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/livelog" itemprop="url">
+          <span itemprop="name">LiveLog</span>
+        </a>
+          <label class="folder" for="list-item-0">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/idea" itemprop="url">
+              <span itemprop="name">Idea</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/workout" itemprop="url">
+          <span itemprop="name">Workout</span>
+        </a>
+          <label class="folder" for="list-item-1">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/kendo" itemprop="url">
+              <span itemprop="name">Kendo</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/strength" itemprop="url">
+              <span itemprop="name">Strength</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/develog" itemprop="url">
+          <span itemprop="name">Develog</span>
+        </a>
+          <label class="folder" for="list-item-2">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript" itemprop="url">
+              <span itemprop="name">JavaScript</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript-design-pattern" itemprop="url">
+              <span itemprop="name">javascript Design Pattern</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/api" itemprop="url">
+              <span itemprop="name">Apis</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:shlrur123@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/shlrur">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+
+  
+    <li><a href="https://instagram.com/dochaebi">
+  <span class="icon icon--instagram"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.05 3.233c-.04.78-.17 1.203-.28 1.485-.15.374-.32.64-.6.92-.28.28-.55.453-.92.598-.28.11-.71.24-1.49.276-.85.038-1.1.047-3.24.047s-2.39-.01-3.24-.05c-.78-.04-1.21-.17-1.49-.28-.38-.15-.64-.32-.92-.6-.28-.28-.46-.55-.6-.92-.11-.28-.24-.71-.28-1.49-.03-.84-.04-1.1-.04-3.23s.01-2.39.04-3.24c.04-.78.17-1.21.28-1.49.14-.38.32-.64.6-.92.28-.28.54-.46.92-.6.28-.11.7-.24 1.48-.28.85-.03 1.1-.04 3.24-.04zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z"/></svg></span>
+  <span class="label">Instagram</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/atom.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">Subscribe</span>
+      </a>
+    
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/">
+            <img src="/assets/images/icon_me.jpg" alt="" class="site-logo">
+            <span>First Blog</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          <header class="intro">
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      <h1 id="page-title" class="intro-title">[webpack] Why using webpack
+</h1>
+      
+
+      
+        
+
+        <p class="entry-meta">
+          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2018-11-14T00:00:00+00:00">November 14, 2018</time></span>
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        <p>기존의 React Boilerplate들은 여러 종류의 package를 사용하지만, 그중에서 webpack과 babel은 거의 필수로 사용하고 있습니다. 이번 포스트에서는 필수 third party API 중 Frontend에서 bundling을 위해 가장 많이 사용하는 <strong>Webpack</strong>이 필요한 이유에 대해서 알아보려 합니다.</p>
+
+<blockquote>
+  <p>webpack is a static module bundler for modern JavaScript applications.</p>
+</blockquote>
+
+<p>Webpack 공식 홈페이지의 concept을 설명하는 제일 첫 줄에 있는 문구입니다. 중요한 문장이니만큼 <strong>module</strong>과 <strong>Bundle</strong>에 대해서 알아봐야겠습니다.</p>
+
+<h1 id="contents">Contents</h1>
+
+<ul>
+  <li><a href="#module">Module</a></li>
+  <li><a href="#bundle">Bundle</a>
+    <ul>
+      <li><a href="#old-way">OLD way…</a></li>
+      <li><a href="#static-file-bundling">Static File Bundling</a></li>
+    </ul>
+  </li>
+  <li><a href="#webpack">Webpack</a>
+    <ul>
+      <li><a href="#concepts">Concepts</a></li>
+      <li><a href="#entry">Entry</a></li>
+      <li><a href="#output">Output</a></li>
+      <li><a href="#loaders">Loaders</a></li>
+      <li><a href="#plugins">Plugins</a></li>
+      <li><a href="#mode">Mode</a></li>
+      <li><a href="#browser-compatibility">Browser Compatibility</a></li>
+    </ul>
+  </li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+<hr />
+
+<h1 id="module">Module</h1>
+
+<p><strong>Modular Programming</strong>에서, 개발자들은 프로그램을 <strong>module</strong>이라고 부르는 별도의 기능 덩어리(<em>chunks of functionality</em>)로 분할합니다.(<a href="https://stackoverflow.com/questions/14000762/what-does-low-in-coupling-and-high-in-cohesion-mean">Low Coupling High Cohesion</a>) 각 module은 전체 프로그램에 비하면 작기 때문에, 검증, 디버깅, 그리고 테스트하는데 비교적 적은 노력이 필요합니다. 그리고, 잘 만들어진 module은 OOP의 요소인 abstraction과 encapsulation을 제공하기 때문에, 전체 프로그램에서 일관된 디자인과 함께 명확한 목적을 가지고 사용됩니다.</p>
+
+<p>Node.js는 처음부터 modular programming을 지원했지만, 현재 web 표준인 ES6의 module은 아직 모든 브라우저에서 지원하고 있지 않습니다. 때문에, third party library를 사용해서 bundling을 해야 합니다. 현재 Web에서 <strong>Modular JavaScript</strong>를 지원하는 여러 third party library들이 존재하며 각각 이점과 한계를 가지고 있습니다.<del>만, 여기서는 webpack에 대해서 알아보려 합니다.</del></p>
+
+<hr />
+
+<h1 id="bundle">Bundle</h1>
+
+<p>JavaScript에서의 Modular Programming을 위해서는 일반적으로 하나의 module 당 하나의 파일이 사용됩니다. 그러면 여러 파일이 생성되는데, 이 파일들을 사용하기 위해서는 어떤 형태로든 명시를 해 줘야 합니다.</p>
+
+<h2 id="old-way">OLD way…</h2>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/why_using_webpack/0_old-way.png" alt="" />
+    <figcaption>old way</figcaption>
+</figure>
+
+<p>위의 이미지는 우리가 예전에 혹은 간단한 site에서 사용하는 방식입니다.</p>
+
+<p>위의 방식은 세 가지 큰 단점이 있습니다.</p>
+
+<p>첫 번째는 너무 많은 global 변수들 때문에 global namespace가 엉망진창이 된다는 것입니다. 그리고 Library들이 load 되는 순서가 엉켜버리지 않게 조심해야 합니다. jQuery, React, Angular 혹은 lodash같은 third party library들을 먼저 load 한 후에 직접 작성한 component나 service들을 load 해야 합니다.</p>
+
+<p>두 번째는 각 library의 dependency들을 볼 수 없다는 것입니다. 때문에, 특정 코드가 실행될 때, 그 코드에서 사용하는 API의 script 역시 <em>이미</em> load 되었다고 가정하는 수밖에 없습니다. 코드들이 추가될수록, 특정 API를 쓰기 위해서 context를 전환해야 할 수도 있고, HTML에 script 코드가 추가로 필요할 수도 있습니다. 그리고 이 script들이 잘 로드되는지는 직접 실행해서 화면을 보는 수밖에 없습니다…</p>
+
+<p>세 번째는 페이지를 로딩할 때 많은 script 파일의 다운로드로 인해서 네트워크에 bottleneck이 걸릴 수 있다는 점입니다.</p>
+
+<h2 id="static-file-bundling">Static File Bundling</h2>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/why_using_webpack/1_static-bundling.png" alt="" />
+    <figcaption>bundle your anything</figcaption>
+</figure>
+
+<p>Web app들의 증가와 현대적인 frontend framework들 덕분에 JavaScript 개발 방식이 변화되기 시작하면서, static file bundling이라는 방식이 나타났습니다.</p>
+
+<p>현재의 bundling은 여러 tool에 의해 frontend에서 수행되지만, backend에서 수행되던 때도 있었습니다. ASP.NET 5 이전 버전의 Microsoft.AspNet.Optimization package 같은 경우가 하나의 예입니다. 하지만 결국에는 JavaScript를 사용하게 되었습니다.</p>
+
+<hr />
+
+<h1 id="webpack">Webpack</h1>
+
+<h2 id="concepts">Concepts</h2>
+
+<p>다시 webpack으로 돌아오겠습니다.</p>
+
+<blockquote>
+  <p>webpack is a static module bundler for modern JavaScript applications.</p>
+</blockquote>
+
+<p>Webpack은 한마디로 <strong>static module bundler</strong>입니다. Webpack을 frontend 프로그램에 적용했을 때 내부에서 일어나는 일을 아주 간단하게 설명해보자면,</p>
+
+<ol>
+  <li>프로그램에서 사용하는 모든 module의 연관성을 나타내는 <em>dependency graph</em> 를 작성합니다. (이 그래프는 간단히 설명하자면 바로 위의 그림인 ‘bundle your anything’ 의 왼쪽 graph라고 보시면 됩니다)</li>
+  <li><em>Dependency graph</em> 에 따라서 모든 module을 적은 수의 파일로 bundle하고, 이 bundle 된 파일이 브라우저에서 load 되어 사용됩니다. (보통 하나의 파일로 만듭니다)</li>
+</ol>
+
+<p>정말 간단합니다. 하지만 이 간단한 과정을 자신의 frontend project에 반영하기 위해서는 다음의 <strong>Core Concept</strong>를 알아야 합니다.</p>
+
+<ul>
+  <li><a href="#entry">Entry</a></li>
+  <li><a href="#output">Output</a></li>
+  <li><a href="#loaders">Loaders</a></li>
+  <li><a href="#plugins">Plugins</a></li>
+  <li><a href="#mode">Mode</a></li>
+  <li><a href="#browser-compatibility">Browser Compatibility</a></li>
+</ul>
+
+<p>하나씩 알아보겠습니다.</p>
+
+<h2 id="entry">Entry</h2>
+
+<p>Entry point는 간단히 말해서 dependency graph가 시작되는 지점… 즉, root node를 뜻합니다. Webpack은 entry point부터 시작해서 dependency가 있는 module들을 reclusive 하게 탐색해 나갑니다.</p>
+
+<p>기본값은 <kbd>./src/index.js</kbd> 이지만, 직접 설정할 수도 있고, 물론 여러 개의 entry point를 설정할 수도 있습니다. 그러면, 이 값은 어떻게 설정하며, 이 entry point의 설정이 필요한 이유에 대해서도 알아보겠습니다.</p>
+
+<h3 id="single-entry-shorthand-syntax">Single Entry (Shorthand) Syntax</h3>
+
+<p><strong>webpack.config.js</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*** SINGLE ENTRY SYNTAX ***/</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="s1">'./path/to/my/entry/file.js'</span>
+<span class="p">};</span>
+<span class="c1">// OR</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">main</span><span class="p">:</span> <span class="s1">'./path/to/my/entry/file.js'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="cm">/*** Object ENTRY SYNTAX ***/</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">app</span><span class="p">:</span> <span class="s1">'./src/app.js'</span><span class="p">,</span>
+    <span class="na">adminApp</span><span class="p">:</span> <span class="s1">'./src/adminApp.js'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>위의 코드는 entry point를 single 혹은 object를 사용한 multi로 설정하는 방식을 보여주고 있습니다. 위에서 눈여겨볼 방식은 <strong>Object entry syntax</strong> 입니다. 프로그램의 확장성을 위한 방식인데, 이와 같은 방식이 왜 필요할까요?</p>
+
+<p>Web application은 최근 AJAX나 여러 기술로 인해서 single-page로 제작되기도 하지만, performance나 여러 이유에 의해서(굳이 single-page로 제작할 필요가 없음) multi-page로 제작되는 경우도 있습니다. Multi-page application인 경우, <strong>page마다 server에서는 새로운 HTML 문서를 전송해 줍니다.</strong> 그리고 이 HTML 문서는 여러 assets를 새로 내려받습니다. 이때, multi entry point를 설정한 이유를 알 수 있습니다. <strong>특정 단위 page마다 다른 entry point를 설정한다면, 현재 page에서 필요하지 않은 module은 load 되지 않기 때문에, 여러 이점을 가져갈 수 있는 것입니다.</strong></p>
+
+<p><kbd>optimization.splitChunks</kbd>는 각 page에서 공유할 수 있는 code를 bundle로 만들어 줍니다. Multi-page application에서는 각 entry point에서 공유하는 module이 많기 때문에, 이 기술을 사용한다면 얻을 수 있는 이점이 많습니다. SplitChunks에 대한 자세한 설명은 <a href="https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366">여기</a>와 <a href="https://webpack.js.org/plugins/split-chunks-plugin/">여기</a>를 참조해주세요.</p>
+
+<h2 id="output">Output</h2>
+
+<p><strong>Output</strong> 은 <em>bundle</em> 파일이 생성될 위치와 이름을 설정하는 property입니다.</p>
+
+<p><strong>webpack.config.js</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="s1">'./path/to/my/entry/file.js'</span><span class="p">,</span>
+  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'dist'</span><span class="p">),</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="s1">'my-first-webpack.bundle.js'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Main output 파일의 기본값은 <kbd>./dist/main.js</kbd>입니다. path의 기본값은 <kbd>./dist</kbd>입니다.</p>
+
+<p>앞서 살펴본 entry point가 여러 개일 때는 어떻게 될까요?</p>
+
+<p><strong>webpack.config.js</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">app</span><span class="p">:</span> <span class="s1">'./src/app.js'</span><span class="p">,</span>
+    <span class="na">search</span><span class="p">:</span> <span class="s1">'./src/search.js'</span>
+  <span class="p">},</span>
+  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="s1">'[name].js'</span><span class="p">,</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">'/dist'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// writes to disk: ./dist/app.js, ./dist/search.js</span>
+</code></pre></div></div>
+
+<p>Multi entry point인 경우에는 output의 filename에 <a href="https://webpack.js.org/configuration/output#output-filename">substitution</a>을 사용해야 합니다.</p>
+
+<p>그 외에 output의 여러 option 중에서 눈여겨볼 만한 것이 있습니다. 바로 <em>publicPath</em> 입니다. 이 옵션은 on-demand-loading이나 이미지 같은 external resource를 loading 할 때 필요합니다. 해당 값이 제대로 설정되어있지 않으면, 404에러를 받을 수 있습니다… 이 옵션에 대한 자세한 설명을 원하시면 <a href="https://webpack.js.org/configuration/output/#output-publicpath">여기</a>를 참고해주세요.</p>
+
+<h2 id="loaders">Loaders</h2>
+
+<p>TypeScript라는 언어가 있습니다. JavaScript와 달리 variable에 type을 선언할 수 있는 특징을 가지는 언어입니다. 하지만 이 언어는 browser에서 바로 처리할 수 없습니다. 이렇게, Browser 혹은 webpack에서 처리할 수 없는 source code를 가지는 module을 JavaScript 코드 또는 data URI로서의 inline image 등으로 변환시키는 것이 Loader의 역할입니다. 그 때문에 module에서 .CSS 파일을 import 하는 것도 가능합니다 :)</p>
+
+<p>Loader를 사용하는 방법은 3가지가 있습니다.</p>
+
+<ul>
+  <li>Configuration: webpack.config.js 파일에서 명시하는, 추천하는 방식입니다.</li>
+  <li>Inline: <kbd>import</kbd> 구문마다 명시하는 방법입니다.</li>
+  <li>CLI: Shell command에서 지정하는 방식입니다.</li>
+</ul>
+
+<p>이 포스트에서는 Configuration 방식만 알아보도록 하겠습니다. 그 이유는, configuration에 loader의 설정을 명시하는 방법이 loader를 한눈에 보기에 가장 좋고 유지보수에 좋기 때문입니다. 각 loader에 대한 전체적인 overview를 한눈에 볼 수 있는 장점이 있습니다.</p>
+
+<h3 id="configuration-of-loaders">Configuration of Loaders</h3>
+
+<p>Webpack configuration에서 loader에 대한 설정을 하기 위해서는 <kbd>module.rules</kbd>를 건드려야 합니다. 아래의 예제 코드를 보겠습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">css$/</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span> <span class="na">loader</span><span class="p">:</span> <span class="s1">'style-loader'</span> <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="na">loader</span><span class="p">:</span> <span class="s1">'css-loader'</span><span class="p">,</span>
+            <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+              <span class="na">modules</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="p">{</span> <span class="na">loader</span><span class="p">:</span> <span class="s1">'sass-loader'</span> <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Loader는 마지막 ues부터 평가/실행을 시작합니다. 위의 코드를 보면, <em>sass-loader</em> 부터 시작해서 <em>css-loader</em> 그리고 <em>style-loader</em> 로 끝이납니다.</p>
+
+<p>Loader에 대한 개념을 얕게 훑은 후 example도 봤으니, 이제 Loader의 특징에 대해서 알아보겠습니다.</p>
+
+<h3 id="loaders-features">Loaders Features</h3>
+
+<ul>
+  <li><strong>Loader는 chain 형식으로 설정될 수 있습니다.</strong> Chain 구조 내에서는 loader들이 연결되어있고, 각 loader의 output은 다음 loader의 input으로 들어갑니다. 마지막 loader는 아마 JavaScript 코드를 출력할 것입니다.</li>
+  <li>Synchronous와 Asynchronous 모두 가능합니다.</li>
+  <li>Loader는 <strong>Node.js</strong>에서 실행되므로, Node.js에서 가능한 모든 것을 할 수 있습니다.</li>
+  <li>각 Loader의 설정은 <kbd>options</kbd> 객체로 구성할 수 있습니다. (<kbd>query</kbd> parameter는 가능하긴 하지만 deprecated 된 방식입니다.)</li>
+  <li>Normal modules can export a loader in addition to the normal main via package.json with the loader field.</li>
+  <li>Plugin은 loader에 더 많은 기능을 제공할 수 있습니다.</li>
+  <li>로더는 추가의 임의 파일을 내보낼 수 있습니다.</li>
+</ul>
+
+<p>Loader는 전처리 function(즉, loader)을 통해서 JavaScript 생태계에 활력을 불어넣습니다. 이를 통해서 compression, packaging, 그리고 language translation 같은 fine-grained logic을 유연하게 사용할 수 있습니다.</p>
+
+<h2 id="plugins">Plugins</h2>
+
+<p>Loader가 특정 type의 module을 변환하는 역할을 가진다면, <strong>plugin</strong>은 <em>bundle 최적화</em>, <em>asset 관리</em> 그리고 <em>환경변수 injection</em> 같은 광범위한 작업을 수행합니다. Plugin의 목적은 loader가 할 수 없는 다른 어떤 작업을 하는 것입니다.</p>
+
+<h3 id="anotomy-of-plugins">Anotomy of Plugins</h3>
+
+<p>가져다 쓰는 plugin의 내부는 어떤지 잠시 살펴보겠습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ConsoleLogOnBuildWebpackPlugin.js</span>
+<span class="kd">const</span> <span class="nx">pluginName</span> <span class="o">=</span> <span class="s1">'ConsoleLogOnBuildWebpackPlugin'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">ConsoleLogOnBuildWebpackPlugin</span> <span class="p">{</span>
+  <span class="nx">apply</span><span class="p">(</span><span class="nx">compiler</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">compiler</span><span class="p">.</span><span class="nx">hooks</span><span class="p">.</span><span class="nx">run</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="nx">pluginName</span><span class="p">,</span> <span class="nx">compilation</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'The webpack build process is starting!!!'</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 코드는 <strong>ConsoleLogOnBuildWebpackPlugin</strong> 이라는 plugin입니다. Webpack plugin은 <kbd>apply</kbd>라는 함수를 가지는 JavaScript object입니다.(class지만 object입니다…) 이 <kbd>apply</kbd> 함수는 webpack compiler에서 호출되며, compliation lifecycle 중에 언제라도 호출될 수 있습니다. 한 가지 유의해야 할 사항은, <kbd>compiler.hooks.run.tap</kbd>함수의 첫 번째 parameter는 plugin 이름의 upper camel case형이어야 하며, 이는 모든 hook에서 사용될 수 있도록 상수를 사용하는 것이 좋습니다.</p>
+
+<h3 id="usage-of-plugins">Usage of Plugins</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
+<span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'html-webpack-plugin'</span><span class="p">);</span> <span class="c1">//installed via npm</span>
+<span class="kd">const</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'webpack'</span><span class="p">);</span> <span class="c1">//to access built-in plugins</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="s1">'./path/to/my/entry/file.js'</span><span class="p">,</span>
+  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="s1">'my-first-webpack.bundle.js'</span><span class="p">,</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'dist'</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.(</span><span class="sr">js|jsx</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="s1">'babel-loader'</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+    <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">ProgressPlugin</span><span class="p">(),</span>
+    <span class="k">new</span> <span class="nx">HtmlWebpackPlugin</span><span class="p">({</span><span class="na">template</span><span class="p">:</span> <span class="s1">'./src/index.html'</span><span class="p">})</span>
+  <span class="p">]</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Plugin은 arguments/options를 가질 수 있으므로, <kbd>new</kbd>를 사용해서 instance를 전달해야 합니다.</p>
+
+<h2 id="mode">Mode</h2>
+
+<p><strong>Mode</strong>는 <kbd>development</kbd>, <kbd>production</kbd> 그리고 <kbd>none</kbd>으로 설정할 수 있는데, 각각의 값에 따라서 내부적으로 최적화되게 되어있습니다. Default는 <kbd>production</kbd>입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="s1">'production'</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><kbd>production</kbd> mode를 사용하려면 위의 코드처럼 사용하시면 됩니다.</p>
+
+<p>그럼, 각각의 mode에 대해서 알아보겠습니다.</p>
+
+<h3 id="development-mode">development Mode</h3>
+
+<ul>
+  <li><kbd>DefinePlugin</kbd>의 <kbd>process.env.NODE_ENV</kbd>값을 <kbd>development</kbd>로 설정합니다.</li>
+  <li><kbd>NamedChunksPlugin</kbd>과 <kbd>NamedModulesPlugin</kbd>이 가능합니다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.development.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="s1">'development'</span>
+<span class="c1">//devtool: 'eval',</span>
+<span class="c1">//cache: true,</span>
+<span class="c1">//performance: {</span>
+<span class="c1">//  hints: false</span>
+<span class="c1">//},</span>
+<span class="c1">//output: {</span>
+<span class="c1">//  pathinfo: true</span>
+<span class="c1">//},</span>
+<span class="c1">//optimization: {</span>
+<span class="c1">//  namedModules: true,</span>
+<span class="c1">//  namedChunks: true,</span>
+<span class="c1">//  nodeEnv: 'development',</span>
+<span class="c1">//  flagIncludedChunks: false,</span>
+<span class="c1">//  occurrenceOrder: false,</span>
+<span class="c1">//  sideEffects: false,</span>
+<span class="c1">//  usedExports: false,</span>
+<span class="c1">//  concatenateModules: false,</span>
+<span class="c1">//  splitChunks: {</span>
+<span class="c1">//    hidePathInfo: false,</span>
+<span class="c1">//    minSize: 10000,</span>
+<span class="c1">//    maxAsyncRequests: Infinity,</span>
+<span class="c1">//    maxInitialRequests: Infinity,</span>
+<span class="c1">//  },</span>
+<span class="c1">//  noEmitOnErrors: false,</span>
+<span class="c1">//  checkWasmTypes: false,</span>
+<span class="c1">//  minimize: false,</span>
+<span class="c1">//},</span>
+<span class="c1">//plugins: [</span>
+<span class="c1">//  new webpack.NamedModulesPlugin(),</span>
+<span class="c1">//  new webpack.NamedChunksPlugin(),</span>
+<span class="c1">//  new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("development") }),</span>
+<span class="c1">//]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="production-mode">production Mode</h3>
+
+<ul>
+  <li><kbd>DefinePlugin</kbd>의 <kbd>process.env.NODE_ENV</kbd>값을 <kbd>production</kbd>으로 설정합니다.</li>
+  <li><kbd>FlagDependencyUsagePlugin</kbd>, <kbd>FlagIncludedChunksPlugin</kbd>, <kbd>ModuleConcatenationPlugin</kbd>, <kbd>NoEmitOnErrorsPlugin</kbd>, <kbd>OccurrenceOrderPlugin</kbd>, <kbd>SideEffectsFlagPlugin </kbd> 그리고 <kbd>UglifyJsPlugin</kbd>이 가능합니다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.production.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="s1">'production'</span><span class="p">,</span>
+<span class="c1">//performance: {</span>
+<span class="c1">//  hints: 'warning'</span>
+<span class="c1">//},</span>
+<span class="c1">//output: {</span>
+<span class="c1">//  pathinfo: false</span>
+<span class="c1">//},</span>
+<span class="c1">//optimization: {</span>
+<span class="c1">//  namedModules: false,</span>
+<span class="c1">//  namedChunks: false,</span>
+<span class="c1">//  nodeEnv: 'production',</span>
+<span class="c1">//  flagIncludedChunks: true,</span>
+<span class="c1">//  occurrenceOrder: true,</span>
+<span class="c1">//  sideEffects: true,</span>
+<span class="c1">//  usedExports: true,</span>
+<span class="c1">//  concatenateModules: true,</span>
+<span class="c1">//  splitChunks: {</span>
+<span class="c1">//    hidePathInfo: true,</span>
+<span class="c1">//    minSize: 30000,</span>
+<span class="c1">//    maxAsyncRequests: 5,</span>
+<span class="c1">//    maxInitialRequests: 3,</span>
+<span class="c1">//  },</span>
+<span class="c1">//  noEmitOnErrors: true,</span>
+<span class="c1">//  checkWasmTypes: true,</span>
+<span class="c1">//  minimize: true,</span>
+<span class="c1">//},</span>
+<span class="c1">//plugins: [</span>
+<span class="c1">//  new UglifyJsPlugin(/* ... */),</span>
+<span class="c1">//  new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }),</span>
+<span class="c1">//  new webpack.optimize.ModuleConcatenationPlugin(),</span>
+<span class="c1">//  new webpack.NoEmitOnErrorsPlugin()</span>
+<span class="c1">//]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="none-mode">none Mode</h3>
+
+<ul>
+  <li>Default 최적화 옵션이 적용됩니다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.custom.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="s1">'none'</span><span class="p">,</span>
+<span class="c1">//performance: {</span>
+<span class="c1">// hints: false</span>
+<span class="c1">//},</span>
+<span class="c1">//optimization: {</span>
+<span class="c1">//  flagIncludedChunks: false,</span>
+<span class="c1">//  occurrenceOrder: false,</span>
+<span class="c1">//  sideEffects: false,</span>
+<span class="c1">//  usedExports: false,</span>
+<span class="c1">//  concatenateModules: false,</span>
+<span class="c1">//  splitChunks: {</span>
+<span class="c1">//    hidePathInfo: false,</span>
+<span class="c1">//    minSize: 10000,</span>
+<span class="c1">//    maxAsyncRequests: Infinity,</span>
+<span class="c1">//    maxInitialRequests: Infinity,</span>
+<span class="c1">//  },</span>
+<span class="c1">//  noEmitOnErrors: false,</span>
+<span class="c1">//  checkWasmTypes: false,</span>
+<span class="c1">//  minimize: false,</span>
+<span class="c1">//},</span>
+<span class="c1">//plugins: []</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="tip-of-mode">Tip of mode</h3>
+
+<p>Mode에 따라서 webpack config의 설정값을 바꾸고 싶은 경우에는, 아래의 코드와 같이 object가 아닌 function을 export 하면 됩니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="s1">'./app.js'</span>
+  <span class="c1">//...</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">env</span><span class="p">,</span> <span class="nx">argv</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">argv</span><span class="p">.</span><span class="nx">mode</span> <span class="o">===</span> <span class="s1">'development'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">config</span><span class="p">.</span><span class="nx">devtool</span> <span class="o">=</span> <span class="s1">'source-map'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">argv</span><span class="p">.</span><span class="nx">mode</span> <span class="o">===</span> <span class="s1">'production'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">config</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="browser-compatibility">Browser Compatibility</h2>
+
+<p>Webpack은 <a href="https://kangax.github.io/compat-table/es5/">ES5를 준수하는</a> 모든 browser를 지원합니다. 구식의 browser에서도 작동하길 원한다면, <a href="https://webpack.js.org/guides/shimming/">pollyfill을 로드</a>해야 합니다.</p>
+
+<hr />
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>지금까지 webpack을 사용해야 하는 이유와 함께 큼직큼직한 개념들에 대해서 간단히 살펴봤습니다. 대략 정리해보자면, webpack은 frontend application을 module 별로 정리해서 bundling 하는 <strong>static module bundler</strong>입니다. 하나 혹은 여러 개의 entry point를 설정할 수 있고, 그에 따른 bundle file의 이름과 경로도 설정할 수 있습니다. Bundling 하는 과정에서 browser가 인식하지 못하는 type의 module을 발견하면 이를 적절한 code로 변환할 수 있으며, 최적화나 assets 관리 그리고 환경변수 주입도 가능합니다. 그리고 development/production/none 중에서 mode를 선택해서 내부적으로 최적화를 수행할 수도 있습니다.</p>
+
+<p>이 포스트가 새로운 Frontend project를 시작하기에 앞서 webpack에 대한 개념을 정리하는 데 도움이 되길 바랍니다.</p>
+
+<hr />
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li><a href="https://webpack.js.org/concepts/">webpack’s concepts</a></li>
+  <li><a href="https://medium.com/@andrejsabrickis/modern-approach-of-javascript-bundling-with-webpack-3b7b3e5f4e7">Modern approach of JavaScript bundling with Webpack</a></li>
+  <li><a href="https://webpack.js.org/plugins/split-chunks-plugin/">SplitChunksPlugin</a></li>
+  <li><a href="https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366">webpack 4: Code Splitting, chunk graph and the splitChunks optimization</a></li>
+</ul>
+
+      </div>
+      
+        
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://shlrur.github.io//develog/2018/11/14/why-using-webpack/';
+      this.page.identifier = 'https://shlrur.github.io//develog/2018/11/14/why-using-webpack/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://shlrurs-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      
+    </article>
+  </div>
+</main>
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+  <div class="inner">
+    <div class="copyright">
+      
+        <p>&copy; 2018 First Blog.</p>
+      
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async src="/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '8K2C62GHZZ',
+  apiKey: 'ac6b1c9d2ea0e17891c512e13491b27b',
+  indexName: 'my_first_blog_search',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>
