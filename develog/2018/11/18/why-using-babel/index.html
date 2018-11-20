@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!--
+    Basically Basic Jekyll Theme 1.4.1
+    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
+-->
+<html lang="ko" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>[Babel] Why using Babel | First Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="[Babel] Why using Babel" />
+<meta name="author" content="Heekyum" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="Babel은 Webpack과 함께 React에서 꼭 사용되는 third party library 중의 하나입니다." />
+<meta property="og:description" content="Babel은 Webpack과 함께 React에서 꼭 사용되는 third party library 중의 하나입니다." />
+<link rel="canonical" href="https://shlrur.github.io//develog/2018/11/18/why-using-babel/" />
+<meta property="og:url" content="https://shlrur.github.io//develog/2018/11/18/why-using-babel/" />
+<meta property="og:site_name" content="First Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-11-18T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Babel은 Webpack과 함께 React에서 꼭 사용되는 third party library 중의 하나입니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2018/11/18/why-using-babel/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/icon_me.jpg"},"name":"Heekyum"},"headline":"[Babel] Why using Babel","dateModified":"2018-11-18T00:00:00+00:00","datePublished":"2018-11-18T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2018/11/18/why-using-babel/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="First Blog" href="/atom.xml">
+  
+</head>
+
+
+  <body class="layout--post babel-why-using-babel">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- <a href="/test/javascript" itemprop="url"></a> -->
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-0"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/livelog" itemprop="url">
+          <span itemprop="name">LiveLog</span>
+        </a>
+          <label class="folder" for="list-item-0">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/idea" itemprop="url">
+              <span itemprop="name">Idea</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/workout" itemprop="url">
+          <span itemprop="name">Workout</span>
+        </a>
+          <label class="folder" for="list-item-1">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/kendo" itemprop="url">
+              <span itemprop="name">Kendo</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/strength" itemprop="url">
+              <span itemprop="name">Strength</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/develog" itemprop="url">
+          <span itemprop="name">Develog</span>
+        </a>
+          <label class="folder" for="list-item-2">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript" itemprop="url">
+              <span itemprop="name">JavaScript</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript-design-pattern" itemprop="url">
+              <span itemprop="name">javascript Design Pattern</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/api" itemprop="url">
+              <span itemprop="name">Apis</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:shlrur123@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/shlrur">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+
+  
+    <li><a href="https://instagram.com/dochaebi">
+  <span class="icon icon--instagram"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.05 3.233c-.04.78-.17 1.203-.28 1.485-.15.374-.32.64-.6.92-.28.28-.55.453-.92.598-.28.11-.71.24-1.49.276-.85.038-1.1.047-3.24.047s-2.39-.01-3.24-.05c-.78-.04-1.21-.17-1.49-.28-.38-.15-.64-.32-.92-.6-.28-.28-.46-.55-.6-.92-.11-.28-.24-.71-.28-1.49-.03-.84-.04-1.1-.04-3.23s.01-2.39.04-3.24c.04-.78.17-1.21.28-1.49.14-.38.32-.64.6-.92.28-.28.54-.46.92-.6.28-.11.7-.24 1.48-.28.85-.03 1.1-.04 3.24-.04zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z"/></svg></span>
+  <span class="label">Instagram</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/atom.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">Subscribe</span>
+      </a>
+    
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/">
+            <img src="/assets/images/icon_me.jpg" alt="" class="site-logo">
+            <span>First Blog</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          <header class="intro">
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      <h1 id="page-title" class="intro-title">[Babel] Why using Babel
+</h1>
+      
+
+      
+        
+
+        <p class="entry-meta">
+          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2018-11-18T00:00:00+00:00">November 18, 2018</time></span>
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        <p><strong>Babel</strong>은 Webpack과 함께 React에서 꼭 사용되는 third party library 중의 하나입니다.</p>
+
+<p>webpack에 대해서는 <a href="https://shlrur.github.io//develog/2018/11/14/why-using-webpack/">Why using webpack</a> 에서 개념과 함께 필요한 이유에 대해서 알아보았습니다. 이번 포스트에서는 <strong>Babel</strong>이 필요한 이유와 몇 가지 플러그인에 대해서 알아보겠습니다.</p>
+
+<hr />
+
+<h1 id="contents">Contents</h1>
+
+<ul>
+  <li><a href="#why">Why??</a></li>
+  <li><a href="#how-to-use-babel">How to Use Babel</a>
+    <ul>
+      <li><a href="#config-in-react">Config in React</a>
+        <ul>
+          <li><a href="#babelpolyfill">@babel/polyfill</a></li>
+          <li><a href="#babelpreset-env">@babel/preset-env</a></li>
+          <li><a href="#babelpreset-react">babel/preset-react</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+<hr />
+
+<h1 id="why">Why??</h1>
+
+<blockquote>
+  <p>Babel is a JavaScript compiler</p>
+</blockquote>
+
+<p>Babel은 주로 현재 및 이전 브라우저 또는 환경에서 ECMAScript 2015+ 코드를 이전 버전과 호환되는 JavaScript 버전으로 변환하는 데 사용되는 <a href="https://ko.wikipedia.org/wiki/%ED%88%B4%EC%B2%B4%EC%9D%B8">툴체인</a>입니다.</p>
+
+<p>Babel이 하는 일을 간단히 나열해보자면,</p>
+
+<ul>
+  <li>syntax를 버전 또는 환경에 알맞게 바꾸고</li>
+  <li>Target 환경에서 지원하지 않는 기능에 대한 <a href="https://en.wikipedia.org/wiki/Polyfill_(programming)">polyfill</a>을 수행(@babel/polyfill을 통해서)</li>
+  <li>소스코드 변환</li>
+  <li><a href="https://babeljs.io/videos.html">등등</a>…</li>
+</ul>
+
+<p>이 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Babel Input: ES2015 arrow function</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">// Babel Output: ES5 equivalent</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>혹시 어디서 들어본 것 같은 기능인가요? 그렇습니다. <a href="https://shlrur.github.io//develog/2018/11/14/why-using-webpack/#loaders">Webpack의 Loaders</a>가 하는 일이 바로 babel이 하는 일과 같습니다. 그래서, <strong>webpack을 bundler로 사용하는 project에서 babel을 사용해야 할 때는 webpack의 loader에서 babel을 사용하면 됩니다.</strong></p>
+
+<p>그렇다면 babel을 사용해야 하는 project는 어떤 것이 있을까요?</p>
+
+<p><em>TypeScript</em> 를 사용하는 프로젝트가 하나의 예가 될 수 있습니다. TypeScript의 syntax는 browser가 이해할 수 없기 때문에 소스코드를 변환시켜야 합니다.</p>
+
+<p>그리고, JavaScript framework 중 하나인 <strong>React</strong>를 뼈대로 사용하는 project가 하나의 예가 될 수 있습니다. React는 <strong>JSX</strong>를 사용해서 script에서 <strong>view</strong>를 구현합니다. (<strong>Angular</strong>역시 script에서 view를 구현할 수 있지만 <strong>.html</strong> 파일로도 view를 구현할 수 있는 것과 비교하면 특이한 방식이라고 볼 수 있습니다.) JSX는 <del>당연히</del> 현재 browser에서 바로 인식하지 못하기 때문에 babel의 기능이 필요하게 됩니다.</p>
+
+<hr />
+
+<h1 id="how-to-use-babel">How to Use Babel</h1>
+
+<p>이번 포스트에서는 frontend, 더 특정하자면 react에서 babel을 사용하는 방법에 대해서 이야기해 보려고 합니다. 이 포스트를 작성하는 이유가 react를 사용한 프로젝트의 공부를 하기 위해서이기 때문입니다. 각설하고, CLI tool이 아닌 Configuration에 의한 사용법에 대해서 알아보도록 하겠습니다.</p>
+
+<p>Webpack의 loader로서 Babel을 이용할 때는 <strong>File-relative</strong> 방식의 config를 사용할 수 있습니다. Project-wide 방식도 있지만, 여기서는 File-relative 방식만을 다루도록 하겠습니다.</p>
+
+<h2 id="config-in-react">Config in React</h2>
+
+<p>Babel을 webpack의 loader로 사용하기 위해서는, webpack과 babel 두 군데의 설정을 해줘야 합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ./webpack.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">entry</span><span class="p">:</span> <span class="p">[</span><span class="s1">'@babel/polyfill'</span><span class="p">,</span> <span class="s1">'./src/index.js'</span><span class="p">],</span>
+        <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.(</span><span class="sr">js|jsx</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span>
+                <span class="na">exclude</span><span class="p">:</span> <span class="sr">/node_modules/</span><span class="p">,</span>
+                <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="s1">'babel-loader'</span><span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>위의 코드는 webpack의 설정 파일인 <em>webpack.config.js</em> 입니다. 파일의 위치는 project의 root입니다.</p>
+
+<p>output, plugins 등의 설정은 생략하고 loader인 _rules_과 entry만 표현했습니다.</p>
+
+<p>entry에 <em>@babel/polyfill</em> 이 있습니다. 해당 설정은 아래에서 설명하겠습니다.</p>
+
+<p>그리고 rules 배열에 babel을 사용하는 설정이 있습니다.</p>
+
+<p><em>.js 혹은 .jsx 파일을 babel을 사용해서 변환하고, node_modules 폴더는 생략한다</em></p>
+
+<p>라는 뜻입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ./.babelrc</span>
+<span class="p">{</span>
+    <span class="s2">"presets"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"@babel/preset-env"</span><span class="p">,</span>
+        <span class="s2">"@babel/preset-react"</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 코드는 babel에 대한 설정을 하는 <em>.babelrc</em> 파일입니다. 역시 project의 root에 있습니다.</p>
+
+<p>위의 코드는 간단합니다. <em>@babel/preset-env</em> 과 <em>@babel/preset-react</em> 를 적용한다는 뜻입니다. 그럼 각각의 preset이 어떤 역할을 하는지 알아보겠습니다.</p>
+
+<h3 id="babelpolyfill">@babel/polyfill</h3>
+
+<p>ES2015+의 <a href="https://devhints.io/es6">새로운 기능</a>을 사용할 수 있도록 코드를 바꿔줍니다.</p>
+
+<h3 id="babelpreset-env">@babel/preset-env</h3>
+
+<p>@babel/preset-env은 최신 코드(ES2015 혹은 이상의)를 사용할 때 코드가 실행되는 환경에서 필요한 syntax 변환을 해주는 preset입니다. 한마디로, 현재 브라우저에서 지원하지 않는 어떤 syntax가 발견됐을 때, 해당 syntax를 현재 브라우저에서 지원하는 정도의 syntax로 변환시켜줍니다.</p>
+
+<p>그럼 어떤 syntax에 대한 처리를 해주는 걸까요? JavaScript는 아직 표준으로 정의되지 않는 proposal spec들이 존재합니다. 예전에는 이 spec들을 stage로 구분해서 babel-preset-stage-0, babel-preset-stage-1, babel-preset-stage-2, babel-preset-stage-3, babel-preset-stage-4를 지원했고, 목적에 맞게 설정해서 사용했었습니다. 하지만 이제는 <strong>@babel/preset-env</strong> 하나면 세세한 설정을 할 필요가 없습니다.</p>
+
+<h3 id="babelpreset-react">@babel/preset-react</h3>
+
+<p>React를 사용하는 project를 위한 preset입니다. 해당 preset은 3가지 preset을 가지고 있고, 2가지 preset은 development 옵션이 있을 때 포함됩니다.</p>
+
+<p>항상 포함하는 preset은 다음과 같습니다.</p>
+
+<ul>
+  <li><em>@babel/plugin-syntax-jsx</em>: JSX의 parsing을 가능하게 해줍니다.</li>
+  <li><em>@babel/plugin-transform-react-jsx</em>: JSX를 react의 함수(<em>React.createElement()</em>)를 호출하는 방식으로 전환해줍니다.</li>
+  <li><em>@babel/plugin-transform-react-display-name</em>: <em>createReactClass</em> 와 <em>React.createClass</em> 에 displayName을 추가시켜줍니다.</li>
+</ul>
+
+<p>development 옵션일 때 추가되는 preset은 다음과 같습니다.</p>
+
+<ul>
+  <li><em>@babel/plugin-transform-react-jsx-self</em>: JSX element에 <strong>__self</strong> property를 추가합니다. 이는 runtime warning 을 생성하는 데 사용됩니다. Development mode에서는 해당 preset을 사용해야 합니다.</li>
+  <li><em>@babel/plugin-transform-react-jsx-source</em>: JSX element에 <strong>__source</strong> property를 추가합니다. 해당 property에는 file name과 line number가 있는데, 이는 warning message를 생성하는 데 도움을 줍니다.</li>
+</ul>
+
+<hr />
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>해당 post에서는 <strong>babel</strong>을 사용하는 이유에 대해서 알아보고, react를 사용하는 project에서의 babel 설정 방법과 각 설정 항목들이 맡은 역할에 대해서 간략하게 알아봤습니다. Project를 진행함에 따라서 babel의 세세한 설정이 필요한 경우가 있거나, 다른 조사가 필요한 경우 그에 대한 post를 또 작성해보도록 하겠습니다.</p>
+
+<hr />
+
+<h1 id="references">References</h1>
+<ul>
+  <li><a href="https://babeljs.io/docs/en/#babel-is-a-javascript-compiler">Babel Docs</a></li>
+</ul>
+
+      </div>
+      
+        
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://shlrur.github.io//develog/2018/11/18/why-using-babel/';
+      this.page.identifier = 'https://shlrur.github.io//develog/2018/11/18/why-using-babel/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://shlrurs-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      
+    </article>
+  </div>
+</main>
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+  <div class="inner">
+    <div class="copyright">
+      
+        <p>&copy; 2018 First Blog.</p>
+      
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async src="/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '8K2C62GHZZ',
+  apiKey: 'ac6b1c9d2ea0e17891c512e13491b27b',
+  indexName: 'my_first_blog_search',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

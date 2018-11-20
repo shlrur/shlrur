@@ -373,4 +373,9 @@ var store = [{
         "excerpt":"        View this post on Instagram           #운동 #매일운동 #오전운동 #dailyworkouts  #strength #squat #스쿼트 80kg 3x5 #benchpressing #벤치프레스 60kg  3x8 2주만에 바벨운동하는거라 가볍게 해봄...무겁게 할수는 있을까ㅠ  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 15, 2018 at 6:42pm PST ","categories": ["workout"],
         "tags": ["strength"],
         "url": "https://shlrur.github.io//workout/2018/11/16/workout-log-strength/"
+      },{
+        "title": "[Babel] Why using Babel",
+        "excerpt":"Babel은 Webpack과 함께 React에서 꼭 사용되는 third party library 중의 하나입니다. webpack에 대해서는 Why using webpack 에서 개념과 함께 필요한 이유에 대해서 알아보았습니다. 이번 포스트에서는 Babel이 필요한 이유와 몇 가지 플러그인에 대해서 알아보겠습니다. Contents Why?? How to Use Babel Config in React @babel/polyfill @babel/preset-env babel/preset-react ConclusionWhy?? Babel is a JavaScript...","categories": ["develog"],
+        "tags": ["api"],
+        "url": "https://shlrur.github.io//develog/2018/11/18/why-using-babel/"
       }]
