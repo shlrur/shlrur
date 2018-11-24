@@ -378,4 +378,9 @@ var store = [{
         "excerpt":"Babel은 Webpack과 함께 React에서 꼭 사용되는 third party library 중의 하나입니다. webpack에 대해서는 Why using webpack 에서 개념과 함께 필요한 이유에 대해서 알아보았습니다. 이번 포스트에서는 Babel이 필요한 이유와 몇 가지 플러그인에 대해서 알아보겠습니다. Contents Why?? How to Use Babel Config in React @babel/polyfill @babel/preset-env babel/preset-react ConclusionWhy?? Babel is a JavaScript...","categories": ["develog"],
         "tags": ["api"],
         "url": "https://shlrur.github.io//develog/2018/11/18/why-using-babel/"
+      },{
+        "title": "[Jekyll] 나의 Jekyll template 제작기 - 1",
+        "excerpt":"블로그를 시작한 계기는 내가 하는 일이나 평소 생활에 대한 log를 남겨보고 싶었기 때문입니다. 말 그대로 BLOG를 해보고 싶었습니다. 대학교&amp;대학원 그리고 동아리에서 했던 프로젝트, 발표자료, 취미생활 등 모든 것들을 blog로 남겼다면 하는 후회가 들었습니다. 그래서 늦긴 했지만, 지금이라도 허겁지겁 블로그를 시작해보려고 마음을 먹었습니다. Contents 서론 Jekyll Theme 선택 시작 임시 선택...","categories": ["develog"],
+        "tags": ["etc"],
+        "url": "https://shlrur.github.io//develog/2018/11/24/jekyll-template-story-1/"
       }]
