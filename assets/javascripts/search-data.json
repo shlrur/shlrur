@@ -380,7 +380,7 @@ var store = [{
         "url": "https://shlrur.github.io//develog/2018/11/18/why-using-babel/"
       },{
         "title": "[Jekyll] 나의 Jekyll template 제작기 - 1",
-        "excerpt":"블로그를 시작한 계기는 내가 하는 일이나 평소 생활에 대한 log를 남겨보고 싶었기 때문입니다. 말 그대로 BLOG를 해보고 싶었습니다. 대학교&amp;대학원 그리고 동아리에서 했던 프로젝트, 발표자료, 취미생활 등 모든 것들을 blog로 남겼다면 하는 후회가 들었습니다. 그래서 늦긴 했지만, 지금이라도 허겁지겁 블로그를 시작해보려고 마음을 먹었습니다. Contents 서론 Jekyll Theme 선택 시작 임시 선택...","categories": ["develog"],
+        "excerpt":"블로그를 시작한 계기는 내가 하는 일이나 평소 생활에 대한 log를 남겨보고 싶었기 때문입니다. 말 그대로 BLOG를 해보고 싶었습니다. 대학교&amp;대학원 그리고 동아리에서 했던 프로젝트, 발표자료, 취미생활 등 모든 것들을 blog로 남겼다면 하는 후회가 들었습니다. 그래서 많은 것들을 놓쳤지만, 지금이라도 블로그를 시작해보려고 마음을 먹었습니다. Contents 서론 Jekyll Theme 선택 시작 임시 선택...","categories": ["develog"],
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2018/11/24/jekyll-template-story-1/"
       }]
