@@ -165,7 +165,7 @@ var store = [{
         "url": "https://shlrur.github.io//workout/2018/08/23/workout-log-strength/"
       },{
         "title": "JavaScript engine fundamentals: Shapes and Inline Caches",
-        "excerpt":"이 포스트는 JavaScript engine fundamentals: Shapes and Inline Caches 의 글을 번역한 것입니다. 이 문서는 V8 엔진뿐만 아니라 모든 JavaScript 엔진에 공통으로 적용되는 몇 가지 핵심 기본 사항을 설명합니다. JavaScript 개발자로서, JavaScript 엔진이 어떻게 작동하는지에 대한 이해를 통해 코드의 성능 특성을 추론할 수 있습니다. Note : 문서를 읽는 것보다 발표를...","categories": ["develog"],
+        "excerpt":"이 문서는 V8 엔진뿐만 아니라 모든 JavaScript 엔진에 공통으로 적용되는 몇 가지 핵심 기본 사항을 설명합니다. JavaScript 개발자로서, JavaScript 엔진이 어떻게 작동하는지에 대한 이해를 통해 코드의 성능 특성을 추론할 수 있습니다. 이 포스트는 JavaScript engine fundamentals: Shapes and Inline Caches 의 글을 번역한 것입니다. Note : 문서를 읽는 것보다 발표를...","categories": ["develog"],
         "tags": ["javascript"],
         "url": "https://shlrur.github.io//javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/"
       },{
@@ -185,12 +185,12 @@ var store = [{
         "url": "https://shlrur.github.io//workout/2018/08/30/workout-log-kendo/"
       },{
         "title": "Immediately-Invoked Function Expression (IIFE)",
-        "excerpt":"이 포스트는 Immediately-Invoked Function Expression (IIFE) 의 글을 번역한 것입니다. 잘 모르시겠지만, 저는 용어 사용에 있어서 까다로운 편입니다. 그래서 유명하지만 오해의 소지가 있는 JavaScript 용어인 “self-executing anonymous function” (혹은 self-invoked anonymous function) 을 매우 자주 접한 후, 제 생각을 article에 정리해야겠다고 생각했습니다. 이 패턴이 실제로 어떻게 작용하는지에 대해 철저한 정보를...","categories": ["develog"],
+        "excerpt":"잘 모르시겠지만, 저는 용어 사용에 있어서 까다로운 편입니다. 그래서 유명하지만 오해의 소지가 있는 JavaScript 용어인 “self-executing anonymous function” (혹은 self-invoked anonymous function) 을 매우 자주 접한 후, 제 생각을 article에 정리해야겠다고 생각했습니다. 이 포스트는 Immediately-Invoked Function Expression (IIFE) 의 글을 번역한 것입니다. 이 패턴이 실제로 어떻게 작용하는지에 대해 철저한 정보를...","categories": ["develog"],
         "tags": ["javascript"],
         "url": "https://shlrur.github.io//develog/2018/09/01/immediately-invoked-function-expression/"
       },{
         "title": "JavaScript engine fundamentals: optimizing prototypes",
-        "excerpt":"이 포스트는 JavaScript engine fundamentals: optimizing prototypes 의 글을 번역한 것입니다. 이 문서는 V8 엔진뿐만 아니라 모든 JavaScript 엔진에 공통으로 적용되는 몇 가지 핵심 기본 사항을 설명합니다. JavaScript 개발자로서, JavaScript 엔진이 어떻게 작동하는지에 대한 이해를 통해 코드의 성능 특성을 추론할 수 있을것입니다. 이전 포스트에서, 우리는 JavaScript 엔진이 Shapes와 Inline Caches를...","categories": ["develog"],
+        "excerpt":"이 문서는 V8 엔진뿐만 아니라 모든 JavaScript 엔진에 공통으로 적용되는 몇 가지 핵심 기본 사항을 설명합니다. JavaScript 개발자로서, JavaScript 엔진이 어떻게 작동하는지에 대한 이해를 통해 코드의 성능 특성을 추론할 수 있을것입니다. 이 포스트는 JavaScript engine fundamentals: optimizing prototypes 의 글을 번역한 것입니다. 이전 포스트에서, 우리는 JavaScript 엔진이 Shapes와 Inline Caches를...","categories": ["develog"],
         "tags": ["javascript"],
         "url": "https://shlrur.github.io//javascripts/javascript-engine-fundamentals-optimizing-prototypes/"
       },{

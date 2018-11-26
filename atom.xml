@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2018-11-24T15:59:35+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">[Jekyll] 나의 Jekyll template 제작기 - 1</title><link href="https://shlrur.github.io//develog/2018/11/24/jekyll-template-story-1/" rel="alternate" type="text/html" title="[Jekyll] 나의 Jekyll template 제작기 - 1" /><published>2018-11-24T00:00:00+00:00</published><updated>2018-11-24T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2018/11/24/jekyll-template-story-1</id><content type="html" xml:base="https://shlrur.github.io//develog/2018/11/24/jekyll-template-story-1/">&lt;p&gt;블로그를 시작한 계기는 내가 하는 일이나 평소 생활에 대한 log를 남겨보고 싶었기 때문입니다. 말 그대로 BLOG를 해보고 싶었습니다. 대학교&amp;amp;대학원 그리고 동아리에서 했던 프로젝트, 발표자료, 취미생활 등 모든 것들을 blog로 남겼다면 하는 후회가 들었습니다. 그래서 늦긴 했지만, 지금이라도 허겁지겁 블로그를 시작해보려고 마음을 먹었습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2018-11-26T14:20:31+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">[Jekyll] 나의 Jekyll template 제작기 - 1</title><link href="https://shlrur.github.io//develog/2018/11/24/jekyll-template-story-1/" rel="alternate" type="text/html" title="[Jekyll] 나의 Jekyll template 제작기 - 1" /><published>2018-11-24T00:00:00+00:00</published><updated>2018-11-24T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2018/11/24/jekyll-template-story-1</id><content type="html" xml:base="https://shlrur.github.io//develog/2018/11/24/jekyll-template-story-1/">&lt;p&gt;블로그를 시작한 계기는 내가 하는 일이나 평소 생활에 대한 log를 남겨보고 싶었기 때문입니다. 말 그대로 BLOG를 해보고 싶었습니다. 대학교&amp;amp;대학원 그리고 동아리에서 했던 프로젝트, 발표자료, 취미생활 등 모든 것들을 blog로 남겼다면 하는 후회가 들었습니다. 그래서 늦긴 했지만, 지금이라도 허겁지겁 블로그를 시작해보려고 마음을 먹었습니다.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -37,7 +37,7 @@
 
 &lt;p&gt;처음 github 블로그라는 말을 들었을 때는, github에서 Tistory같은 블로그 제작 툴을 제공하는 줄 알았습니다.&lt;/p&gt;
 
-&lt;p&gt;Jekyll은 github에서 &lt;strong&gt;공짜&lt;/strong&gt;로 &lt;strong&gt;posting&lt;/strong&gt;해주는 &lt;strong&gt;static website&lt;/strong&gt; generator입니다. 예, website를 직접 제작해야 합니다.&lt;/p&gt;
+&lt;p&gt;Jekyll은 github에서 &lt;strong&gt;공짜&lt;/strong&gt;로 &lt;strong&gt;posting&lt;/strong&gt;해주는 &lt;strong&gt;static website&lt;/strong&gt; generator입니다. 그렇기 때문에 Website를 직접 제작해야 하는 어려움이 있지만, site에 대한 file들을 github를 통해서 직접 관리할 수 있다는 장점이 있습니다.&lt;/p&gt;
 
 &lt;p&gt;여러 &lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll 테마를 제공&lt;/a&gt;하지만, 해당 테마에서 &lt;em&gt;마음에 들지 않거나 어떤 기능을 추가 혹은 제거하기 위해서&lt;/em&gt; 는 코딩이 필요합니다.&lt;/p&gt;
 
@@ -56,7 +56,7 @@
 
 &lt;p&gt;맞습니다. 처음엔 아무것도 모르고 그저 메뉴를 계층으로 보일 수만 있으면 됐습니다. 이 생각을 가지고 &lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;여기&lt;/a&gt; 서 테마를 검색해봤습니다.&lt;/p&gt;
 
-&lt;p&gt;그런데 아무리 찾아봐도 menu가 hierarchy 구조로 구성된 테마는 찾을 수 없었습니다. 모든 테마를 본 건 아니지만, 페이지를 아무리 넘겨도 그런 구조는 찾을 수가 없었습니다(ㅠ…)&lt;/p&gt;
+&lt;p&gt;그런데 아무리 찾아봐도 menu가 hierarchy 구조로 구성된 테마는 찾을 수 없었습니다. 모든 테마를 본 건 아니지만, 페이지를 아무리 넘겨도 그런 구조는 찾을 수가 없었습니다. 대책이 필요했습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;임시-선택&quot;&gt;임시 선택&lt;/h2&gt;
 
@@ -237,7 +237,7 @@ order: 1
 
 &lt;p&gt;위의 3가지 파일이 메뉴를 만드는데 핵심적인 역할을 하는 파일입니다. &lt;strong&gt;_featured_categories&lt;/strong&gt;와 &lt;strong&gt;_featured_tags&lt;/strong&gt;폴더에 category와 tag 목록을 넣어놓고, 이 파일들을 사용해서 사이트 왼쪽의 menu와 submenu를 만드는 구조입니다.&lt;/p&gt;
 
-&lt;p&gt;이런 메뉴 구조가 마음에 들었기 때문에 비록 디자인은 마음에 들지 않았지만, 저의 jekyll 블로그 테마를 이 테마로 바꿨습니다. 하지만 다음날 바로 이 테마를 사용할 수 없는 기능적 이유를 찾았습니다…&lt;/p&gt;
+&lt;p&gt;이런 메뉴 구조가 마음에 들었기 때문에 비록 디자인은 마음에 들지 않았지만, 저의 jekyll 블로그 테마를 이 테마로 바꿨습니다. 하지만 다음날 바로 이 테마를 사용할 수 없는 기능적 이유를 찾았습니다.&lt;/p&gt;
 
 &lt;p&gt;다음편에 계속됩니다.&lt;/p&gt;
 
