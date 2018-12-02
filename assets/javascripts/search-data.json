@@ -379,8 +379,23 @@ var store = [{
         "tags": ["api"],
         "url": "https://shlrur.github.io//develog/2018/11/18/why-using-babel/"
       },{
+        "title": "2018-11-22 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #점심운동 #dailyworkouts  #strength #benchpressing #벤치프레스 70kg 5x5 #pullups #풀업 5x5 #dumbellpress #덤벨프레스 20kg 5x5 #hanging #매달리기 30s-20s-15s #무릎연골 #부상 #그래서 #상체운동  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 21, 2018 at 7:14pm PST ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/11/22/workout-log-strength/"
+      },{
         "title": "[Jekyll] 나의 Jekyll template 제작기 - 1",
         "excerpt":"블로그를 시작한 계기는 내가 하는 일이나 평소 생활에 대한 log를 남겨보고 싶었기 때문입니다. 말 그대로 BLOG를 해보고 싶었습니다. 대학교&amp;대학원 그리고 동아리에서 했던 프로젝트, 발표자료, 취미생활 등 모든 것들을 blog로 남겼다면 하는 후회가 들었습니다. 그래서 많은 것들을 놓쳤지만, 지금이라도 블로그를 시작해보려고 마음을 먹었습니다. Contents 서론 Jekyll Theme 선택 시작 임시 선택...","categories": ["develog"],
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2018/11/24/jekyll-template-story-1/"
+      },{
+        "title": "2018-11-26 Workout Log: strength",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #점심운동 #dailyworkouts - #strength - #benchpressing #벤치프레스 #70kg 5x5 #pullups #풀업 5x5 #seatedcablerow 140kg 5x10 무릎이 빨리 나아야 스쿼트나 데드를 할텐데...  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 26, 2018 at 6:36am PST ","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/11/26/workout-log-strength/"
+      },{
+        "title": "2018-11-30 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 - #kendo - 오랜만에 해서 그런지 원래 그런지 넘나 못하는 것.  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 30, 2018 at 4:15am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/11/30/workout-log-kendo/"
       }]
