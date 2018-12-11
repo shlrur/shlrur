@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!--
+    Basically Basic Jekyll Theme 1.4.1
+    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
+-->
+<html lang="ko" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>[Jekyll] 나의 Jekyll template 제작기 - 2 | First Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="[Jekyll] 나의 Jekyll template 제작기 - 2" />
+<meta name="author" content="Heekyum" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="Jekyll Blog의 theme을 선택하기 위해서는, 먼저 자신의 blog에 필요한 기능이 무엇인지를 정리해야 합니다. 하지만 그 기능이 무료 theme 중에 없다면 직접 구현해야 합니다. 이번 포스팅에서는 필요한 기능들을 직접 구현한 경험에 대해서 이야기해 보려 합니다." />
+<meta property="og:description" content="Jekyll Blog의 theme을 선택하기 위해서는, 먼저 자신의 blog에 필요한 기능이 무엇인지를 정리해야 합니다. 하지만 그 기능이 무료 theme 중에 없다면 직접 구현해야 합니다. 이번 포스팅에서는 필요한 기능들을 직접 구현한 경험에 대해서 이야기해 보려 합니다." />
+<link rel="canonical" href="https://shlrur.github.io//develog/2018/12/10/jekyll-template-story-2/" />
+<meta property="og:url" content="https://shlrur.github.io//develog/2018/12/10/jekyll-template-story-2/" />
+<meta property="og:site_name" content="First Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-10T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Jekyll Blog의 theme을 선택하기 위해서는, 먼저 자신의 blog에 필요한 기능이 무엇인지를 정리해야 합니다. 하지만 그 기능이 무료 theme 중에 없다면 직접 구현해야 합니다. 이번 포스팅에서는 필요한 기능들을 직접 구현한 경험에 대해서 이야기해 보려 합니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2018/12/10/jekyll-template-story-2/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/icon_me.jpg"},"name":"Heekyum"},"headline":"[Jekyll] 나의 Jekyll template 제작기 - 2","dateModified":"2018-12-10T00:00:00+00:00","datePublished":"2018-12-10T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2018/12/10/jekyll-template-story-2/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="First Blog" href="/atom.xml">
+  
+</head>
+
+
+  <body class="layout--post jekyll-나의-jekyll-template-제작기-2">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- <a href="/test/javascript" itemprop="url"></a> -->
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-0"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/livelog" itemprop="url">
+          <span itemprop="name">LiveLog</span>
+        </a>
+          <label class="folder" for="list-item-0">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/idea" itemprop="url">
+              <span itemprop="name">Idea</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/workout" itemprop="url">
+          <span itemprop="name">Workout</span>
+        </a>
+          <label class="folder" for="list-item-1">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/kendo" itemprop="url">
+              <span itemprop="name">Kendo</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/strength" itemprop="url">
+              <span itemprop="name">Strength</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/develog" itemprop="url">
+          <span itemprop="name">Develog</span>
+        </a>
+          <label class="folder" for="list-item-2">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript" itemprop="url">
+              <span itemprop="name">JavaScript</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript-design-pattern" itemprop="url">
+              <span itemprop="name">javascript Design Pattern</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/api" itemprop="url">
+              <span itemprop="name">Apis</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/etc" itemprop="url">
+              <span itemprop="name">Et cetera</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:shlrur123@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/shlrur">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+
+  
+    <li><a href="https://instagram.com/dochaebi">
+  <span class="icon icon--instagram"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.05 3.233c-.04.78-.17 1.203-.28 1.485-.15.374-.32.64-.6.92-.28.28-.55.453-.92.598-.28.11-.71.24-1.49.276-.85.038-1.1.047-3.24.047s-2.39-.01-3.24-.05c-.78-.04-1.21-.17-1.49-.28-.38-.15-.64-.32-.92-.6-.28-.28-.46-.55-.6-.92-.11-.28-.24-.71-.28-1.49-.03-.84-.04-1.1-.04-3.23s.01-2.39.04-3.24c.04-.78.17-1.21.28-1.49.14-.38.32-.64.6-.92.28-.28.54-.46.92-.6.28-.11.7-.24 1.48-.28.85-.03 1.1-.04 3.24-.04zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z"/></svg></span>
+  <span class="label">Instagram</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/atom.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">Subscribe</span>
+      </a>
+    
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/">
+            <img src="/assets/images/icon_me.jpg" alt="" class="site-logo">
+            <span>First Blog</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          <header class="intro">
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      <h1 id="page-title" class="intro-title">[Jekyll] 나의 Jekyll template 제작기 - 2
+</h1>
+      
+
+      
+        
+
+        <p class="entry-meta">
+          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2018-12-10T00:00:00+00:00">December 10, 2018</time></span>
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        <p>Jekyll Blog의 theme을 선택하기 위해서는, 먼저 자신의 blog에 필요한 기능이 무엇인지를 정리해야 합니다. 하지만 그 기능이 무료 theme 중에 없다면 직접 구현해야 합니다. 이번 포스팅에서는 필요한 기능들을 직접 구현한 경험에 대해서 이야기해 보려 합니다.</p>
+
+<p><a href="/develog/2018/11/24/jekyll-template-story-1/">이전 편</a>에서는 Jekyll Blog theme 의 선택 과정에 관해서 이야기 했습니다. 처음 선택했던 <a href="https://mmistakes.github.io/jekyll-theme-basically-basic/">Basically Basic</a> theme은 posts를 menu 별로 보여주는 기능이 없었기 때문에 <a href="https://isme2n.github.io/">Aiden 님의 블로그</a> theme을 사용해서 다시 blog를 작성했지만, 이 블로그의 theme을 <strong>사용하기 힘든 이유</strong>를 발견했습니다.</p>
+
+<hr />
+
+<h1 id="contents">Contents</h1>
+
+<ul>
+  <li><a href="#the-problem">The Problem</a>
+    <ul>
+      <li><a href="#jekyll-paginate">jekyll-paginate</a></li>
+    </ul>
+  </li>
+  <li><a href="#is-the-problem-solved">Is The Problem Solved?</a>
+    <ul>
+      <li><a href="#jekyll-paginate-v2">jekyll-paginate-v2</a></li>
+      <li><a href="#apply-to-my-blog">Apply To My Blog</a></li>
+    </ul>
+  </li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<hr />
+
+<h1 id="the-problem">The Problem</h1>
+
+<p>문제를 살펴보기 전에, <a href="https://jekyllrb.com/docs/pagination/">pagination</a> 이라는 기능을 알아보겠습니다.</p>
+
+<p>Jekyll에서 pagination은 전체 posts 목록을 작은 목록으로 나누어 여러 페이지로 보여주는 방법을 말합니다. 예를들어, 20개의 posts를 한 페이지에 5개씩 4개의 페이지로 보여주는 것입니다. 이러한 방법은, posts가 많아 한 페이지에서 모든 posts를 보여주기 힘들 때 유용하게 사용할 수 있습니다.</p>
+
+<p>해당 템플릿의 문제점은, pagination 기능을 사용하기 힘든 구조라는 점입니다. 저게 원하는 기능에 문제가 되는 부분을 살펴보겠습니다.</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">&lt;!-- _featured_tags/develov-javascript.md --&gt;
+---
+</span>layout: tag-blog
+title: JavaScript
+slug: javascript
+category: devlog
+menu: false
+order: 1
+<span class="gh">header-img: "/img/js-logo.png"
+---
+</span></code></pre></div></div>
+
+<div class="language-django highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- _layouts/tag-blog.html --&gt;</span>
+---
+layout: base
+---
+
+<span class="cp">{%</span> <span class="nv">assign</span> <span class="nv">posts</span> <span class="err">=</span> <span class="nv">site.tags</span><span class="p">[</span><span class="nv">page.slug</span><span class="p">]</span> <span class="err">|</span> <span class="nv">where</span><span class="err">:</span> <span class="s2">"categories"</span><span class="p">,</span> <span class="nv">page.category</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="ow">in</span> <span class="nv">posts</span> <span class="cp">%}</span>
+  <span class="cp">{%</span> <span class="k">include</span> <span class="nv">post.html</span> <span class="nv">post</span><span class="err">=</span><span class="nv">post</span> <span class="nv">link_title</span><span class="err">=</span><span class="kp">true</span> <span class="nv">excerpt</span><span class="err">=</span><span class="kp">true</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">include</span> <span class="nv">pagination.html</span> <span class="cp">%}</span>
+</code></pre></div></div>
+
+<p><a href="https://isme2n.github.io/">Aiden 님의 블로그</a>는 <strong>featured_category</strong> 와 <strong>featured_tags</strong> 로 모든 post를 분류합니다. Category로 크게 분류하고, 다시 tags로 소분류를 합니다. 위에서 첫 번째 코드는 develog category 내에서 javascript tag로 분류하는 post의 list를 그리는 markdown 파일입니다. 해당 파일은 <strong>tag-blog</strong>라는 layout을 사용합니다.</p>
+
+<p><em>_layouts/tag-blog.html</em>는 모든 post에서, category와 tag가 맞는 post를 골라낸 후 그 post들을 나열해서 간단히 보여줍니다. 여기서 문제를 찾을 수 있었습니다. <em>_layouts/tag-blog.html</em>에는 pagenation 기능이 없습니다. 저에게는 pagination 기능이 필요했기 때문에, 그대로 쓸 수가 없었습니다. 그래서 해당 페이지에서 pagenation 기능을 적용할 방법을 찾기 시작했습니다.</p>
+
+<h2 id="jekyll-paginate">jekyll-paginate</h2>
+
+<p><a href="https://github.com/jekyll/jekyll-paginate">jekyll-paginate</a>는 github에서 제공하는 plugin 중에 하나로서, jekyll blog에서 pagination 기능을 사용할 수 있게 해줍니다. 하지만 이 plugin은 사용하기에 한계가 있습니다. <strong>모든 post를 정해진 개수로만 나눌 수 있고, 더 세세하게 page를 나눌 수 없습니다.</strong> Blog에서 menu를 2단계로 나누고 각 menu마다 구분해서 post를 보여주기 위해서는 <a href="https://github.com/jekyll/jekyll-paginate">jekyll-paginate</a> 말고 더 많은 기능을 제공하는 pagination plugin이 필요하게 되었습니다.</p>
+
+<hr />
+
+<h1 id="is-the-problem-solved">Is The Problem Solved?</h1>
+
+<h2 id="jekyll-paginate-v2">jekyll-paginate-v2</h2>
+
+<p><a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> 는 <a href="https://github.com/jekyll/jekyll-paginate">jekyll-paginate</a>에 비해 더 강화된 pagination 기능을 제공하는 plugin입니다. 이 plugin은 collection, categories, tags 및 locale 등으로 구분해서 pagination을 할 수 있는 기능을 제공합니다. 제가 원하던 기능입니다.</p>
+
+<h2 id="apply-to-my-blog">Apply To My Blog</h2>
+
+<p>일단, <a href="https://isme2n.github.io/">Aiden 님의 블로그</a>는 제가 필요한 기능이 없기 때문에 그대로 사용하기에 적절하지 않았습니다. <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> plugin을 적용해야 하기 때문에, 제가 처음에 선택했던 <a href="https://mmistakes.github.io/jekyll-theme-basically-basic/">Basically Basic</a> theme을 다시 선택하기로 했습니다.</p>
+
+<p><strong><a href="https://mmistakes.github.io/jekyll-theme-basically-basic/">Basically Basic</a> theme에서, <a href="https://isme2n.github.io/">Aiden 님의 블로그</a>의 category와 tag를 사용해서 post를 구분하는 개념을 사용하되, <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> plugin을 적용해서 blog를 제작하기로 결정했습니다.</strong></p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">&lt;!-- tag/etc.md --&gt;
+---
+</span>layout: tag-blog
+title: etc
+permalink: tag/etc
+pagination:
+    enabled: true
+<span class="gh">    tag: etc
+---
+</span></code></pre></div></div>
+
+<div class="language-django highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- _layouts/tag-blog.html --&gt;</span>
+---
+layout: page
+---
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="ow">in</span> <span class="nv">paginator.posts</span> <span class="cp">%}</span>
+  <span class="cp">{%</span> <span class="k">include</span> <span class="nv">entry.html</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+<span class="c">&lt;!-- Pagination links --&gt;</span>
+<span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pager"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="c">&lt;!-- Page: </span><span class="cp">{{</span> <span class="nv">paginator.page</span> <span class="cp">}}</span><span class="c"> of </span><span class="cp">{{</span> <span class="nv">paginator.total_pages</span> <span class="cp">}}</span><span class="c"> --&gt;</span>
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nv">paginator.previous_page</span> <span class="cp">%}</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">paginator.previous_page_path</span> <span class="err">|</span> <span class="nv">relative_url</span> <span class="cp">}}</span><span class="s">"</span> <span class="na">class=</span><span class="s">"previous"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"icon icon--arrow-right"</span><span class="nt">&gt;</span><span class="cp">{%</span> <span class="k">include</span> <span class="nv">icon</span><span class="o">-</span><span class="nv">arrow</span><span class="o">-</span><span class="nv">left.svg</span> <span class="cp">%}</span><span class="nt">&lt;/span&gt;</span> <span class="cp">{{</span> <span class="nv">site.data.theme.t.newer</span> <span class="err">|</span> <span class="nv">default</span><span class="err">:</span> <span class="s1">'Newer'</span> <span class="cp">}}</span><span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nv">paginator.next_page</span> <span class="cp">%}</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">paginator.next_page_path</span> <span class="err">|</span> <span class="nv">relative_url</span> <span class="cp">}}</span><span class="s">"</span> <span class="na">class=</span><span class="s">"next"</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">site.data.theme.t.older</span> <span class="err">|</span> <span class="nv">default</span><span class="err">:</span> <span class="s1">'Older'</span> <span class="cp">}}</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon--arrow-right"</span><span class="nt">&gt;</span><span class="cp">{%</span> <span class="k">include</span> <span class="nv">icon</span><span class="o">-</span><span class="nv">arrow</span><span class="o">-</span><span class="nv">right.svg</span> <span class="cp">%}</span><span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+
+<p>위의 두 코드는 제 블로그에서 pagination 기능을 구현한 page의 코드입니다.</p>
+
+<p><em>tag/etc.md</em> 파일은 tag-blog layout을 사용하며, pagination 기능을 사용하기위해 <kbd>pagination: enabled: true</kbd>로 설정했으며, <strong>etc</strong>라는 tag를 가지는 post만 가져온다는 것을 나타내고 있습니다.</p>
+
+<p><em>_layouts/tag-blog.html</em> 파일은 <em>tag/etc.md</em> 파일에서 <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> plugin을 통해 filtering 된 post를 나열합니다. <kbd>paginator.posts</kbd>는 <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> plugin에서 제공하는, 현재 page의 post를 배열로 가지고 있습니다. 해당 정보를 <kbd>for</kbd> 구문을 사용해서 <em>_includes/entry.html</em> 파일로 화면에 그리게 됩니다.</p>
+
+<p>이렇게 해서 저의 블로그에 다음과 같은 기능을 적용하는 데 성공했습니다.</p>
+
+<ul>
+  <li>메뉴가 왼쪽 혹은 오른쪽에 나오며, depth 가 있는 hierarchy 구조여야 한다.</li>
+  <li>각 메뉴마다 pagination 기능을 사용해서 post를 구분하여 나열한다.</li>
+</ul>
+
+<p>그런데, local 환경에서는 문제없이 블로그가 실행되는데, github에서 build 된 <em><a href="http://shlrur.github.io">http://shlrur.github.io</a></em> 주소에서는 pagination 기능이 적용되지 않는 문제가 생겼습니다. 다 했다고 생각했는데 전혀 예상치 못한 문제를 접했습니다.</p>
+
+<p>다음 편에 계속됩니다.</p>
+
+<hr />
+
+<h1 id="references">References</h1>
+<ul>
+  <li><a href="https://jekyllrb.com/docs/pagination/">Jekyll Pagination</a></li>
+  <li><a href="https://github.com/jekyll/jekyll-paginate">jekyll-paginate plugin</a></li>
+  <li><a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2 plugin</a></li>
+</ul>
+
+      </div>
+      
+        
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://shlrur.github.io//develog/2018/12/10/jekyll-template-story-2/';
+      this.page.identifier = 'https://shlrur.github.io//develog/2018/12/10/jekyll-template-story-2/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://shlrurs-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      
+    </article>
+  </div>
+</main>
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+  <div class="inner">
+    <div class="copyright">
+      
+        <p>&copy; 2018 First Blog.</p>
+      
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async src="/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '8K2C62GHZZ',
+  apiKey: 'ac6b1c9d2ea0e17891c512e13491b27b',
+  indexName: 'my_first_blog_search',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

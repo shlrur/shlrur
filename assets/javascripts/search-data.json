@@ -398,4 +398,9 @@ var store = [{
         "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 - #kendo - 오랜만에 해서 그런지 원래 그런지 넘나 못하는 것.  A post shared by  #kendo #검도 #strength (@dochaebi) on Nov 30, 2018 at 4:15am PST ","categories": ["workout"],
         "tags": ["kendo"],
         "url": "https://shlrur.github.io//workout/2018/11/30/workout-log-kendo/"
+      },{
+        "title": "[Jekyll] 나의 Jekyll template 제작기 - 2",
+        "excerpt":"Jekyll Blog의 theme을 선택하기 위해서는, 먼저 자신의 blog에 필요한 기능이 무엇인지를 정리해야 합니다. 하지만 그 기능이 무료 theme 중에 없다면 직접 구현해야 합니다. 이번 포스팅에서는 필요한 기능들을 직접 구현한 경험에 대해서 이야기해 보려 합니다. 이전 편에서는 Jekyll Blog theme 의 선택 과정에 관해서 이야기 했습니다. 처음 선택했던 Basically Basic theme은...","categories": ["develog"],
+        "tags": ["etc"],
+        "url": "https://shlrur.github.io//develog/2018/12/10/jekyll-template-story-2/"
       }]
