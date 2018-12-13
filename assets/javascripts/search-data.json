@@ -399,8 +399,38 @@ var store = [{
         "tags": ["kendo"],
         "url": "https://shlrur.github.io//workout/2018/11/30/workout-log-kendo/"
       },{
+        "title": "2018-12-5 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts - #kendo #검도 - 자세가 발라야 몸이 안아프다.. 난 몸이 아프다ㅠ  A post shared by  #kendo #검도 #strength (@dochaebi) on Dec 5, 2018 at 4:01am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/12/05/workout-log-kendo/"
+      },{
+        "title": "2018-12-6 Workout Log: strength",
+        "excerpt":"View this post on Instagram #운동 #매일운동 #저녁운동 #dailyworkouts - #strength - #squats #스쿼트 20kg 10 60kg 8 80kg 3x5 #benchpressing #벤치프레스 20kg 5 60kg 5 80kg 3x5 #pullups #풀업 5x5 풀업 올라갈땐 숄더팩킹 확실히 하도록 신경쓰자. 내려올땐 데드행. 무릎보호대 올때까진 무리 ㄴㄴ A post shared by #kendo #검도 #strength...","categories": ["workout"],
+        "tags": ["strength"],
+        "url": "https://shlrur.github.io//workout/2018/12/06/workout-log-strength/"
+      },{
+        "title": "2018-12-7 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #점심운동 #dailyworkouts - #kendo #검도 - 오랜만에 점심검도. 좋다.  A post shared by  #kendo #검도 #strength (@dochaebi) on Dec 7, 2018 at 12:45am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/12/07/workout-log-kendo/"
+      },{
+        "title": "2018-12-9 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 - #kendo #검도 - #나주 #시합 #원정 #나주시장기호남의병검도대회 #개인전2위🥈 #단체전3위🥉 #조아따  A post shared by  #kendo #검도 #strength (@dochaebi) on Dec 9, 2018 at 3:23am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/12/09/workout-log-kendo/"
+      },{
         "title": "[Jekyll] 나의 Jekyll template 제작기 - 2",
         "excerpt":"Jekyll Blog의 theme을 선택하기 위해서는, 먼저 자신의 blog에 필요한 기능이 무엇인지를 정리해야 합니다. 하지만 그 기능이 무료 theme 중에 없다면 직접 구현해야 합니다. 이번 포스팅에서는 필요한 기능들을 직접 구현한 경험에 대해서 이야기해 보려 합니다. 이전 편에서는 Jekyll Blog theme 의 선택 과정에 관해서 이야기 했습니다. 처음 선택했던 Basically Basic theme은...","categories": ["develog"],
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2018/12/10/jekyll-template-story-2/"
+      },{
+        "title": "2018-12-11 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts - #kendo #검도 - #월요검도  A post shared by  #kendo #검도 #strength (@dochaebi) on Dec 10, 2018 at 8:00am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/12/11/workout-log-kendo/"
+      },{
+        "title": "2018-12-12 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkouts - #kendo #검도 - 머리를 치기 위해서 손목을 시도해야 한다. 퇴격손목도 던져야 퇴격머리가 성공함.  A post shared by  #kendo #검도 #strength (@dochaebi) on Dec 12, 2018 at 3:33am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2018/12/12/workout-log-kendo/"
       }]
