@@ -463,4 +463,9 @@ var store = [{
         "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout - #kendo #검도 #머리치기왕대회 #2등 #luckypoint  A post shared by  #kendo #검도 #strength (@dochaebi) on Dec 28, 2018 at 5:31am PST ","categories": ["workout"],
         "tags": ["kendo"],
         "url": "https://shlrur.github.io//workout/2018/12/28/workout-log-kendo/"
+      },{
+        "title": "[Jekyll] 나의 Jekyll template 제작기 - 3(final)",
+        "excerpt":"Jekyll은 github에서 제공하는 static website generator입니다. Github repository에 jekyll blog를 위한 code를 push하면, github가 static website를 만들어줍니다. 이 때에, github에서 제공하는 dependency는 한정되어 있습니다. 바꿔말하면, 여기서 제공하지 않는 dependency는 사용할 수 없다는 뜻입니다. 이전 편에서는 제가 원하는 요구사항에 맞춰서 blog theme을 만드는 과정을 보여드렸습니다. Basically Basic theme에서, Aiden 님의 블로그의...","categories": ["develog"],
+        "tags": ["etc"],
+        "url": "https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/"
       }]

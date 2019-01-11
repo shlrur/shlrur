@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<!--
+    Basically Basic Jekyll Theme 1.4.1
+    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
+-->
+<html lang="ko" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>[Jekyll] 나의 Jekyll template 제작기 - 3(final) | First Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="[Jekyll] 나의 Jekyll template 제작기 - 3(final)" />
+<meta name="author" content="Heekyum" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="Jekyll은 github에서 제공하는 static website generator입니다. Github repository에 jekyll blog를 위한 code를 push하면, github가 static website를 만들어줍니다. 이 때에, github에서 제공하는 dependency는 한정되어 있습니다. 바꿔말하면, 여기서 제공하지 않는 dependency는 사용할 수 없다는 뜻입니다." />
+<meta property="og:description" content="Jekyll은 github에서 제공하는 static website generator입니다. Github repository에 jekyll blog를 위한 code를 push하면, github가 static website를 만들어줍니다. 이 때에, github에서 제공하는 dependency는 한정되어 있습니다. 바꿔말하면, 여기서 제공하지 않는 dependency는 사용할 수 없다는 뜻입니다." />
+<link rel="canonical" href="https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/" />
+<meta property="og:url" content="https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/" />
+<meta property="og:site_name" content="First Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-01T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Jekyll은 github에서 제공하는 static website generator입니다. Github repository에 jekyll blog를 위한 code를 push하면, github가 static website를 만들어줍니다. 이 때에, github에서 제공하는 dependency는 한정되어 있습니다. 바꿔말하면, 여기서 제공하지 않는 dependency는 사용할 수 없다는 뜻입니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/icon_me.jpg"},"name":"Heekyum"},"headline":"[Jekyll] 나의 Jekyll template 제작기 - 3(final)","dateModified":"2019-01-01T00:00:00+00:00","datePublished":"2019-01-01T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="First Blog" href="/atom.xml">
+  
+</head>
+
+
+  <body class="layout--post jekyll-나의-jekyll-template-제작기-3-final">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- <a href="/test/javascript" itemprop="url"></a> -->
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-0"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/livelog" itemprop="url">
+          <span itemprop="name">LiveLog</span>
+        </a>
+          <label class="folder" for="list-item-0">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/idea" itemprop="url">
+              <span itemprop="name">Idea</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/workout" itemprop="url">
+          <span itemprop="name">Workout</span>
+        </a>
+          <label class="folder" for="list-item-1">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/kendo" itemprop="url">
+              <span itemprop="name">Kendo</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/strength" itemprop="url">
+              <span itemprop="name">Strength</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+        <a class="sidebar-nav-item" href="/category/develog" itemprop="url">
+          <span itemprop="name">Develog</span>
+        </a>
+          <label class="folder" for="list-item-2">▾</label>
+      </div>
+      <ul class="list-body">
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript" itemprop="url">
+              <span itemprop="name">JavaScript</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/javascript-design-pattern" itemprop="url">
+              <span itemprop="name">javascript Design Pattern</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/api" itemprop="url">
+              <span itemprop="name">Apis</span>
+          </a>
+        </li>
+        <li>
+          <a class="sidebar-nav-subitem" href="/tag/etc" itemprop="url">
+              <span itemprop="name">Et cetera</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:shlrur123@gmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/shlrur">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+
+  
+    <li><a href="https://instagram.com/dochaebi">
+  <span class="icon icon--instagram"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.05 3.233c-.04.78-.17 1.203-.28 1.485-.15.374-.32.64-.6.92-.28.28-.55.453-.92.598-.28.11-.71.24-1.49.276-.85.038-1.1.047-3.24.047s-2.39-.01-3.24-.05c-.78-.04-1.21-.17-1.49-.28-.38-.15-.64-.32-.92-.6-.28-.28-.46-.55-.6-.92-.11-.28-.24-.71-.28-1.49-.03-.84-.04-1.1-.04-3.23s.01-2.39.04-3.24c.04-.78.17-1.21.28-1.49.14-.38.32-.64.6-.92.28-.28.54-.46.92-.6.28-.11.7-.24 1.48-.28.85-.03 1.1-.04 3.24-.04zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z"/></svg></span>
+  <span class="label">Instagram</span>
+</a>
+</li>
+  
+
+  <li>
+    
+      <a href="/atom.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">Subscribe</span>
+      </a>
+    
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/">
+            <img src="/assets/images/icon_me.jpg" alt="" class="site-logo">
+            <span>First Blog</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          <header class="intro">
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      <h1 id="page-title" class="intro-title">[Jekyll] 나의 Jekyll template 제작기 - 3(final)
+</h1>
+      
+
+      
+        
+
+        <p class="entry-meta">
+          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2019-01-01T00:00:00+00:00">January 1, 2019</time></span>
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        <p>Jekyll은 github에서 제공하는 static website generator입니다. Github repository에 jekyll blog를 위한 code를 push하면, github가 static website를 만들어줍니다. 이 때에, <a href="https://pages.github.com/versions/">github에서 제공하는 dependency</a>는 한정되어 있습니다. 바꿔말하면, 여기서 제공하지 않는 dependency는 사용할 수 없다는 뜻입니다.</p>
+
+<p><a href="/develog/2018/11/24/jekyll-template-story-2/">이전 편</a>에서는 제가 원하는 요구사항에 맞춰서 blog theme을 만드는 과정을 보여드렸습니다. <a href="https://mmistakes.github.io/jekyll-theme-basically-basic/">Basically Basic</a> theme에서, <a href="https://isme2n.github.io/">Aiden 님의 블로그</a>의 category와 tag를 사용해서 post를 구분하는 개념을 사용하여, <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> plugin을 적용해서 blog를 제작하는데 성공하였습니다.</p>
+
+<p><strong>하지만, 해당 결과물을 blog 생성을 위한 <a href="https://github.com/shlrur/first-blog.maker">github repository</a>에 push 했을 때 jekyll blog가 제대로 작동하지 않았습니다.</strong></p>
+
+<hr />
+
+<h1 id="contents">Contents</h1>
+
+<ul>
+  <li><a href="#the-problem">The Problem</a></li>
+  <li><a href="#solution">Solution</a>
+    <ul>
+      <li><a href="#_site-folder">_site Folder</a></li>
+      <li><a href="#solutions-for-using-jekyll-paginate-v2">Solutions for Using Jekyll-Paginate-V2</a></li>
+      <li><a href="#using-ci">Using CI</a></li>
+      <li><a href="#solutions-for-using-troublesome-task">Solutions for Using Troublesome Task</a>
+        <ul>
+          <li><a href="#git-submodule-생성">Git submodule 생성</a></li>
+          <li><a href="#travis에-github-repository-연결">Travis에 Github repository 연결</a></li>
+          <li><a href="#token-생성">Token 생성</a></li>
+          <li><a href="#config-파일-설정">Config 파일 설정</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+<hr />
+
+<h1 id="the-problem">The Problem</h1>
+
+<p>결론부터 말하자면, <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> plugin은 실제 github에서 생성되는 static website에서는 동작하지 않습니다. <a href="https://pages.github.com/versions/">github에서 제공하는 dependency</a>에 포함되어 있지 않기 때문입니다.</p>
+
+<p>그러면 방법이 없을까요? <strong>방법은 있습니다!</strong></p>
+
+<hr />
+
+<h1 id="solution">Solution</h1>
+
+<h2 id="_site-folder">_site Folder</h2>
+
+<blockquote>
+  <p>This is where the generated site will be placed (by default) once Jekyll is done transforming it. It’s probably a good idea to add this to your .gitignore file.(<a href="https://jekyllrb.com/docs/structure/">description of _site folder</a>)</p>
+</blockquote>
+
+<p><strong>_site</strong> folder는 <strong>Jekyll</strong>로 build 된 파일들이 저장되어있는 곳입니다. <strong>jekyll serve</strong> 명령어로 local에서 볼 수 있는 블로그 화면은 <strong>_site</strong> folder에 있는 파일들을 보는 것이죠. 여기서 해결책이 생깁니다.</p>
+
+<ul>
+  <li>Local에서는 jekyll-paginate-v2가 제대로 동작되어서 _site folder의 결과물이 생성되었다.</li>
+  <li>Github에서는 jekyll-paginate-v2가 무시되어서 블로그가 build 되었다.</li>
+</ul>
+
+<p>예 맞습니다. <strong>Github에서 build하게 하지말고, local에서 생성된 _site folder를 바로 repository에 올리면 됩니다.</strong></p>
+
+<h2 id="solutions-for-using-jekyll-paginate-v2">Solutions for Using Jekyll-Paginate-V2</h2>
+
+<p>위의 방법을 사용하기 위해서는 2개의 repository가 필요합니다.</p>
+
+<ol>
+  <li>기존의, .md 파일로 작성한 blog post를 올리던 repository.</li>
+  <li>새로 필요한, 1. 의 _site folder를 저장할 repository.</li>
+</ol>
+
+<p>저는 기존의 repository인 <a href="https://github.com/shlrur/shlrur.github.io">shlrur.github.io</a> 의 파일들을 <a href="https://github.com/shlrur/first-blog.maker">first-blog.maker</a>라는, 새로 만든 repository에 옮겼습니다.</p>
+
+<p>그리고 <a href="https://github.com/shlrur/first-blog.maker">first-blog.maker</a>에서 생성되는 <strong>_site folder</strong>의 내용을 <a href="https://github.com/shlrur/shlrur.github.io">shlrur.github.io</a>에 올려서 <a href="https://shlrur.github.io/">https://shlrur.github.io/</a> 주소로 blog에 접속할 수 있도록 하였습니다.</p>
+
+<p>이 방법을 사용하면 jekyll-paginate-v2를 blog의 구조 생성에 사용할 수 있습니다. <strong>하지만, 관리해야 할 repository가 하나 늘었고, commit/push 횟수도 늘어났습니다.</strong> 하나의 문제를 해결하기 위해서 귀찮은 작업이 추가되어 버렸습니다.</p>
+
+<h2 id="using-ci">Using CI</h2>
+
+<p><a href="https://codeship.com/continuous-integration-essentials">CI(Continous Integration)</a>를 사용해서 위의 과정을 자동으로 처리해 보겠습니다.</p>
+
+<p>CI 툴로는 <a href="https://jenkins.io/">Jenkins</a>, <a href="https://travis-ci.org/">Travis</a> 등이 있습니다.</p>
+
+<p>Jenkins는 회사에서 frontend와 backend를 통합한 CI로 사용했는데, 설치형이기 때문에 따로 서버가 필요합니다. 저는 CI를 위해서 따로 서버를 사용할 생각은 없기 때문에 Jenkins는 사용하지 않기로 했습니다.</p>
+
+<p>Travis는 Github와 연동하는데 편리하고, public repository에 대해서는 무료로 사용할 수 있다는 장점이 있습니다. 그리고 Travis Server를 이용하기 때문에 따로 서버가 필요하지도 않습니다.</p>
+
+<p>그래서 저는 Travis를 사용하기로 했습니다.</p>
+
+<h2 id="solutions-for-using-troublesome-task">Solutions for Using Troublesome Task</h2>
+
+<p>Travis CI를 사용해서 하려는 작업은,</p>
+
+<p><strong><a href="https://github.com/shlrur/first-blog.maker">first-blog.maker</a> repository의 내용을 commit 및 push 했을 때, 해당 내용을 자동으로 build하고, build된 결과물인 _site folder의 내용물을 <a href="https://github.com/shlrur/shlrur.github.io">shlrur.github.io</a> repository에 commit 및 push한다.</strong></p>
+
+<p>입니다. 그럼 찬찬히 과정을 따라가 보겠습니다. 아래의 과정을 따라가기 전에, <a href="https://github.com/shlrur/first-blog.maker">first-blog.maker</a> repository에 해당하는 repository를 본인의 pc에 clone 해 놓으셔야 합니다. 저의 repository를 예로 들어서 설명을 하겠습니다.</p>
+
+<h3 id="git-submodule-생성">Git submodule 생성</h3>
+
+<p><a href="https://github.com/shlrur/first-blog.maker">first-blog.maker</a> repository와 <a href="https://github.com/shlrur/shlrur.github.io">shlrur.github.io</a> repository를 git submodule로 묶습니다.</p>
+
+<p><a href="https://github.com/shlrur/first-blog.maker">first-blog.maker</a> repository를 clone 한 경로에서 다음과 같이 command를 입력합니다.</p>
+
+<blockquote>
+  <p>git submodule add https://github.com/shlrur/shlrur.github.io exampleoutputname</p>
+</blockquote>
+
+<p>그러면, <a href="https://github.com/shlrur/first-blog.maker">first-blog.maker</a> repository의 하위에 <kbd>exampleoutputname</kbd>이라는 이름의 folder가 만들어지고 이 폴더는 <a href="https://github.com/shlrur/shlrur.github.io">shlrur.github.io</a> repository에 대한 local git repository가 됩니다.</p>
+
+<p><kbd>exampleoutputname</kbd> 이라는 이름은 맘에 드는걸로 사용하시면 됩니다. 단, <kbd>_config.yml</kbd>에 있는 <strong>destination</strong> property의 값과 같아야 합니다.</p>
+
+<blockquote>
+  <p>destination: ./exampleoutputname</p>
+</blockquote>
+
+<p>정상적으로 clone이 진행되어서 submodule이 생성되면 command창에 다음과 같이 입력합니다.</p>
+
+<blockquote>
+  <p>git submodule update</p>
+</blockquote>
+
+<h3 id="travis에-github-repository-연결">Travis에 Github repository 연결</h3>
+
+<p><a href="https://travis-ci.org">Travis 사이트</a>에 접속해서 GitHub Repository에 대한 연결을 활성화합니다.</p>
+
+<p>기본적으로 Public Repository만 사용할 수 있으며, Private Repository를 사용하고 싶으면 <a href="https://travis-ci.com">다른 주소를 가지는 Travis 사이트</a>에서 별도의 비용을 지불해야 합니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/jekyll-template-story-3/0_enabled_repository.png" alt="enabled repository" />
+    <figcaption>enabled repository</figcaption>
+</figure>
+
+<p>위의 그림과 같이, 필요한 repository 2개를 Enabled 상태로 바꿔줍니다.</p>
+
+<p>잠깐 정리하자만, <a href="https://github.com/shlrur/first-blog.maker">first-blog.maker</a> repository에 push가 이루어지면 Travis CI가 <kbd>.travis.yml</kbd> 설정파일의 내용을 토대로 특정 작업을 수행하게 됩니다. <kbd>.travis.yml</kbd> 의 작성은 조금 아래에서 알아보겠습니다.</p>
+
+<p>우리는 이 <kbd>.travis.yml</kbd>과 <kbd>Rakefile</kbd>을 이용하여 <kbd>exampleoutputname</kbd>안에 있는 내용을 commit하고 push하게 될 것입니다. <kbd>exampleoutputname</kbd>은 <a href="https://github.com/shlrur/shlrur.github.io">shlrur.github.io</a>와 연동되는 repository이기 때문에 결국, Jekyll로 컴파일한 내용이 GitHub Page Repository로 들어가게 되는 겁니다.</p>
+
+<h3 id="token-생성">Token 생성</h3>
+
+<p>Travis CI에서 다른 Repository(<a href="https://github.com/shlrur/shlrur.github.io">shlrur.github.io</a>)로 push를 하기 위해서는 token이 필요합니다.</p>
+
+<p>GitHub에 접속해 Setting &gt; Developer settings &gt; Personal access tokens에 들어가서 Generate New Token을 클릭합니다. 적당히 description을 작성하고 Select scopes 중 repo 선택하고 generate token을 클릭하면 새로운 token이 생성 됩니다. 이 token을 바로 이용할 건 아니기 때문에 어딘가에 잘 저장해 둡니다.</p>
+
+<p>이 token값을 직접 Travis CI 설정파일( .travis.yml )에 직접 노출시키면 안되고 이 값을 암호화해서 사용해야 합니다.
+일단 command 창을 열어서 travis gem을 설치합니다.</p>
+
+<blockquote>
+  <p>gem install travis</p>
+</blockquote>
+
+<p>설치가 끝나면 다음의 명령을 이용해서 암호화를 진행합니다. 만약 로그인을 안했다는 메시지가 나오면 다음과 같이 로그인 후 진행하시면 됩니다. (ID/PW는 GitHub의 ID/PW를 이용합니다.)</p>
+
+<blockquote>
+  <p>travis login –pro
+travis encrypt GITHUB_TOKEN=<token> -r <repo-name></repo-name></token></p>
+</blockquote>
+
+<p>여기서 <token>에는 아까 우리가 획득한 GitHub token을 넣어주시면 됩니다. <repo-name>부분에는 우리의 Jekyll Source Folder에 대한 Repository이름을 주면 됩니다. 주의하실점은 {ID/RepoName} 형태로 사용하셔야 합니다. 저의 경우를 예로 들자면 다음과 같습니다.</repo-name></token></p>
+
+<blockquote>
+  <p>travis encrypt GITHUB_TOKEN=123abc456xxx -r shlrur/first-blog.maker</p>
+</blockquote>
+
+<p>위의 과정을 거치면 암호화된 값을 얻을 수 있는데 이 값을 아래와 같이 .travis.yml안에 설정하시면 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>env:
+  global:
+    secure: "Insert an encrypted value here."
+branches:
+  only:
+    - master
+</code></pre></div></div>
+
+<h3 id="config-파일-설정">Config 파일 설정</h3>
+
+<p>이제 <kbd>_config.yml</kbd>, <kbd>.travis.yml</kbd>, <kbd>Rakefile</kbd> 파일을 아래와 같이 적절하게 수정해야 합니다. Ruby언어로 작성된 script를 보는게 영 껄끄럽지만 어렵지 않는 내용이니 천천히 보시면 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># _config.yml
+# for Travis CI. (shit custom gem api...) ##################
+destination: ./exampleoutputname
+
+production_url: https://shlrur.github.io/
+source_url: https://github.com/shlrur/first-blog.maker
+
+safe: False
+lsi: False
+
+username: shlrur
+repo: first-blog.maker
+branch: master
+############################################################
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .travis.yml
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+- 2.4.2
+
+install:
+  # Install Jekyll and dependencies
+  - bundle install
+
+before_script:
+  - git config --global user.email "shlrur123@gmail.com"
+  - git config --global user.name "shlrur"
+
+script: bundle exec rake site:deploy --quiet #--trace
+
+# Generate your secure token with the travis gem:
+# get Github token from your Travis CI profile page
+# gem install travis
+# GH_TOKEN from https://github.com/settings/tokens
+# travis encrypt 'GIT_NAME="YOUR_USERNAME" GIT_EMAIL="YOUR_EMAIL" GH_TOKEN=YOUR_TOKEN'
+env:
+  global:
+    secure: "ssssssssssssss"
+branches:
+  only:
+    - master
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Rakefile
+#############################################################################
+#
+# Modified version of jekyllrb Rakefile
+# https://github.com/jekyll/jekyll/blob/master/Rakefile
+#
+#############################################################################
+
+require 'rake'
+require 'date'
+require 'yaml'
+
+CONFIG = YAML.load(File.read('_config.yml'))
+USERNAME = CONFIG["username"]
+REPO = CONFIG["repo"]
+SOURCE_BRANCH = CONFIG["branch"]
+DESTINATION_BRANCH = "master"
+
+def check_destination
+  unless Dir.exist? CONFIG["destination"]
+    sh "git clone https://$GIT_NAME:$GITHUB_TOKEN@github.com/#{USERNAME}/#{REPO}.git #{CONFIG["destination"]}"
+  end
+end
+
+namespace :site do
+  desc "Generate the site"
+  task :build do
+    check_destination
+    sh "bundle exec jekyll build"
+  end
+
+  desc "Generate the site and serve locally"
+  task :serve do
+    check_destination
+    sh "bundle exec jekyll serve"
+  end
+
+  desc "Generate the site, serve locally and watch for changes"
+  task :watch do
+    sh "bundle exec jekyll serve --watch"
+  end
+
+  desc "Generate the site and push changes to remote origin"
+  task :deploy do
+    # Detect pull request
+    if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i &gt; 0
+      puts 'Pull request detected. Not proceeding with deploy.'
+      exit
+    end
+
+    # Configure git if this is run in Travis CI
+    if ENV["TRAVIS"]
+      sh "git config --global user.name $GIT_NAME"
+      sh "git config --global user.email $GIT_EMAIL"
+      sh "git config --global push.default simple"
+    end
+
+    # Make sure destination folder exists as git repo
+    check_destination
+
+    sh "git checkout #{SOURCE_BRANCH}"
+    Dir.chdir(CONFIG["destination"]) { sh "git checkout #{DESTINATION_BRANCH}" }
+
+    # Generate the site
+    sh "bundle exec jekyll build"
+
+    # Commit and push to github
+    sha = `git log`.match(/[a-z0-9]{40}/)[0]
+    Dir.chdir(CONFIG["destination"]) do
+      # check if there is anything to add and commit, and pushes it
+      sh "if [ -n '$(git status)' ]; then
+            git add --all .;
+            git commit -m 'Updating to #{USERNAME}/#{REPO}@#{sha}.';
+            git push https://$GITHUB_TOKEN@github.com/#{USERNAME}/#{USERNAME}.github.io.git #{DESTINATION_BRANCH} --quiet ;
+         fi"
+      puts "Pushed updated branch #{DESTINATION_BRANCH} to GitHub Pages"
+    end
+  end
+end
+</code></pre></div></div>
+
+<p>모든 설정이 끝났습니다. 이제 <a href="https://github.com/shlrur/first-blog.maker">first-blog.maker</a> repository에서 push작업을 해 보시면 Travis CI가 동작하면서 내부적으로 처리해서 결과를 알려줍니다. 해보시면 아시겠지만 거의 스팸메일처럼 날라옵니다.</p>
+
+<p>Travis CI 사이트에 들어가면 CI Server가 어떻게 처리하는지를 실시간적으로 log를 출력해 보여주는데 그걸 보시면서 혹 문제가 있는 부분이 있으면 해결하시면 됩니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/jekyll-template-story-3/1_build-screen.png" alt="building screen" />
+    <figcaption>building screen</figcaption>
+</figure>
+
+<hr />
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>3편에 걸쳐서, 저만의 블로그를 만들면서 겪었던 시행착오에 대해서 말씀드리고 해결했던 방법들을 보여드렸습니다.</p>
+
+<p>블로그를 만들면서 어떠한 이유로 막혔던 순간과 어떻게 해결했는지에 대한 내용을 정리해 보고 싶었습니다.</p>
+
+<p>Jekyll Blog는 비교적 어려운 방법이기 때문에 사용하는 사람이 많지 않습니다. 하지만 매우 매력적인 방법입니다. Jekyll을 사용해서 blog를 만드는 분들 중에 저와 같은 문제에 부딪힌 분들에게 이 포스트들이 도움이 되었으면 합니다.</p>
+
+<hr />
+
+<h1 id="references">References</h1>
+<ul>
+  <li><a href="https://pages.github.com/versions/">Github Pages Dependency Versions</a></li>
+  <li><a href="https://travis-ci.org">Travis CI</a></li>
+  <li><a href="https://moon9342.github.io/jekyll-travis-ci-public">Jekyll 기반의 GitHub Page 생성(8)</a></li>
+</ul>
+
+      </div>
+      
+        
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/';
+      this.page.identifier = 'https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://shlrurs-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      
+    </article>
+  </div>
+</main>
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+  <div class="inner">
+    <div class="copyright">
+      
+        <p>&copy; 2019 First Blog.</p>
+      
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async src="/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '8K2C62GHZZ',
+  apiKey: 'ac6b1c9d2ea0e17891c512e13491b27b',
+  indexName: 'my_first_blog_search',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>

@@ -1,4 +1,330 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-01-01T14:28:35+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">2018-12-28 Workout Log: kendo</title><link href="https://shlrur.github.io//workout/2018/12/28/workout-log-kendo/" rel="alternate" type="text/html" title="2018-12-28 Workout Log: kendo" /><published>2018-12-28T00:00:00+00:00</published><updated>2018-12-28T00:00:00+00:00</updated><id>https://shlrur.github.io//workout/2018/12/28/workout-log-kendo</id><content type="html" xml:base="https://shlrur.github.io//workout/2018/12/28/workout-log-kendo/">&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned=&quot;&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/Br7spIGAMig/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; data-instgrm-version=&quot;12&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:16px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/Br7spIGAMig/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;&quot; target=&quot;_blank&quot;&gt; &lt;div style=&quot; display: flex; flex-direction: row; align-items: center;&quot;&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: column; flex-grow: 1; justify-content: center;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;padding: 19% 0;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;display:block; height:50px; margin:0 auto 12px; width:50px;&quot;&gt;&lt;svg width=&quot;50px&quot; height=&quot;50px&quot; viewBox=&quot;0 0 60 60&quot; version=&quot;1.1&quot; xmlns=&quot;https://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;https://www.w3.org/1999/xlink&quot;&gt;&lt;g stroke=&quot;none&quot; stroke-width=&quot;1&quot; fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;g transform=&quot;translate(-511.000000, -20.000000)&quot; fill=&quot;#000000&quot;&gt;&lt;g&gt;&lt;path d=&quot;M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/div&gt;&lt;div style=&quot;padding-top: 8px;&quot;&gt; &lt;div style=&quot; color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;&quot;&gt; View this post on Instagram&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;padding: 12.5% 0;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;&quot;&gt;&lt;div&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot;background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 8px;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: auto;&quot;&gt; &lt;div style=&quot; width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot; width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/Br7spIGAMig/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_blank&quot;&gt;#운동 #매일운동 #저녁운동 #dailyworkout - #kendo #검도 #머리치기왕대회 #2등 #luckypoint&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;A post shared by &lt;a href=&quot;https://www.instagram.com/dochaebi/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&quot; target=&quot;_blank&quot;&gt; #kendo #검도 #strength&lt;/a&gt; (@dochaebi) on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-12-28T13:31:29+00:00&quot;&gt;Dec 28, 2018 at 5:31am PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-01-11T05:25:42+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">[Jekyll] 나의 Jekyll template 제작기 - 3(final)</title><link href="https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/" rel="alternate" type="text/html" title="[Jekyll] 나의 Jekyll template 제작기 - 3(final)" /><published>2019-01-01T00:00:00+00:00</published><updated>2019-01-01T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/">&lt;p&gt;Jekyll은 github에서 제공하는 static website generator입니다. Github repository에 jekyll blog를 위한 code를 push하면, github가 static website를 만들어줍니다. 이 때에, &lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;github에서 제공하는 dependency&lt;/a&gt;는 한정되어 있습니다. 바꿔말하면, 여기서 제공하지 않는 dependency는 사용할 수 없다는 뜻입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/develog/2018/11/24/jekyll-template-story-2/&quot;&gt;이전 편&lt;/a&gt;에서는 제가 원하는 요구사항에 맞춰서 blog theme을 만드는 과정을 보여드렸습니다. &lt;a href=&quot;https://mmistakes.github.io/jekyll-theme-basically-basic/&quot;&gt;Basically Basic&lt;/a&gt; theme에서, &lt;a href=&quot;https://isme2n.github.io/&quot;&gt;Aiden 님의 블로그&lt;/a&gt;의 category와 tag를 사용해서 post를 구분하는 개념을 사용하여, &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;jekyll-paginate-v2&lt;/a&gt; plugin을 적용해서 blog를 제작하는데 성공하였습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;하지만, 해당 결과물을 blog 생성을 위한 &lt;a href=&quot;https://github.com/shlrur/first-blog.maker&quot;&gt;github repository&lt;/a&gt;에 push 했을 때 jekyll blog가 제대로 작동하지 않았습니다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;contents&quot;&gt;Contents&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-problem&quot;&gt;The Problem&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#solution&quot;&gt;Solution&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#_site-folder&quot;&gt;_site Folder&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#solutions-for-using-jekyll-paginate-v2&quot;&gt;Solutions for Using Jekyll-Paginate-V2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#using-ci&quot;&gt;Using CI&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#solutions-for-using-troublesome-task&quot;&gt;Solutions for Using Troublesome Task&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#git-submodule-생성&quot;&gt;Git submodule 생성&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#travis에-github-repository-연결&quot;&gt;Travis에 Github repository 연결&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#token-생성&quot;&gt;Token 생성&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#config-파일-설정&quot;&gt;Config 파일 설정&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;the-problem&quot;&gt;The Problem&lt;/h1&gt;
+
+&lt;p&gt;결론부터 말하자면, &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;jekyll-paginate-v2&lt;/a&gt; plugin은 실제 github에서 생성되는 static website에서는 동작하지 않습니다. &lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;github에서 제공하는 dependency&lt;/a&gt;에 포함되어 있지 않기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;그러면 방법이 없을까요? &lt;strong&gt;방법은 있습니다!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;solution&quot;&gt;Solution&lt;/h1&gt;
+
+&lt;h2 id=&quot;_site-folder&quot;&gt;_site Folder&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is where the generated site will be placed (by default) once Jekyll is done transforming it. It’s probably a good idea to add this to your .gitignore file.(&lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot;&gt;description of _site folder&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;_site&lt;/strong&gt; folder는 &lt;strong&gt;Jekyll&lt;/strong&gt;로 build 된 파일들이 저장되어있는 곳입니다. &lt;strong&gt;jekyll serve&lt;/strong&gt; 명령어로 local에서 볼 수 있는 블로그 화면은 &lt;strong&gt;_site&lt;/strong&gt; folder에 있는 파일들을 보는 것이죠. 여기서 해결책이 생깁니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Local에서는 jekyll-paginate-v2가 제대로 동작되어서 _site folder의 결과물이 생성되었다.&lt;/li&gt;
+  &lt;li&gt;Github에서는 jekyll-paginate-v2가 무시되어서 블로그가 build 되었다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;예 맞습니다. &lt;strong&gt;Github에서 build하게 하지말고, local에서 생성된 _site folder를 바로 repository에 올리면 됩니다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;solutions-for-using-jekyll-paginate-v2&quot;&gt;Solutions for Using Jekyll-Paginate-V2&lt;/h2&gt;
+
+&lt;p&gt;위의 방법을 사용하기 위해서는 2개의 repository가 필요합니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;기존의, .md 파일로 작성한 blog post를 올리던 repository.&lt;/li&gt;
+  &lt;li&gt;새로 필요한, 1. 의 _site folder를 저장할 repository.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;저는 기존의 repository인 &lt;a href=&quot;https://github.com/shlrur/shlrur.github.io&quot;&gt;shlrur.github.io&lt;/a&gt; 의 파일들을 &lt;a href=&quot;https://github.com/shlrur/first-blog.maker&quot;&gt;first-blog.maker&lt;/a&gt;라는, 새로 만든 repository에 옮겼습니다.&lt;/p&gt;
+
+&lt;p&gt;그리고 &lt;a href=&quot;https://github.com/shlrur/first-blog.maker&quot;&gt;first-blog.maker&lt;/a&gt;에서 생성되는 &lt;strong&gt;_site folder&lt;/strong&gt;의 내용을 &lt;a href=&quot;https://github.com/shlrur/shlrur.github.io&quot;&gt;shlrur.github.io&lt;/a&gt;에 올려서 &lt;a href=&quot;https://shlrur.github.io/&quot;&gt;https://shlrur.github.io/&lt;/a&gt; 주소로 blog에 접속할 수 있도록 하였습니다.&lt;/p&gt;
+
+&lt;p&gt;이 방법을 사용하면 jekyll-paginate-v2를 blog의 구조 생성에 사용할 수 있습니다. &lt;strong&gt;하지만, 관리해야 할 repository가 하나 늘었고, commit/push 횟수도 늘어났습니다.&lt;/strong&gt; 하나의 문제를 해결하기 위해서 귀찮은 작업이 추가되어 버렸습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-ci&quot;&gt;Using CI&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codeship.com/continuous-integration-essentials&quot;&gt;CI(Continous Integration)&lt;/a&gt;를 사용해서 위의 과정을 자동으로 처리해 보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;CI 툴로는 &lt;a href=&quot;https://jenkins.io/&quot;&gt;Jenkins&lt;/a&gt;, &lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis&lt;/a&gt; 등이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Jenkins는 회사에서 frontend와 backend를 통합한 CI로 사용했는데, 설치형이기 때문에 따로 서버가 필요합니다. 저는 CI를 위해서 따로 서버를 사용할 생각은 없기 때문에 Jenkins는 사용하지 않기로 했습니다.&lt;/p&gt;
+
+&lt;p&gt;Travis는 Github와 연동하는데 편리하고, public repository에 대해서는 무료로 사용할 수 있다는 장점이 있습니다. 그리고 Travis Server를 이용하기 때문에 따로 서버가 필요하지도 않습니다.&lt;/p&gt;
+
+&lt;p&gt;그래서 저는 Travis를 사용하기로 했습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;solutions-for-using-troublesome-task&quot;&gt;Solutions for Using Troublesome Task&lt;/h2&gt;
+
+&lt;p&gt;Travis CI를 사용해서 하려는 작업은,&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/shlrur/first-blog.maker&quot;&gt;first-blog.maker&lt;/a&gt; repository의 내용을 commit 및 push 했을 때, 해당 내용을 자동으로 build하고, build된 결과물인 _site folder의 내용물을 &lt;a href=&quot;https://github.com/shlrur/shlrur.github.io&quot;&gt;shlrur.github.io&lt;/a&gt; repository에 commit 및 push한다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;입니다. 그럼 찬찬히 과정을 따라가 보겠습니다. 아래의 과정을 따라가기 전에, &lt;a href=&quot;https://github.com/shlrur/first-blog.maker&quot;&gt;first-blog.maker&lt;/a&gt; repository에 해당하는 repository를 본인의 pc에 clone 해 놓으셔야 합니다. 저의 repository를 예로 들어서 설명을 하겠습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;git-submodule-생성&quot;&gt;Git submodule 생성&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/shlrur/first-blog.maker&quot;&gt;first-blog.maker&lt;/a&gt; repository와 &lt;a href=&quot;https://github.com/shlrur/shlrur.github.io&quot;&gt;shlrur.github.io&lt;/a&gt; repository를 git submodule로 묶습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/shlrur/first-blog.maker&quot;&gt;first-blog.maker&lt;/a&gt; repository를 clone 한 경로에서 다음과 같이 command를 입력합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;git submodule add https://github.com/shlrur/shlrur.github.io exampleoutputname&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그러면, &lt;a href=&quot;https://github.com/shlrur/first-blog.maker&quot;&gt;first-blog.maker&lt;/a&gt; repository의 하위에 &lt;kbd&gt;exampleoutputname&lt;/kbd&gt;이라는 이름의 folder가 만들어지고 이 폴더는 &lt;a href=&quot;https://github.com/shlrur/shlrur.github.io&quot;&gt;shlrur.github.io&lt;/a&gt; repository에 대한 local git repository가 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;exampleoutputname&lt;/kbd&gt; 이라는 이름은 맘에 드는걸로 사용하시면 됩니다. 단, &lt;kbd&gt;_config.yml&lt;/kbd&gt;에 있는 &lt;strong&gt;destination&lt;/strong&gt; property의 값과 같아야 합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;destination: ./exampleoutputname&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;정상적으로 clone이 진행되어서 submodule이 생성되면 command창에 다음과 같이 입력합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;git submodule update&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;travis에-github-repository-연결&quot;&gt;Travis에 Github repository 연결&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis 사이트&lt;/a&gt;에 접속해서 GitHub Repository에 대한 연결을 활성화합니다.&lt;/p&gt;
+
+&lt;p&gt;기본적으로 Public Repository만 사용할 수 있으며, Private Repository를 사용하고 싶으면 &lt;a href=&quot;https://travis-ci.com&quot;&gt;다른 주소를 가지는 Travis 사이트&lt;/a&gt;에서 별도의 비용을 지불해야 합니다.&lt;/p&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+    &lt;img src=&quot;https://shlrur.github.io//assets/images/jekyll-template-story-3/0_enabled_repository.png&quot; alt=&quot;enabled repository&quot; /&gt;
+    &lt;figcaption&gt;enabled repository&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;위의 그림과 같이, 필요한 repository 2개를 Enabled 상태로 바꿔줍니다.&lt;/p&gt;
+
+&lt;p&gt;잠깐 정리하자만, &lt;a href=&quot;https://github.com/shlrur/first-blog.maker&quot;&gt;first-blog.maker&lt;/a&gt; repository에 push가 이루어지면 Travis CI가 &lt;kbd&gt;.travis.yml&lt;/kbd&gt; 설정파일의 내용을 토대로 특정 작업을 수행하게 됩니다. &lt;kbd&gt;.travis.yml&lt;/kbd&gt; 의 작성은 조금 아래에서 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;우리는 이 &lt;kbd&gt;.travis.yml&lt;/kbd&gt;과 &lt;kbd&gt;Rakefile&lt;/kbd&gt;을 이용하여 &lt;kbd&gt;exampleoutputname&lt;/kbd&gt;안에 있는 내용을 commit하고 push하게 될 것입니다. &lt;kbd&gt;exampleoutputname&lt;/kbd&gt;은 &lt;a href=&quot;https://github.com/shlrur/shlrur.github.io&quot;&gt;shlrur.github.io&lt;/a&gt;와 연동되는 repository이기 때문에 결국, Jekyll로 컴파일한 내용이 GitHub Page Repository로 들어가게 되는 겁니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;token-생성&quot;&gt;Token 생성&lt;/h3&gt;
+
+&lt;p&gt;Travis CI에서 다른 Repository(&lt;a href=&quot;https://github.com/shlrur/shlrur.github.io&quot;&gt;shlrur.github.io&lt;/a&gt;)로 push를 하기 위해서는 token이 필요합니다.&lt;/p&gt;
+
+&lt;p&gt;GitHub에 접속해 Setting &amp;gt; Developer settings &amp;gt; Personal access tokens에 들어가서 Generate New Token을 클릭합니다. 적당히 description을 작성하고 Select scopes 중 repo 선택하고 generate token을 클릭하면 새로운 token이 생성 됩니다. 이 token을 바로 이용할 건 아니기 때문에 어딘가에 잘 저장해 둡니다.&lt;/p&gt;
+
+&lt;p&gt;이 token값을 직접 Travis CI 설정파일( .travis.yml )에 직접 노출시키면 안되고 이 값을 암호화해서 사용해야 합니다.
+일단 command 창을 열어서 travis gem을 설치합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;gem install travis&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;설치가 끝나면 다음의 명령을 이용해서 암호화를 진행합니다. 만약 로그인을 안했다는 메시지가 나오면 다음과 같이 로그인 후 진행하시면 됩니다. (ID/PW는 GitHub의 ID/PW를 이용합니다.)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;travis login –pro
+travis encrypt GITHUB_TOKEN=&lt;token&gt; -r &lt;repo-name&gt;&lt;/repo-name&gt;&lt;/token&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;여기서 &lt;token&gt;에는 아까 우리가 획득한 GitHub token을 넣어주시면 됩니다. &lt;repo-name&gt;부분에는 우리의 Jekyll Source Folder에 대한 Repository이름을 주면 됩니다. 주의하실점은 {ID/RepoName} 형태로 사용하셔야 합니다. 저의 경우를 예로 들자면 다음과 같습니다.&lt;/repo-name&gt;&lt;/token&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;travis encrypt GITHUB_TOKEN=123abc456xxx -r shlrur/first-blog.maker&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;위의 과정을 거치면 암호화된 값을 얻을 수 있는데 이 값을 아래와 같이 .travis.yml안에 설정하시면 됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;env:
+  global:
+    secure: &quot;Insert an encrypted value here.&quot;
+branches:
+  only:
+    - master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;config-파일-설정&quot;&gt;Config 파일 설정&lt;/h3&gt;
+
+&lt;p&gt;이제 &lt;kbd&gt;_config.yml&lt;/kbd&gt;, &lt;kbd&gt;.travis.yml&lt;/kbd&gt;, &lt;kbd&gt;Rakefile&lt;/kbd&gt; 파일을 아래와 같이 적절하게 수정해야 합니다. Ruby언어로 작성된 script를 보는게 영 껄끄럽지만 어렵지 않는 내용이니 천천히 보시면 됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# _config.yml
+# for Travis CI. (shit custom gem api...) ##################
+destination: ./exampleoutputname
+
+production_url: https://shlrur.github.io/
+source_url: https://github.com/shlrur/first-blog.maker
+
+safe: False
+lsi: False
+
+username: shlrur
+repo: first-blog.maker
+branch: master
+############################################################
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# .travis.yml
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+- 2.4.2
+
+install:
+  # Install Jekyll and dependencies
+  - bundle install
+
+before_script:
+  - git config --global user.email &quot;shlrur123@gmail.com&quot;
+  - git config --global user.name &quot;shlrur&quot;
+
+script: bundle exec rake site:deploy --quiet #--trace
+
+# Generate your secure token with the travis gem:
+# get Github token from your Travis CI profile page
+# gem install travis
+# GH_TOKEN from https://github.com/settings/tokens
+# travis encrypt 'GIT_NAME=&quot;YOUR_USERNAME&quot; GIT_EMAIL=&quot;YOUR_EMAIL&quot; GH_TOKEN=YOUR_TOKEN'
+env:
+  global:
+    secure: &quot;ssssssssssssss&quot;
+branches:
+  only:
+    - master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Rakefile
+#############################################################################
+#
+# Modified version of jekyllrb Rakefile
+# https://github.com/jekyll/jekyll/blob/master/Rakefile
+#
+#############################################################################
+
+require 'rake'
+require 'date'
+require 'yaml'
+
+CONFIG = YAML.load(File.read('_config.yml'))
+USERNAME = CONFIG[&quot;username&quot;]
+REPO = CONFIG[&quot;repo&quot;]
+SOURCE_BRANCH = CONFIG[&quot;branch&quot;]
+DESTINATION_BRANCH = &quot;master&quot;
+
+def check_destination
+  unless Dir.exist? CONFIG[&quot;destination&quot;]
+    sh &quot;git clone https://$GIT_NAME:$GITHUB_TOKEN@github.com/#{USERNAME}/#{REPO}.git #{CONFIG[&quot;destination&quot;]}&quot;
+  end
+end
+
+namespace :site do
+  desc &quot;Generate the site&quot;
+  task :build do
+    check_destination
+    sh &quot;bundle exec jekyll build&quot;
+  end
+
+  desc &quot;Generate the site and serve locally&quot;
+  task :serve do
+    check_destination
+    sh &quot;bundle exec jekyll serve&quot;
+  end
+
+  desc &quot;Generate the site, serve locally and watch for changes&quot;
+  task :watch do
+    sh &quot;bundle exec jekyll serve --watch&quot;
+  end
+
+  desc &quot;Generate the site and push changes to remote origin&quot;
+  task :deploy do
+    # Detect pull request
+    if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i &amp;gt; 0
+      puts 'Pull request detected. Not proceeding with deploy.'
+      exit
+    end
+
+    # Configure git if this is run in Travis CI
+    if ENV[&quot;TRAVIS&quot;]
+      sh &quot;git config --global user.name $GIT_NAME&quot;
+      sh &quot;git config --global user.email $GIT_EMAIL&quot;
+      sh &quot;git config --global push.default simple&quot;
+    end
+
+    # Make sure destination folder exists as git repo
+    check_destination
+
+    sh &quot;git checkout #{SOURCE_BRANCH}&quot;
+    Dir.chdir(CONFIG[&quot;destination&quot;]) { sh &quot;git checkout #{DESTINATION_BRANCH}&quot; }
+
+    # Generate the site
+    sh &quot;bundle exec jekyll build&quot;
+
+    # Commit and push to github
+    sha = `git log`.match(/[a-z0-9]{40}/)[0]
+    Dir.chdir(CONFIG[&quot;destination&quot;]) do
+      # check if there is anything to add and commit, and pushes it
+      sh &quot;if [ -n '$(git status)' ]; then
+            git add --all .;
+            git commit -m 'Updating to #{USERNAME}/#{REPO}@#{sha}.';
+            git push https://$GITHUB_TOKEN@github.com/#{USERNAME}/#{USERNAME}.github.io.git #{DESTINATION_BRANCH} --quiet ;
+         fi&quot;
+      puts &quot;Pushed updated branch #{DESTINATION_BRANCH} to GitHub Pages&quot;
+    end
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;모든 설정이 끝났습니다. 이제 &lt;a href=&quot;https://github.com/shlrur/first-blog.maker&quot;&gt;first-blog.maker&lt;/a&gt; repository에서 push작업을 해 보시면 Travis CI가 동작하면서 내부적으로 처리해서 결과를 알려줍니다. 해보시면 아시겠지만 거의 스팸메일처럼 날라옵니다.&lt;/p&gt;
+
+&lt;p&gt;Travis CI 사이트에 들어가면 CI Server가 어떻게 처리하는지를 실시간적으로 log를 출력해 보여주는데 그걸 보시면서 혹 문제가 있는 부분이 있으면 해결하시면 됩니다.&lt;/p&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+    &lt;img src=&quot;https://shlrur.github.io//assets/images/jekyll-template-story-3/1_build-screen.png&quot; alt=&quot;building screen&quot; /&gt;
+    &lt;figcaption&gt;building screen&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;3편에 걸쳐서, 저만의 블로그를 만들면서 겪었던 시행착오에 대해서 말씀드리고 해결했던 방법들을 보여드렸습니다.&lt;/p&gt;
+
+&lt;p&gt;블로그를 만들면서 어떠한 이유로 막혔던 순간과 어떻게 해결했는지에 대한 내용을 정리해 보고 싶었습니다.&lt;/p&gt;
+
+&lt;p&gt;Jekyll Blog는 비교적 어려운 방법이기 때문에 사용하는 사람이 많지 않습니다. 하지만 매우 매력적인 방법입니다. Jekyll을 사용해서 blog를 만드는 분들 중에 저와 같은 문제에 부딪힌 분들에게 이 포스트들이 도움이 되었으면 합니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;Github Pages Dependency Versions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis CI&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://moon9342.github.io/jekyll-travis-ci-public&quot;&gt;Jekyll 기반의 GitHub Page 생성(8)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Heekyum</name></author><category term="etc" /><summary type="html">Jekyll은 github에서 제공하는 static website generator입니다. Github repository에 jekyll blog를 위한 code를 push하면, github가 static website를 만들어줍니다. 이 때에, github에서 제공하는 dependency는 한정되어 있습니다. 바꿔말하면, 여기서 제공하지 않는 dependency는 사용할 수 없다는 뜻입니다.</summary></entry><entry><title type="html">2018-12-28 Workout Log: kendo</title><link href="https://shlrur.github.io//workout/2018/12/28/workout-log-kendo/" rel="alternate" type="text/html" title="2018-12-28 Workout Log: kendo" /><published>2018-12-28T00:00:00+00:00</published><updated>2018-12-28T00:00:00+00:00</updated><id>https://shlrur.github.io//workout/2018/12/28/workout-log-kendo</id><content type="html" xml:base="https://shlrur.github.io//workout/2018/12/28/workout-log-kendo/">&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned=&quot;&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/Br7spIGAMig/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; data-instgrm-version=&quot;12&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:16px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/Br7spIGAMig/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;&quot; target=&quot;_blank&quot;&gt; &lt;div style=&quot; display: flex; flex-direction: row; align-items: center;&quot;&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: column; flex-grow: 1; justify-content: center;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;padding: 19% 0;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;display:block; height:50px; margin:0 auto 12px; width:50px;&quot;&gt;&lt;svg width=&quot;50px&quot; height=&quot;50px&quot; viewBox=&quot;0 0 60 60&quot; version=&quot;1.1&quot; xmlns=&quot;https://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;https://www.w3.org/1999/xlink&quot;&gt;&lt;g stroke=&quot;none&quot; stroke-width=&quot;1&quot; fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;g transform=&quot;translate(-511.000000, -20.000000)&quot; fill=&quot;#000000&quot;&gt;&lt;g&gt;&lt;path d=&quot;M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/div&gt;&lt;div style=&quot;padding-top: 8px;&quot;&gt; &lt;div style=&quot; color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;&quot;&gt; View this post on Instagram&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;padding: 12.5% 0;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;&quot;&gt;&lt;div&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot;background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 8px;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: auto;&quot;&gt; &lt;div style=&quot; width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot; width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/Br7spIGAMig/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_blank&quot;&gt;#운동 #매일운동 #저녁운동 #dailyworkout - #kendo #검도 #머리치기왕대회 #2등 #luckypoint&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;A post shared by &lt;a href=&quot;https://www.instagram.com/dochaebi/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&quot; target=&quot;_blank&quot;&gt; #kendo #검도 #strength&lt;/a&gt; (@dochaebi) on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-12-28T13:31:29+00:00&quot;&gt;Dec 28, 2018 at 5:31am PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;//www.instagram.com/embed.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;instgrm.Embeds.process()&lt;/script&gt;</content><author><name>Heekyum</name></author><category term="kendo" /><summary type="html">View this post on Instagram #운동 #매일운동 #저녁운동 #dailyworkout - #kendo #검도 #머리치기왕대회 #2등 #luckypoint A post shared by #kendo #검도 #strength (@dochaebi) on Dec 28, 2018 at 5:31am PST</summary></entry><entry><title type="html">2018-12-24 Workout Log: strength</title><link href="https://shlrur.github.io//workout/2018/12/24/workout-log-strength/" rel="alternate" type="text/html" title="2018-12-24 Workout Log: strength" /><published>2018-12-24T00:00:00+00:00</published><updated>2018-12-24T00:00:00+00:00</updated><id>https://shlrur.github.io//workout/2018/12/24/workout-log-strength</id><content type="html" xml:base="https://shlrur.github.io//workout/2018/12/24/workout-log-strength/">&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned=&quot;&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/Brv9E-EAblM/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; data-instgrm-version=&quot;12&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:16px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/Brv9E-EAblM/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;&quot; target=&quot;_blank&quot;&gt; &lt;div style=&quot; display: flex; flex-direction: row; align-items: center;&quot;&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: column; flex-grow: 1; justify-content: center;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;padding: 19% 0;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;display:block; height:50px; margin:0 auto 12px; width:50px;&quot;&gt;&lt;svg width=&quot;50px&quot; height=&quot;50px&quot; viewBox=&quot;0 0 60 60&quot; version=&quot;1.1&quot; xmlns=&quot;https://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;https://www.w3.org/1999/xlink&quot;&gt;&lt;g stroke=&quot;none&quot; stroke-width=&quot;1&quot; fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;g transform=&quot;translate(-511.000000, -20.000000)&quot; fill=&quot;#000000&quot;&gt;&lt;g&gt;&lt;path d=&quot;M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/div&gt;&lt;div style=&quot;padding-top: 8px;&quot;&gt; &lt;div style=&quot; color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;&quot;&gt; View this post on Instagram&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;padding: 12.5% 0;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;&quot;&gt;&lt;div&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot;background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 8px;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: auto;&quot;&gt; &lt;div style=&quot; width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot; width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/Brv9E-EAblM/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_blank&quot;&gt;#운동 #매일운동 #아침운동 #dailyworkout #strength -  #squat #스쿼트 80kg 5x5 호텔 헬스장에서 처음 운동해본다. 프리웨이트 운동하기에 그렇게 좋은 환경은 아님.&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;A post shared by &lt;a href=&quot;https://www.instagram.com/dochaebi/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&quot; target=&quot;_blank&quot;&gt; #kendo #검도 #strength&lt;/a&gt; (@dochaebi) on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-12-24T00:04:12+00:00&quot;&gt;Dec 23, 2018 at 4:04pm PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;//www.instagram.com/embed.js&quot;&gt;&lt;/script&gt;
@@ -152,6 +478,4 @@ layout: page
   &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/pagination/&quot;&gt;Jekyll Pagination&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll-paginate&quot;&gt;jekyll-paginate plugin&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;jekyll-paginate-v2 plugin&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Heekyum</name></author><category term="etc" /><summary type="html">Jekyll Blog의 theme을 선택하기 위해서는, 먼저 자신의 blog에 필요한 기능이 무엇인지를 정리해야 합니다. 하지만 그 기능이 무료 theme 중에 없다면 직접 구현해야 합니다. 이번 포스팅에서는 필요한 기능들을 직접 구현한 경험에 대해서 이야기해 보려 합니다.</summary></entry><entry><title type="html">2018-12-9 Workout Log: kendo</title><link href="https://shlrur.github.io//workout/2018/12/09/workout-log-kendo/" rel="alternate" type="text/html" title="2018-12-9 Workout Log: kendo" /><published>2018-12-09T00:00:00+00:00</published><updated>2018-12-09T00:00:00+00:00</updated><id>https://shlrur.github.io//workout/2018/12/09/workout-log-kendo</id><content type="html" xml:base="https://shlrur.github.io//workout/2018/12/09/workout-log-kendo/">&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned=&quot;&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/BrKi3Yqgy9w/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; data-instgrm-version=&quot;12&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:16px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/BrKi3Yqgy9w/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;&quot; target=&quot;_blank&quot;&gt; &lt;div style=&quot; display: flex; flex-direction: row; align-items: center;&quot;&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: column; flex-grow: 1; justify-content: center;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;padding: 19% 0;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;display:block; height:50px; margin:0 auto 12px; width:50px;&quot;&gt;&lt;svg width=&quot;50px&quot; height=&quot;50px&quot; viewBox=&quot;0 0 60 60&quot; version=&quot;1.1&quot; xmlns=&quot;https://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;https://www.w3.org/1999/xlink&quot;&gt;&lt;g stroke=&quot;none&quot; stroke-width=&quot;1&quot; fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;g transform=&quot;translate(-511.000000, -20.000000)&quot; fill=&quot;#000000&quot;&gt;&lt;g&gt;&lt;path d=&quot;M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/div&gt;&lt;div style=&quot;padding-top: 8px;&quot;&gt; &lt;div style=&quot; color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;&quot;&gt; View this post on Instagram&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;padding: 12.5% 0;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;&quot;&gt;&lt;div&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot;background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 8px;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: auto;&quot;&gt; &lt;div style=&quot; width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot; width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/BrKi3Yqgy9w/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_blank&quot;&gt;#운동 #매일운동 - #kendo #검도 - #나주 #시합 #원정 #나주시장기호남의병검도대회 #개인전2위🥈 #단체전3위🥉 #조아따&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;A post shared by &lt;a href=&quot;https://www.instagram.com/dochaebi/?utm_source=ig_embed&amp;amp;utm_medium=loading&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&quot; target=&quot;_blank&quot;&gt; #kendo #검도 #strength&lt;/a&gt; (@dochaebi) on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-12-09T11:23:15+00:00&quot;&gt;Dec 9, 2018 at 3:23am PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//www.instagram.com/embed.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;instgrm.Embeds.process()&lt;/script&gt;</content><author><name>Heekyum</name></author><category term="kendo" /><summary type="html">View this post on Instagram #운동 #매일운동 - #kendo #검도 - #나주 #시합 #원정 #나주시장기호남의병검도대회 #개인전2위🥈 #단체전3위🥉 #조아따 A post shared by #kendo #검도 #strength (@dochaebi) on Dec 9, 2018 at 3:23am PST</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Heekyum</name></author><category term="etc" /><summary type="html">Jekyll Blog의 theme을 선택하기 위해서는, 먼저 자신의 blog에 필요한 기능이 무엇인지를 정리해야 합니다. 하지만 그 기능이 무료 theme 중에 없다면 직접 구현해야 합니다. 이번 포스팅에서는 필요한 기능들을 직접 구현한 경험에 대해서 이야기해 보려 합니다.</summary></entry></feed>
