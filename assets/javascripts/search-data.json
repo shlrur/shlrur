@@ -468,4 +468,9 @@ var store = [{
         "excerpt":"Jekyll은 github에서 제공하는 static website generator입니다. Github repository에 jekyll blog를 위한 code를 push하면, github가 static website를 만들어줍니다. 이 때에, github에서 제공하는 dependency는 한정되어 있습니다. 바꿔말하면, 여기서 제공하지 않는 dependency는 사용할 수 없다는 뜻입니다. 이전 편에서는 제가 원하는 요구사항에 맞춰서 blog theme을 만드는 과정을 보여드렸습니다. Basically Basic theme에서, Aiden 님의 블로그의...","categories": ["develog"],
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/"
+      },{
+        "title": "[html/css] Block element를 가로로 배치하는 방법",
+        "excerpt":"이번 post에서는 float, display, flex, grid, bootstrap 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. 제가 처음 HTML과 CSS를 공부할 때 가장 먼저 맞닥뜨린 문제가 있었습니다. 바로 div element를 가로로 배치하는 것이었습다. 그때는 block 혹은 inline 에 대한 개념이 없을때라, div 같은 block element를 어떻게 가로로 배치해야 하는지에 대해서...","categories": ["develog"],
+        "tags": ["etc"],
+        "url": "https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally/"
       }]
