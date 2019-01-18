@@ -14,20 +14,20 @@
   
     
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>[html/css] Block element를 가로로 배치하는 방법 | First Blog</title>
+<title>[html/css] Block element를 가로로 배치하는 방법 - float | First Blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="[html/css] Block element를 가로로 배치하는 방법" />
+<meta property="og:title" content="[html/css] Block element를 가로로 배치하는 방법 - float" />
 <meta name="author" content="Heekyum" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="이번 post에서는 float, display, flex, grid, bootstrap 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다." />
-<meta property="og:description" content="이번 post에서는 float, display, flex, grid, bootstrap 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다." />
-<link rel="canonical" href="https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally/" />
-<meta property="og:url" content="https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally/" />
+<meta name="description" content="이번 post에서는 float 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다." />
+<meta property="og:description" content="이번 post에서는 float 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다." />
+<link rel="canonical" href="https://shlrur.github.io//develog/2019/01/18/how-arrange-elements-horizontally-float/" />
+<meta property="og:url" content="https://shlrur.github.io//develog/2019/01/18/how-arrange-elements-horizontally-float/" />
 <meta property="og:site_name" content="First Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-01-12T00:00:00+00:00" />
+<meta property="article:published_time" content="2019-01-18T00:00:00+00:00" />
 <script type="application/ld+json">
-{"description":"이번 post에서는 float, display, flex, grid, bootstrap 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/icon_me.jpg"},"name":"Heekyum"},"headline":"[html/css] Block element를 가로로 배치하는 방법","dateModified":"2019-01-12T00:00:00+00:00","datePublished":"2019-01-12T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally/"},"@context":"http://schema.org"}</script>
+{"description":"이번 post에서는 float 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2019/01/18/how-arrange-elements-horizontally-float/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/icon_me.jpg"},"name":"Heekyum"},"headline":"[html/css] Block element를 가로로 배치하는 방법 - float","dateModified":"2019-01-18T00:00:00+00:00","datePublished":"2019-01-18T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2019/01/18/how-arrange-elements-horizontally-float/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -51,7 +51,7 @@
 </head>
 
 
-  <body class="layout--post html-css-block-element를-가로로-배치하는-방법">
+  <body class="layout--post html-css-block-element를-가로로-배치하는-방법-float">
 
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
@@ -233,7 +233,7 @@
 
   <div class="inner">
     <div class="intro-text">
-      <h1 id="page-title" class="intro-title">[html/css] Block element를 가로로 배치하는 방법
+      <h1 id="page-title" class="intro-title">[html/css] Block element를 가로로 배치하는 방법 - float
 </h1>
       
 
@@ -241,7 +241,7 @@
         
 
         <p class="entry-meta">
-          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2019-01-12T00:00:00+00:00">January 12, 2019</time></span>
+          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2019-01-18T00:00:00+00:00">January 18, 2019</time></span>
         </p>
       
 
@@ -257,77 +257,19 @@
   <div class="inner">
     <article class="entry-wrap">
       <div class="entry-content">
-        <p>이번 post에서는 float, display, flex, grid, bootstrap 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다.</p>
-
-<p>제가 처음 HTML과 CSS를 공부할 때 가장 먼저 맞닥뜨린 문제가 있었습니다. 바로 <strong>div</strong> element를 가로로 배치하는 것이었습다. 그때는 <em>block</em> 혹은 <em>inline</em> 에 대한 개념이 없을때라, <strong>div</strong> 같은 <em>block</em> element를 어떻게 가로로 배치해야 하는지에 대해서 알지 못했습니다.</p>
-
-<p><strong>이번 post에서는 HTML의 가장 기본적 요소인 <em>block</em> 과 <em>inline</em> 에 대해서 알아보고 float, display, flex, grid 그리고 bootstrap을 이용한 가로배치에 대해서 알아보겠습니다.</strong></p>
+        <p>이번 post에서는 <strong>float</strong> 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다.</p>
 
 <hr />
 
 <h1 id="contents">Contents</h1>
 
 <ul>
-  <li><a href="#block-and-inline">Block and inline</a>
-    <ul>
-      <li><a href="">Block Level Elements</a></li>
-      <li><a href="">Inline Level Elements</a></li>
-    </ul>
-  </li>
-  <li><a href="#solution">Solution</a>
-    <ul>
-      <li><a href="#_site-folder">_site Folder</a></li>
-    </ul>
-  </li>
-  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#using-float">Using Float</a></li>
 </ul>
 
 <hr />
 
-<h1 id="block-and-inline">Block and Inline</h1>
-
-<p>HTML의 모든 element는 자신이 가지는 기본 display type이 있습니다. 대부분의 element가 가지는 기본 display type은 <strong>block</strong> 혹은 <strong>inline</strong> 입니다.</p>
-
-<h2 id="block-level-elements">Block Level Elements</h2>
-
-<p>Block-level element는 항상 새로운 line에 위치하며, 가능한 전체 폭을 사용합니다.
-Block-level 에 해당하는 element는 다음과 같습니다.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;address&gt;</span>, <span class="nt">&lt;article&gt;</span>, <span class="nt">&lt;aside&gt;</span>, <span class="nt">&lt;blockquote&gt;</span>, <span class="nt">&lt;canvas&gt;</span>, <span class="nt">&lt;dd&gt;</span>, <span class="nt">&lt;div&gt;</span>, <span class="nt">&lt;dl&gt;</span>, <span class="nt">&lt;dt&gt;</span>, <span class="nt">&lt;fieldset&gt;</span>, <span class="nt">&lt;figcaption&gt;</span>, <span class="nt">&lt;figure&gt;</span>, <span class="nt">&lt;footer&gt;</span>, <span class="nt">&lt;form&gt;</span>, <span class="nt">&lt;h1&gt;</span>-<span class="nt">&lt;h6&gt;</span>, <span class="nt">&lt;header&gt;</span>, <span class="nt">&lt;hr&gt;</span>, <span class="nt">&lt;li&gt;</span>, <span class="nt">&lt;main&gt;</span>, <span class="nt">&lt;nav&gt;</span>, <span class="nt">&lt;noscript&gt;</span>, <span class="nt">&lt;ol&gt;</span>, <span class="nt">&lt;output&gt;</span>, <span class="nt">&lt;p&gt;</span>, <span class="nt">&lt;pre&gt;</span>, <span class="nt">&lt;section&gt;</span>, <span class="nt">&lt;table&gt;</span>, <span class="nt">&lt;tfoot&gt;</span>, <span class="nt">&lt;ul&gt;</span>, <span class="nt">&lt;video&gt;</span>
-</code></pre></div></div>
-
-<h3 id="the-div-element">The <strong>div</strong> Element</h3>
-
-<p data-height="265" data-theme-id="light" data-slug-hash="WLLwxJ" data-default-tab="result" data-user="shlrur" data-pen-title="WLLwxJ" class="codepen">See the Pen <a href="https://codepen.io/shlrur/pen/WLLwxJ/">WLLwxJ</a> by Heekyum Kim (<a href="https://codepen.io/shlrur">@shlrur</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-<p><strong>div element는 가장 대표적인 block type element</strong>로서, container로 사용됩니다.
-<em>div</em> element는 class, id 그리고 style 외에 따로 필요한 attribute는 없습니다.
-CSS와 함께 사용될 때는 <em>div</em> element 내의 element 들에게 style을 적용합니다.</p>
-
-<h2 id="inline-level-elements">Inline Level Elements</h2>
-
-<p>Inline-level element는 새로운 line에서 시작하지 않으며, 필요한 만큼의 폭만 사용합니다.
-Inline-level 에 해당하는 element는 다음과 같습니다.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a&gt;</span>, <span class="nt">&lt;abbr&gt;</span>, <span class="nt">&lt;acronym&gt;</span>, <span class="nt">&lt;b&gt;</span>, <span class="nt">&lt;bdo&gt;</span>, <span class="nt">&lt;big&gt;</span>, <span class="nt">&lt;br&gt;</span>, <span class="nt">&lt;button&gt;</span>, <span class="nt">&lt;cite&gt;</span>, <span class="nt">&lt;code&gt;</span>, <span class="nt">&lt;dfn&gt;</span>, <span class="nt">&lt;em&gt;</span>, <span class="nt">&lt;i&gt;</span>, <span class="nt">&lt;img&gt;</span>, <span class="nt">&lt;input&gt;</span>, <span class="nt">&lt;kbd&gt;</span>, <span class="nt">&lt;label&gt;</span>, <span class="nt">&lt;map&gt;</span>, <span class="nt">&lt;object&gt;</span>, <span class="nt">&lt;q&gt;</span>, <span class="nt">&lt;samp&gt;</span>, <span class="nt">&lt;script&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">select</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">small</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">strong</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">sub</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">sup</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">textarea</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">time</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">tt</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="kd">var</span><span class="o">&gt;</span>
-</code></pre></div></div>
-
-<h3 id="the-span-element">The <strong>span</strong> Element</h3>
-
-<p data-height="265" data-theme-id="light" data-slug-hash="BvvKMO" data-default-tab="html,result" data-user="shlrur" data-pen-title="BvvKMO" class="codepen">See the Pen <a href="https://codepen.io/shlrur/pen/BvvKMO/">BvvKMO</a> by Heekyum Kim (<a href="https://codepen.io/shlrur">@shlrur</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-<p><strong>span element는 가장 대표적인 inline type element</strong>로서, 주로 text의 container로 사용됩니다.
-<em>span</em> element역시 class, id 그리고 style 외에 따로 필요한 attribute는 없습니다.
-CSS와 함께 사용될 때는 <em>span</em> element 내의 text에 style을 적용합니다.</p>
-
-<hr />
-
-<h1 id="arrange-elements-horizontally">Arrange Elements Horizontally</h1>
-
-<p>여러 방법을 사용하여, block elements를 가로로 배치하는 방법에 대해서 알아보겠습니다.
-비교적 예전에 사용하던 기술들 부터 아래에서 보여드리겠습니다.</p>
-
-<h2 id="using-float">Using Float</h2>
+<h1 id="using-float">Using Float</h1>
 
 <p>Float property는 원래 text와 함께 image를 보여줄 때, image를 어떻게 띄워서(float) 배치할 것인지를 설정하기 위한 것이지만, 현재는 layout을 배치할 때 주로 사용됩니다.
 Float property는 다음과 같은 값을 가질 수 있습니다.</p>
@@ -342,9 +284,9 @@ Float property는 다음과 같은 값을 가질 수 있습니다.</p>
 <p data-height="265" data-theme-id="light" data-slug-hash="rooLyW" data-default-tab="html,result" data-user="shlrur" data-pen-title="rooLyW" class="codepen">See the Pen <a href="https://codepen.io/shlrur/pen/rooLyW/">rooLyW</a> by Heekyum Kim (<a href="https://codepen.io/shlrur">@shlrur</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <p><br /></p>
 
-<h3 id="the-clear-property">The clear Property</h3>
+<h2 id="the-clear-property">The clear Property</h2>
 
-<p>Clear property는 float property를 사용할 때 함께 사용하는 property로서, 해당 element의 왼쪽, 오른쪽 혹은 양쪽에 다른 element가 올수 있는지 없는지를 결정합니다.
+<p>Clear property는 float property를 사용할 때 함께 사용하는 property로서, 해당 element의 왼쪽, 오른쪽 혹은 양쪽에 다른 element가 올 수 있는지 없는지를 결정합니다.
 Clear property는 다음과 같은 값을 가질 수 있습니다.</p>
 
 <ul>
@@ -355,21 +297,33 @@ Clear property는 다음과 같은 값을 가질 수 있습니다.</p>
   <li>inherit: 해당 element는 자신의 부모와 같은 clear값을 가집니다.</li>
 </ul>
 
-<h2 id="using-display-inline-block">Using display: inline-block</h2>
+<p>Clear property는 float property를 사용한 후 가장 흔하게 사용합니다.</p>
 
-<h2 id="using-flexbox">Using Flexbox</h2>
+<p>Float에 clear를 할 때, float에 맞춰서 clear를 잘 사용해야 합니다. 무슨 말이냐면, <em>A element</em> 를 왼쪽으로 float 시키려면, 다음 element인 <em>B element</em> 의 왼쪽을 clear 해야 합니다. 그러면 <em>A element</em> 는 왼쪽에 float 되고 clear 된 <em>B element</em> 는 아래에 위치하게 될 것입니다.</p>
 
-<h2 id="using-grid">Using Grid</h2>
+<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="shlrur" data-slug-hash="XoLVzb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="XoLVzb">
+  <span>See the Pen <a href="https://codepen.io/shlrur/pen/XoLVzb/">
+  XoLVzb</a> by Heekyum Kim (<a href="https://codepen.io/shlrur">@shlrur</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p><br /></p>
 
-<h2 id="using-position">Using Position</h2>
+<h2 id="the-clearfix-hack">The clearfix Hack</h2>
 
-<h2 id="using-bootstrap">Using Bootstrap</h2>
+<p>만약 어떤 float element가 자신을 감싸고 있는 container element보다 높이가 클때는(taller), container element의 바깥으로 <em>overflow</em> 됩니다.</p>
+
+<figure class="align-center">
+    <img src="https://shlrur.github.io//assets/images/how-arrange-elements-horizontally-float/0_clearfix.png" alt="why using clearfix" />
+    <figcaption>need clearfix</figcaption>
+</figure>
+
+<p>그럴때는 <kbd>overflow: auto;</kbd></p>
 
 <hr />
 
 <h1 id="references">References</h1>
 <ul>
-  <li><a href="https://www.w3schools.com/html/html_blocks.asp">HTML Block and Inline Elements</a></li>
+  <li><a href="https://www.w3schools.com/css/css_float.asp">CSS Layout - float and clear</a></li>
 </ul>
 
 <script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -381,8 +335,8 @@ Clear property는 다음과 같은 값을 가질 수 있습니다.</p>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = 'https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally/';
-      this.page.identifier = 'https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally/';
+      this.page.url = 'https://shlrur.github.io//develog/2019/01/18/how-arrange-elements-horizontally-float/';
+      this.page.identifier = 'https://shlrur.github.io//develog/2019/01/18/how-arrange-elements-horizontally-float/';
     };
 
     (function() {

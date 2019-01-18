@@ -469,8 +469,13 @@ var store = [{
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/"
       },{
-        "title": "[html/css] Block element를 가로로 배치하는 방법",
+        "title": "[html/css] Block element를 가로로 배치하는 방법 - 시작",
         "excerpt":"이번 post에서는 float, display, flex, grid, bootstrap 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. 제가 처음 HTML과 CSS를 공부할 때 가장 먼저 맞닥뜨린 문제가 있었습니다. 바로 div element를 가로로 배치하는 것이었습다. 그때는 block 혹은 inline 에 대한 개념이 없을때라, div 같은 block element를 어떻게 가로로 배치해야 하는지에 대해서...","categories": ["develog"],
         "tags": ["etc"],
-        "url": "https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally/"
+        "url": "https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally-preview/"
+      },{
+        "title": "[html/css] Block element를 가로로 배치하는 방법 - float",
+        "excerpt":"이번 post에서는 float 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Contents Using FloatUsing Float Float property는 원래 text와 함께 image를 보여줄 때, image를 어떻게 띄워서(float) 배치할 것인지를 설정하기 위한 것이지만, 현재는 layout을 배치할 때 주로 사용됩니다.Float property는 다음과 같은 값을 가질 수 있습니다. left: 해당 element의 container의 왼쪽에...","categories": ["develog"],
+        "tags": ["etc"],
+        "url": "https://shlrur.github.io//develog/2019/01/18/how-arrange-elements-horizontally-float/"
       }]
