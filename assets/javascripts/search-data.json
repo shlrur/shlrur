@@ -470,12 +470,17 @@ var store = [{
         "url": "https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/"
       },{
         "title": "[html/css] Block element를 가로로 배치하는 방법 - 시작",
-        "excerpt":"이번 post에서는 float, display, flex, grid, bootstrap 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. 제가 처음 HTML과 CSS를 공부할 때 가장 먼저 맞닥뜨린 문제가 있었습니다. 바로 div element를 가로로 배치하는 것이었습다. 그때는 block 혹은 inline 에 대한 개념이 없을때라, div 같은 block element를 어떻게 가로로 배치해야 하는지에 대해서...","categories": ["develog"],
+        "excerpt":"이번 post에서는 float, display, flex, grid 등을 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Bootstrap4 와 같이 모든 속성이 정의되어 있고 element의 class만 지정해서 layout을 잡는 방법도 있지만, 이번 series에서는 순수하게 html과 css만을 사용해서 layout을 배치하는 방법에 대해서 알아보겠습니다. 제가 처음 HTML과 CSS를 공부할 때 가장 먼저 맞닥뜨린 문제가...","categories": ["develog"],
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally-preview/"
       },{
         "title": "[html/css] Block element를 가로로 배치하는 방법 - float",
-        "excerpt":"이번 post에서는 float 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Contents Using FloatUsing Float Float property는 원래 text와 함께 image를 보여줄 때, image를 어떻게 띄워서(float) 배치할 것인지를 설정하기 위한 것이지만, 현재는 layout을 배치할 때 주로 사용됩니다.Float property는 다음과 같은 값을 가질 수 있습니다. left: 해당 element의 container의 왼쪽에...","categories": ["develog"],
+        "excerpt":"이번 post에서는 float 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Contents Using Float The clear Property The clearfix Hack Layout ReferencesUsing Float Float property는 원래 text와 함께 image를 보여줄 때, image를 어떻게 띄워서(float) 배치할 것인지를 설정하기 위한 것이지만, 현재는 layout을 배치할 때 주로 사용됩니다.Float property는 다음과 같은 값을...","categories": ["develog"],
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2019/01/18/how-arrange-elements-horizontally-float/"
+      },{
+        "title": "[html/css] Block element를 가로로 배치하는 방법 - display: inline-block",
+        "excerpt":"이번 post에서는 display: inline-block 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Contents display Property Using display: inline-block Create Navigation Links Referencesdisplay Property 먼저, CSS에서 display라는 속성이 가지는 값의 종류와 효과에 대해서 알아보겠습니다. dispaly 속성은 element가 보여주는 방식을 나타냅니다. inline: Element를 과 같이 inline element로 보여줍니다. 그래서 height와 width...","categories": ["develog"],
+        "tags": ["etc"],
+        "url": "https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/"
       }]
