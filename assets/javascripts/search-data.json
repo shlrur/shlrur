@@ -483,4 +483,9 @@ var store = [{
         "excerpt":"이번 post에서는 display: inline-block 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Contents display Property Using display: inline-block Create Navigation Links Referencesdisplay Property 먼저, CSS에서 display라는 속성이 가지는 값의 종류와 효과에 대해서 알아보겠습니다. dispaly 속성은 element가 보여주는 방식을 나타냅니다. inline: Element를 과 같이 inline element로 보여줍니다. 그래서 height와 width...","categories": ["develog"],
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/"
+      },{
+        "title": "[html/css] Block element를 가로로 배치하는 방법 - Flexbox",
+        "excerpt":"이번 post에서는 Flexbox 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Contents Flexbox with Other Layout Modules What is FlexboxFlexbox with Other Layout Modules 일반적으로 4가지의 layout을 설정하는 방법이 있습니다. webpage의 section 정의를 위한 Block. text를 위한 Inline. 2차원(가로, 세로) table data를 위한 Table. element의 위치를 명확히 지정하기 위한...","categories": ["develog"],
+        "tags": ["etc"],
+        "url": "https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-flexbox/"
       }]
