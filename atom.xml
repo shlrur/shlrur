@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-01-23T15:09:12+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">[html/css] Block element를 가로로 배치하는 방법 - display: inline-block</title><link href="https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/" rel="alternate" type="text/html" title="[html/css] Block element를 가로로 배치하는 방법 - display: inline-block" /><published>2019-01-23T00:00:00+00:00</published><updated>2019-01-23T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/">&lt;p&gt;이번 post에서는 &lt;strong&gt;display: inline-block&lt;/strong&gt; 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-01-24T05:38:04+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">[html/css] Block element를 가로로 배치하는 방법 - display: inline-block</title><link href="https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/" rel="alternate" type="text/html" title="[html/css] Block element를 가로로 배치하는 방법 - display: inline-block" /><published>2019-01-23T00:00:00+00:00</published><updated>2019-01-23T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/">&lt;p&gt;이번 post에서는 &lt;strong&gt;display: inline-block&lt;/strong&gt; 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -144,7 +144,7 @@
   &lt;li&gt;align-content&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;아래에서 해당 속성들에 대해 자세히 알아보겠습니다.&lt;/p&gt;
+&lt;p&gt;아래에서 해당 속성들에 대해 예제와 함께 자세히 알아보겠습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-flex-direction-property&quot;&gt;The &lt;strong&gt;flex-direction&lt;/strong&gt; Property&lt;/h2&gt;
 
@@ -189,7 +189,7 @@
 
 &lt;h2 id=&quot;the-align-items-property&quot;&gt;The &lt;strong&gt;align-items&lt;/strong&gt; Property&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;align-items&lt;/strong&gt; 속성은 flex item들의 가로정렬을 결정합니다. &lt;strong&gt;stretch&lt;/strong&gt;가 기본값입니다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;align-items&lt;/strong&gt; 속성은 flex item들의 세로정렬을 결정합니다. &lt;strong&gt;stretch&lt;/strong&gt;가 기본값입니다.&lt;/p&gt;
 
 &lt;p class=&quot;codepen&quot; data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;shlrur&quot; data-slug-hash=&quot;QYwRXY&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;QYwRXY&quot;&gt;
   &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/shlrur/pen/QYwRXY/&quot;&gt;
@@ -207,6 +207,117 @@
 &lt;p class=&quot;codepen&quot; data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;shlrur&quot; data-slug-hash=&quot;qgEzzY&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;qgEzzY&quot;&gt;
   &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/shlrur/pen/qgEzzY/&quot;&gt;
   qgEzzY&lt;/a&gt; by Heekyum Kim (&lt;a href=&quot;https://codepen.io/shlrur&quot;&gt;@shlrur&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;perfect-centering&quot;&gt;Perfect Centering&lt;/h2&gt;
+
+&lt;p&gt;그러면, 가장 흔한 style problem인 가로 세로 완전 중간에 element를 놓는 방법이 뭘까요?&lt;/p&gt;
+
+&lt;p&gt;정답은, flex item의 세로 정렬을 결정하는 &lt;strong&gt;justify-content&lt;/strong&gt;와 가로 정렬을 결정하는 &lt;strong&gt;align-items&lt;/strong&gt;의 값을 &lt;strong&gt;center&lt;/strong&gt;로 하는 것입니다. 그러면 해당 flex item은 정확히 flex container의 중앙에 위치하게 됩니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;about-child-elements&quot;&gt;About Child Elements&lt;/h1&gt;
+
+&lt;p&gt;위에서 살펴본 &lt;strong&gt;Flex Container&lt;/strong&gt;의 바로 아래에 위치하는 element들을 &lt;strong&gt;Flex(flexible) Items&lt;/strong&gt;라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Flex Items&lt;/strong&gt;은 아래의 속성들을 설정할 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;order&lt;/li&gt;
+  &lt;li&gt;flex-grow&lt;/li&gt;
+  &lt;li&gt;flex-shrink&lt;/li&gt;
+  &lt;li&gt;flex-basis&lt;/li&gt;
+  &lt;li&gt;flex&lt;/li&gt;
+  &lt;li&gt;align-self&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;아래에서 해당 속성들에 대해 예제와 함께 자세히 알아보겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-order-property&quot;&gt;The order Property&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;order&lt;/strong&gt; 속성은 각 flex item들의 &lt;strong&gt;순서&lt;/strong&gt;를 나타냅니다.
+그러므로 value는 number여야 하며, default는 0입니다.&lt;/p&gt;
+
+&lt;p class=&quot;codepen&quot; data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;shlrur&quot; data-slug-hash=&quot;qgdYry&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;qgdYry&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/shlrur/pen/qgdYry/&quot;&gt;
+  qgdYry&lt;/a&gt; by Heekyum Kim (&lt;a href=&quot;https://codepen.io/shlrur&quot;&gt;@shlrur&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-flex-grow-property&quot;&gt;The flex-grow Property&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;flex-grow&lt;/strong&gt; 속성은 각 flex item들의 &lt;strong&gt;길이&lt;/strong&gt;를 나타내는 비율이라고 할 수 있습니다.
+그러므로 value는 숫자여야 하고 default value는 0입니다.&lt;/p&gt;
+
+&lt;p class=&quot;codepen&quot; data-height=&quot;306&quot; data-theme-id=&quot;light&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;shlrur&quot; data-slug-hash=&quot;LqVmyJ&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;LqVmyJ&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/shlrur/pen/LqVmyJ/&quot;&gt;
+  LqVmyJ&lt;/a&gt; by Heekyum Kim (&lt;a href=&quot;https://codepen.io/shlrur&quot;&gt;@shlrur&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-flex-shrink-property&quot;&gt;The flex-shrink Property&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;flex-shrink&lt;/strong&gt; 속성은 각 flex item들이 각자 얼마나 &lt;strong&gt;수축&lt;/strong&gt; 할 것인지를 비율로 나타냅니다.
+역시 value는 숫자여야 하며 default value는 1입니다.&lt;/p&gt;
+
+&lt;p class=&quot;codepen&quot; data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;shlrur&quot; data-slug-hash=&quot;daoeRw&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;daoeRw&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/shlrur/pen/daoeRw/&quot;&gt;
+  daoeRw&lt;/a&gt; by Heekyum Kim (&lt;a href=&quot;https://codepen.io/shlrur&quot;&gt;@shlrur&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-flex-basis-property&quot;&gt;The flex-basis Property&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;flex-basis&lt;/strong&gt; 속성은 각 flex item의 처음 길이를 지정합니다.&lt;/p&gt;
+
+&lt;p class=&quot;codepen&quot; data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;shlrur&quot; data-slug-hash=&quot;qgdYxJ&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;qgdYxJ&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/shlrur/pen/qgdYxJ/&quot;&gt;
+  qgdYxJ&lt;/a&gt; by Heekyum Kim (&lt;a href=&quot;https://codepen.io/shlrur&quot;&gt;@shlrur&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-flex-property&quot;&gt;The flex Property&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;flex&lt;/strong&gt;는 &lt;strong&gt;flex-grow&lt;/strong&gt;, &lt;strong&gt;flex-shrink&lt;/strong&gt;, 그리고 &lt;strong&gt;flex-basis&lt;/strong&gt; 속성을 동시에 설정할 수 있는 속성입니다.&lt;/p&gt;
+
+&lt;p&gt;예를들어, &lt;kbd&gt;flex: 0 0 200px&lt;/kbd&gt;는 growable 하지 않고(0), shrinkable 하지 않으며(0) 초기 길이는 200pixel 이라는 뜻입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-align-self-property&quot;&gt;The align-self Property&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;align-self&lt;/strong&gt; 속성은 flex item의 세로정렬을 결정합니다.&lt;/p&gt;
+
+&lt;p&gt;그런데, flex item들의 세로 정렬은 flex container의 &lt;strong&gt;align-items&lt;/strong&gt;를 통해서도 한번에 설정 가능합니다.
+&lt;strong&gt;align-self&lt;/strong&gt; 속성은 flex container의 &lt;strong&gt;align-items&lt;/strong&gt;를 override 해서 각 flex item에 가로정렬 값을 설정할 수 있는 것입니다.&lt;/p&gt;
+
+&lt;p class=&quot;codepen&quot; data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;shlrur&quot; data-slug-hash=&quot;PVqeXZ&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;PVqeXZ&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/shlrur/pen/PVqeXZ/&quot;&gt;
+  PVqeXZ&lt;/a&gt; by Heekyum Kim (&lt;a href=&quot;https://codepen.io/shlrur&quot;&gt;@shlrur&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;responsive-website-using-flexbox&quot;&gt;Responsive Website using Flexbox&lt;/h1&gt;
+
+&lt;p&gt;그럼 지금까지 공부한 flex의 여러 속성들을 사용해서 reponsive wesite를 만들어 보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;해당 website는 &lt;em&gt;width: 700px&lt;/em&gt; 을 기점으로,
+&lt;em&gt;width &amp;lt; 700px&lt;/em&gt; 일 때는 mobile을 위해서 element들이 세로로 배치되고,
+&lt;em&gt;width &amp;gt; 700px&lt;/em&gt; 일 때는 PC로 보기 편한 배치가 됩니다. Link인 a tag들은 inline-level element이기 때문에 가로로 배치되고, About Me와 TITLE HEADING 은 block-level인 div tag지만 container에서 display: flex 를 설정했기 때문에 가로로 배치되어 있습니다.&lt;/p&gt;
+
+&lt;p&gt;아래의 코드는 &lt;em&gt;CODEPEN&lt;/em&gt; 배너를 누른 후 큰 창에서 보시길 추천드립니다.&lt;/p&gt;
+
+&lt;p class=&quot;codepen&quot; data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;shlrur&quot; data-slug-hash=&quot;mvJKde&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;mvJKde&quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/shlrur/pen/mvJKde/&quot;&gt;
+  mvJKde&lt;/a&gt; by Heekyum Kim (&lt;a href=&quot;https://codepen.io/shlrur&quot;&gt;@shlrur&lt;/a&gt;)
   on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
