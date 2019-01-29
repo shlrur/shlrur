@@ -485,7 +485,12 @@ var store = [{
         "url": "https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/"
       },{
         "title": "[html/css] Block element를 가로로 배치하는 방법 - Flexbox",
-        "excerpt":"이번 post에서는 Flexbox 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Contents Flexbox with Other Layout Modules What is FlexboxFlexbox with Other Layout Modules 일반적으로 4가지의 layout을 설정하는 방법이 있습니다. webpage의 section 정의를 위한 Block. text를 위한 Inline. 2차원(가로, 세로) table data를 위한 Table. element의 위치를 명확히 지정하기 위한...","categories": ["develog"],
+        "excerpt":"이번 post에서는 Flexbox 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Contents Flexbox with Other Layout Modules What is Flexbox About Container Element The flex-direction Property The flex-wrap Property The flex-flow Property The justify-content Property The align-items Property The align-content Property Perfect Centering About Child Elements The order Property...","categories": ["develog"],
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-flexbox/"
+      },{
+        "title": "What features will added in ES2019",
+        "excerpt":"이번 post에서는 2019년에 발표될 ES2019에 추가될 예정인 기능들에 대해서 살펴보겠습니다. JavaScript는 지난 몇 년 동안 꾸준히 새로운 표준을 발표해왔습니다. 바로 Ecma International의 ECMA-262 기술 규격에 정의된 ECMAScript 인데요, 현재 9번째 버전인 ES2018까지 나와 있습니다.그리고 현재 ES2019에 대한 명세가 작성되고 있습니다. 이번 post에서는 ECMAScript가 어떤 과정을 거쳐서 표준 문서를 만드는지 간단히...","categories": ["develog"],
+        "tags": ["javascript"],
+        "url": "https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/"
       }]
