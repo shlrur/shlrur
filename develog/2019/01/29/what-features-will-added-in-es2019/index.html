@@ -19,15 +19,15 @@
 <meta property="og:title" content="What features will added in ES2019" />
 <meta name="author" content="Heekyum" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="A blog about study log." />
-<meta property="og:description" content="A blog about study log." />
+<meta name="description" content="이번 post에서는 2019년에 발표될 ES2019에 추가될 예정인 기능들에 대해서 살펴보겠습니다." />
+<meta property="og:description" content="이번 post에서는 2019년에 발표될 ES2019에 추가될 예정인 기능들에 대해서 살펴보겠습니다." />
 <link rel="canonical" href="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/" />
 <meta property="og:url" content="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/" />
 <meta property="og:site_name" content="First Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-01-29T00:00:00+00:00" />
 <script type="application/ld+json">
-{"description":"A blog about study log.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/icon_me.jpg"},"name":"Heekyum"},"headline":"What features will added in ES2019","dateModified":"2019-01-29T00:00:00+00:00","datePublished":"2019-01-29T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/"},"@context":"http://schema.org"}</script>
+{"description":"이번 post에서는 2019년에 발표될 ES2019에 추가될 예정인 기능들에 대해서 살펴보겠습니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/icon_me.jpg"},"name":"Heekyum"},"headline":"What features will added in ES2019","dateModified":"2019-01-29T00:00:00+00:00","datePublished":"2019-01-29T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -257,11 +257,11 @@
   <div class="inner">
     <article class="entry-wrap">
       <div class="entry-content">
-        <figure class="align-center">
+        <p>이번 post에서는 2019년에 발표될 <strong>ES2019</strong>에 추가될 예정인 기능들에 대해서 살펴보겠습니다.</p>
+
+<figure class="align-center">
     <img src="https://shlrur.github.io//assets/images/what-features-will-added-in-es2019/article-logo.jpg" alt="new features in es2019" />
 </figure>
-
-<p>이번 post에서는 2019년에 발표될 <strong>ES2019</strong>에 추가될 예정인 기능들에 대해서 살펴보겠습니다.</p>
 
 <p>JavaScript는 지난 몇 년 동안 꾸준히 새로운 표준을 발표해왔습니다. 바로 Ecma International의 ECMA-262 기술 규격에 정의된 <a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript</a> 인데요, 현재 9번째 버전인 <a href="https://www.ecma-international.org/ecma-262/9.0/index.html">ES2018</a>까지 나와 있습니다.
 그리고 현재 ES2019에 대한 명세가 작성되고 있습니다. 이번 post에서는 ECMAScript가 어떤 과정을 거쳐서 표준 문서를 만드는지 간단히 알아보고, ES2019에 들어갈 수도 있는 기능에 대해서 알아보겠습니다.</p>
@@ -272,7 +272,31 @@
 
 <ul>
   <li><a href="#the-tc39-process">The TC39 Process</a></li>
-  <li><a href="#es2019-candidates">ES2019 Candidates</a></li>
+  <li><a href="#es2019-candidates">ES2019 Candidates</a>
+    <ul>
+      <li><a href="#Stage 3 Features">Stage 3 Features</a>
+        <ul>
+          <li><a href="#globalThis">globalThis</a></li>
+          <li><a href="#import()">import()</a></li>
+          <li><a href="#Legacy RegExp features in JavaScript">Legacy RegExp features in JavaScript</a></li>
+          <li><a href="#BigInt">BigInt</a></li>
+          <li><a href="#Array.prototype.{flat,flatMap}">Array.prototype.{flat,flatMap}</a></li>
+          <li><a href="#String.prototype.{trimStart,trimEnd}">String.prototype.{trimStart,trimEnd}</a></li>
+          <li><a href="#String.prototype.matchAll">String.prototype.matchAll</a></li>
+          <li><a href="#Object.fromEntries">Object.fromEntries</a></li>
+          <li><a href="#Well-formed JSON.stringify">Well-formed JSON.stringify</a></li>
+        </ul>
+      </li>
+      <li><a href="#Finished Proposal Features">Finished Proposal Features</a>
+        <ul>
+          <li><a href="#Optional catch binding">Optional catch binding</a></li>
+          <li><a href="#JSON superset">JSON superset</a></li>
+          <li><a href="#Symbol.prototype.description">Symbol.prototype.description</a></li>
+          <li><a href="#Function.prototype.toString revision">Function.prototype.toString revision</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
   <li><a href="#references">References</a></li>
 </ul>
 
@@ -312,41 +336,264 @@
   </li>
 </ul>
 
-<p>앞의 Stage(0~4)에서 새로 추가 될 것으로 이야기 됐던 기능들이 Stage 4까지 오지 않는 한 ECMAScript 표준에 추가된다는 보장은 없습니다. 현재(2019년 1월 29일) <a href="https://github.com/tc39/proposals">ES2019 proposals</a>를 보면, Stage 4인 Finished Proposal에 들어간 기능도 있고 아직 Stage 3에서 수락을 기다리고 있는 기능도 있습니다. 그러므로 아래에서 살펴 볼 기능 중에서 Stage 3에 있는 후보들은 ES2019에 포함되지 않을 수도 있습니다. 하지만, Stage 3까지 논의됐다는 것 만으로도 충분히 흥미롭고 중요한 기능입니다.</p>
+<p>앞의 Stage(0~4)에서 새로 추가될 것으로 이야기됐던 기능들이 Stage 4까지 오지 않는 한 ECMAScript 표준에 추가된다는 보장은 없습니다. 현재(2019년 1월 29일) <a href="https://github.com/tc39/proposals">ES2019 proposals</a>를 보면, Stage 4인 Finished Proposal에 들어간 기능도 있고 아직 Stage 3에서 수락을 기다리고 있는 기능도 있습니다. 그러므로 아래에서 살펴볼 기능 중에서 Stage 3에 있는 후보들은 ES2019에 포함되지 않을 수도 있습니다. 하지만, Stage 3까지 논의됐다는 것만으로도 충분히 흥미롭고 중요한 기능입니다.</p>
 
-<p>그리고 ECMAScript에 표준으로 아직 추가되지 않은 기능이지만 몇몇 JavaScript engine(V8, SpiderMonkey등)에서는 그 기능들을 구현한 경우도 있습니다. 어떤 JavaScript engine에서 제공하는지는 <a href="https://caniuse.com/">Can I Use?</a> 에서 찾아볼 수 있습니다.</p>
+<p>그리고 ECMAScript에 표준으로 아직 추가되지 않은 기능이지만 몇몇 JavaScript engine(V8, SpiderMonkey 등)에서는 그 기능들을 구현한 경우도 있습니다. 어떤 JavaScript engine에서 제공하는지는 <a href="https://caniuse.com/">Can I Use?</a> 에서 찾아볼 수 있습니다.</p>
 
 <hr />
 
 <h1 id="es2019-candidates">ES2019 Candidates</h1>
 
 <h2 id="stage-3-features">Stage 3 Features</h2>
-<p>Stage 3에 있는 Candidate Feature들은 대부분 완성에 가깝고, 구현 주체나 사용자들로부터 피드백을 좀 더 받아보는 일만이 남은 상태입니다. Stage 3에 들어오기 위해서는 Stage 2의 Draft와는 다르게 빈칸없이 문법, 동작, 그리고 API까지 모든 부분이 기술되어 있도록 마무리 된 명세가 필요합니다.</p>
+<p>Stage 3에 있는 Candidate Feature들은 대부분 완성에 가깝고, 구현 주체나 사용자들로부터 피드백을 좀 더 받아보는 일만이 남은 상태입니다. Stage 3에 들어오기 위해서는 Stage 2의 Draft와는 다르게 빈칸 없이 문법, 동작, 그리고 API까지 모든 부분이 기술되어 있도록 마무리된 명세가 필요합니다.</p>
 
 <p>Stage 3까지 올라온 feature는 이후 구현상 심각한 문제가 발견되지 않는 이상 변경이 허용되지 않습니다. 이 시점에서는 실제로 ECMA-262 표준에 편입시키고자 하는 해당 표준의 명세가 거의 마무리 된 상태여야 합니다.</p>
 
-<p>아래에서는 Stage 3 proposal 중에서 Stage 4로 갈 확률이 높은 feature를 살펴보겠습니다.(test를 위한 pull request가 merge 되었는지를 기준으로 하였습니다)</p>
+<p>아래에서는 Stage 3 proposal 중에서 Stage 4로 갈 확률이 높은 feature를 살펴보겠습니다. (test를 위한 pull request가 merge 되었는지를 기준으로 하였습니다)</p>
 
 <h3 id="globalthis">globalThis</h3>
+
+<p>ECMAScript를 사용해서 코드를 작성할 때, 어느 환경에서나 적용할 수 있도록 <em><strong>global object</strong>에 접근하는 것은 어렵습니다.</em></p>
+
+<ul>
+  <li>Web에서는 <strong>Window</strong> 혹은 <strong>self</strong>, <strong>this</strong> 그리고 <strong>frames</strong>를 통해 <em><strong>global object</strong></em> 에 접근 가능합니다.</li>
+  <li>node.js에서는 <strong>global</strong> 혹은 <strong>this</strong>로 접근 가능합니다.</li>
+  <li>이 중에서, <strong>this</strong>만이 shell(V8의 d8이나 JavaScriptCore의 jsc같은)에서 사용 가능합니다.</li>
+  <li>엉성한 standalone function call에서 역시 <strong>this</strong>는 작동하지만, module이나 strict mode의 function에서 <strong>this</strong>는 undefined입니다.</li>
+  <li><strong>Function(‘return this’)()</strong> 로 global object에 접근할 수 있지만, Chrome Apps와 같은 CSP setting에서는 접근 불가능합니다.</li>
+</ul>
+
+<p>위와 같은 문제때문에, ECMAScript를 사용하는 환경에 상관없이 global object에 접근하기가 힘듭니다.</p>
+
+<p>이를 해결하기 위해서 제안된 것이 <a href="https://github.com/tc39/proposal-global"><strong>globalThis</strong></a>입니다. <strong>globalThis</strong> property는 환경에 상관없이 global object에 접근 가능한 standard way입니다.</p>
+
+<p><strong>globalThis</strong>가 있다면, 아래와 같이 여러 환경을 고려해서 global object를 가져오는 code가 필요 없어집니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">// If we're in a browser, the global namespace is named 'window'. If we're</span>
+	<span class="c1">// in node, it's named 'global'. If we're in a shell, 'this' might work.</span>
+	<span class="p">(</span><span class="k">typeof</span> <span class="nb">window</span> <span class="o">!==</span> <span class="s2">"undefined"</span>
+		<span class="p">?</span> <span class="nb">window</span>
+		<span class="p">:</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">process</span> <span class="o">===</span> <span class="s1">'object'</span> <span class="o">&amp;&amp;</span>
+		   <span class="k">typeof</span> <span class="nx">require</span> <span class="o">===</span> <span class="s1">'function'</span> <span class="o">&amp;&amp;</span>
+		   <span class="k">typeof</span> <span class="nb">global</span> <span class="o">===</span> <span class="s1">'object'</span><span class="p">)</span>
+			<span class="p">?</span> <span class="nb">global</span>
+			<span class="p">:</span> <span class="k">this</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">getGlobal</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="c1">// the only reliable means to get the global object is</span>
+	<span class="c1">// `Function('return this')()`</span>
+	<span class="c1">// However, this causes CSP violations in Chrome apps.</span>
+	<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nb">self</span> <span class="o">!==</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">self</span><span class="p">;</span> <span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nb">window</span> <span class="o">!==</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">window</span><span class="p">;</span> <span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nb">global</span> <span class="o">!==</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">global</span><span class="p">;</span> <span class="p">}</span>
+	<span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'unable to locate global object'</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
 <h3 id="import">import()</h3>
+
+<p><a href="https://github.com/tc39/proposal-dynamic-import">import()</a>는 기존의 <em>pre-runtime에 import를 하는 정적인 방식</em> 이 아닌, <strong>runtime에 import할 수 있는 동적인 방식</strong> 을 제안하고 있습니다.</p>
+
+<h4 id="motivation">motivation</h4>
+<p>현재 module import를 위해 사용하는 방식은 정적인 선언(static declarations)입니다. Import 할 module의 식별자로 문자열을 받고, pre-runtime에 “linking” process를 거침으로서 local scope에 binding합니다. 이런 정적인 선언은 90%의 경우에 매우 좋은 방식입니다.<br />
+하지만, runtime에 JavaScript application의 일부를 load할 수 있는 것도 바람직한 방법입니다. 그 이유는 다음과 같습니다. 사용자의 언어와 같은 <strong>runtime에만 알 수 있는 요소</strong>들이 있습니다. 그리고 사용되지 않을 코드는 load하지 않기 때문에 <strong>performance 측면</strong>에서도 이유가 될 수 있습니다. 혹은 중요하지 않은 module을 load했을 때 생기는 문제를 피함으로서 견고함에도 이유가 될 수 있습니다.</p>
+
+<h4 id="proposed-solution">Proposed solution</h4>
+<p>해당 proposal은 function처럼 동작하는 <strong>import(specifier)</strong>를 제안합니다. <strong>이 함수는 request module에 대한 module namespace object를 가지는 promise를 return합니다. 해당 module namespace object는 fetching, instantiating, 그리고 관련된 다른 module에 대한 evaluating까지 완료한 후 자신의 module로서 제공됩니다.</strong>
+import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니라 backtick 형태도 지원합니다.</p>
+
+<h4 id="example">Example</h4>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;nav&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"books.html"</span> <span class="na">data-entry-module=</span><span class="s">"books"</span><span class="nt">&gt;</span>Books<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"movies.html"</span> <span class="na">data-entry-module=</span><span class="s">"movies"</span><span class="nt">&gt;</span>Movies<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"video-games.html"</span> <span class="na">data-entry-module=</span><span class="s">"video-games"</span><span class="nt">&gt;</span>Video Games<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+
+<span class="nt">&lt;main&gt;</span>Content will load here!<span class="nt">&lt;/main&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"main"</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">link</span> <span class="k">of</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"nav &gt; a"</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">link</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+
+      <span class="k">import</span><span class="p">(</span><span class="s2">`./section-modules/</span><span class="p">${</span><span class="nx">link</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">entryModule</span><span class="p">}</span><span class="s2">.js`</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">module</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="nx">module</span><span class="p">.</span><span class="nx">loadPageInto</span><span class="p">(</span><span class="nx">main</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="nx">main</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
 <h3 id="legacy-regexp-features-in-javascript">Legacy RegExp features in JavaScript</h3>
+
+<p><a href="https://github.com/tc39/proposal-regexp-legacy-features">해당 proposal</a>은 <strong>RegExp.$1와 같은 생성자의 static properties</strong>와 <strong>RegExp.prototype.compile method</strong>가 RegExp에서 deprecated 된 것에 문제를 제기하고 있습니다.</p>
+
+<p><a href="https://github.com/tc39/proposal-regexp-legacy-features/blob/master/subclass-restriction-motivation.md">해당 기능들이 deprecated된 이유는 encapsulation을 위반했기 때문이라는 설명</a>을 하며, 해결책을 제안하고 있습니다.</p>
+
+<p><br />
+<br /></p>
+
 <h3 id="bigint">BigInt</h3>
+
+<p><a href="https://github.com/tc39/proposal-bigint">BigInt</a>는 2<sup>53</sup> 보다 큰 수를 표현하기 위한 새로운 primitive type입니다. (JavaScript에서 기존의 숫자를 표현하는 primitive type인 Number는 2<sup>53</sup>까지만 표현 가능합니다.)</p>
+
+<p>BigInt의 syntax는 다음과 같이 integer의 끝에 ‘n’을 붙이거나 생성자를 호출합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">theBiggestInt</span> <span class="o">=</span> <span class="mi">9007199254740991</span><span class="nx">n</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">alsoHuge</span> <span class="o">=</span> <span class="nx">BigInt</span><span class="p">(</span><span class="mi">9007199254740991</span><span class="p">);</span>
+<span class="c1">// ↪ 9007199254740991n</span>
+
+<span class="kd">const</span> <span class="nx">hugeButString</span> <span class="o">=</span> <span class="nx">BigInt</span><span class="p">(</span><span class="s1">'9007199254740991'</span><span class="p">);</span>
+<span class="c1">// ↪ 9007199254740991n</span>
+</code></pre></div></div>
+
+<p>+, -, *, ** 그리고 % 같은 연산들 역시 가능합니다. 그 외에 comparison, conditional 등등의 여러 usecase와 gotcha에 대한 설명은 <a href="https://github.com/tc39/proposal-bigint">여기</a>를 참조하세요.</p>
+
+<p><br />
+<br /></p>
+
 <h3 id="arrayprototypeflatflatmap">Array.prototype.{flat,flatMap}</h3>
+<blockquote>
+  <p>특히 finished proposal로 넘어갈 확률이 높은 proposal입니다.
+<a href="https://github.com/tc39/proposal-flatMap">해당 proposal</a>은 Array.prototype.flat과 Array.prototype.flatMap을 ECMAScript에 추가하려 합니다.</p>
+</blockquote>
+
+<p>flat()은 여러 depth를 가지는 array를 한 depth씩 혹은 여러 depth씩 평평하게(flatten) 합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">nestedArr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">]]]];</span>
+
+<span class="kd">const</span> <span class="nx">flat1Depth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// == nestedArr.flat(); [1, 2, [3, [4]]]</span>
+<span class="kd">const</span> <span class="nx">flat2Depth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// [1, 2, 3, [4]]</span>
+<span class="kd">const</span> <span class="nx">flat3Depth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// [1, 2, 3, 4]</span>
+<span class="kd">const</span> <span class="nx">flatMoreDepth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span> <span class="c1">// [1, 2, 3, 4]</span>
+</code></pre></div></div>
+
+<p>flatMap()은 map()과 유사하게 array를 return합니다. 하지만 flatMap은 return되는 array를 한 depth 평평하게 합니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">example1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">flatMap</span><span class="p">((</span><span class="nx">x</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]);</span>
+<span class="c1">// example1 === [2, 4, 3, 6, 4, 8]</span>
+
+<span class="kd">const</span> <span class="nx">example2_1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'I am'</span><span class="p">,</span> <span class="s1">'not a'</span><span class="p">,</span> <span class="s1">'boy'</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)});</span>
+<span class="c1">// example2_1 === [["I", "am"], ["not", "a"], ["boy"]]</span>
+<span class="kd">const</span> <span class="nx">example2_2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'I am'</span><span class="p">,</span> <span class="s1">'not a'</span><span class="p">,</span> <span class="s1">'boy'</span><span class="p">].</span><span class="nx">flatMap</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)});</span>
+<span class="c1">// example2_2 === ["I", "am", "not", "a", "boy"]</span>
+</code></pre></div></div>
+
+<p><br />
+<br /></p>
+
 <h3 id="stringprototypetrimstarttrimend">String.prototype.{trimStart,trimEnd}</h3>
+
+<p>String type은 trim()이라는, 양쪽의 whitespace를 제거하는 method를 표준으로 가지고 있습니다. <a href="https://github.com/tc39/proposal-string-left-right-trim">해당 proposal</a>은 string의 양쪽이 아닌 한쪽의 whitespace만 제거하는 trimStart()와 trimEnd()라는 method를 제안합니다.</p>
+
+<p>재미있는 점은, 해당 method는 표준에 제정되기 전에 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd#Browser_compatibility">여러 browser에서 이미 구현</a>되어 있습니다. Browser에서 ECMAScript로 기능을 넣게하는 경우 중 하나입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">first</span> <span class="o">=</span> <span class="s2">"      My favorite sport "</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">second</span> <span class="o">=</span> <span class="s2">"is kendo.        "</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">.</span><span class="nx">trimStart</span><span class="p">()</span> <span class="o">+</span> <span class="nx">second</span><span class="p">.</span><span class="nx">trimEnd</span><span class="p">())</span> <span class="c1">// "My favorite sport is kendo."</span>
+</code></pre></div></div>
+
+<p>기능의 추가 외에도, naming/aliasing 도 제안하고 있습니다. ES2017에서 표준으로 추가된 <strong>padStart/padEnd</strong>와 일관성을 유지하기 위해서 <strong>trimLeft/trimRight</strong> 대신 <strong>trimStart/trimEnd</strong>를 제안하고 있습니다.</p>
+
+<p><br />
+<br /></p>
+
 <h3 id="stringprototypematchall">String.prototype.matchAll</h3>
+
+<p><a href="https://github.com/tc39/proposal-string-matchall">해당 proposal은 <strong>String.prototype.exec</strong>이 단일 결과값을 return하는 것을 보완하여, 모든 결과값을 return하는 <strong>String.prototype.matchAll</strong>을 제안하고 있습니다.</a></p>
+
+<p>기존의 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec#%EC%84%A4%EB%AA%85">String.prototype.exec은 단일 결과값을 이러한 format</a>으로 보여줍니다. exec()를 사용해서 모든 만족하는 결과를 얻기 위해서는 loop를 사용해야 합니다. 이런 과정을 거쳐서 주어진 string에서 정규표현식과 일치하는 모든 부분을 찾는 logic은 아래의 코드와 같습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">regex</span> <span class="o">=</span> <span class="sr">/t</span><span class="se">(</span><span class="sr">e</span><span class="se">)(</span><span class="sr">st</span><span class="se">(\d?))</span><span class="sr">/g</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">'test1test2'</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">matches</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">lastIndexes</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">match</span><span class="p">;</span>
+<span class="nx">lastIndexes</span><span class="p">[</span><span class="nx">regex</span><span class="p">.</span><span class="nx">lastIndex</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">match</span> <span class="o">=</span> <span class="nx">regex</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">string</span><span class="p">))</span> <span class="p">{</span>
+	<span class="nx">lastIndexes</span><span class="p">[</span><span class="nx">regex</span><span class="p">.</span><span class="nx">lastIndex</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+	<span class="nx">matches</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">match</span><span class="p">);</span>
+	<span class="c1">// example: ['test1', 'e', 'st1', '1'] with properties `index` and `input`</span>
+<span class="p">}</span>
+<span class="nx">matches</span><span class="p">;</span> <span class="cm">/* gives exactly what i want, but uses a loop,
+		* and mutates the regex's `lastIndex` property */</span>
+<span class="nx">lastIndexes</span><span class="p">;</span> <span class="cm">/* ideally should give { 0: true } but instead
+		* will have a value for each mutation of lastIndex */</span>
+</code></pre></div></div>
+
+<p>위의 코드는 <strong>matches</strong> 변수에 원하는 결과가 들어있지만, loop를 사용했고, regex의 lastIndex property를 변경했다는 단점이 있습니다.</p>
+
+<p>아래의 코드는 String.prototype.exec가 아닌 <strong>String.prototype.replace</strong>의 두 번째 parameter에 function을 사용한 경우입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">regex</span> <span class="o">=</span> <span class="sr">/t</span><span class="se">(</span><span class="sr">e</span><span class="se">)(</span><span class="sr">st</span><span class="se">(\d?))</span><span class="sr">/g</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">'test1test2'</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">matches</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">string</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">regex</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">match</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kr">arguments</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+	<span class="nx">match</span><span class="p">.</span><span class="nx">input</span> <span class="o">=</span> <span class="kr">arguments</span><span class="p">[</span><span class="kr">arguments</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+	<span class="nx">match</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="kr">arguments</span><span class="p">[</span><span class="kr">arguments</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">2</span><span class="p">];</span>
+	<span class="nx">matches</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">match</span><span class="p">);</span>
+	<span class="c1">// example: ['test1', 'e', 'st1', '1'] with properties `index` and `input`</span>
+<span class="p">});</span>
+<span class="nx">matches</span><span class="p">;</span> <span class="cm">/* gives exactly what i want, but abuses `replace`,
+	  * mutates the regex's `lastIndex` property,
+	  * and requires manual construction of `match` */</span>
+</code></pre></div></div>
+
+<p>위의 코드는 앞의 코드가 가지는 단점을 보완했지만, replace 함수를 남용하였고, 역시 regex의 lastIndex property를 변경했다는 단점이 있습니다. 그리고 match 변수를 직접 작성해야 합니다.</p>
+
+<p>이러한 단점들이 있기 때문에, 주어진 string에서 정규표현식과 일치하는 모든 결과값을 return하는 <strong>String.prototype.matchAll</strong> 을 표준에 포함하길 제안하고 있습니다.</p>
+
+<p><br />
+<br /></p>
+
 <h3 id="objectfromentries">Object.fromEntries</h3>
+<blockquote>
+  <p>특히 finished proposal로 넘어갈 확률이 높은 proposal입니다.</p>
+</blockquote>
+
+<p><br />
+<br /></p>
+
 <h3 id="well-formed-jsonstringify">Well-formed JSON.stringify</h3>
 
 <h2 id="finished-proposal-features">Finished Proposal Features</h2>
 <p>마지막 Stage 4는 모든 단계를 거치고 마침내 제안이 수락되고 다음 표준에 포함되어 발표되기만을 기다리는 단계입니다. Stage 3의 proposal이 ECMA-262의 unit test suit인 Test262에 관련 테스트가 작성되고, 최소 2개 이상의 구현이 제공되는 등의 까다로운 추가 조건을 모두 만족하면 마침내 Stage 4로 올라올 수 있습니다.</p>
 
-<p>Stage 4까지 올라온 프로포절은 별다른 이변이 없는 이상 다가오는 새 표준에 포함되어 발표됩니다. 2015년을 기점으로 매년 6월 새로운 ECMAScript 표준이 발표되는데, 당해 3월 전까지 Stage 4를 달성하고 3월 회의에서 최종 승인된 제안들이 새 표준에 포함됩니다.</p>
+<p>Stage 4까지 올라온 proposal은 별다른 이변이 없는 이상 다가오는 새 표준에 포함되어 발표됩니다. 2015년을 기점으로 매년 6월 새로운 ECMAScript 표준이 발표되는데, 당해 3월 전까지 Stage 4를 달성하고 3월 회의에서 최종 승인된 제안들이 새 표준에 포함됩니다.</p>
 
-<p>현재 ES2019에 포함될것으로 예상되는, finished proposal은 다음과 같습니다.</p>
+<p>현재 ES2019에 포함될 것으로 예상되는, finished proposal은 다음과 같습니다.</p>
 
 <h3 id="optional-catch-binding">Optional catch binding</h3>
+
+<p><br />
+<br /></p>
+
 <h3 id="json-superset">JSON superset</h3>
+
+<p><br />
+<br /></p>
+
 <h3 id="symbolprototypedescription">Symbol.prototype.description</h3>
+
+<p><br />
+<br /></p>
+
 <h3 id="functionprototypetostring-revision">Function.prototype.toString revision</h3>
 
 <hr />
@@ -360,6 +607,14 @@
   <li><a href="https://tc39.github.io/process-document/">The TC39 Process</a></li>
   <li><a href="https://github.com/tc39/proposals">ECMAScript Proposals</a></li>
   <li><a href="https://ahnheejong.name/articles/ecmascript-tc39/">ECMAScript와 TC39</a></li>
+  <li><a href="https://github.com/tc39/proposal-global">globalThis</a></li>
+  <li><a href="https://github.com/tc39/proposal-dynamic-import">import()</a></li>
+  <li><a href="https://github.com/tc39/proposal-regexp-legacy-features">Legacy RegExp features in JavaScript</a></li>
+  <li><a href="https://github.com/tc39/proposal-regexp-legacy-features/blob/master/subclass-restriction-motivation.md">Why disable legacy RegExp features for proper subclasses of RegExp?</a></li>
+  <li><a href="https://github.com/tc39/proposal-bigint">BigInt: Arbitrary precision integers in JavaScript</a></li>
+  <li><a href="https://github.com/tc39/proposal-flatMap">Array.prototype.{flat,flatMap}</a></li>
+  <li><a href="https://github.com/tc39/proposal-string-left-right-trim">String.prototype.{trimStart,trimEnd}</a></li>
+  <li><a href="https://github.com/ljharb/String.prototype.matchAll">String.prototype.matchAll</a></li>
 </ul>
 
       </div>
