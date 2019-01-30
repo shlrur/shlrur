@@ -280,19 +280,19 @@
           <li><a href="#import()">import()</a></li>
           <li><a href="#Legacy RegExp features in JavaScript">Legacy RegExp features in JavaScript</a></li>
           <li><a href="#BigInt">BigInt</a></li>
-          <li><a href="#Array.prototype.{flat,flatMap}">Array.prototype.{flat,flatMap}</a></li>
-          <li><a href="#String.prototype.{trimStart,trimEnd}">String.prototype.{trimStart,trimEnd}</a></li>
           <li><a href="#String.prototype.matchAll">String.prototype.matchAll</a></li>
-          <li><a href="#Object.fromEntries">Object.fromEntries</a></li>
-          <li><a href="#Well-formed JSON.stringify">Well-formed JSON.stringify</a></li>
         </ul>
       </li>
       <li><a href="#Finished Proposal Features">Finished Proposal Features</a>
         <ul>
           <li><a href="#Optional catch binding">Optional catch binding</a></li>
-          <li><a href="#JSON superset">JSON superset</a></li>
+          <li><a href="#JSON superset">Subsume JSON(JSON superset)</a></li>
           <li><a href="#Symbol.prototype.description">Symbol.prototype.description</a></li>
           <li><a href="#Function.prototype.toString revision">Function.prototype.toString revision</a></li>
+          <li><a href="#Object.fromEntries">Object.fromEntries</a></li>
+          <li><a href="#Well-formed JSON.stringify">Well-formed JSON.stringify</a></li>
+          <li><a href="#String.prototype.{trimStart,trimEnd}">String.prototype.{trimStart,trimEnd}</a></li>
+          <li><a href="#Array.prototype.{flat,flatMap}">Array.prototype.{flat,flatMap}</a></li>
         </ul>
       </li>
     </ul>
@@ -336,7 +336,7 @@
   </li>
 </ul>
 
-<p>앞의 Stage(0~4)에서 새로 추가될 것으로 이야기됐던 기능들이 Stage 4까지 오지 않는 한 ECMAScript 표준에 추가된다는 보장은 없습니다. 현재(2019년 1월 29일) <a href="https://github.com/tc39/proposals">ES2019 proposals</a>를 보면, Stage 4인 Finished Proposal에 들어간 기능도 있고 아직 Stage 3에서 수락을 기다리고 있는 기능도 있습니다. 그러므로 아래에서 살펴볼 기능 중에서 Stage 3에 있는 후보들은 ES2019에 포함되지 않을 수도 있습니다. 하지만, Stage 3까지 논의됐다는 것만으로도 충분히 흥미롭고 중요한 기능입니다.</p>
+<p>앞의 Stage(0~4)에서 새로 추가될 것으로 이야기됐던 기능들이 Stage 4까지 오지 않는 한 ECMAScript 표준에 추가된다는 보장은 없습니다. 현재(2019년 1월 30일) <a href="https://github.com/tc39/proposals">ES2019 proposals</a>를 보면, Stage 4인 Finished Proposal에 들어간 기능도 있고 아직 Stage 3에서 수락을 기다리고 있는 기능도 있습니다. 그러므로 아래에서 살펴볼 기능 중에서 Stage 3에 있는 후보들은 ES2019에 포함되지 않을 수도 있습니다. 하지만, Stage 3까지 논의됐다는 것만으로도 충분히 흥미롭고 중요한 기능입니다.</p>
 
 <p>그리고 ECMAScript에 표준으로 아직 추가되지 않은 기능이지만 몇몇 JavaScript engine(V8, SpiderMonkey 등)에서는 그 기능들을 구현한 경우도 있습니다. 어떤 JavaScript engine에서 제공하는지는 <a href="https://caniuse.com/">Can I Use?</a> 에서 찾아볼 수 있습니다.</p>
 
@@ -466,51 +466,6 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 <p><br />
 <br /></p>
 
-<h3 id="arrayprototypeflatflatmap">Array.prototype.{flat,flatMap}</h3>
-<blockquote>
-  <p>특히 finished proposal로 넘어갈 확률이 높은 proposal입니다.
-<a href="https://github.com/tc39/proposal-flatMap">해당 proposal</a>은 Array.prototype.flat과 Array.prototype.flatMap을 ECMAScript에 추가하려 합니다.</p>
-</blockquote>
-
-<p>flat()은 여러 depth를 가지는 array를 한 depth씩 혹은 여러 depth씩 평평하게(flatten) 합니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">nestedArr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">]]]];</span>
-
-<span class="kd">const</span> <span class="nx">flat1Depth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// == nestedArr.flat(); [1, 2, [3, [4]]]</span>
-<span class="kd">const</span> <span class="nx">flat2Depth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// [1, 2, 3, [4]]</span>
-<span class="kd">const</span> <span class="nx">flat3Depth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// [1, 2, 3, 4]</span>
-<span class="kd">const</span> <span class="nx">flatMoreDepth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span> <span class="c1">// [1, 2, 3, 4]</span>
-</code></pre></div></div>
-
-<p>flatMap()은 map()과 유사하게 array를 return합니다. 하지만 flatMap은 return되는 array를 한 depth 평평하게 합니다.</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">example1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">flatMap</span><span class="p">((</span><span class="nx">x</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]);</span>
-<span class="c1">// example1 === [2, 4, 3, 6, 4, 8]</span>
-
-<span class="kd">const</span> <span class="nx">example2_1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'I am'</span><span class="p">,</span> <span class="s1">'not a'</span><span class="p">,</span> <span class="s1">'boy'</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)});</span>
-<span class="c1">// example2_1 === [["I", "am"], ["not", "a"], ["boy"]]</span>
-<span class="kd">const</span> <span class="nx">example2_2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'I am'</span><span class="p">,</span> <span class="s1">'not a'</span><span class="p">,</span> <span class="s1">'boy'</span><span class="p">].</span><span class="nx">flatMap</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)});</span>
-<span class="c1">// example2_2 === ["I", "am", "not", "a", "boy"]</span>
-</code></pre></div></div>
-
-<p><br />
-<br /></p>
-
-<h3 id="stringprototypetrimstarttrimend">String.prototype.{trimStart,trimEnd}</h3>
-
-<p>String type은 trim()이라는, 양쪽의 whitespace를 제거하는 method를 표준으로 가지고 있습니다. <a href="https://github.com/tc39/proposal-string-left-right-trim">해당 proposal</a>은 string의 양쪽이 아닌 한쪽의 whitespace만 제거하는 trimStart()와 trimEnd()라는 method를 제안합니다.</p>
-
-<p>재미있는 점은, 해당 method는 표준에 제정되기 전에 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd#Browser_compatibility">여러 browser에서 이미 구현</a>되어 있습니다. Browser에서 ECMAScript로 기능을 넣게하는 경우 중 하나입니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">first</span> <span class="o">=</span> <span class="s2">"      My favorite sport "</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">second</span> <span class="o">=</span> <span class="s2">"is kendo.        "</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">.</span><span class="nx">trimStart</span><span class="p">()</span> <span class="o">+</span> <span class="nx">second</span><span class="p">.</span><span class="nx">trimEnd</span><span class="p">())</span> <span class="c1">// "My favorite sport is kendo."</span>
-</code></pre></div></div>
-
-<p>기능의 추가 외에도, naming/aliasing 도 제안하고 있습니다. ES2017에서 표준으로 추가된 <strong>padStart/padEnd</strong>와 일관성을 유지하기 위해서 <strong>trimLeft/trimRight</strong> 대신 <strong>trimStart/trimEnd</strong>를 제안하고 있습니다.</p>
-
-<p><br />
-<br /></p>
-
 <h3 id="stringprototypematchall">String.prototype.matchAll</h3>
 
 <p><a href="https://github.com/tc39/proposal-string-matchall">해당 proposal은 <strong>String.prototype.exec</strong>이 단일 결과값을 return하는 것을 보완하여, 모든 결과값을 return하는 <strong>String.prototype.matchAll</strong>을 제안하고 있습니다.</a></p>
@@ -559,19 +514,6 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 
 <p>이러한 단점들이 있기 때문에, 주어진 string에서 정규표현식과 일치하는 모든 결과값을 return하는 <strong>String.prototype.matchAll</strong> 을 표준에 포함하길 제안하고 있습니다.</p>
 
-<p><br />
-<br /></p>
-
-<h3 id="objectfromentries">Object.fromEntries</h3>
-<blockquote>
-  <p>특히 finished proposal로 넘어갈 확률이 높은 proposal입니다.</p>
-</blockquote>
-
-<p><br />
-<br /></p>
-
-<h3 id="well-formed-jsonstringify">Well-formed JSON.stringify</h3>
-
 <h2 id="finished-proposal-features">Finished Proposal Features</h2>
 <p>마지막 Stage 4는 모든 단계를 거치고 마침내 제안이 수락되고 다음 표준에 포함되어 발표되기만을 기다리는 단계입니다. Stage 3의 proposal이 ECMA-262의 unit test suit인 Test262에 관련 테스트가 작성되고, 최소 2개 이상의 구현이 제공되는 등의 까다로운 추가 조건을 모두 만족하면 마침내 Stage 4로 올라올 수 있습니다.</p>
 
@@ -581,20 +523,122 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 
 <h3 id="optional-catch-binding">Optional catch binding</h3>
 
+<p><a href="https://github.com/tc39/proposal-optional-catch-binding">이 proposal은 try와 함께 사용하는 <strong>catch</strong>에 대한 수정을 요구하고 있습니다.</a></p>
+
+<p>기본 주장은 <strong>catch</strong>에 binding되는 <strong>exception variable</strong>이 사용되지 않는 경우가 많으니, 생략할 수 있게 문법적인 변경을 요청하는 것입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
+  <span class="c1">// try to use a web feature which may not be implemented</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">unused</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// fall back to a less desirable web feature with broader support</span>
+<span class="p">}</span>
+
+<span class="c1">// or</span>
+
+<span class="kd">let</span> <span class="nx">isTheFeatureImplemented</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="k">try</span> <span class="p">{</span>
+  <span class="c1">// stress the required bits of the web API</span>
+  <span class="nx">isTheFeatureImplemented</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">unused</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="c1">// or</span>
+
+<span class="kd">let</span> <span class="nx">parseResult</span> <span class="o">=</span> <span class="nx">someFallbackValue</span><span class="p">;</span>
+<span class="k">try</span> <span class="p">{</span>
+  <span class="nx">parseResult</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">potentiallyMalformedJSON</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">unused</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>위의 코드에서 보여주는 3가지 경우에는 <strong>catch</strong>에 binding되는 <em>unused</em> 라는 parameter는 사용되지 않으며 불필요합니다. 사용하지 않는 variable이 있다는건 프로그래밍 에러를 야기할 수도 있습니다.</p>
+
+<p>그래서 해당 proposal은 아래와 같은 코드의 허용을 제안합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 <p><br />
 <br /></p>
 
-<h3 id="json-superset">JSON superset</h3>
+<h3 id="subsume-jsonjson-superset">Subsume JSON(JSON superset)</h3>
+
+<p><a href="https://github.com/tc39/proposal-json-superset">해당 proposal은 ECMAScript의 string이 <strong>U+2028</strong>과 <strong>U+2029</strong>를 포함하기를 제안합니다.</a></p>
+
+<p>JSON string은 unescaped <strong>U+2028 LINE SEPARATOR</strong> 와 <strong>U+2029 PARAGRAPH SEPARATOR</strong> character 를 포함합니다. 하지만 ECMAScript string은 포함하지 않습니다.</p>
+
+<p>이 때문에 specification에 있어서 불필요한 복잡성이 증가하고, 개발자와 사용자에게 부담이 더해집니다. 그리고 valid JSON을 valid ECMAScript로 넣는데 불필요한 과정이 필요하게 됩니다.</p>
+
+<p>이를 해결하기 위해서, JSON syntax는 ECMA-404에 정의되어있고 RFC 7159로 인해서 영구히 fix 되었으니, ECMA-262에 의한 <em>DoubleStringCharacter</em> 과 <em>SingleStringCharacter</em> 를 확장해서 unescaped <strong>U+2028 LINE SEPARATOR</strong> 와 <strong>U+2029 PARAGRAPH SEPARATOR</strong> character 를 허용하자고 제안하고 있습니다.</p>
 
 <p><br />
 <br /></p>
 
 <h3 id="symbolprototypedescription">Symbol.prototype.description</h3>
 
+<p><a href="https://github.com/tc39/proposal-Symbol-description">해당 proposal은 Symbol을 사용함에 있어서, description에 바로 접근할 수 있는 <strong>Symbol.prototype.description</strong>의 추가를 제안하고 있습니다.</a></p>
+
+<p>기존에는 Symbol의 description을 알기 위해서 Symbol.prototype.toString을 사용했지만, description 만을 얻기 위해서는 적절치 않은 방법이라고 말하고 있습니다.</p>
+
 <p><br />
 <br /></p>
 
 <h3 id="functionprototypetostring-revision">Function.prototype.toString revision</h3>
+
+<p><br />
+<br /></p>
+
+<h3 id="objectfromentries">Object.fromEntries</h3>
+
+<p><br />
+<br /></p>
+
+<h3 id="well-formed-jsonstringify">Well-formed JSON.stringify</h3>
+
+<p><br />
+<br /></p>
+
+<h3 id="stringprototypetrimstarttrimend">String.prototype.{trimStart,trimEnd}</h3>
+
+<p>String type은 trim()이라는, 양쪽의 whitespace를 제거하는 method를 표준으로 가지고 있습니다. <a href="https://github.com/tc39/proposal-string-left-right-trim">해당 proposal</a>은 string의 양쪽이 아닌 한쪽의 whitespace만 제거하는 trimStart()와 trimEnd()라는 method를 제안합니다.</p>
+
+<p>재미있는 점은, 해당 method는 표준에 제정되기 전에 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd#Browser_compatibility">여러 browser에서 이미 구현</a>되어 있습니다. Browser에서 ECMAScript로 기능을 넣게하는 경우 중 하나입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">first</span> <span class="o">=</span> <span class="s2">"      My favorite sport "</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">second</span> <span class="o">=</span> <span class="s2">"is kendo.        "</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">.</span><span class="nx">trimStart</span><span class="p">()</span> <span class="o">+</span> <span class="nx">second</span><span class="p">.</span><span class="nx">trimEnd</span><span class="p">())</span> <span class="c1">// "My favorite sport is kendo."</span>
+</code></pre></div></div>
+
+<p>기능의 추가 외에도, naming/aliasing 도 제안하고 있습니다. ES2017에서 표준으로 추가된 <strong>padStart/padEnd</strong>와 일관성을 유지하기 위해서 <strong>trimLeft/trimRight</strong> 대신 <strong>trimStart/trimEnd</strong>를 제안하고 있습니다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="arrayprototypeflatflatmap">Array.prototype.{flat,flatMap}</h3>
+
+<p><a href="https://github.com/tc39/proposal-flatMap">해당 proposal</a>은 Array.prototype.flat과 Array.prototype.flatMap을 ECMAScript에 추가하려 합니다.</p>
+
+<p>flat()은 여러 depth를 가지는 array를 한 depth씩 혹은 여러 depth씩 평평하게(flatten) 합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">nestedArr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">]]]];</span>
+
+<span class="kd">const</span> <span class="nx">flat1Depth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// == nestedArr.flat(); [1, 2, [3, [4]]]</span>
+<span class="kd">const</span> <span class="nx">flat2Depth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// [1, 2, 3, [4]]</span>
+<span class="kd">const</span> <span class="nx">flat3Depth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// [1, 2, 3, 4]</span>
+<span class="kd">const</span> <span class="nx">flatMoreDepth</span> <span class="o">=</span> <span class="nx">nestedArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span> <span class="c1">// [1, 2, 3, 4]</span>
+</code></pre></div></div>
+
+<p>flatMap()은 map()과 유사하게 array를 return합니다. 하지만 flatMap은 return되는 array를 한 depth 평평하게 합니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">example1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">flatMap</span><span class="p">((</span><span class="nx">x</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]);</span>
+<span class="c1">// example1 === [2, 4, 3, 6, 4, 8]</span>
+
+<span class="kd">const</span> <span class="nx">example2_1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'I am'</span><span class="p">,</span> <span class="s1">'not a'</span><span class="p">,</span> <span class="s1">'boy'</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)});</span>
+<span class="c1">// example2_1 === [["I", "am"], ["not", "a"], ["boy"]]</span>
+<span class="kd">const</span> <span class="nx">example2_2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'I am'</span><span class="p">,</span> <span class="s1">'not a'</span><span class="p">,</span> <span class="s1">'boy'</span><span class="p">].</span><span class="nx">flatMap</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)});</span>
+<span class="c1">// example2_2 === ["I", "am", "not", "a", "boy"]</span>
+</code></pre></div></div>
 
 <hr />
 
@@ -615,6 +659,9 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
   <li><a href="https://github.com/tc39/proposal-flatMap">Array.prototype.{flat,flatMap}</a></li>
   <li><a href="https://github.com/tc39/proposal-string-left-right-trim">String.prototype.{trimStart,trimEnd}</a></li>
   <li><a href="https://github.com/ljharb/String.prototype.matchAll">String.prototype.matchAll</a></li>
+  <li><a href="https://github.com/tc39/proposal-optional-catch-binding">Optional catch binding</a></li>
+  <li><a href="https://github.com/tc39/proposal-json-superset">Subsume JSON(JSON superset)</a></li>
+  <li><a href="https://github.com/tc39/proposal-Symbol-description">Symbol.prototype.description</a></li>
 </ul>
 
       </div>

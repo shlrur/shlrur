@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-01-29T17:05:54+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">What features will added in ES2019</title><link href="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/" rel="alternate" type="text/html" title="What features will added in ES2019" /><published>2019-01-29T00:00:00+00:00</published><updated>2019-01-29T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/">&lt;p&gt;이번 post에서는 2019년에 발표될 &lt;strong&gt;ES2019&lt;/strong&gt;에 추가될 예정인 기능들에 대해서 살펴보겠습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-01-30T09:10:23+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">What features will added in ES2019</title><link href="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/" rel="alternate" type="text/html" title="What features will added in ES2019" /><published>2019-01-29T00:00:00+00:00</published><updated>2019-01-29T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/">&lt;p&gt;이번 post에서는 2019년에 발표될 &lt;strong&gt;ES2019&lt;/strong&gt;에 추가될 예정인 기능들에 대해서 살펴보겠습니다.&lt;/p&gt;
 
 &lt;figure class=&quot;align-center&quot;&gt;
     &lt;img src=&quot;https://shlrur.github.io//assets/images/what-features-will-added-in-es2019/article-logo.jpg&quot; alt=&quot;new features in es2019&quot; /&gt;
@@ -21,19 +21,19 @@
           &lt;li&gt;&lt;a href=&quot;#import()&quot;&gt;import()&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#Legacy RegExp features in JavaScript&quot;&gt;Legacy RegExp features in JavaScript&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#BigInt&quot;&gt;BigInt&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#Array.prototype.{flat,flatMap}&quot;&gt;Array.prototype.{flat,flatMap}&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#String.prototype.{trimStart,trimEnd}&quot;&gt;String.prototype.{trimStart,trimEnd}&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#String.prototype.matchAll&quot;&gt;String.prototype.matchAll&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#Object.fromEntries&quot;&gt;Object.fromEntries&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#Well-formed JSON.stringify&quot;&gt;Well-formed JSON.stringify&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#Finished Proposal Features&quot;&gt;Finished Proposal Features&lt;/a&gt;
         &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;#Optional catch binding&quot;&gt;Optional catch binding&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#JSON superset&quot;&gt;JSON superset&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#JSON superset&quot;&gt;Subsume JSON(JSON superset)&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#Symbol.prototype.description&quot;&gt;Symbol.prototype.description&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#Function.prototype.toString revision&quot;&gt;Function.prototype.toString revision&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#Object.fromEntries&quot;&gt;Object.fromEntries&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#Well-formed JSON.stringify&quot;&gt;Well-formed JSON.stringify&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#String.prototype.{trimStart,trimEnd}&quot;&gt;String.prototype.{trimStart,trimEnd}&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#Array.prototype.{flat,flatMap}&quot;&gt;Array.prototype.{flat,flatMap}&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -77,7 +77,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;앞의 Stage(0~4)에서 새로 추가될 것으로 이야기됐던 기능들이 Stage 4까지 오지 않는 한 ECMAScript 표준에 추가된다는 보장은 없습니다. 현재(2019년 1월 29일) &lt;a href=&quot;https://github.com/tc39/proposals&quot;&gt;ES2019 proposals&lt;/a&gt;를 보면, Stage 4인 Finished Proposal에 들어간 기능도 있고 아직 Stage 3에서 수락을 기다리고 있는 기능도 있습니다. 그러므로 아래에서 살펴볼 기능 중에서 Stage 3에 있는 후보들은 ES2019에 포함되지 않을 수도 있습니다. 하지만, Stage 3까지 논의됐다는 것만으로도 충분히 흥미롭고 중요한 기능입니다.&lt;/p&gt;
+&lt;p&gt;앞의 Stage(0~4)에서 새로 추가될 것으로 이야기됐던 기능들이 Stage 4까지 오지 않는 한 ECMAScript 표준에 추가된다는 보장은 없습니다. 현재(2019년 1월 30일) &lt;a href=&quot;https://github.com/tc39/proposals&quot;&gt;ES2019 proposals&lt;/a&gt;를 보면, Stage 4인 Finished Proposal에 들어간 기능도 있고 아직 Stage 3에서 수락을 기다리고 있는 기능도 있습니다. 그러므로 아래에서 살펴볼 기능 중에서 Stage 3에 있는 후보들은 ES2019에 포함되지 않을 수도 있습니다. 하지만, Stage 3까지 논의됐다는 것만으로도 충분히 흥미롭고 중요한 기능입니다.&lt;/p&gt;
 
 &lt;p&gt;그리고 ECMAScript에 표준으로 아직 추가되지 않은 기능이지만 몇몇 JavaScript engine(V8, SpiderMonkey 등)에서는 그 기능들을 구현한 경우도 있습니다. 어떤 JavaScript engine에서 제공하는지는 &lt;a href=&quot;https://caniuse.com/&quot;&gt;Can I Use?&lt;/a&gt; 에서 찾아볼 수 있습니다.&lt;/p&gt;
 
@@ -207,51 +207,6 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;arrayprototypeflatflatmap&quot;&gt;Array.prototype.{flat,flatMap}&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;특히 finished proposal로 넘어갈 확률이 높은 proposal입니다.
-&lt;a href=&quot;https://github.com/tc39/proposal-flatMap&quot;&gt;해당 proposal&lt;/a&gt;은 Array.prototype.flat과 Array.prototype.flatMap을 ECMAScript에 추가하려 합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;flat()은 여러 depth를 가지는 array를 한 depth씩 혹은 여러 depth씩 평평하게(flatten) 합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nestedArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]]];&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flat1Depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nestedArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// == nestedArr.flat(); [1, 2, [3, [4]]]&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flat2Depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nestedArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [1, 2, 3, [4]]&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flat3Depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nestedArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [1, 2, 3, 4]&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flatMoreDepth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nestedArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [1, 2, 3, 4]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;flatMap()은 map()과 유사하게 array를 return합니다. 하지만 flatMap은 return되는 array를 한 depth 평평하게 합니다.&lt;/p&gt;
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;example1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flatMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// example1 === [2, 4, 3, 6, 4, 8]&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;example2_1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'I am'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'not a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'boy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)});&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// example2_1 === [[&quot;I&quot;, &quot;am&quot;], [&quot;not&quot;, &quot;a&quot;], [&quot;boy&quot;]]&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;example2_2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'I am'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'not a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'boy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flatMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)});&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// example2_2 === [&quot;I&quot;, &quot;am&quot;, &quot;not&quot;, &quot;a&quot;, &quot;boy&quot;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;stringprototypetrimstarttrimend&quot;&gt;String.prototype.{trimStart,trimEnd}&lt;/h3&gt;
-
-&lt;p&gt;String type은 trim()이라는, 양쪽의 whitespace를 제거하는 method를 표준으로 가지고 있습니다. &lt;a href=&quot;https://github.com/tc39/proposal-string-left-right-trim&quot;&gt;해당 proposal&lt;/a&gt;은 string의 양쪽이 아닌 한쪽의 whitespace만 제거하는 trimStart()와 trimEnd()라는 method를 제안합니다.&lt;/p&gt;
-
-&lt;p&gt;재미있는 점은, 해당 method는 표준에 제정되기 전에 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd#Browser_compatibility&quot;&gt;여러 browser에서 이미 구현&lt;/a&gt;되어 있습니다. Browser에서 ECMAScript로 기능을 넣게하는 경우 중 하나입니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;      My favorite sport &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;is kendo.        &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trimStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trimEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;My favorite sport is kendo.&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;기능의 추가 외에도, naming/aliasing 도 제안하고 있습니다. ES2017에서 표준으로 추가된 &lt;strong&gt;padStart/padEnd&lt;/strong&gt;와 일관성을 유지하기 위해서 &lt;strong&gt;trimLeft/trimRight&lt;/strong&gt; 대신 &lt;strong&gt;trimStart/trimEnd&lt;/strong&gt;를 제안하고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
 &lt;h3 id=&quot;stringprototypematchall&quot;&gt;String.prototype.matchAll&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-string-matchall&quot;&gt;해당 proposal은 &lt;strong&gt;String.prototype.exec&lt;/strong&gt;이 단일 결과값을 return하는 것을 보완하여, 모든 결과값을 return하는 &lt;strong&gt;String.prototype.matchAll&lt;/strong&gt;을 제안하고 있습니다.&lt;/a&gt;&lt;/p&gt;
@@ -300,19 +255,6 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 
 &lt;p&gt;이러한 단점들이 있기 때문에, 주어진 string에서 정규표현식과 일치하는 모든 결과값을 return하는 &lt;strong&gt;String.prototype.matchAll&lt;/strong&gt; 을 표준에 포함하길 제안하고 있습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;objectfromentries&quot;&gt;Object.fromEntries&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;특히 finished proposal로 넘어갈 확률이 높은 proposal입니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;well-formed-jsonstringify&quot;&gt;Well-formed JSON.stringify&lt;/h3&gt;
-
 &lt;h2 id=&quot;finished-proposal-features&quot;&gt;Finished Proposal Features&lt;/h2&gt;
 &lt;p&gt;마지막 Stage 4는 모든 단계를 거치고 마침내 제안이 수락되고 다음 표준에 포함되어 발표되기만을 기다리는 단계입니다. Stage 3의 proposal이 ECMA-262의 unit test suit인 Test262에 관련 테스트가 작성되고, 최소 2개 이상의 구현이 제공되는 등의 까다로운 추가 조건을 모두 만족하면 마침내 Stage 4로 올라올 수 있습니다.&lt;/p&gt;
 
@@ -322,20 +264,122 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 
 &lt;h3 id=&quot;optional-catch-binding&quot;&gt;Optional catch binding&lt;/h3&gt;
 
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-optional-catch-binding&quot;&gt;이 proposal은 try와 함께 사용하는 &lt;strong&gt;catch&lt;/strong&gt;에 대한 수정을 요구하고 있습니다.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;기본 주장은 &lt;strong&gt;catch&lt;/strong&gt;에 binding되는 &lt;strong&gt;exception variable&lt;/strong&gt;이 사용되지 않는 경우가 많으니, 생략할 수 있게 문법적인 변경을 요청하는 것입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// try to use a web feature which may not be implemented&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unused&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// fall back to a less desirable web feature with broader support&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// or&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isTheFeatureImplemented&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// stress the required bits of the web API&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;isTheFeatureImplemented&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unused&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// or&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;parseResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;someFallbackValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;parseResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;potentiallyMalformedJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unused&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 코드에서 보여주는 3가지 경우에는 &lt;strong&gt;catch&lt;/strong&gt;에 binding되는 &lt;em&gt;unused&lt;/em&gt; 라는 parameter는 사용되지 않으며 불필요합니다. 사용하지 않는 variable이 있다는건 프로그래밍 에러를 야기할 수도 있습니다.&lt;/p&gt;
+
+&lt;p&gt;그래서 해당 proposal은 아래와 같은 코드의 허용을 제안합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;json-superset&quot;&gt;JSON superset&lt;/h3&gt;
+&lt;h3 id=&quot;subsume-jsonjson-superset&quot;&gt;Subsume JSON(JSON superset)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-json-superset&quot;&gt;해당 proposal은 ECMAScript의 string이 &lt;strong&gt;U+2028&lt;/strong&gt;과 &lt;strong&gt;U+2029&lt;/strong&gt;를 포함하기를 제안합니다.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;JSON string은 unescaped &lt;strong&gt;U+2028 LINE SEPARATOR&lt;/strong&gt; 와 &lt;strong&gt;U+2029 PARAGRAPH SEPARATOR&lt;/strong&gt; character 를 포함합니다. 하지만 ECMAScript string은 포함하지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;이 때문에 specification에 있어서 불필요한 복잡성이 증가하고, 개발자와 사용자에게 부담이 더해집니다. 그리고 valid JSON을 valid ECMAScript로 넣는데 불필요한 과정이 필요하게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;이를 해결하기 위해서, JSON syntax는 ECMA-404에 정의되어있고 RFC 7159로 인해서 영구히 fix 되었으니, ECMA-262에 의한 &lt;em&gt;DoubleStringCharacter&lt;/em&gt; 과 &lt;em&gt;SingleStringCharacter&lt;/em&gt; 를 확장해서 unescaped &lt;strong&gt;U+2028 LINE SEPARATOR&lt;/strong&gt; 와 &lt;strong&gt;U+2029 PARAGRAPH SEPARATOR&lt;/strong&gt; character 를 허용하자고 제안하고 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;symbolprototypedescription&quot;&gt;Symbol.prototype.description&lt;/h3&gt;
 
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-Symbol-description&quot;&gt;해당 proposal은 Symbol을 사용함에 있어서, description에 바로 접근할 수 있는 &lt;strong&gt;Symbol.prototype.description&lt;/strong&gt;의 추가를 제안하고 있습니다.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;기존에는 Symbol의 description을 알기 위해서 Symbol.prototype.toString을 사용했지만, description 만을 얻기 위해서는 적절치 않은 방법이라고 말하고 있습니다.&lt;/p&gt;
+
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;functionprototypetostring-revision&quot;&gt;Function.prototype.toString revision&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;objectfromentries&quot;&gt;Object.fromEntries&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;well-formed-jsonstringify&quot;&gt;Well-formed JSON.stringify&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;stringprototypetrimstarttrimend&quot;&gt;String.prototype.{trimStart,trimEnd}&lt;/h3&gt;
+
+&lt;p&gt;String type은 trim()이라는, 양쪽의 whitespace를 제거하는 method를 표준으로 가지고 있습니다. &lt;a href=&quot;https://github.com/tc39/proposal-string-left-right-trim&quot;&gt;해당 proposal&lt;/a&gt;은 string의 양쪽이 아닌 한쪽의 whitespace만 제거하는 trimStart()와 trimEnd()라는 method를 제안합니다.&lt;/p&gt;
+
+&lt;p&gt;재미있는 점은, 해당 method는 표준에 제정되기 전에 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd#Browser_compatibility&quot;&gt;여러 browser에서 이미 구현&lt;/a&gt;되어 있습니다. Browser에서 ECMAScript로 기능을 넣게하는 경우 중 하나입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;      My favorite sport &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;is kendo.        &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trimStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trimEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;My favorite sport is kendo.&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;기능의 추가 외에도, naming/aliasing 도 제안하고 있습니다. ES2017에서 표준으로 추가된 &lt;strong&gt;padStart/padEnd&lt;/strong&gt;와 일관성을 유지하기 위해서 &lt;strong&gt;trimLeft/trimRight&lt;/strong&gt; 대신 &lt;strong&gt;trimStart/trimEnd&lt;/strong&gt;를 제안하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;arrayprototypeflatflatmap&quot;&gt;Array.prototype.{flat,flatMap}&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-flatMap&quot;&gt;해당 proposal&lt;/a&gt;은 Array.prototype.flat과 Array.prototype.flatMap을 ECMAScript에 추가하려 합니다.&lt;/p&gt;
+
+&lt;p&gt;flat()은 여러 depth를 가지는 array를 한 depth씩 혹은 여러 depth씩 평평하게(flatten) 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nestedArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]]];&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flat1Depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nestedArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// == nestedArr.flat(); [1, 2, [3, [4]]]&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flat2Depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nestedArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [1, 2, 3, [4]]&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flat3Depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nestedArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [1, 2, 3, 4]&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flatMoreDepth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nestedArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [1, 2, 3, 4]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;flatMap()은 map()과 유사하게 array를 return합니다. 하지만 flatMap은 return되는 array를 한 depth 평평하게 합니다.&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;example1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flatMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// example1 === [2, 4, 3, 6, 4, 8]&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;example2_1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'I am'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'not a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'boy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)});&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// example2_1 === [[&quot;I&quot;, &quot;am&quot;], [&quot;not&quot;, &quot;a&quot;], [&quot;boy&quot;]]&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;example2_2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'I am'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'not a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'boy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flatMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)});&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// example2_2 === [&quot;I&quot;, &quot;am&quot;, &quot;not&quot;, &quot;a&quot;, &quot;boy&quot;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;hr /&gt;
 
@@ -356,6 +400,9 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
   &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-flatMap&quot;&gt;Array.prototype.{flat,flatMap}&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-string-left-right-trim&quot;&gt;String.prototype.{trimStart,trimEnd}&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/ljharb/String.prototype.matchAll&quot;&gt;String.prototype.matchAll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-optional-catch-binding&quot;&gt;Optional catch binding&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-json-superset&quot;&gt;Subsume JSON(JSON superset)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-Symbol-description&quot;&gt;Symbol.prototype.description&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Heekyum</name></author><category term="javascript" /><summary type="html">이번 post에서는 2019년에 발표될 ES2019에 추가될 예정인 기능들에 대해서 살펴보겠습니다.</summary></entry><entry><title type="html">[html/css] Block element를 가로로 배치하는 방법 - display: inline-block</title><link href="https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/" rel="alternate" type="text/html" title="[html/css] Block element를 가로로 배치하는 방법 - display: inline-block" /><published>2019-01-23T00:00:00+00:00</published><updated>2019-01-23T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/">&lt;p&gt;이번 post에서는 &lt;strong&gt;display: inline-block&lt;/strong&gt; 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다.&lt;/p&gt;
 
 &lt;hr /&gt;
