@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-01-30T09:10:23+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">What features will added in ES2019</title><link href="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/" rel="alternate" type="text/html" title="What features will added in ES2019" /><published>2019-01-29T00:00:00+00:00</published><updated>2019-01-29T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/">&lt;p&gt;이번 post에서는 2019년에 발표될 &lt;strong&gt;ES2019&lt;/strong&gt;에 추가될 예정인 기능들에 대해서 살펴보겠습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-01-31T07:52:10+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">What features will added in ES2019</title><link href="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/" rel="alternate" type="text/html" title="What features will added in ES2019" /><published>2019-01-29T00:00:00+00:00</published><updated>2019-01-29T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/">&lt;p&gt;이번 post에서는 2019년에 발표될 &lt;strong&gt;ES2019&lt;/strong&gt;에 추가될 예정인 기능들에 대해서 살펴보겠습니다.&lt;/p&gt;
 
 &lt;figure class=&quot;align-center&quot;&gt;
     &lt;img src=&quot;https://shlrur.github.io//assets/images/what-features-will-added-in-es2019/article-logo.jpg&quot; alt=&quot;new features in es2019&quot; /&gt;
@@ -15,25 +15,25 @@
   &lt;li&gt;&lt;a href=&quot;#the-tc39-process&quot;&gt;The TC39 Process&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#es2019-candidates&quot;&gt;ES2019 Candidates&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#Stage 3 Features&quot;&gt;Stage 3 Features&lt;/a&gt;
+      &lt;li&gt;&lt;a href=&quot;#stage-3-features&quot;&gt;Stage 3 Features&lt;/a&gt;
         &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#globalThis&quot;&gt;globalThis&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#import()&quot;&gt;import()&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#Legacy RegExp features in JavaScript&quot;&gt;Legacy RegExp features in JavaScript&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#BigInt&quot;&gt;BigInt&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#String.prototype.matchAll&quot;&gt;String.prototype.matchAll&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#globalthis&quot;&gt;globalThis&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#import&quot;&gt;import()&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#legacy-regexp-features-in-javascript&quot;&gt;Legacy RegExp features in JavaScript&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#bigint&quot;&gt;BigInt&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#stringprototypematchall&quot;&gt;String.prototype.matchAll&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#Finished Proposal Features&quot;&gt;Finished Proposal Features&lt;/a&gt;
+      &lt;li&gt;&lt;a href=&quot;#finished-proposal-features&quot;&gt;Finished Proposal Features&lt;/a&gt;
         &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#Optional catch binding&quot;&gt;Optional catch binding&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#JSON superset&quot;&gt;Subsume JSON(JSON superset)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#Symbol.prototype.description&quot;&gt;Symbol.prototype.description&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#Function.prototype.toString revision&quot;&gt;Function.prototype.toString revision&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#Object.fromEntries&quot;&gt;Object.fromEntries&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#Well-formed JSON.stringify&quot;&gt;Well-formed JSON.stringify&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#String.prototype.{trimStart,trimEnd}&quot;&gt;String.prototype.{trimStart,trimEnd}&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#Array.prototype.{flat,flatMap}&quot;&gt;Array.prototype.{flat,flatMap}&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#optional-catch-binding&quot;&gt;Optional catch binding&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#subsume-jsonjson-superset&quot;&gt;Subsume JSON(JSON superset)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#symbolprototypedescription&quot;&gt;Symbol.prototype.description&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#functionprototypetostring-revision&quot;&gt;Function.prototype.toString revision&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#objectfromentries&quot;&gt;Object.fromEntries&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#well-formed-jsonstringify&quot;&gt;Well-formed JSON.stringify&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#stringprototypetrimstarttrimend&quot;&gt;String.prototype.{trimStart,trimEnd}&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#arrayprototypeflatflatmap&quot;&gt;Array.prototype.{flat,flatMap}&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -104,7 +104,7 @@
   &lt;li&gt;&lt;strong&gt;Function(‘return this’)()&lt;/strong&gt; 로 global object에 접근할 수 있지만, Chrome Apps와 같은 CSP setting에서는 접근 불가능합니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;위와 같은 문제때문에, ECMAScript를 사용하는 환경에 상관없이 global object에 접근하기가 힘듭니다.&lt;/p&gt;
+&lt;p&gt;위와 같은 문제 때문에, ECMAScript를 사용하는 환경에 상관없이 global object에 접근하기가 힘듭니다.&lt;/p&gt;
 
 &lt;p&gt;이를 해결하기 위해서 제안된 것이 &lt;a href=&quot;https://github.com/tc39/proposal-global&quot;&gt;&lt;strong&gt;globalThis&lt;/strong&gt;&lt;/a&gt;입니다. &lt;strong&gt;globalThis&lt;/strong&gt; property는 환경에 상관없이 global object에 접근 가능한 standard way입니다.&lt;/p&gt;
 
@@ -138,14 +138,15 @@
 
 &lt;h3 id=&quot;import&quot;&gt;import()&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-dynamic-import&quot;&gt;import()&lt;/a&gt;는 기존의 &lt;em&gt;pre-runtime에 import를 하는 정적인 방식&lt;/em&gt; 이 아닌, &lt;strong&gt;runtime에 import할 수 있는 동적인 방식&lt;/strong&gt; 을 제안하고 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-dynamic-import&quot;&gt;import()&lt;/a&gt;는 기존의 &lt;em&gt;pre-runtime에 import를 하는 정적인 방식&lt;/em&gt; 이 아닌, &lt;strong&gt;runtime에 import 할 수 있는 동적인 방식&lt;/strong&gt; 을 제안하고 있습니다.&lt;/p&gt;
 
 &lt;h4 id=&quot;motivation&quot;&gt;motivation&lt;/h4&gt;
-&lt;p&gt;현재 module import를 위해 사용하는 방식은 정적인 선언(static declarations)입니다. Import 할 module의 식별자로 문자열을 받고, pre-runtime에 “linking” process를 거침으로서 local scope에 binding합니다. 이런 정적인 선언은 90%의 경우에 매우 좋은 방식입니다.&lt;br /&gt;
-하지만, runtime에 JavaScript application의 일부를 load할 수 있는 것도 바람직한 방법입니다. 그 이유는 다음과 같습니다. 사용자의 언어와 같은 &lt;strong&gt;runtime에만 알 수 있는 요소&lt;/strong&gt;들이 있습니다. 그리고 사용되지 않을 코드는 load하지 않기 때문에 &lt;strong&gt;performance 측면&lt;/strong&gt;에서도 이유가 될 수 있습니다. 혹은 중요하지 않은 module을 load했을 때 생기는 문제를 피함으로서 견고함에도 이유가 될 수 있습니다.&lt;/p&gt;
+&lt;p&gt;현재 module import를 위해 사용하는 방식은 정적인 선언(static declarations)입니다. Import 할 module의 식별자로 문자열을 받고, pre-runtime에 “linking” process를 거침으로써 local scope에 binding 합니다. 이런 정적인 선언은 90%의 경우에 매우 좋은 방식입니다.&lt;/p&gt;
+
+&lt;p&gt;하지만, runtime에 JavaScript application의 일부를 load 할 수 있는 것도 바람직한 방법입니다. 그 이유는 다음과 같습니다. 사용자의 언어와 같은 &lt;strong&gt;runtime에만 알 수 있는 요소&lt;/strong&gt;들이 있습니다. 그리고 사용되지 않을 코드는 load 하지 않기 때문에 &lt;strong&gt;performance 측면&lt;/strong&gt;에서도 이유가 될 수 있습니다. 혹은 중요하지 않은 module을 load 했을 때 생기는 문제를 피함으로써 견고함에도 이유가 될 수 있습니다.&lt;/p&gt;
 
 &lt;h4 id=&quot;proposed-solution&quot;&gt;Proposed solution&lt;/h4&gt;
-&lt;p&gt;해당 proposal은 function처럼 동작하는 &lt;strong&gt;import(specifier)&lt;/strong&gt;를 제안합니다. &lt;strong&gt;이 함수는 request module에 대한 module namespace object를 가지는 promise를 return합니다. 해당 module namespace object는 fetching, instantiating, 그리고 관련된 다른 module에 대한 evaluating까지 완료한 후 자신의 module로서 제공됩니다.&lt;/strong&gt;
+&lt;p&gt;해당 proposal은 function처럼 동작하는 &lt;strong&gt;import(specifier)&lt;/strong&gt;를 제안합니다. &lt;strong&gt;이 함수는 request module에 대한 module namespace object를 가지는 promise를 return 합니다. 해당 module namespace object는 fetching, instantiating, 그리고 관련된 다른 module에 대한 evaluating까지 완료한 후 자신의 module로써 제공됩니다.&lt;/strong&gt;
 import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐만 아니라 backtick 형태도 지원합니다.&lt;/p&gt;
 
 &lt;h4 id=&quot;example&quot;&gt;Example&lt;/h4&gt;
@@ -182,14 +183,14 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-regexp-legacy-features&quot;&gt;해당 proposal&lt;/a&gt;은 &lt;strong&gt;RegExp.$1와 같은 생성자의 static properties&lt;/strong&gt;와 &lt;strong&gt;RegExp.prototype.compile method&lt;/strong&gt;가 RegExp에서 deprecated 된 것에 문제를 제기하고 있습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-regexp-legacy-features/blob/master/subclass-restriction-motivation.md&quot;&gt;해당 기능들이 deprecated된 이유는 encapsulation을 위반했기 때문이라는 설명&lt;/a&gt;을 하며, 해결책을 제안하고 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-regexp-legacy-features/blob/master/subclass-restriction-motivation.md&quot;&gt;해당 기능들이 deprecated 된 이유는 encapsulation을 위반했기 때문이라는 설명&lt;/a&gt;을 하며, 해결책을 제안하고 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;bigint&quot;&gt;BigInt&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-bigint&quot;&gt;BigInt&lt;/a&gt;는 2&lt;sup&gt;53&lt;/sup&gt; 보다 큰 수를 표현하기 위한 새로운 primitive type입니다. (JavaScript에서 기존의 숫자를 표현하는 primitive type인 Number는 2&lt;sup&gt;53&lt;/sup&gt;까지만 표현 가능합니다.)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-bigint&quot;&gt;BigInt&lt;/a&gt;는 2&lt;sup&gt;53&lt;/sup&gt; 보다 큰 수를 표현하기 위한 새로운 primitive type입니다. (JavaScript에서 기존의 숫자를 표현하는 primitive type인 Number는 2&lt;sup&gt;53&lt;/sup&gt;까지만 표현 가능합니다)&lt;/p&gt;
 
 &lt;p&gt;BigInt의 syntax는 다음과 같이 integer의 끝에 ‘n’을 붙이거나 생성자를 호출합니다.&lt;/p&gt;
 
@@ -209,9 +210,9 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 
 &lt;h3 id=&quot;stringprototypematchall&quot;&gt;String.prototype.matchAll&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-string-matchall&quot;&gt;해당 proposal은 &lt;strong&gt;String.prototype.exec&lt;/strong&gt;이 단일 결과값을 return하는 것을 보완하여, 모든 결과값을 return하는 &lt;strong&gt;String.prototype.matchAll&lt;/strong&gt;을 제안하고 있습니다.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-string-matchall&quot;&gt;해당 proposal은 &lt;strong&gt;String.prototype.exec&lt;/strong&gt;이 단일 결과값을 return 하는 것을 보완하여, 모든 결과값을 return 하는 &lt;strong&gt;String.prototype.matchAll&lt;/strong&gt;을 제안하고 있습니다.&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;기존의 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec#%EC%84%A4%EB%AA%85&quot;&gt;String.prototype.exec은 단일 결과값을 이러한 format&lt;/a&gt;으로 보여줍니다. exec()를 사용해서 모든 만족하는 결과를 얻기 위해서는 loop를 사용해야 합니다. 이런 과정을 거쳐서 주어진 string에서 정규표현식과 일치하는 모든 부분을 찾는 logic은 아래의 코드와 같습니다.&lt;/p&gt;
+&lt;p&gt;기존의 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec#%EC%84%A4%EB%AA%85&quot;&gt;String.prototype.exec은 단일 결과값을 이러한 format&lt;/a&gt;으로 보여줍니다. exec()을 사용해서 모든 만족하는 결과를 얻기 위해서는 loop를 사용해야 합니다. 이런 과정을 거쳐서 주어진 string에서 정규표현식과 일치하는 모든 부분을 찾는 logic은 아래의 코드와 같습니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;regex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/t&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(\d?))&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'test1test2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -253,7 +254,7 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 
 &lt;p&gt;위의 코드는 앞의 코드가 가지는 단점을 보완했지만, replace 함수를 남용하였고, 역시 regex의 lastIndex property를 변경했다는 단점이 있습니다. 그리고 match 변수를 직접 작성해야 합니다.&lt;/p&gt;
 
-&lt;p&gt;이러한 단점들이 있기 때문에, 주어진 string에서 정규표현식과 일치하는 모든 결과값을 return하는 &lt;strong&gt;String.prototype.matchAll&lt;/strong&gt; 을 표준에 포함하길 제안하고 있습니다.&lt;/p&gt;
+&lt;p&gt;이러한 단점들이 있기 때문에, 주어진 string에서 정규표현식과 일치하는 모든 결과값을 return 하는 &lt;strong&gt;String.prototype.matchAll&lt;/strong&gt; 을 표준에 포함하길 제안하고 있습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;finished-proposal-features&quot;&gt;Finished Proposal Features&lt;/h2&gt;
 &lt;p&gt;마지막 Stage 4는 모든 단계를 거치고 마침내 제안이 수락되고 다음 표준에 포함되어 발표되기만을 기다리는 단계입니다. Stage 3의 proposal이 ECMA-262의 unit test suit인 Test262에 관련 테스트가 작성되고, 최소 2개 이상의 구현이 제공되는 등의 까다로운 추가 조건을 모두 만족하면 마침내 Stage 4로 올라올 수 있습니다.&lt;/p&gt;
@@ -266,7 +267,7 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-optional-catch-binding&quot;&gt;이 proposal은 try와 함께 사용하는 &lt;strong&gt;catch&lt;/strong&gt;에 대한 수정을 요구하고 있습니다.&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;기본 주장은 &lt;strong&gt;catch&lt;/strong&gt;에 binding되는 &lt;strong&gt;exception variable&lt;/strong&gt;이 사용되지 않는 경우가 많으니, 생략할 수 있게 문법적인 변경을 요청하는 것입니다.&lt;/p&gt;
+&lt;p&gt;기본 주장은 &lt;strong&gt;catch&lt;/strong&gt;에 binding 되는 &lt;strong&gt;exception variable&lt;/strong&gt;이 사용되지 않는 경우가 많으니, 생략할 수 있게 문법적인 변경을 요청하는 것입니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// try to use a web feature which may not be implemented&lt;/span&gt;
@@ -290,7 +291,7 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unused&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;위의 코드에서 보여주는 3가지 경우에는 &lt;strong&gt;catch&lt;/strong&gt;에 binding되는 &lt;em&gt;unused&lt;/em&gt; 라는 parameter는 사용되지 않으며 불필요합니다. 사용하지 않는 variable이 있다는건 프로그래밍 에러를 야기할 수도 있습니다.&lt;/p&gt;
+&lt;p&gt;위의 코드에서 보여주는 3가지 경우에는 &lt;strong&gt;catch&lt;/strong&gt;에 binding 되는 &lt;em&gt;unused&lt;/em&gt; 라는 parameter는 사용되지 않으며 불필요합니다. 사용하지 않는 variable이 있다는 건 프로그래밍 에러를 일으킬 수도 있습니다.&lt;/p&gt;
 
 &lt;p&gt;그래서 해당 proposal은 아래와 같은 코드의 허용을 제안합니다.&lt;/p&gt;
 
@@ -308,11 +309,11 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-json-superset&quot;&gt;해당 proposal은 ECMAScript의 string이 &lt;strong&gt;U+2028&lt;/strong&gt;과 &lt;strong&gt;U+2029&lt;/strong&gt;를 포함하기를 제안합니다.&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;JSON string은 unescaped &lt;strong&gt;U+2028 LINE SEPARATOR&lt;/strong&gt; 와 &lt;strong&gt;U+2029 PARAGRAPH SEPARATOR&lt;/strong&gt; character 를 포함합니다. 하지만 ECMAScript string은 포함하지 않습니다.&lt;/p&gt;
+&lt;p&gt;JSON string은 unescaped &lt;strong&gt;U+2028 LINE SEPARATOR&lt;/strong&gt; 와 &lt;strong&gt;U+2029 PARAGRAPH SEPARATOR&lt;/strong&gt; character를 포함합니다. 하지만 ECMAScript string은 포함하지 않습니다.&lt;/p&gt;
 
 &lt;p&gt;이 때문에 specification에 있어서 불필요한 복잡성이 증가하고, 개발자와 사용자에게 부담이 더해집니다. 그리고 valid JSON을 valid ECMAScript로 넣는데 불필요한 과정이 필요하게 됩니다.&lt;/p&gt;
 
-&lt;p&gt;이를 해결하기 위해서, JSON syntax는 ECMA-404에 정의되어있고 RFC 7159로 인해서 영구히 fix 되었으니, ECMA-262에 의한 &lt;em&gt;DoubleStringCharacter&lt;/em&gt; 과 &lt;em&gt;SingleStringCharacter&lt;/em&gt; 를 확장해서 unescaped &lt;strong&gt;U+2028 LINE SEPARATOR&lt;/strong&gt; 와 &lt;strong&gt;U+2029 PARAGRAPH SEPARATOR&lt;/strong&gt; character 를 허용하자고 제안하고 있습니다.&lt;/p&gt;
+&lt;p&gt;이를 해결하기 위해서, JSON syntax는 ECMA-404에 정의되어있고 RFC 7159로 인해서 영구히 fix 되었으니, ECMA-262에 의한 &lt;em&gt;DoubleStringCharacter&lt;/em&gt; 과 &lt;em&gt;SingleStringCharacter&lt;/em&gt; 를 확장해서 unescaped &lt;strong&gt;U+2028 LINE SEPARATOR&lt;/strong&gt; 와 &lt;strong&gt;U+2029 PARAGRAPH SEPARATOR&lt;/strong&gt; character를 허용하자고 제안하고 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
@@ -321,22 +322,126 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-Symbol-description&quot;&gt;해당 proposal은 Symbol을 사용함에 있어서, description에 바로 접근할 수 있는 &lt;strong&gt;Symbol.prototype.description&lt;/strong&gt;의 추가를 제안하고 있습니다.&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;기존에는 Symbol의 description을 알기 위해서 Symbol.prototype.toString을 사용했지만, description 만을 얻기 위해서는 적절치 않은 방법이라고 말하고 있습니다.&lt;/p&gt;
+&lt;p&gt;기존에는 Symbol의 description을 알기 위해서 Symbol.prototype.toString을 사용했지만, description만을 얻기 위해서는 적절치 않은 방법이라고 말하고 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;functionprototypetostring-revision&quot;&gt;Function.prototype.toString revision&lt;/h3&gt;
 
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/Function-prototype-toString-revision&quot;&gt;해당 proposal의 목적은 Function.prototype.toString 의 현재 기능을 바꾸는 것입니다.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Function.prototype.toString은 Object.prototype.toString을 그대로 쓰는 것이 아니라 override 해서 사용하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이전의 ECMAScript에서 Function.prototype.toString을 실행하면 다음 중 하나가 발생합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ECMAScript engine에 따른 function의 source code가 string으로 반환됨.&lt;/li&gt;
+  &lt;li&gt;ECMAScript engine이 적절한 source code를 생성할 수 없을때는, &lt;em&gt;evel&lt;/em&gt; 을 사용했을 때 &lt;em&gt;SyntaxError&lt;/em&gt; 를 유발하는 string을 반환함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 proposal에서 제안하는 solution은 특정 case마다 구분해놓았습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ECMAScript code를 사용해서 정의한 function의 경우 original source code를 return 해야 한다. (for functions defined using ECMAScript code, toString must return source text slice from beginning of first token to end of last token matched by the appropriate grammar production)
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'My Function!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// case user-defined =&amp;gt; &quot;function () { console.log('My Function!'); }&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;built-in function 객체 및 binding 된 이질적인 객체의 경우, NativeFunction외에 어떤 것도 return 해서는 안된다. (for built-in function objects and bound function exotic objects, toString must not return anything other than NativeFunction)
+```js
+console.log(Number.parseInt.toString());
+// case built-in =&amp;gt; “function () { [native code] }”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;console.log(function () { }.bind(0).toString());
+// case binding =&amp;gt; “function () { [native code] }”&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* ECMAScript code를 사용해서 정의하지 않은 호출 가능한 객체의 경우 NativeFunction을 반환해야 함. (for callable objects which were not defined using ECMAScript code, toString must return NativeFunction)
+```js
+console.log(Symbol.toString());
+// case Built-in callable =&amp;gt; &quot;function Symbol() { [native code] }&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Function 및 GeneratorFunction 생성자를 통해 dynamic 하게 생성되는 function의 경우, ToString이 소스 텍스트를 합성해야 함. (for functions created dynamically (through the Function and GeneratorFunction constructors), toString must synthesise a source text)
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// case Dynamically generated =&amp;gt; &quot;function anonymous() {}&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;이 외의 모든 다른 object에 대해서는 TypeError가 나온다. (for all other objects, toString must throw a TypeError exception)
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// case all other objects =&amp;gt; &quot;Uncaught TypeError: Function.prototype.toString requires that 'this' be a Function&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;objectfromentries&quot;&gt;Object.fromEntries&lt;/h3&gt;
 
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-object-from-entries&quot;&gt;해당 proposal에서는 &lt;strong&gt;Object.fromEntries&lt;/strong&gt; 라는 static method를 제안하고 있습니다.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Object.fromEntries&lt;/strong&gt;는 key-value 쌍의 list(array)를 object로 바꿔주는 ECMAScript의 static method입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fromEntries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'b'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// =&amp;gt; { a: 0, b: 1 }&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Object.fromEntries가 필요한 이유는 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;Array나 Map 등 다양한 structure에 저장된 data를 한 형태에서 다른 형태로 변환하는 작업은 일반적입니다. 두 data 구조가 모두 iterable할 때 아래의 코드와 같이 간단히 해결할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'foo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'bar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Map의 iterable entries는 key-value 형태를 가집니다. 이런 형태는 Object.entries가 return 하는 형태와 잘 들어맞기 때문에, object를 Map으로 잘 변환할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;하지만, key-value 형태에서 객체를 만들기 위한 역방향 Object.entries가 없으므로&lt;/strong&gt;, 일반적으로 helper나 inline reducer를 사용해야 합니다.&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이렇게 여러 방법으로 해당 기능을 구현할 수 있지만, 해당 method들이 본래의 목적으로 사용되는 것이 아니기 때문에 잠재적인 문제를 가질 수 있습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://lodash.com/docs/4.17.11#fromPairs&quot;&gt;Lodash에서는 이미 해당 기능이 구현되어 있습니다.&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;well-formed-jsonstringify&quot;&gt;Well-formed JSON.stringify&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/proposal-well-formed-stringify&quot;&gt;해당 proposal&lt;/a&gt;의 동기는 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tools.ietf.org/html/rfc8259#section-8.1&quot;&gt;RFC 8259 section 8.1&lt;/a&gt; 는 JSON이 closed ecosystem 밖에서 가져온 text를 UTF-8을 사용해서 encoding 하길 원합니다. 하지만, ECMAScript의 JSON.stringify은 UTF-8에서 표현할 수 없는 code point도 string으로 return 합니다. 특히 surrogate code인 U+D800 ~ U+DFFF가 있습니다. 이 코드는 UTF-8에서 다른 목적으로 사용하기 위해 예약되어 있습니다. 그리고 &lt;a href=&quot;https://tc39.github.io/ecma262/#sec-json.stringify&quot;&gt;JSON.stringify의 description&lt;/a&gt;과는 반대로, 몇몇 string은 UFT-16에 들어가지 않습니다. 왜냐하면, &lt;a href=&quot;https://unicode.org/versions/Unicode10.0.0/ch03.pdf#G7404&quot;&gt;The Unicode Standard, Version 10.0.0, Section 3.4&lt;/a&gt;의 definition D91에 “UTF-16 code unit에서 D800&lt;sub&gt;16&lt;/sub&gt;에서 DFFF&lt;sub&gt;16&lt;/sub&gt;는 부적절하다(isolated UTF-16 code units in the range D800&lt;sub&gt;16&lt;/sub&gt;..DFFF&lt;sub&gt;16&lt;/sub&gt; are ill-formed)”라고 되어있기 때문입니다. 그리고 D89에 의해서 UFT-16에서 제외되었습니다.&lt;/p&gt;
+
+&lt;p&gt;이런 문제를 해결하기 위해서, &lt;em&gt;unpaired surrogate code points를 단일 UTF-16 code unit으로 return 하는 대신, JSON escape sequenc로 표현&lt;/em&gt; 하는 것을 제안하고 있습니다. 아래의 코드에서 예시를 보여주고 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Non-BMP characters still serialize to surrogate pairs.&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'𝌆'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// → '&quot;𝌆&quot;'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;uD834&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;uDF06'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// → '&quot;𝌆&quot;'&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Unpaired surrogate code units will serialize to escape sequences.&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;uDF06&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;uD834'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// → '&quot;\\udf06\\ud834&quot;'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;uDEAD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// → '&quot;\\udead&quot;'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;현재,&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;V8, enabled by default in V8 v7.2.10 and Chrome 72&lt;/li&gt;
+  &lt;li&gt;SpiderMonkey, shipping in Firefox 64&lt;/li&gt;
+  &lt;li&gt;JavaScriptCore, shipping in Safari Technology Preview 73
+에 구현되어 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
@@ -345,7 +450,7 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
 
 &lt;p&gt;String type은 trim()이라는, 양쪽의 whitespace를 제거하는 method를 표준으로 가지고 있습니다. &lt;a href=&quot;https://github.com/tc39/proposal-string-left-right-trim&quot;&gt;해당 proposal&lt;/a&gt;은 string의 양쪽이 아닌 한쪽의 whitespace만 제거하는 trimStart()와 trimEnd()라는 method를 제안합니다.&lt;/p&gt;
 
-&lt;p&gt;재미있는 점은, 해당 method는 표준에 제정되기 전에 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd#Browser_compatibility&quot;&gt;여러 browser에서 이미 구현&lt;/a&gt;되어 있습니다. Browser에서 ECMAScript로 기능을 넣게하는 경우 중 하나입니다.&lt;/p&gt;
+&lt;p&gt;재미있는 점은, 해당 method는 표준에 제정되기 전에 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd#Browser_compatibility&quot;&gt;여러 browser에서 이미 구현&lt;/a&gt; 되어 있습니다. Browser에서 ECMAScript로 기능을 넣게하는 경우 중 하나입니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;      My favorite sport &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;is kendo.        &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -403,6 +508,11 @@ import(specifier)의 &lt;strong&gt;specifier&lt;/strong&gt;는 string literal뿐
   &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-optional-catch-binding&quot;&gt;Optional catch binding&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-json-superset&quot;&gt;Subsume JSON(JSON superset)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-Symbol-description&quot;&gt;Symbol.prototype.description&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/Function-prototype-toString-revision&quot;&gt;Function.prototype.toString revision&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-object-from-entries&quot;&gt;Object.fromEntries&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://lodash.com/docs/4.17.11#fromPairs&quot;&gt;fromPairt - lodash&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-well-formed-stringify&quot;&gt;Well-formed JSON.stringify&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tools.ietf.org/html/rfc8259#section-8.1&quot;&gt;RFC 8259 section 8.1&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Heekyum</name></author><category term="javascript" /><summary type="html">이번 post에서는 2019년에 발표될 ES2019에 추가될 예정인 기능들에 대해서 살펴보겠습니다.</summary></entry><entry><title type="html">[html/css] Block element를 가로로 배치하는 방법 - display: inline-block</title><link href="https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/" rel="alternate" type="text/html" title="[html/css] Block element를 가로로 배치하는 방법 - display: inline-block" /><published>2019-01-23T00:00:00+00:00</published><updated>2019-01-23T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/">&lt;p&gt;이번 post에서는 &lt;strong&gt;display: inline-block&lt;/strong&gt; 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다.&lt;/p&gt;
 
 &lt;hr /&gt;

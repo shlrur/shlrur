@@ -274,25 +274,25 @@
   <li><a href="#the-tc39-process">The TC39 Process</a></li>
   <li><a href="#es2019-candidates">ES2019 Candidates</a>
     <ul>
-      <li><a href="#Stage 3 Features">Stage 3 Features</a>
+      <li><a href="#stage-3-features">Stage 3 Features</a>
         <ul>
-          <li><a href="#globalThis">globalThis</a></li>
-          <li><a href="#import()">import()</a></li>
-          <li><a href="#Legacy RegExp features in JavaScript">Legacy RegExp features in JavaScript</a></li>
-          <li><a href="#BigInt">BigInt</a></li>
-          <li><a href="#String.prototype.matchAll">String.prototype.matchAll</a></li>
+          <li><a href="#globalthis">globalThis</a></li>
+          <li><a href="#import">import()</a></li>
+          <li><a href="#legacy-regexp-features-in-javascript">Legacy RegExp features in JavaScript</a></li>
+          <li><a href="#bigint">BigInt</a></li>
+          <li><a href="#stringprototypematchall">String.prototype.matchAll</a></li>
         </ul>
       </li>
-      <li><a href="#Finished Proposal Features">Finished Proposal Features</a>
+      <li><a href="#finished-proposal-features">Finished Proposal Features</a>
         <ul>
-          <li><a href="#Optional catch binding">Optional catch binding</a></li>
-          <li><a href="#JSON superset">Subsume JSON(JSON superset)</a></li>
-          <li><a href="#Symbol.prototype.description">Symbol.prototype.description</a></li>
-          <li><a href="#Function.prototype.toString revision">Function.prototype.toString revision</a></li>
-          <li><a href="#Object.fromEntries">Object.fromEntries</a></li>
-          <li><a href="#Well-formed JSON.stringify">Well-formed JSON.stringify</a></li>
-          <li><a href="#String.prototype.{trimStart,trimEnd}">String.prototype.{trimStart,trimEnd}</a></li>
-          <li><a href="#Array.prototype.{flat,flatMap}">Array.prototype.{flat,flatMap}</a></li>
+          <li><a href="#optional-catch-binding">Optional catch binding</a></li>
+          <li><a href="#subsume-jsonjson-superset">Subsume JSON(JSON superset)</a></li>
+          <li><a href="#symbolprototypedescription">Symbol.prototype.description</a></li>
+          <li><a href="#functionprototypetostring-revision">Function.prototype.toString revision</a></li>
+          <li><a href="#objectfromentries">Object.fromEntries</a></li>
+          <li><a href="#well-formed-jsonstringify">Well-formed JSON.stringify</a></li>
+          <li><a href="#stringprototypetrimstarttrimend">String.prototype.{trimStart,trimEnd}</a></li>
+          <li><a href="#arrayprototypeflatflatmap">Array.prototype.{flat,flatMap}</a></li>
         </ul>
       </li>
     </ul>
@@ -363,7 +363,7 @@
   <li><strong>Function(‘return this’)()</strong> 로 global object에 접근할 수 있지만, Chrome Apps와 같은 CSP setting에서는 접근 불가능합니다.</li>
 </ul>
 
-<p>위와 같은 문제때문에, ECMAScript를 사용하는 환경에 상관없이 global object에 접근하기가 힘듭니다.</p>
+<p>위와 같은 문제 때문에, ECMAScript를 사용하는 환경에 상관없이 global object에 접근하기가 힘듭니다.</p>
 
 <p>이를 해결하기 위해서 제안된 것이 <a href="https://github.com/tc39/proposal-global"><strong>globalThis</strong></a>입니다. <strong>globalThis</strong> property는 환경에 상관없이 global object에 접근 가능한 standard way입니다.</p>
 
@@ -397,14 +397,15 @@
 
 <h3 id="import">import()</h3>
 
-<p><a href="https://github.com/tc39/proposal-dynamic-import">import()</a>는 기존의 <em>pre-runtime에 import를 하는 정적인 방식</em> 이 아닌, <strong>runtime에 import할 수 있는 동적인 방식</strong> 을 제안하고 있습니다.</p>
+<p><a href="https://github.com/tc39/proposal-dynamic-import">import()</a>는 기존의 <em>pre-runtime에 import를 하는 정적인 방식</em> 이 아닌, <strong>runtime에 import 할 수 있는 동적인 방식</strong> 을 제안하고 있습니다.</p>
 
 <h4 id="motivation">motivation</h4>
-<p>현재 module import를 위해 사용하는 방식은 정적인 선언(static declarations)입니다. Import 할 module의 식별자로 문자열을 받고, pre-runtime에 “linking” process를 거침으로서 local scope에 binding합니다. 이런 정적인 선언은 90%의 경우에 매우 좋은 방식입니다.<br />
-하지만, runtime에 JavaScript application의 일부를 load할 수 있는 것도 바람직한 방법입니다. 그 이유는 다음과 같습니다. 사용자의 언어와 같은 <strong>runtime에만 알 수 있는 요소</strong>들이 있습니다. 그리고 사용되지 않을 코드는 load하지 않기 때문에 <strong>performance 측면</strong>에서도 이유가 될 수 있습니다. 혹은 중요하지 않은 module을 load했을 때 생기는 문제를 피함으로서 견고함에도 이유가 될 수 있습니다.</p>
+<p>현재 module import를 위해 사용하는 방식은 정적인 선언(static declarations)입니다. Import 할 module의 식별자로 문자열을 받고, pre-runtime에 “linking” process를 거침으로써 local scope에 binding 합니다. 이런 정적인 선언은 90%의 경우에 매우 좋은 방식입니다.</p>
+
+<p>하지만, runtime에 JavaScript application의 일부를 load 할 수 있는 것도 바람직한 방법입니다. 그 이유는 다음과 같습니다. 사용자의 언어와 같은 <strong>runtime에만 알 수 있는 요소</strong>들이 있습니다. 그리고 사용되지 않을 코드는 load 하지 않기 때문에 <strong>performance 측면</strong>에서도 이유가 될 수 있습니다. 혹은 중요하지 않은 module을 load 했을 때 생기는 문제를 피함으로써 견고함에도 이유가 될 수 있습니다.</p>
 
 <h4 id="proposed-solution">Proposed solution</h4>
-<p>해당 proposal은 function처럼 동작하는 <strong>import(specifier)</strong>를 제안합니다. <strong>이 함수는 request module에 대한 module namespace object를 가지는 promise를 return합니다. 해당 module namespace object는 fetching, instantiating, 그리고 관련된 다른 module에 대한 evaluating까지 완료한 후 자신의 module로서 제공됩니다.</strong>
+<p>해당 proposal은 function처럼 동작하는 <strong>import(specifier)</strong>를 제안합니다. <strong>이 함수는 request module에 대한 module namespace object를 가지는 promise를 return 합니다. 해당 module namespace object는 fetching, instantiating, 그리고 관련된 다른 module에 대한 evaluating까지 완료한 후 자신의 module로써 제공됩니다.</strong>
 import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니라 backtick 형태도 지원합니다.</p>
 
 <h4 id="example">Example</h4>
@@ -441,14 +442,14 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 
 <p><a href="https://github.com/tc39/proposal-regexp-legacy-features">해당 proposal</a>은 <strong>RegExp.$1와 같은 생성자의 static properties</strong>와 <strong>RegExp.prototype.compile method</strong>가 RegExp에서 deprecated 된 것에 문제를 제기하고 있습니다.</p>
 
-<p><a href="https://github.com/tc39/proposal-regexp-legacy-features/blob/master/subclass-restriction-motivation.md">해당 기능들이 deprecated된 이유는 encapsulation을 위반했기 때문이라는 설명</a>을 하며, 해결책을 제안하고 있습니다.</p>
+<p><a href="https://github.com/tc39/proposal-regexp-legacy-features/blob/master/subclass-restriction-motivation.md">해당 기능들이 deprecated 된 이유는 encapsulation을 위반했기 때문이라는 설명</a>을 하며, 해결책을 제안하고 있습니다.</p>
 
 <p><br />
 <br /></p>
 
 <h3 id="bigint">BigInt</h3>
 
-<p><a href="https://github.com/tc39/proposal-bigint">BigInt</a>는 2<sup>53</sup> 보다 큰 수를 표현하기 위한 새로운 primitive type입니다. (JavaScript에서 기존의 숫자를 표현하는 primitive type인 Number는 2<sup>53</sup>까지만 표현 가능합니다.)</p>
+<p><a href="https://github.com/tc39/proposal-bigint">BigInt</a>는 2<sup>53</sup> 보다 큰 수를 표현하기 위한 새로운 primitive type입니다. (JavaScript에서 기존의 숫자를 표현하는 primitive type인 Number는 2<sup>53</sup>까지만 표현 가능합니다)</p>
 
 <p>BigInt의 syntax는 다음과 같이 integer의 끝에 ‘n’을 붙이거나 생성자를 호출합니다.</p>
 
@@ -468,9 +469,9 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 
 <h3 id="stringprototypematchall">String.prototype.matchAll</h3>
 
-<p><a href="https://github.com/tc39/proposal-string-matchall">해당 proposal은 <strong>String.prototype.exec</strong>이 단일 결과값을 return하는 것을 보완하여, 모든 결과값을 return하는 <strong>String.prototype.matchAll</strong>을 제안하고 있습니다.</a></p>
+<p><a href="https://github.com/tc39/proposal-string-matchall">해당 proposal은 <strong>String.prototype.exec</strong>이 단일 결과값을 return 하는 것을 보완하여, 모든 결과값을 return 하는 <strong>String.prototype.matchAll</strong>을 제안하고 있습니다.</a></p>
 
-<p>기존의 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec#%EC%84%A4%EB%AA%85">String.prototype.exec은 단일 결과값을 이러한 format</a>으로 보여줍니다. exec()를 사용해서 모든 만족하는 결과를 얻기 위해서는 loop를 사용해야 합니다. 이런 과정을 거쳐서 주어진 string에서 정규표현식과 일치하는 모든 부분을 찾는 logic은 아래의 코드와 같습니다.</p>
+<p>기존의 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec#%EC%84%A4%EB%AA%85">String.prototype.exec은 단일 결과값을 이러한 format</a>으로 보여줍니다. exec()을 사용해서 모든 만족하는 결과를 얻기 위해서는 loop를 사용해야 합니다. 이런 과정을 거쳐서 주어진 string에서 정규표현식과 일치하는 모든 부분을 찾는 logic은 아래의 코드와 같습니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">regex</span> <span class="o">=</span> <span class="sr">/t</span><span class="se">(</span><span class="sr">e</span><span class="se">)(</span><span class="sr">st</span><span class="se">(\d?))</span><span class="sr">/g</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">'test1test2'</span><span class="p">;</span>
@@ -512,7 +513,7 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 
 <p>위의 코드는 앞의 코드가 가지는 단점을 보완했지만, replace 함수를 남용하였고, 역시 regex의 lastIndex property를 변경했다는 단점이 있습니다. 그리고 match 변수를 직접 작성해야 합니다.</p>
 
-<p>이러한 단점들이 있기 때문에, 주어진 string에서 정규표현식과 일치하는 모든 결과값을 return하는 <strong>String.prototype.matchAll</strong> 을 표준에 포함하길 제안하고 있습니다.</p>
+<p>이러한 단점들이 있기 때문에, 주어진 string에서 정규표현식과 일치하는 모든 결과값을 return 하는 <strong>String.prototype.matchAll</strong> 을 표준에 포함하길 제안하고 있습니다.</p>
 
 <h2 id="finished-proposal-features">Finished Proposal Features</h2>
 <p>마지막 Stage 4는 모든 단계를 거치고 마침내 제안이 수락되고 다음 표준에 포함되어 발표되기만을 기다리는 단계입니다. Stage 3의 proposal이 ECMA-262의 unit test suit인 Test262에 관련 테스트가 작성되고, 최소 2개 이상의 구현이 제공되는 등의 까다로운 추가 조건을 모두 만족하면 마침내 Stage 4로 올라올 수 있습니다.</p>
@@ -525,7 +526,7 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 
 <p><a href="https://github.com/tc39/proposal-optional-catch-binding">이 proposal은 try와 함께 사용하는 <strong>catch</strong>에 대한 수정을 요구하고 있습니다.</a></p>
 
-<p>기본 주장은 <strong>catch</strong>에 binding되는 <strong>exception variable</strong>이 사용되지 않는 경우가 많으니, 생략할 수 있게 문법적인 변경을 요청하는 것입니다.</p>
+<p>기본 주장은 <strong>catch</strong>에 binding 되는 <strong>exception variable</strong>이 사용되지 않는 경우가 많으니, 생략할 수 있게 문법적인 변경을 요청하는 것입니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
   <span class="c1">// try to use a web feature which may not be implemented</span>
@@ -549,7 +550,7 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">unused</span><span class="p">)</span> <span class="p">{}</span>
 </code></pre></div></div>
 
-<p>위의 코드에서 보여주는 3가지 경우에는 <strong>catch</strong>에 binding되는 <em>unused</em> 라는 parameter는 사용되지 않으며 불필요합니다. 사용하지 않는 variable이 있다는건 프로그래밍 에러를 야기할 수도 있습니다.</p>
+<p>위의 코드에서 보여주는 3가지 경우에는 <strong>catch</strong>에 binding 되는 <em>unused</em> 라는 parameter는 사용되지 않으며 불필요합니다. 사용하지 않는 variable이 있다는 건 프로그래밍 에러를 일으킬 수도 있습니다.</p>
 
 <p>그래서 해당 proposal은 아래와 같은 코드의 허용을 제안합니다.</p>
 
@@ -567,11 +568,11 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 
 <p><a href="https://github.com/tc39/proposal-json-superset">해당 proposal은 ECMAScript의 string이 <strong>U+2028</strong>과 <strong>U+2029</strong>를 포함하기를 제안합니다.</a></p>
 
-<p>JSON string은 unescaped <strong>U+2028 LINE SEPARATOR</strong> 와 <strong>U+2029 PARAGRAPH SEPARATOR</strong> character 를 포함합니다. 하지만 ECMAScript string은 포함하지 않습니다.</p>
+<p>JSON string은 unescaped <strong>U+2028 LINE SEPARATOR</strong> 와 <strong>U+2029 PARAGRAPH SEPARATOR</strong> character를 포함합니다. 하지만 ECMAScript string은 포함하지 않습니다.</p>
 
 <p>이 때문에 specification에 있어서 불필요한 복잡성이 증가하고, 개발자와 사용자에게 부담이 더해집니다. 그리고 valid JSON을 valid ECMAScript로 넣는데 불필요한 과정이 필요하게 됩니다.</p>
 
-<p>이를 해결하기 위해서, JSON syntax는 ECMA-404에 정의되어있고 RFC 7159로 인해서 영구히 fix 되었으니, ECMA-262에 의한 <em>DoubleStringCharacter</em> 과 <em>SingleStringCharacter</em> 를 확장해서 unescaped <strong>U+2028 LINE SEPARATOR</strong> 와 <strong>U+2029 PARAGRAPH SEPARATOR</strong> character 를 허용하자고 제안하고 있습니다.</p>
+<p>이를 해결하기 위해서, JSON syntax는 ECMA-404에 정의되어있고 RFC 7159로 인해서 영구히 fix 되었으니, ECMA-262에 의한 <em>DoubleStringCharacter</em> 과 <em>SingleStringCharacter</em> 를 확장해서 unescaped <strong>U+2028 LINE SEPARATOR</strong> 와 <strong>U+2029 PARAGRAPH SEPARATOR</strong> character를 허용하자고 제안하고 있습니다.</p>
 
 <p><br />
 <br /></p>
@@ -580,22 +581,126 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 
 <p><a href="https://github.com/tc39/proposal-Symbol-description">해당 proposal은 Symbol을 사용함에 있어서, description에 바로 접근할 수 있는 <strong>Symbol.prototype.description</strong>의 추가를 제안하고 있습니다.</a></p>
 
-<p>기존에는 Symbol의 description을 알기 위해서 Symbol.prototype.toString을 사용했지만, description 만을 얻기 위해서는 적절치 않은 방법이라고 말하고 있습니다.</p>
+<p>기존에는 Symbol의 description을 알기 위해서 Symbol.prototype.toString을 사용했지만, description만을 얻기 위해서는 적절치 않은 방법이라고 말하고 있습니다.</p>
 
 <p><br />
 <br /></p>
 
 <h3 id="functionprototypetostring-revision">Function.prototype.toString revision</h3>
 
+<p><a href="https://github.com/tc39/Function-prototype-toString-revision">해당 proposal의 목적은 Function.prototype.toString 의 현재 기능을 바꾸는 것입니다.</a></p>
+
+<p>Function.prototype.toString은 Object.prototype.toString을 그대로 쓰는 것이 아니라 override 해서 사용하고 있습니다.</p>
+
+<p>이전의 ECMAScript에서 Function.prototype.toString을 실행하면 다음 중 하나가 발생합니다.</p>
+
+<ul>
+  <li>ECMAScript engine에 따른 function의 source code가 string으로 반환됨.</li>
+  <li>ECMAScript engine이 적절한 source code를 생성할 수 없을때는, <em>evel</em> 을 사용했을 때 <em>SyntaxError</em> 를 유발하는 string을 반환함.</li>
+</ul>
+
+<p>이 proposal에서 제안하는 solution은 특정 case마다 구분해놓았습니다.</p>
+
+<ul>
+  <li>ECMAScript code를 사용해서 정의한 function의 경우 original source code를 return 해야 한다. (for functions defined using ECMAScript code, toString must return source text slice from beginning of first token to end of last token matched by the appropriate grammar production)
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'My Function!'</span><span class="p">);</span> <span class="p">}.</span><span class="nx">toString</span><span class="p">());</span>
+<span class="c1">// case user-defined =&gt; "function () { console.log('My Function!'); }"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>built-in function 객체 및 binding 된 이질적인 객체의 경우, NativeFunction외에 어떤 것도 return 해서는 안된다. (for built-in function objects and bound function exotic objects, toString must not return anything other than NativeFunction)
+```js
+console.log(Number.parseInt.toString());
+// case built-in =&gt; “function () { [native code] }”</li>
+</ul>
+
+<p>console.log(function () { }.bind(0).toString());
+// case binding =&gt; “function () { [native code] }”</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* ECMAScript code를 사용해서 정의하지 않은 호출 가능한 객체의 경우 NativeFunction을 반환해야 함. (for callable objects which were not defined using ECMAScript code, toString must return NativeFunction)
+```js
+console.log(Symbol.toString());
+// case Built-in callable =&gt; "function Symbol() { [native code] }"
+</code></pre></div></div>
+<ul>
+  <li>Function 및 GeneratorFunction 생성자를 통해 dynamic 하게 생성되는 function의 경우, ToString이 소스 텍스트를 합성해야 함. (for functions created dynamically (through the Function and GeneratorFunction constructors), toString must synthesise a source text)
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Function</span><span class="p">().</span><span class="nx">toString</span><span class="p">());</span>
+<span class="c1">// case Dynamically generated =&gt; "function anonymous() {}"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>이 외의 모든 다른 object에 대해서는 TypeError가 나온다. (for all other objects, toString must throw a TypeError exception)
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">// case all other objects =&gt; "Uncaught TypeError: Function.prototype.toString requires that 'this' be a Function"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
 <p><br />
 <br /></p>
 
 <h3 id="objectfromentries">Object.fromEntries</h3>
 
+<p><a href="https://github.com/tc39/proposal-object-from-entries">해당 proposal에서는 <strong>Object.fromEntries</strong> 라는 static method를 제안하고 있습니다.</a></p>
+
+<p><strong>Object.fromEntries</strong>는 key-value 쌍의 list(array)를 object로 바꿔주는 ECMAScript의 static method입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">obj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">fromEntries</span><span class="p">([[</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="s1">'b'</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+<span class="c1">// =&gt; { a: 0, b: 1 }</span>
+</code></pre></div></div>
+
+<p>Object.fromEntries가 필요한 이유는 다음과 같습니다.</p>
+
+<p>Array나 Map 등 다양한 structure에 저장된 data를 한 형태에서 다른 형태로 변환하는 작업은 일반적입니다. 두 data 구조가 모두 iterable할 때 아래의 코드와 같이 간단히 해결할 수 있습니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">().</span><span class="kd">set</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="kc">true</span><span class="p">).</span><span class="kd">set</span><span class="p">(</span><span class="s1">'bar'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">arr</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+<span class="kd">set</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">(</span><span class="nx">map</span><span class="p">.</span><span class="nx">values</span><span class="p">());</span>
+</code></pre></div></div>
+
+<p>Map의 iterable entries는 key-value 형태를 가집니다. 이런 형태는 Object.entries가 return 하는 형태와 잘 들어맞기 때문에, object를 Map으로 잘 변환할 수 있습니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">bar</span><span class="p">:</span> <span class="kc">false</span> <span class="p">};</span>
+<span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">obj</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong>하지만, key-value 형태에서 객체를 만들기 위한 역방향 Object.entries가 없으므로</strong>, 일반적으로 helper나 inline reducer를 사용해야 합니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">obj</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">map</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="p">[</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">val</span> <span class="p">])</span> <span class="o">=&gt;</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="p">{</span> <span class="p">[</span><span class="nx">key</span><span class="p">]:</span> <span class="nx">val</span> <span class="p">}),</span> <span class="p">{});</span>
+</code></pre></div></div>
+
+<p>이렇게 여러 방법으로 해당 기능을 구현할 수 있지만, 해당 method들이 본래의 목적으로 사용되는 것이 아니기 때문에 잠재적인 문제를 가질 수 있습니다.</p>
+
+<blockquote>
+  <p><a href="https://lodash.com/docs/4.17.11#fromPairs">Lodash에서는 이미 해당 기능이 구현되어 있습니다.</a></p>
+</blockquote>
+
 <p><br />
 <br /></p>
 
 <h3 id="well-formed-jsonstringify">Well-formed JSON.stringify</h3>
+
+<p><a href="https://github.com/tc39/proposal-well-formed-stringify">해당 proposal</a>의 동기는 다음과 같습니다.</p>
+
+<p><a href="https://tools.ietf.org/html/rfc8259#section-8.1">RFC 8259 section 8.1</a> 는 JSON이 closed ecosystem 밖에서 가져온 text를 UTF-8을 사용해서 encoding 하길 원합니다. 하지만, ECMAScript의 JSON.stringify은 UTF-8에서 표현할 수 없는 code point도 string으로 return 합니다. 특히 surrogate code인 U+D800 ~ U+DFFF가 있습니다. 이 코드는 UTF-8에서 다른 목적으로 사용하기 위해 예약되어 있습니다. 그리고 <a href="https://tc39.github.io/ecma262/#sec-json.stringify">JSON.stringify의 description</a>과는 반대로, 몇몇 string은 UFT-16에 들어가지 않습니다. 왜냐하면, <a href="https://unicode.org/versions/Unicode10.0.0/ch03.pdf#G7404">The Unicode Standard, Version 10.0.0, Section 3.4</a>의 definition D91에 “UTF-16 code unit에서 D800<sub>16</sub>에서 DFFF<sub>16</sub>는 부적절하다(isolated UTF-16 code units in the range D800<sub>16</sub>..DFFF<sub>16</sub> are ill-formed)”라고 되어있기 때문입니다. 그리고 D89에 의해서 UFT-16에서 제외되었습니다.</p>
+
+<p>이런 문제를 해결하기 위해서, <em>unpaired surrogate code points를 단일 UTF-16 code unit으로 return 하는 대신, JSON escape sequenc로 표현</em> 하는 것을 제안하고 있습니다. 아래의 코드에서 예시를 보여주고 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Non-BMP characters still serialize to surrogate pairs.</span>
+<span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="s1">'𝌆'</span><span class="p">)</span>
+<span class="c1">// → '"𝌆"'</span>
+<span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="s1">'</span><span class="err">\</span><span class="s1">uD834</span><span class="err">\</span><span class="s1">uDF06'</span><span class="p">)</span>
+<span class="c1">// → '"𝌆"'</span>
+
+<span class="c1">// Unpaired surrogate code units will serialize to escape sequences.</span>
+<span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="s1">'</span><span class="err">\</span><span class="s1">uDF06</span><span class="err">\</span><span class="s1">uD834'</span><span class="p">)</span>
+<span class="c1">// → '"\\udf06\\ud834"'</span>
+<span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="s1">'</span><span class="err">\</span><span class="s1">uDEAD'</span><span class="p">)</span>
+<span class="c1">// → '"\\udead"'</span>
+</code></pre></div></div>
+
+<p>현재,</p>
+<ul>
+  <li>V8, enabled by default in V8 v7.2.10 and Chrome 72</li>
+  <li>SpiderMonkey, shipping in Firefox 64</li>
+  <li>JavaScriptCore, shipping in Safari Technology Preview 73
+에 구현되어 있습니다.</li>
+</ul>
 
 <p><br />
 <br /></p>
@@ -604,7 +709,7 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
 
 <p>String type은 trim()이라는, 양쪽의 whitespace를 제거하는 method를 표준으로 가지고 있습니다. <a href="https://github.com/tc39/proposal-string-left-right-trim">해당 proposal</a>은 string의 양쪽이 아닌 한쪽의 whitespace만 제거하는 trimStart()와 trimEnd()라는 method를 제안합니다.</p>
 
-<p>재미있는 점은, 해당 method는 표준에 제정되기 전에 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd#Browser_compatibility">여러 browser에서 이미 구현</a>되어 있습니다. Browser에서 ECMAScript로 기능을 넣게하는 경우 중 하나입니다.</p>
+<p>재미있는 점은, 해당 method는 표준에 제정되기 전에 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd#Browser_compatibility">여러 browser에서 이미 구현</a> 되어 있습니다. Browser에서 ECMAScript로 기능을 넣게하는 경우 중 하나입니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">first</span> <span class="o">=</span> <span class="s2">"      My favorite sport "</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">second</span> <span class="o">=</span> <span class="s2">"is kendo.        "</span><span class="p">;</span>
@@ -662,6 +767,11 @@ import(specifier)의 <strong>specifier</strong>는 string literal뿐만 아니�
   <li><a href="https://github.com/tc39/proposal-optional-catch-binding">Optional catch binding</a></li>
   <li><a href="https://github.com/tc39/proposal-json-superset">Subsume JSON(JSON superset)</a></li>
   <li><a href="https://github.com/tc39/proposal-Symbol-description">Symbol.prototype.description</a></li>
+  <li><a href="https://github.com/tc39/Function-prototype-toString-revision">Function.prototype.toString revision</a></li>
+  <li><a href="https://github.com/tc39/proposal-object-from-entries">Object.fromEntries</a></li>
+  <li><a href="https://lodash.com/docs/4.17.11#fromPairs">fromPairt - lodash</a></li>
+  <li><a href="https://github.com/tc39/proposal-well-formed-stringify">Well-formed JSON.stringify</a></li>
+  <li><a href="https://tools.ietf.org/html/rfc8259#section-8.1">RFC 8259 section 8.1</a></li>
 </ul>
 
       </div>
