@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-02-14T14:36:08+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">Web에서의 Rendering</title><link href="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/" rel="alternate" type="text/html" title="Web에서의 Rendering" /><published>2019-02-14T00:00:00+00:00</published><updated>2019-02-14T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/">&lt;p&gt;개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-02-14T15:01:36+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">Web에서의 Rendering</title><link href="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/" rel="alternate" type="text/html" title="Web에서의 Rendering" /><published>2019-02-14T00:00:00+00:00</published><updated>2019-02-14T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/">&lt;p&gt;개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.&lt;/p&gt;
 
 &lt;p&gt;사이트가 부분적으로 완성 된 후에는 개선사항으로 SSR을 적용 할 생각입니다. 하지만 해당 기술을 적용하기 위해서는 좀더 잘 알 필요가 있기 때문에 이번 포스트를 작성하게 되었습니다.&lt;/p&gt;
 
@@ -51,11 +51,17 @@
 &lt;ul&gt;
   &lt;li&gt;SSR: Server-Side Rendering - Client side 혹은 범용 application을 &lt;em&gt;서버에서&lt;/em&gt; HTML로 rendering 합니다.&lt;/li&gt;
   &lt;li&gt;CSR: Client-Side Rendering - Browser에서 DOM을 사용해서 Application을 rendering합니다.&lt;/li&gt;
-  &lt;li&gt;Rehydration:&lt;/li&gt;
-  &lt;li&gt;Prerendering:&lt;/li&gt;
+  &lt;li&gt;Rehydration: Server에서 rendering 한 HTML DOM 트리와 data를 client에서 재사용하도록 자바 스크립트 뷰를 “부팅”합니다.&lt;/li&gt;
+  &lt;li&gt;Prerendering: Build시에 client-side application을 실행해서 초기 상태를 static HTML로 저장합니다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;TTFB: Time to First Byte - seen as the time between clicking a link and the first bit of content coming in.&lt;/li&gt;
+  &lt;li&gt;FP: First Paint - the first time any pixel gets becomes visible to the user.&lt;/li&gt;
+  &lt;li&gt;FCP: First Contentful Paint - the time when requested content (article body, etc) becomes visible.&lt;/li&gt;
+  &lt;li&gt;TTI: Time To Interactive - the time at which a page becomes interactive (events wired up, etc).&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
