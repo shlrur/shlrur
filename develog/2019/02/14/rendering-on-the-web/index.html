@@ -14,18 +14,20 @@
   
     
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Devlog | First Blog</title>
+<title>Web에서의 Rendering | First Blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Devlog" />
+<meta property="og:title" content="Web에서의 Rendering" />
 <meta name="author" content="Heekyum" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="전공 및 업무와 관련있는 포스트를 적는 곳입니다." />
-<meta property="og:description" content="전공 및 업무와 관련있는 포스트를 적는 곳입니다." />
-<link rel="canonical" href="https://shlrur.github.io//category/develog/" />
-<meta property="og:url" content="https://shlrur.github.io//category/develog/" />
+<meta name="description" content="개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다." />
+<meta property="og:description" content="개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다." />
+<link rel="canonical" href="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/" />
+<meta property="og:url" content="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/" />
 <meta property="og:site_name" content="First Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-14T00:00:00+00:00" />
 <script type="application/ld+json">
-{"description":"전공 및 업무와 관련있는 포스트를 적는 곳입니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"WebPage","url":"https://shlrur.github.io//category/develog/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/icon_me.jpg"},"name":"Heekyum"},"headline":"Devlog","@context":"http://schema.org"}</script>
+{"description":"개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.","author":{"@type":"Person","name":"Heekyum"},"@type":"BlogPosting","url":"https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://shlrur.github.io//assets/images/icon_me.jpg"},"name":"Heekyum"},"headline":"Web에서의 Rendering","dateModified":"2019-02-14T00:00:00+00:00","datePublished":"2019-02-14T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -49,7 +51,7 @@
 </head>
 
 
-  <body class="layout--list devlog">
+  <body class="layout--post web에서의-rendering">
 
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
@@ -134,7 +136,7 @@
     <li class="menu-item">
       <input type="checkbox" id="list-item-2"/>
       <div  class="list-wrapper">
-        <a class="sidebar-nav-item active" href="/category/develog" itemprop="url">
+        <a class="sidebar-nav-item" href="/category/develog" itemprop="url">
           <span itemprop="name">Develog</span>
         </a>
           <label class="folder" for="list-item-2">▾</label>
@@ -231,10 +233,16 @@
 
   <div class="inner">
     <div class="intro-text">
-      <h1 id="page-title" class="intro-title">Devlog
+      <h1 id="page-title" class="intro-title">Web에서의 Rendering
 </h1>
       
 
+      
+        
+
+        <p class="entry-meta">
+          <span class="byline-item">by Heekyum</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2019-02-14T00:00:00+00:00">February 14, 2019</time></span>
+        </p>
       
 
       
@@ -249,367 +257,93 @@
   <div class="inner">
     <article class="entry-wrap">
       <div class="entry-content">
-        <header>
-  
-  
-  
-<p class="message">전공 및 업무와 관련있는 포스트를 적는 곳입니다.</p>
+        <p>개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.</p>
 
+<p>사이트가 부분적으로 완성 된 후에는 개선사항으로 SSR을 적용 할 생각입니다. 하지만 해당 기술을 적용하기 위해서는 좀더 잘 알 필요가 있기 때문에 이번 포스트를 작성하게 되었습니다.</p>
 
+<blockquote>
+  <p>이 포스트는 <a href="https://developers.google.com/web/updates/2019/02/rendering-on-the-web">Rendering on the Web</a> 의 글을 번역한 것입니다.</p>
+</blockquote>
 
+<hr />
 
-</header>
-<hr class="sr-only"/>
+<h1 id="contents">Contents</h1>
 
-
-  
-  
-    
-    <h2 id="y2019" class="hr">2019</h2>
-    <ul class="related-posts">
-    
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2019/02/14/rendering-on-the-web/" data-flip="title">
-    <span>Web에서의 Rendering</span>
-  </a>
-  <small><time datetime="2019-02-14T00:00:00+00:00">
-    14 Feb
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2019/01/29/what-features-will-added-in-es2019/" data-flip="title">
-    <span>What features will added in ES2019</span>
-  </a>
-  <small><time datetime="2019-01-29T00:00:00+00:00">
-    29 Jan
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2019/01/23/how-arrange-elements-horizontally-flexbox/" data-flip="title">
-    <span>[html/css] Block element를 가로로 배치하는 방법 - Flexbox</span>
-  </a>
-  <small><time datetime="2019-01-23T00:00:00+00:00">
-    23 Jan
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2019/01/23/how-arrange-elements-horizontally-display-inline-block/" data-flip="title">
-    <span>[html/css] Block element를 가로로 배치하는 방법 - display: inline-block</span>
-  </a>
-  <small><time datetime="2019-01-23T00:00:00+00:00">
-    23 Jan
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2019/01/18/how-arrange-elements-horizontally-float/" data-flip="title">
-    <span>[html/css] Block element를 가로로 배치하는 방법 - float</span>
-  </a>
-  <small><time datetime="2019-01-18T00:00:00+00:00">
-    18 Jan
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2019/01/12/how-arrange-elements-horizontally-preview/" data-flip="title">
-    <span>[html/css] Block element를 가로로 배치하는 방법 - 시작</span>
-  </a>
-  <small><time datetime="2019-01-12T00:00:00+00:00">
-    12 Jan
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2019/01/01/jekyll-template-story-3/" data-flip="title">
-    <span>[Jekyll] 나의 Jekyll template 제작기 - 3(final)</span>
-  </a>
-  <small><time datetime="2019-01-01T00:00:00+00:00">
-    01 Jan
-  </time></small>
-</li>
-
-  
-
-  
-  
+<ul>
+  <li><a href="#motivation">Motivation</a></li>
+  <li><a href="#terminology">Terminology</a></li>
+  <li><a href="#Server Rendering">Server Rendering</a></li>
+  <li><a href="#Static Rednering">Static Rednering</a></li>
+  <li><a href="#Server Rendering vs Static Rendering">Server Rendering vs Static Rendering</a></li>
+  <li><a href="#Client-Side Rendering(CSR)">Client-Side Rendering(CSR)</a></li>
+  <li><a href="#Combining serverrendering and CSR via rehydration">Combining serverrendering and CSR via rehydration</a>
+    <ul>
+      <li><a href="#A Rehydration Problem: One App for the Price of Two">A Rehydration Problem: One App for the Price of Two</a></li>
     </ul>
-    <h2 id="y2018" class="hr">2018</h2>
-    <ul class="related-posts">
-    
-  
-  
+  </li>
+  <li><a href="#Streaming server rendering and Progressive Rehydration">Streaming server rendering and Progressive Rehydration</a>
+    <ul>
+      <li><a href="#Partial Rehydration">Partial Rehydration</a></li>
+      <li><a href="#Trisomorphic Rendering">Trisomorphic Rendering</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEO Considerations">SEO Considerations</a></li>
+  <li><a href="#Wrapping up...">Wrapping up…</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
 
+<hr />
 
-<li class="h4">
-  <a href="/develog/2018/12/10/jekyll-template-story-2/" data-flip="title">
-    <span>[Jekyll] 나의 Jekyll template 제작기 - 2</span>
-  </a>
-  <small><time datetime="2018-12-10T00:00:00+00:00">
-    10 Dec
-  </time></small>
-</li>
+<h1 id="motivation">Motivation</h1>
 
-  
+<p>우리는 가끔 개발자로서, application의 전체적인 구조에 영향을 미치는 사항에 대한 결정을 해야 할 때가 있습니다. 웹 개발자에게는 <strong>logic과 rendering을 application의 어디에서 구현할 것인지에 대한 결정</strong>이 바로 그런 것입니다. 웹 사이트를 만드는데 수 많은 방법이 있기 때문에, 어려운 결정이라고 할 수 있습니다.</p>
 
-  
-  
-  
+<p>여기서 우리는 지난 몇년간 Chrome을 통해서 큰 사이트들의 방법을 알 수 있었습니다. 전반적으로, <strong>full rehydration</strong> 접근법을 통해서 server rendering 혹은 static rendering을 고려할 것을 권장하고 있습니다.</p>
 
+<p>이러한 결정을 내릴 때 고려중인 여러 architecture를 더 잘 이해하려면 각 방식에 대해서 확실히 이해하고 일관된 용어를 사용해야 합니다. 이러한 접근방식간의 차이를 잘 이해하면, 각 방식들의 performance적인 측면에서 trade-off를 더 잘 이해할 수 있습니다.</p>
 
-<li class="h4">
-  <a href="/develog/2018/11/24/jekyll-template-story-1/" data-flip="title">
-    <span>[Jekyll] 나의 Jekyll template 제작기 - 1</span>
-  </a>
-  <small><time datetime="2018-11-24T00:00:00+00:00">
-    24 Nov
-  </time></small>
-</li>
+<hr />
 
-  
+<h1 id="terminology">Terminology</h1>
 
-  
-  
-  
+<p><strong>Rendring</strong></p>
+<ul>
+  <li>SSR: Server-Side Rendering - Client side 혹은 범용 application을 <em>서버에서</em> HTML로 rendering 합니다.</li>
+  <li>CSR: Client-Side Rendering - Browser에서 DOM을 사용해서 Application을 rendering합니다.</li>
+  <li>Rehydration:</li>
+  <li>Prerendering:</li>
+</ul>
 
+<p><strong>Performance</strong></p>
 
-<li class="h4">
-  <a href="/develog/2018/11/18/why-using-babel/" data-flip="title">
-    <span>[Babel] Why using Babel</span>
-  </a>
-  <small><time datetime="2018-11-18T00:00:00+00:00">
-    18 Nov
-  </time></small>
-</li>
+<hr />
 
-  
+<h1 id="references">References</h1>
 
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2018/11/14/why-using-webpack/" data-flip="title">
-    <span>[webpack] Why using webpack</span>
-  </a>
-  <small><time datetime="2018-11-14T00:00:00+00:00">
-    14 Nov
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2018/11/06/reactjs-immutablejs/" data-flip="title">
-    <span>[React] Immutable.js: Why Using Immutable Data Structures</span>
-  </a>
-  <small><time datetime="2018-11-06T00:00:00+00:00">
-    06 Nov
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2018/10/18/about-loop-performance/" data-flip="title">
-    <span>About JavaScript Loop Performance(forEach, for, while, etc...)</span>
-  </a>
-  <small><time datetime="2018-10-18T00:00:00+00:00">
-    18 Oct
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2018/09/18/4-observer/" data-flip="title">
-    <span>Obserber Design Pattern</span>
-  </a>
-  <small><time datetime="2018-09-18T00:00:00+00:00">
-    18 Sep
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2018/09/12/3-fatory/" data-flip="title">
-    <span>Fatory Design Pattern</span>
-  </a>
-  <small><time datetime="2018-09-12T00:00:00+00:00">
-    12 Sep
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2018/09/11/2-module/" data-flip="title">
-    <span>Module Design Pattern</span>
-  </a>
-  <small><time datetime="2018-09-11T00:00:00+00:00">
-    11 Sep
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2018/09/06/1-constructor/" data-flip="title">
-    <span>Constructor Design Pattern</span>
-  </a>
-  <small><time datetime="2018-09-06T00:00:00+00:00">
-    06 Sep
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2018/09/06/0-overview/" data-flip="title">
-    <span>JavaScript design pattern: overview</span>
-  </a>
-  <small><time datetime="2018-09-06T00:00:00+00:00">
-    06 Sep
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/javascripts/javascript-engine-fundamentals-optimizing-prototypes/" data-flip="title">
-    <span>JavaScript engine fundamentals: optimizing prototypes</span>
-  </a>
-  <small><time datetime="2018-09-01T00:00:00+00:00">
-    01 Sep
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/develog/2018/09/01/immediately-invoked-function-expression/" data-flip="title">
-    <span>Immediately-Invoked Function Expression (IIFE)</span>
-  </a>
-  <small><time datetime="2018-09-01T00:00:00+00:00">
-    01 Sep
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-<li class="h4">
-  <a href="/javascripts/javascript-engine-fundamentals-shapes-and-Inline-caches/" data-flip="title">
-    <span>JavaScript engine fundamentals: Shapes and Inline Caches</span>
-  </a>
-  <small><time datetime="2018-08-28T00:00:00+00:00">
-    28 Aug
-  </time></small>
-</li>
-
-  </ul>
-
+<ul>
+  <li><a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript</a></li>
+</ul>
 
       </div>
+      
+        
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/';
+      this.page.identifier = 'https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://shlrurs-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      
     </article>
   </div>
 </main>

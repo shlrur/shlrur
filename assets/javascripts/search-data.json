@@ -493,4 +493,9 @@ var store = [{
         "excerpt":"이번 post에서는 2019년에 발표될 ES2019에 추가될 예정인 기능들에 대해서 살펴보겠습니다. JavaScript는 지난 몇 년 동안 꾸준히 새로운 표준을 발표해왔습니다. 바로 Ecma International의 ECMA-262 기술 규격에 정의된 ECMAScript 인데요, 현재 9번째 버전인 ES2018까지 나와 있습니다.그리고 현재 ES2019에 대한 명세가 작성되고 있습니다. 이번 post에서는 ECMAScript가 어떤 과정을 거쳐서 표준 문서를 만드는지 간단히...","categories": ["develog"],
         "tags": ["javascript"],
         "url": "https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/"
+      },{
+        "title": "Web에서의 Rendering",
+        "excerpt":"개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다. 사이트가 부분적으로 완성 된 후에는 개선사항으로 SSR을 적용 할 생각입니다. 하지만 해당 기술을 적용하기...","categories": ["develog"],
+        "tags": ["javascript"],
+        "url": "https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/"
       }]
