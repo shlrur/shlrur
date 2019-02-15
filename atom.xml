@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-02-15T07:14:09+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">Web에서의 Rendering</title><link href="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/" rel="alternate" type="text/html" title="Web에서의 Rendering" /><published>2019-02-14T00:00:00+00:00</published><updated>2019-02-14T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/">&lt;p&gt;개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-02-15T14:28:48+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">Web에서의 Rendering</title><link href="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/" rel="alternate" type="text/html" title="Web에서의 Rendering" /><published>2019-02-14T00:00:00+00:00</published><updated>2019-02-14T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/">&lt;p&gt;개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.&lt;/p&gt;
 
 &lt;p&gt;사이트가 부분적으로 완성 된 후에는 개선사항으로 SSR을 적용 할 생각입니다. 하지만 해당 기술을 적용하기 위해서는 좀더 잘 알 필요가 있기 때문에 이번 포스트를 작성하게 되었습니다.&lt;/p&gt;
 
@@ -121,6 +121,26 @@
 
 &lt;hr /&gt;
 
+&lt;h1 id=&quot;client-side-renderingcsr&quot;&gt;Client-Side Rendering(CSR)&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Client-side rendering(CSR)은 browser에서 JavaScript를 사용해서 바로 page를 rendering하는 것을 뜻합니다. 모든 logic, data fetching, templating, 그리고 routing들이 모두 server가 아닌 client에서 처리됩니다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Client-side rendering은 mobile환경에서 빠르기가 힘듭니다. 만약 최소한의 작업만 수행하고, &lt;a href=&quot;https://mobile.twitter.com/HenrikJoreteg/status/1039744716210950144&quot;&gt;JavaScript 작업을 최소화하며&lt;/a&gt;, 최대한 적은 수의 &lt;a href=&quot;https://en.wikipedia.org/wiki/Round-trip_delay_time&quot;&gt;round-trip delay time(RTT)&lt;/a&gt;를 유지한다면 순수한 server rendering 성능과 비슷해질 수 있습니다. Client-side rendering에서 사용하는 중요한 script와 data는 &lt;a href=&quot;https://www.smashingmagazine.com/2017/04/guide-http2-server-push/&quot;&gt;HTTP/2 Server Push&lt;/a&gt;나 &lt;kbd&gt;&amp;lt;link rel=preload&amp;gt;&lt;/kbd&gt;를 통해서 더 빨리 전달될 수 있으며, 이는 parser를 통해서 더 빠르게 작동합니다. &lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/prpl-pattern/&quot;&gt;PRPL 패턴&lt;/a&gt;같은 패턴은 처음 및 다음에 실행 될 navigation들이 즉각적으로 일어나는 것 처럼 합니다.&lt;/p&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+    &lt;img src=&quot;https://shlrur.github.io//assets/images/rendering-on-the-web/2_client-rendering-tti.png&quot; alt=&quot;client rendering TTI&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Client-side rendering의 가장 큰 단점은 application이 커짐에 따라 필요한 JavaScript의 양이 증가할 수 있다는 점입니다. 이는 새로운 JavaScript library, pollyfill, 그리고 third-party code를 추가할 때 특히 어려워지는데, 이 코드들은 각자 수행해야 할 것들을 위해서 경쟁할 수 있으며, 종종 page가 rendering되기 전에 처리해야 하는 것들도 있습니다. 그리고 대규모 JavaScript bundle이 필요한 Client-side rendering의 경우는 &lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting/&quot;&gt;적극적으로 code를 분할&lt;/a&gt;해야 하며, JavaScript에 대해서 lazy-load도 고려해야 합니다. (&lt;em&gt;필요한 것만 서비스하라: serve only what you need, when you need it&lt;/em&gt;) Interactive가 거의 없거나 아예 없는 경우, server rendering이 더 확장 가능한 solution이 될 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;SPA(Single Page Application)을 제작하는 개발자가, 대부분의 page에서 사용하는 UI 핵심 부분을 구별할 수 있다면 &lt;a href=&quot;https://developers.google.com/web/updates/2015/11/app-shell&quot;&gt;Application Shell caching&lt;/a&gt; 기술을 적용할 수 있습니다. Service worker와 결합한다면, page를 반복해서 방문할 때 &lt;a href=&quot;https://en.wikipedia.org/wiki/Perceived_performance&quot;&gt;perceived performance&lt;/a&gt;를 획기적으로 개선할 수 있습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;combining-server-rendering-and-csr-via-rehydration&quot;&gt;Combining server rendering and CSR via rehydration&lt;/h1&gt;
+
+&lt;hr /&gt;
+
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
 
 &lt;ul&gt;
@@ -135,6 +155,10 @@
   &lt;li&gt;&lt;a href=&quot;https://medium.com/airbnb-engineering/operationalizing-node-js-for-server-side-rendering-c5ba718acfc9&quot;&gt;Operationalizing Node.js for Server Side Rendering&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Memoization&quot;&gt;memoization&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://freecontent.manning.com/caching-in-react/&quot;&gt;HTML caching&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mobile.twitter.com/HenrikJoreteg/status/1039744716210950144&quot;&gt;tight JavaScript budget&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Round-trip_delay_time&quot;&gt;RTT&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting/&quot;&gt;aggressive code-splitting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Perceived_performance&quot;&gt;perceived performance&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Heekyum</name></author><category term="javascript" /><summary type="html">개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.</summary></entry><entry><title type="html">What features will added in ES2019</title><link href="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/" rel="alternate" type="text/html" title="What features will added in ES2019" /><published>2019-01-29T00:00:00+00:00</published><updated>2019-01-29T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/">&lt;p&gt;이번 post에서는 2019년에 발표될 &lt;strong&gt;ES2019&lt;/strong&gt;에 추가될 예정인 기능들에 대해서 살펴보겠습니다.&lt;/p&gt;
 
 &lt;figure class=&quot;align-center&quot;&gt;
