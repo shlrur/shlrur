@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-02-15T14:28:48+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">Web에서의 Rendering</title><link href="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/" rel="alternate" type="text/html" title="Web에서의 Rendering" /><published>2019-02-14T00:00:00+00:00</published><updated>2019-02-14T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/">&lt;p&gt;개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-02-16T09:24:13+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">Web에서의 Rendering</title><link href="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/" rel="alternate" type="text/html" title="Web에서의 Rendering" /><published>2019-02-14T00:00:00+00:00</published><updated>2019-02-14T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/">&lt;p&gt;개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.&lt;/p&gt;
 
 &lt;p&gt;사이트가 부분적으로 완성 된 후에는 개선사항으로 SSR을 적용 할 생각입니다. 하지만 해당 기술을 적용하기 위해서는 좀더 잘 알 필요가 있기 때문에 이번 포스트를 작성하게 되었습니다.&lt;/p&gt;
 
@@ -139,6 +139,30 @@
 
 &lt;h1 id=&quot;combining-server-rendering-and-csr-via-rehydration&quot;&gt;Combining server rendering and CSR via rehydration&lt;/h1&gt;
 
+&lt;p&gt;Universal Rendering 혹은 간단히 “SSR”이라고 하는 접근 방식은 Client-Side Rendering과 Server Rendering간의 trade-off를 조절해서 두 방식 모두 사용합니다. Full page load 혹은 reload같은 navigation 요청은 server가 application을 HTML로 rendering하는 방식으로 처리합니다. 그리고 rendering에 사용되는 data와 JavaScript는 resulting document에 포함되어 처리됩니다. 신중하게 구현한다면, Server Rendering과 같이 빠른 First Contentful Paint(FCP)를 얻을 수 있으며, 그 후 &lt;a href=&quot;https://docs.electrode.io/guides/general/server-side-data-hydration&quot;&gt;(re)hydration&lt;/a&gt;이라는 테크닉을 사용해서 client에서 다시 rendering 하여 “pick up”할 수 있습니다. 이는 새로운 해결책이지만, 상당한 성능상의 단점이 있을 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Rehydration을 사용하는 SSR의 가장 큰 단점은 Time To Interactive(TTI)에 상당히 부정적인 영향을 미칠 수 있다는 것입니다. First Paint(FP)가 개선되더라도 말이죠… SSR의 페이지는 종종 로딩도 되고 interactive한 것처럼 보이지만, 사실은 client-side JS가 실행되고 event handler가 붙을 때 까지 실제로 입력등에 반응할 수 없습니다. Mobile에서는 수 초에서 수 분까지 걸릴 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;아마 여러분들도 이런 경험이 있을겁니다. 어떤 page가 로드된 것처럼 보이지만, 일정 기간 동안 click이나 touch가 작동하지 않는 경우 말이죠. “왜 아무것도 안되지? 왜 스크롤을 할 수 없지???” 같은 경우 말이죠.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-rehydration-problem-one-app-for-the-price-of-two&quot;&gt;A Rehydration Problem: One App for the Price of Two&lt;/h2&gt;
+
+&lt;p&gt;Rehydration 문제는 가끔 JS때문에 interactive가 지연되는 것보다 더 문제가 될 수 있습니다. 최근의 SSR solution들은 일반적으로 UI의 data dependency들로부터 document로의 응답을 script tag로 직렬화 합니다. Server가 HTML을 rendering하는데 사용한 모든 data를 다시 요청 할 필요없이 client-side JavaScript가 server의 종료지점을 정확하게 “pick-up” 할 수 있도록 말이죠.&lt;/p&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+    &lt;img src=&quot;https://shlrur.github.io//assets/images/rendering-on-the-web/3_html.png&quot; alt=&quot;html&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;위의 사진과 같이, server는 navigation의 request에 대한 application UI의 description을 반환합니다. 이 UI를 작성하는데 필요한 data도 함께 말이죠. UI의 진정한 interactive는 bundle.js가 완벽히 load된 후에나 가능해집니다.&lt;/p&gt;
+
+&lt;p&gt;실제 website에서 수집된 performance 지표만 보면 SSR rehydration을 사용하지 않아야 할 것처럼 보입니다. 궁극적으로 그 이유는 UX(user experience)때문인데, user들이 쉽게 &lt;a href=&quot;https://en.wikipedia.org/wiki/Uncanny_valley&quot;&gt;“불쾌한 계곡”&lt;/a&gt;에 남겨질 수 있기 때문입니다.&lt;/p&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+    &lt;img src=&quot;https://shlrur.github.io//assets/images/rendering-on-the-web/4_rehydration-tti.png&quot; alt=&quot;rehydration-tti&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Rehydration을 사용하는 SSR에도 희망은 있습니다. 단기적으로는, 캐시성이 높은 content에만 SSR을 사용하면 TTFB delay를 줄여서 prerendering과 유사한 결과를 얻을 수 있습니다. 점진적으로, 계속해서, 혹은 부분적으로 rehydrating을 한다면 이 기술을 미래에 더 실용적으로 만들 수 있을 것입니다.&lt;/p&gt;
+
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
@@ -159,6 +183,7 @@
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Round-trip_delay_time&quot;&gt;RTT&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting/&quot;&gt;aggressive code-splitting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Perceived_performance&quot;&gt;perceived performance&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.electrode.io/guides/general/server-side-data-hydration&quot;&gt;(re)hydration technique&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Heekyum</name></author><category term="javascript" /><summary type="html">개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.</summary></entry><entry><title type="html">What features will added in ES2019</title><link href="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/" rel="alternate" type="text/html" title="What features will added in ES2019" /><published>2019-01-29T00:00:00+00:00</published><updated>2019-01-29T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/">&lt;p&gt;이번 post에서는 2019년에 발표될 &lt;strong&gt;ES2019&lt;/strong&gt;에 추가될 예정인 기능들에 대해서 살펴보겠습니다.&lt;/p&gt;
 
 &lt;figure class=&quot;align-center&quot;&gt;
