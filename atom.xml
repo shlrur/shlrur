@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-02-16T09:24:13+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">Web에서의 Rendering</title><link href="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/" rel="alternate" type="text/html" title="Web에서의 Rendering" /><published>2019-02-14T00:00:00+00:00</published><updated>2019-02-14T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/">&lt;p&gt;개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://shlrur.github.io//atom.xml" rel="self" type="application/atom+xml" /><link href="https://shlrur.github.io//" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-02-16T16:41:00+00:00</updated><id>https://shlrur.github.io//atom.xml</id><title type="html">First Blog</title><subtitle>A blog about study log.</subtitle><author><name>Heekyum</name></author><entry><title type="html">Web에서의 Rendering</title><link href="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/" rel="alternate" type="text/html" title="Web에서의 Rendering" /><published>2019-02-14T00:00:00+00:00</published><updated>2019-02-14T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/">&lt;p&gt;개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.&lt;/p&gt;
 
 &lt;p&gt;사이트가 부분적으로 완성 된 후에는 개선사항으로 SSR을 적용 할 생각입니다. 하지만 해당 기술을 적용하기 위해서는 좀더 잘 알 필요가 있기 때문에 이번 포스트를 작성하게 되었습니다.&lt;/p&gt;
 
@@ -165,6 +165,24 @@
 
 &lt;hr /&gt;
 
+&lt;h1 id=&quot;streaming-server-rendering-and-progressive-rehydration&quot;&gt;Streaming server rendering and Progressive Rehydration&lt;/h1&gt;
+
+&lt;p&gt;Server rendering은 지난 몇 년간 많은 발전을 해왔습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://zeit.co/blog/streaming-server-rendering-at-spectrum&quot;&gt;Streaming server rendering&lt;/a&gt;을 사용하면 HTML을 chunck로 보내면서 browser가 점진적으로 rendering 할 수 있습니다. 이런 방식을 사용하면 markup이 사용자에게 더 빨리 도착하기 때문에 더 빠른 First Paint(FP)와 First Contentful Paint(FCP)를 제공할 수 있습니다. React에서는 &lt;a href=&quot;https://reactjs.org/docs/react-dom-server.html#rendertonodestream&quot;&gt;renderToNodeStream()&lt;/a&gt;(renderToString()은 synchronous)을 사용해서 stream을 asynchronous로 처리하기 때문에 배압(backpressure)이 잘 처리됨을 의미합니다.&lt;/p&gt;
+
+&lt;p&gt;점진적인(progressive) rehydration 역시 눈여겨볼 가치가 있으며, &lt;a href=&quot;https://github.com/facebook/react/pull/14717&quot;&gt;React가 계속 연구&lt;/a&gt;하고 있는 것입니다. 점진적인 rehydration은, 현재 일반적인 접근방법인 전체 application을 한번에 모두 초기화하기 보다는, 시간에 따라 server render로 application의 개별 부분을 “booted up” 합니다. 이는 우선순위가 낮은 page의 client-side upgrade를 미룸에 따라 main thread가 block되지 않기 때문에, 우선순위가 높은 page의 interactive를 가져오는데 필요한 JavaScript의 양을 줄이는데 도움을 줍니다. &lt;em&gt;한마디로 당장 필요없는 부분보다 필요한 부분의 interactive부터 가능하게 한다는 뜻입니다.&lt;/em&gt; 그리고, SSR Rehydration의 가장 일반적인 단점인 server-rendered DOM tree가 부서졌다가 바로 재건되는 것을 피하는데 도움을 줍니다. 가장 큰 이유는 초기의 synchronous한 client-side rendering이 아직 준비되지 않은 data가 필요한데, 아마 Promise를 기다리기 때문일 것입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;partial-rehydration&quot;&gt;Partial Rehydration&lt;/h2&gt;
+
+&lt;h2 id=&quot;trisomorphic-rendering&quot;&gt;Trisomorphic Rendering&lt;/h2&gt;
+
+&lt;h1 id=&quot;seo-considerations&quot;&gt;SEO Considerations&lt;/h1&gt;
+
+&lt;h1 id=&quot;wrapping-up&quot;&gt;Wrapping up…&lt;/h1&gt;
+
+&lt;hr /&gt;
+
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
 
 &lt;ul&gt;
@@ -184,6 +202,8 @@
   &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting/&quot;&gt;aggressive code-splitting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Perceived_performance&quot;&gt;perceived performance&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.electrode.io/guides/general/server-side-data-hydration&quot;&gt;(re)hydration technique&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zeit.co/blog/streaming-server-rendering-at-spectrum&quot;&gt;Streaming server rendering&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react/pull/14717&quot;&gt;React - Partial Hydration #14717&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Heekyum</name></author><category term="javascript" /><summary type="html">개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다.</summary></entry><entry><title type="html">What features will added in ES2019</title><link href="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/" rel="alternate" type="text/html" title="What features will added in ES2019" /><published>2019-01-29T00:00:00+00:00</published><updated>2019-01-29T00:00:00+00:00</updated><id>https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019</id><content type="html" xml:base="https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/">&lt;p&gt;이번 post에서는 2019년에 발표될 &lt;strong&gt;ES2019&lt;/strong&gt;에 추가될 예정인 기능들에 대해서 살펴보겠습니다.&lt;/p&gt;
 
 &lt;figure class=&quot;align-center&quot;&gt;
