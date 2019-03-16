@@ -469,15 +469,55 @@ var store = [{
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2019/01/01/jekyll-template-story-3/"
       },{
+        "title": "2019-1-3 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout - #kendo #검도 #2019 #첫운동  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 3, 2019 at 5:37am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/03/workout-log-kendo/"
+      },{
+        "title": "2019-1-7 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout - #kendo #검도 -  좀 더 열심히  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 7, 2019 at 6:18am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/07/workout-log-kendo/"
+      },{
+        "title": "2019-1-9 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout - #kendo - 더  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 9, 2019 at 3:39am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/09/workout-log-kendo/"
+      },{
+        "title": "2019-1-10 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout - #kendo - 잘게잘게 쪼개서  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 10, 2019 at 3:31am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/10/workout-log-kendo/"
+      },{
         "title": "[html/css] Block element를 가로로 배치하는 방법 - 시작",
         "excerpt":"이번 post에서는 float, display, flex, grid 등을 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Bootstrap4 와 같이 모든 속성이 정의되어 있고 element의 class만 지정해서 layout을 잡는 방법도 있지만, 이번 series에서는 순수하게 html과 css만을 사용해서 layout을 배치하는 방법에 대해서 알아보겠습니다. 제가 처음 HTML과 CSS를 공부할 때 가장 먼저 맞닥뜨린 문제가...","categories": ["develog"],
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2019/01/12/how-arrange-elements-horizontally-preview/"
       },{
+        "title": "2019-1-16 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout - #kendo - #출동 #성공 #젤힘듬 #사실집에가는길  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 16, 2019 at 6:14am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/16/workout-log-kendo/"
+      },{
+        "title": "2019-1-17 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout - #kendo - #존심 #부족  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 17, 2019 at 5:27am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/17/workout-log-kendo/"
+      },{
         "title": "[html/css] Block element를 가로로 배치하는 방법 - float",
         "excerpt":"이번 post에서는 float 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Contents Using Float The clear Property The clearfix Hack Layout ReferencesUsing Float Float property는 원래 text와 함께 image를 보여줄 때, image를 어떻게 띄워서(float) 배치할 것인지를 설정하기 위한 것이지만, 현재는 layout을 배치할 때 주로 사용됩니다.Float property는 다음과 같은 값을...","categories": ["develog"],
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2019/01/18/how-arrange-elements-horizontally-float/"
+      },{
+        "title": "2019-1-21 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout #kendo #검도 뒤로 가다가 상격뜨면 거진 패한다. #잔심 #존심 제대로 하자. 기합을 정확히  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 21, 2019 at 5:31am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/21/workout-log-kendo/"
+      },{
+        "title": "2019-1-22 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 좀 더 제대로 해보자  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 22, 2019 at 3:37am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/22/workout-log-kendo/"
       },{
         "title": "[html/css] Block element를 가로로 배치하는 방법 - display: inline-block",
         "excerpt":"이번 post에서는 display: inline-block 를 이용한 block element를 가로로 배치하는 방법에 대해서 알아보겠습니다. Contents display Property Using display: inline-block Create Navigation Links Referencesdisplay Property 먼저, CSS에서 display라는 속성이 가지는 값의 종류와 효과에 대해서 알아보겠습니다. dispaly 속성은 element가 보여주는 방식을 나타냅니다. inline: Element를 과 같이 inline element로 보여줍니다. 그래서 height와 width...","categories": ["develog"],
@@ -489,13 +529,83 @@ var store = [{
         "tags": ["etc"],
         "url": "https://shlrur.github.io//develog/2019/01/23/how-arrange-elements-horizontally-flexbox/"
       },{
+        "title": "2019-1-24 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 #사범님들 #대련  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 24, 2019 at 5:29am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/24/workout-log-kendo/"
+      },{
+        "title": "2019-1-28 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 공복 운동은 되도록 지양할 것.  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 28, 2019 at 6:37am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/28/workout-log-kendo/"
+      },{
         "title": "What features will added in ES2019",
         "excerpt":"이번 post에서는 2019년에 발표될 ES2019에 추가될 예정인 기능들에 대해서 살펴보겠습니다. JavaScript는 지난 몇 년 동안 꾸준히 새로운 표준을 발표해왔습니다. 바로 Ecma International의 ECMA-262 기술 규격에 정의된 ECMAScript 인데요, 현재 9번째 버전인 ES2018까지 나와 있습니다.그리고 현재 ES2019에 대한 명세가 작성되고 있습니다. 이번 post에서는 ECMAScript가 어떤 과정을 거쳐서 표준 문서를 만드는지 간단히...","categories": ["develog"],
         "tags": ["javascript"],
         "url": "https://shlrur.github.io//develog/2019/01/29/what-features-will-added-in-es2019/"
       },{
+        "title": "2019-1-30 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 오늘도 운동했따  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 30, 2019 at 4:16am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/30/workout-log-kendo/"
+      },{
+        "title": "2019-1-31 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 이틀연속 운동. 체력이 부족하다.  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 31, 2019 at 4:38am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/01/31/workout-log-kendo/"
+      },{
+        "title": "2019-2-1 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #점심운동 #dailyworkout  #kendo #검도 #다음으로 #부서질 #죽도들 쓰던 죽도가 고장났다.  A post shared by  #kendo #검도 #strength (@dochaebi) on Jan 31, 2019 at 8:19pm PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/02/01/workout-log-kendo/"
+      },{
         "title": "Web에서의 Rendering",
         "excerpt":"개인 프로젝트를 진행하면서 계속해서 고민하고 있는 부분이 있습니다. 바로 SAP와 SSR인데요, 현재 사이트는 SAP로 구현하고 있습니다. 하지만 사이트가 검색엔진에서 검색되어져야 한다거나, 굳히 single page로 구현하지 않아도 되는 page 등의 이유로 부분적인 server side rendering도 고려하고 있습니다. 사이트가 부분적으로 완성 된 후에는 개선사항으로 SSR을 적용 할 생각입니다. 하지만 해당 기술을 적용하기...","categories": ["develog"],
         "tags": ["javascript"],
         "url": "https://shlrur.github.io//develog/2019/02/14/rendering-on-the-web/"
+      },{
+        "title": "2019-2-16 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 오랜만의 운동. 죽도가 무겁다. #실제로 #무거운 #죽도  A post shared by  #kendo #검도 #strength (@dochaebi) on Feb 15, 2019 at 7:52am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/02/16/workout-log-kendo/"
+      },{
+        "title": "2019-2-18 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 #기세 를 끌어올려야.  A post shared by  #kendo #검도 #strength (@dochaebi) on Feb 18, 2019 at 3:34am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/02/18/workout-log-kendo/"
+      },{
+        "title": "2019-2-20 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 오늘도 운동 했다아 d-90  A post shared by  #kendo #검도 #strength (@dochaebi) on Feb 20, 2019 at 3:57am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/02/20/workout-log-kendo/"
+      },{
+        "title": "2019-2-25 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 #호면 #넘나편한것  A post shared by  #kendo #검도 #strength (@dochaebi) on Feb 25, 2019 at 4:22am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/02/25/workout-log-kendo/"
+      },{
+        "title": "2019-2-27 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 오늘도 운동 했다. #뿌듯  A post shared by  #kendo #검도 #strength (@dochaebi) on Feb 26, 2019 at 9:16am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/02/27/workout-log-kendo/"
+      },{
+        "title": "2019-3-5 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 칼을 죽이고 들어가야 함. 그리고 웨이트 필요.  A post shared by  #kendo #검도 #strength (@dochaebi) on Mar 4, 2019 at 11:01am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/03/05/workout-log-kendo/"
+      },{
+        "title": "2019-3-6 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도  A post shared by  #kendo #검도 #strength (@dochaebi) on Mar 6, 2019 at 4:28am PST ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/03/06/workout-log-kendo/"
+      },{
+        "title": "2019-3-11 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 오랜만에 운동  A post shared by  #kendo #검도 #strength (@dochaebi) on Mar 11, 2019 at 6:16am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/03/11/workout-log-kendo/"
+      },{
+        "title": "2019-3-15 Workout Log: kendo",
+        "excerpt":"        View this post on Instagram           #운동 #매일운동 #저녁운동 #dailyworkout  #kendo #검도 비오는날 운동  A post shared by  #kendo #검도 #strength (@dochaebi) on Mar 15, 2019 at 5:33am PDT ","categories": ["workout"],
+        "tags": ["kendo"],
+        "url": "https://shlrur.github.io//workout/2019/03/15/workout-log-kendo/"
       }]
